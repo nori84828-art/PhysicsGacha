@@ -1,0 +1,195 @@
+{
+  "version": 1,
+  "mode": "boss",
+  "category": "level",
+  "level": 4,
+  "levelName": "挑戦",
+  "bosses": [
+    {
+      "id": "BOSS-L4-001",
+      "bossName": null,
+      "displayLabel": "BOSS 01",
+      "field": "thermodynamics",
+      "fieldName": "熱",
+      "theme": "ばね付きピストン・状態方程式・気体の仕事・熱力学第一法則",
+      "source": {
+        "university": "福岡大学",
+        "year": 2024,
+        "examType": "前期",
+        "track": "理系",
+        "question": "物理 II",
+        "sourceType": "adapted"
+      },
+      "sourceNote": "福岡大学2024年度前期の、ばね付きピストン内の理想気体を加熱する問題を参考にした改題・類題",
+      "image": "boss_level4_01.png",
+      "imageStatus": "pending",
+      "setup": "断面積S=1.0×10^-2 m^2の鉛直シリンダー内に、単原子分子理想気体を封入する。気体の上には摩擦なく動くピストンがあり、さらにばね定数k=1.0×10^4 N/mのばねが取り付けられている。初め、ばねは自然長で、気体の圧力はp0=1.0×10^5 Pa、体積はV0=1.0×10^-3 m^3でつり合っている。気体をゆっくり加熱するとピストンが上昇し、体積が2V0になった。ピストンが上昇した距離をxとすると体積変化はΔV=Sxであり、ばねによる追加圧力はkx/Sである。気体の内部エネルギーはU=(3/2)pVとし、気体が外部にした仕事を正、熱力学第一法則をΔU=Q-Wとする。",
+      "parts": [
+        {
+          "id": "1",
+          "question": "体積が2V0になったときの気体の圧力を求めよ。",
+          "answerType": "number",
+          "answer": 200000,
+          "unit": "Pa",
+          "significantFigures": null,
+          "tolerance": 0,
+          "explanation": "体積変化はΔV=V0=1.0×10^-3 m^3なので、x=ΔV/S=0.10 m。ばねの力はkx=1.0×10^3 N、追加圧力はkx/S=1.0×10^5 Pa。したがって最終圧力は2.0×10^5 Pa。"
+        },
+        {
+          "id": "2",
+          "question": "最終状態の絶対温度は初期状態の何倍か求めよ。",
+          "answerType": "number",
+          "answer": 4.0,
+          "unit": "倍",
+          "significantFigures": null,
+          "tolerance": 0,
+          "explanation": "物質量は一定なのでTはpVに比例する。TB/TA=(2p0×2V0)/(p0V0)=4。"
+        },
+        {
+          "id": "3",
+          "question": "初期状態から最終状態までに気体が外部にした仕事を求めよ。",
+          "answerType": "number",
+          "answer": 150,
+          "unit": "J",
+          "significantFigures": null,
+          "tolerance": 0,
+          "explanation": "ばねの力は変位に比例するため、圧力は体積に対して直線的にp0から2p0まで増加する。したがってW=((p0+2p0)/2)(2V0-V0)=1.5p0V0=150 J。"
+        },
+        {
+          "id": "4",
+          "question": "この加熱過程で気体に与えた熱量を求めよ。",
+          "answerType": "number",
+          "answer": 600,
+          "unit": "J",
+          "significantFigures": null,
+          "tolerance": 0,
+          "explanation": "UA=(3/2)p0V0=150 J、UB=(3/2)(2p0)(2V0)=600 JなのでΔU=450 J。ΔU=Q-WよりQ=ΔU+W=450+150=600 J。"
+        }
+      ]
+    },
+    {
+      "id": "BOSS-L4-002",
+      "bossName": null,
+      "displayLabel": "BOSS 02",
+      "field": "waves",
+      "fieldName": "波",
+      "theme": "ドップラー効果・風・移動する反射板・うなり",
+      "source": {
+        "university": "福岡大学",
+        "year": 2025,
+        "examType": "系統別",
+        "track": "理系",
+        "question": "物理 I",
+        "sourceType": "adapted"
+      },
+      "sourceNote": "福岡大学2025年度系統別の、風がある場合のドップラー効果と反射を扱う問題を参考にした改題・類題",
+      "image": "boss_level4_02.png",
+      "imageStatus": "pending",
+      "setup": "一直線上に音源S、観測者O、反射板Rがこの順に並んでいる。SとOは地面に対して静止しており、OはSのすぐ近くにいる。空気に対する音速は330 m/sで、SからRへ向かう向きに30 m/sの風が吹いている。反射板RはSへ向かって30 m/sの速さで移動している。音源Sは振動数216 Hzの音を連続して出している。反射板での反射では、反射板が受け取った振動数と反射板から再び送り出される振動数は反射板の立場で等しいものとする。",
+      "parts": [
+        {
+          "id": "1",
+          "question": "SからRへ進む音波の、地面に対する速さを求めよ。",
+          "answerType": "number",
+          "answer": 360,
+          "unit": "m/s",
+          "significantFigures": null,
+          "tolerance": 0,
+          "explanation": "音は空気に対して330 m/sで進み、風も同じ向きに30 m/sなので、地面に対する速さは360 m/s。"
+        },
+        {
+          "id": "2",
+          "question": "反射板Rが受け取る音の振動数を求めよ。",
+          "answerType": "number",
+          "answer": 234,
+          "unit": "Hz",
+          "significantFigures": null,
+          "tolerance": 0,
+          "explanation": "音源は地面に静止しているので、SからRへ進む音の波長はλ=360/216=5/3 m。Rは音波へ向かって30 m/sで近づくため、波面との相対速度は360+30=390 m/s。よってfR=390/(5/3)=234 Hz。"
+        },
+        {
+          "id": "3",
+          "question": "反射板Rで反射した音を、地面に静止している観測者Oが受け取るときの振動数を求めよ。",
+          "answerType": "number",
+          "answer": 260,
+          "unit": "Hz",
+          "significantFigures": null,
+          "tolerance": 0,
+          "explanation": "反射音はS向きに進むので地面に対する速さは330-30=300 m/s。Rは同じくS向きに30 m/sで動きながら234 Hzで波面を送り出すため、反射波の波長は(300-30)/234=15/13 m。したがって静止観測者Oが受け取る振動数は300/(15/13)=260 Hz。"
+        },
+        {
+          "id": "4",
+          "question": "観測者Oが音源Sから直接届く音と反射音を同時に聞いたとき、うなりの振動数を求めよ。",
+          "answerType": "number",
+          "answer": 44,
+          "unit": "Hz",
+          "significantFigures": null,
+          "tolerance": 0,
+          "explanation": "SとOはともに地面に静止しているため、直接音は216 Hzのまま。反射音は260 Hzなので、うなりの振動数は|260-216|=44 Hz。"
+        }
+      ]
+    },
+    {
+      "id": "BOSS-L4-003",
+      "bossName": null,
+      "displayLabel": "BOSS 03",
+      "field": "electromagnetism",
+      "fieldName": "電磁気",
+      "theme": "電磁誘導・導体棒・磁気力・終端速度",
+      "source": {
+        "university": "福岡大学",
+        "year": 2025,
+        "examType": "系統別",
+        "track": "理系",
+        "question": "物理 II",
+        "sourceType": "adapted"
+      },
+      "sourceNote": "福岡大学2025年度系統別の、磁場中を運動する導体棒と電磁誘導を扱う問題を参考にした改題・類題",
+      "image": "boss_level4_03.png",
+      "imageStatus": "pending",
+      "setup": "傾斜角30°のなめらかな平行レール上に、質量m=0.20 kg、長さL=0.50 mの導体棒をレールに垂直に置く。レール上端は抵抗R=0.50 Ωで接続され、レールと導体棒自身の抵抗は無視できる。レール面に垂直な向きに、磁束密度B=2.0 Tの一様な磁場が加えられている。導体棒はレールとの接触を保ったまま斜面を下向きに滑る。重力加速度は10 m/s^2とする。導体棒が速さvで動くときの誘導起電力の大きさはBLvとする。",
+      "parts": [
+        {
+          "id": "1",
+          "question": "導体棒が斜面下向きに0.30 m/sで動いているとき、導体棒に生じる誘導起電力の大きさを求めよ。",
+          "answerType": "number",
+          "answer": 0.3,
+          "unit": "V",
+          "significantFigures": null,
+          "tolerance": 0,
+          "explanation": "誘導起電力はE=BLv=2.0×0.50×0.30=0.30 V。"
+        },
+        {
+          "id": "2",
+          "question": "問1の瞬間に回路を流れる誘導電流の大きさを求めよ。",
+          "answerType": "number",
+          "answer": 0.6,
+          "unit": "A",
+          "significantFigures": null,
+          "tolerance": 0,
+          "explanation": "I=E/R=0.30/0.50=0.60 A。"
+        },
+        {
+          "id": "3",
+          "question": "問1の瞬間の導体棒の斜面下向きの加速度の大きさを求めよ。",
+          "answerType": "number",
+          "answer": 2.0,
+          "unit": "m/s^2",
+          "significantFigures": null,
+          "tolerance": 0,
+          "explanation": "斜面下向きの重力成分はmgsin30°=0.20×10×0.50=1.0 N。磁気力はF=BIL=2.0×0.60×0.50=0.60 Nで運動を妨げる向き。したがって合力は0.40 N、a=0.40/0.20=2.0 m/s^2。"
+        },
+        {
+          "id": "4",
+          "question": "十分時間が経って導体棒が一定速度で運動するようになったとき、その速さを求めよ。",
+          "answerType": "number",
+          "answer": 0.5,
+          "unit": "m/s",
+          "significantFigures": null,
+          "tolerance": 0,
+          "explanation": "一定速度ではmgsin30°=BIL。I=BLv/Rなので、mgsin30°=(B^2L^2/R)v。よってv=mgsin30°R/(B^2L^2)=1.0×0.50/(4.0×0.25)=0.50 m/s。"
+        }
+      ]
+    }
+  ]
+}

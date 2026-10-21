@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>高校物理 4択クイズゲーム (Ver.0.1)</title>
+  <meta name="description" content="高校生向け物理4択クイズゲーム。力学・熱力学・波動・電磁気の基礎〜標準問題を1問20秒の制限時間で解くWeb学習ゲームです。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="vendor/katex/katex.min.css">
+</head>
+<body class="is-home-screen">
+
+  <main class="app-container">
+    <div class="quiz-card">
+
+      <!-- ホーム・プレイ・ガチャで同じDOMを表示する上部HUD -->
+      <header id="global-hud" class="home-hud home-top-hud" aria-label="プレイヤーステータス">
+        <div class="home-left-hud">
+          <div class="player-rank-panel player-hud" aria-label="プレイヤーランク">
+            <img class="player-hud-frame" src="images/home/hud/player-hud-frame.png" alt="" aria-hidden="true">
+            <div class="player-rank-emblem rank-badge">
+              <span>RANK</span><strong id="player-rank-value">1</strong>
+            </div>
+            <div class="player-rank-progress player-panel">
+              <div class="player-name" aria-label="プレイヤー名"><span id="home-player-name">プレイヤー</span></div>
+              <div class="player-exp-row exp-row">
+                <div class="player-exp-info"><span class="exp-label">EXP</span><strong><span id="player-exp-value">0</span> / <span id="player-exp-needed">300</span></strong></div>
+                <div class="player-exp-track exp-bar"><div id="player-exp-fill" class="player-exp-fill exp-fill"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="currency-hud">
+          <div class="top-status-bar currency-stack" aria-label="所持ステータス">
+            <img class="currency-stack-frame" src="images/home/hud/currency-stack-frame.png" alt="" aria-hidden="true">
+            <div class="status-pill home-resource-pill currency-card currency-points" aria-label="所持POINT">
+              <img class="home-resource-icon home-point-icon currency-icon" src="images/home/hud/point.png" alt="">
+              <span class="status-value"><strong id="start-total-points">0</strong></span>
+            </div>
+            <div class="status-pill boss-coin-pill home-resource-pill currency-card currency-wisdom" aria-label="叡智の欠片">
+              <img class="home-resource-icon home-wisdom-icon currency-icon" src="images/home/hud/wisdom-stone.png" alt="">
+              <span class="status-value"><strong id="start-boss-coins">0</strong></span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- ホームとプレイで消さずに表示し続ける共通キャッチコピー -->
+      <p id="global-tagline" class="home-tagline">学ぶほど、世界は美しい。</p>
+
+      <!-- ==============================================
+           1. スタート画面
+      =============================================== -->
+      <section id="start-screen" class="screen active">
+        <div class="start-content social-home">
+          <div class="home-hud-space" aria-hidden="true"></div>
+          <div class="home-settings-overlay">
+            <div class="home-settings-currency-slot">
+              <button id="btn-home-settings" class="home-settings-button" type="button" aria-label="設定を開く" title="設定">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10.3 2h3.4l.5 2.2c.5.2 1 .4 1.4.8l2.1-.9 2.4 2.4-.9 2.1c.3.4.6.9.8 1.4l2.2.5v3.4l-2.2.5c-.2.5-.4 1-.8 1.4l.9 2.1-2.4 2.4-2.1-.9c-.4.3-.9.6-1.4.8l-.5 2.2h-3.4l-.5-2.2c-.5-.2-1-.4-1.4-.8l-2.1.9-2.4-2.4.9-2.1c-.3-.4-.6-.9-.8-1.4L2 13.7v-3.4l2.2-.5c.2-.5.4-1 .8-1.4l-.9-2.1 2.4-2.4 2.1.9c.4-.3.9-.6 1.4-.8L10.3 2Z"/><circle cx="12" cy="12" r="3.2"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- 将来、選択中の科学者立ち絵を重ねるための中央スペース -->
+          <div class="home-character-stage" aria-label="科学者表示用スペース">
+            <img id="home-character-portrait" class="home-character-portrait" src="" alt="" style="display: none;">
+          </div>
+
+          <nav class="home-main-menu" aria-label="メインメニュー">
+            <button id="btn-to-gacha-from-start" class="home-menu-card home-menu-gacha">
+              <img class="home-menu-art" src="images/home/menu-icons/gacha.png" alt="" aria-hidden="true">
+              <span class="home-menu-kicker">COLLECTION</span>
+              <span class="home-menu-label">ガチャ</span>
+              <span class="home-menu-caption">偉人と法則を手に入れる</span>
+            </button>
+
+            <button id="btn-to-battle-select" class="home-menu-card home-menu-play" aria-label="プレイ">
+              <img class="home-menu-art" src="images/home/menu-icons/play.png" alt="" aria-hidden="true">
+              <span class="home-menu-kicker">PLAY</span>
+              <span class="home-menu-label">プレイ</span>
+              <span class="home-menu-caption">物理の力を試す</span>
+            </button>
+
+            <button id="btn-to-collection-from-start" class="home-menu-card home-menu-cards">
+              <img class="home-menu-art" src="images/home/menu-icons/card.png" alt="" aria-hidden="true">
+              <span class="home-menu-kicker">CATALOG</span>
+              <span class="home-menu-label">カード</span>
+              <span class="home-menu-caption">所持カードを確認する</span>
+            </button>
+          </nav>
+
+        </div>
+      </section>
+
+      <!-- ==============================================
+           バトル選択画面
+      =============================================== -->
+      <section id="battle-select-screen" class="screen">
+        <div class="battle-select-page">
+          <div class="battle-select-hud-space" aria-hidden="true"></div>
+          <header class="battle-select-heading">
+            <h2>プレイ</h2>
+            <span>BATTLE SELECT</span>
+            <p>挑むのは、まだ見ぬ物理の世界</p>
+          </header>
+          <div class="battle-select-modes">
+        <button id="btn-start-from-battle-select" class="battle-select-card battle-select-normal">
+          <img class="battle-select-art" src="images/battle-select/normal-battle.png" alt="" aria-hidden="true">
+          <span class="battle-select-card-en">NORMAL BATTLE</span>
+              <strong>通常バトル</strong>
+              <small>基礎から応用まで<br>様々な物理の問題に挑戦</small>
+              <b>挑戦する　›</b>
+            </button>
+        <button id="btn-to-boss-from-battle-select" class="battle-select-card battle-select-boss">
+          <img class="battle-select-art" src="images/battle-select/boss-battle.png" alt="" aria-hidden="true">
+          <span class="battle-select-card-en">BOSS BATTLE</span>
+              <strong>ボスバトル</strong>
+              <small>強大な概念・法則に挑み<br>君の知識の限界を超えろ</small>
+              <b>挑戦する　›</b>
+            </button>
+          </div>
+          <button id="btn-back-from-battle-select" class="battle-select-back">‹ 戻る</button>
+        </div>
+      </section>
+
+      <!-- ==============================================
+           通常バトル：大分野・単元選択
+      =============================================== -->
+      <section id="normal-battle-select-screen" class="screen">
+        <div class="normal-battle-select-page">
+          <header class="normal-battle-select-heading">
+            <h2>通常バトル</h2>
+            <span>NORMAL BATTLE</span>
+            <p>大分野と単元を選んで問題演習を始めよう</p>
+          </header>
+          <div class="normal-battle-select-content">
+            <section id="normal-battle-field-section" class="normal-battle-select-section" aria-labelledby="normal-battle-field-title">
+              <h3 id="normal-battle-field-title">大分野を選択</h3>
+              <div id="normal-battle-field-list" class="normal-battle-field-list"></div>
+            </section>
+            <section id="normal-battle-selected-field" class="normal-battle-selected-field" hidden aria-label="選択中の大分野">
+              <div class="normal-battle-selected-field-info">
+                <span class="normal-battle-selected-field-label">大分野</span>
+                <strong id="normal-battle-selected-field-name"></strong>
+              </div>
+              <span id="normal-battle-selected-field-count" class="normal-battle-selected-field-count"></span>
+            </section>
+            <section id="normal-battle-unit-section" class="normal-battle-select-section" hidden aria-labelledby="normal-battle-unit-title">
+              <h3 id="normal-battle-unit-title">単元を選択</h3>
+              <div id="normal-battle-unit-list" class="normal-battle-unit-list"></div>
+            </section>
+            <p id="normal-battle-load-message" class="normal-battle-load-message" role="status"></p>
+          </div>
+          <button id="btn-back-from-normal-battle-select" class="battle-select-back">‹ 戻る</button>
+        </div>
+      </section>
+
+      <!-- ==============================================
+           2. クイズ画面
+      =============================================== -->
+      <section id="quiz-screen" class="screen">
+        <div class="quiz-header">
+          <div class="quiz-meta-row">
+            <div class="quiz-field-info">
+              <span id="field-badge" class="field-badge">力学</span>
+              <span id="unit-badge" class="unit-badge">運動の表し方</span>
+            </div>
+            <div class="quiz-points-display">
+              🪙 <span id="current-points">0</span> pt
+              <span id="combo-badge" class="combo-badge" style="display: none;">🔥 0 COMBO</span>
+            </div>
+            <div class="question-counter">
+              第 <span id="current-q-num">1</span> 問 / <span id="current-q-total">10</span>問
+            </div>
+          </div>
+
+          <div class="timer-wrapper">
+            <div class="timer-bar-container">
+              <div id="timer-bar-fill" class="timer-bar-fill"></div>
+            </div>
+            <div id="timer-text" class="timer-text">20s</div>
+          </div>
+        </div>
+
+        <div class="question-container">
+          <p id="question-text" class="question-text">
+            問題文がここに表示されます。
+          </p>
+          <img id="question-image" class="question-image" src="" alt="" hidden>
+        </div>
+
+        <div id="options-grid" class="options-grid">
+          <!-- 選択肢ボタンがJSで動的に生成されます -->
+        </div>
+
+        <div id="feedback-box" class="feedback-box">
+          <div id="feedback-header" class="feedback-header">
+            <!-- 正解！ / 不正解！ が入ります -->
+          </div>
+          <div id="feedback-points" class="feedback-points" style="display: none;">
+            <!-- +180 pt (基本: 100 + スピード: 60 + コンボ: 20) -->
+          </div>
+          <div id="feedback-explanation" class="feedback-explanation">
+            <!-- 解説文が入ります -->
+          </div>
+        </div>
+
+        <div class="quiz-footer">
+          <button id="btn-next" class="btn-next" style="display: none;">
+            次の問題へ ➔
+          </button>
+        </div>
+      </section>
+
+      <!-- ==============================================
+           3. 結果画面
+      =============================================== -->
+      <section id="result-screen" class="screen">
+        <div class="result-header-nav">
+          <button id="btn-back-from-result" class="btn-text-back">
+            ◁ 戻る
+          </button>
+        </div>
+
+        <div class="result-header">
+          <span class="app-badge">結果発表</span>
+          <h2 class="result-title">クイズ終了！お疲れ様でした</h2>
+        </div>
+
+        <div class="score-card">
+          <div id="result-rank-badge" class="score-badge rank-s">ランク S</div>
+          <div class="score-number-display">
+            <span id="result-score-num">0</span> <span>/ <span id="result-question-total">10</span> 問正解</span>
+          </div>
+          <div id="result-accuracy" class="accuracy-display">正答率: 0%</div>
+
+          <div class="result-points-summary">
+            <div class="points-main-box">
+              <span class="points-label">獲得ポイント</span>
+              <div class="points-value-row">
+                <span class="points-value" id="result-earned-points">+0</span>
+                <span class="points-unit">pt</span>
+              </div>
+              <div id="new-record-badge" class="new-record-badge" style="display: none;">🎉 NEW RECORD!</div>
+            </div>
+
+            <div class="points-sub-stats">
+              <div class="sub-stat-item">
+                <span class="sub-stat-label">🏆 ハイスコア</span>
+                <span class="sub-stat-val" id="result-high-score">0 pt</span>
+              </div>
+              <div class="sub-stat-item">
+                <span class="sub-stat-label">🪙 累計所持ポイント</span>
+                <span class="sub-stat-val" id="result-total-points">0 pt</span>
+              </div>
+            </div>
+          </div>
+
+          <p id="result-comment" class="result-comment">
+            素晴らしい物理の理解度です！
+          </p>
+        </div>
+
+        <div class="review-section">
+          <div class="review-title">
+            <span>今回の解答・解説の振り返り</span>
+          </div>
+          <div id="review-list" class="review-list">
+            <!-- 1問ごとの振り返りがJSで動的生成されます -->
+          </div>
+        </div>
+
+        <div class="result-actions">
+          <button id="btn-to-gacha-from-result" class="btn-gacha-accent">
+            ガチャへ
+          </button>
+          <button id="btn-restart" class="btn-primary">
+            もう一度挑戦する
+          </button>
+        </div>
+      </section>
+
+      <!-- ==============================================
+           4. ガチャ画面
+      =============================================== -->
+      <section id="gacha-screen" class="screen">
+        <div class="gacha-page">
+          <div class="gacha-header-nav">
+            <button id="btn-back-from-gacha" class="gacha-back-button">
+              <span aria-hidden="true">‹</span> 戻る
+            </button>
+          </div>
+
+          <div class="gacha-content">
+            <div class="gacha-title-area">
+              <h2 class="gacha-title">物理学の殿堂ガチャ</h2>
+              <span class="gacha-collection-label">偉人と理論・法則コレクション</span>
+              <p class="gacha-subtitle">クイズで貯めたPOINTで物理学者と偉大な法則カードを手に入れよう！</p>
+            </div>
+
+            <!-- 背景の天球儀・原子モチーフをガチャ装置として見せるための余白 -->
+            <div class="gacha-device-stage" aria-label="物理学の殿堂ガチャ装置"></div>
+
+            <div class="gacha-actions">
+              <div class="gacha-draw-buttons">
+                <button id="btn-draw-gacha" class="btn-gacha-draw">
+                  <span>1回引く</span><small>1,000 pt</small>
+                </button>
+                <button id="btn-draw-gacha-ten" class="btn-gacha-draw" type="button" aria-label="10回ガチャを引く">
+                  <span>10回引く</span><small>10,000 pt</small>
+                </button>
+              </div>
+              <p id="gacha-point-warning" class="point-warning" style="display: none;">
+                ⚠️ POINTが足りません（クイズに挑戦して貯めよう！）
+              </p>
+              <button id="btn-open-collection" class="gacha-collection-button">
+                所持カード図鑑を見る <span id="collection-count-badge">0/4</span>
+              </button>
+              <div class="gacha-rate-action"><button id="btn-open-gacha-rates" class="btn-open-gacha-rates" type="button">提供割合　›</button></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==============================================
+           5. BOSS BATTLE：ボス選択
+      =============================================== -->
+      <section id="boss-select-screen" class="screen boss-screen">
+        <div class="boss-select-layout">
+          <header class="boss-select-heading">
+            <h2 class="boss-page-title">ボスバトル</h2>
+            <span class="boss-eyebrow">BOSS BATTLE</span>
+            <p class="boss-archive-label">入試問題に挑み、知識を証明せよ</p>
+          </header>
+          <div class="boss-select-content">
+            <section id="boss-select-summary" class="boss-select-summary" hidden aria-label="選択中の内容">
+              <div class="boss-select-summary-info">
+                <span id="boss-select-summary-label" class="boss-select-summary-label"></span>
+                <strong id="boss-select-summary-name"></strong>
+              </div>
+              <span id="boss-select-summary-count" class="boss-select-summary-count"></span>
+            </section>
+            <section class="boss-select-options">
+              <h3 id="boss-select-context" class="boss-select-context">挑戦方法を選択</h3>
+              <div id="boss-select-tabs" class="boss-select-tabs" aria-label="ボスの選び方">
+                <button id="btn-boss-by-level" type="button">LEVEL別</button>
+                <button id="btn-boss-by-university" type="button">大学別</button>
+              </div>
+              <p id="boss-select-message" class="boss-select-message" role="status"></p>
+              <div id="boss-select-list" class="boss-select-list"></div>
+              <div id="boss-detail" class="boss-detail" hidden>
+                <div id="boss-detail-content"></div>
+                <button id="btn-challenge-boss" class="btn-boss-start" type="button">挑戦する</button>
+              </div>
+            </section>
+          </div>
+          <button id="btn-back-from-boss-select" class="battle-select-back">‹ 戻る</button>
+        </div>
+      </section>
+
+      <!-- 6. BOSS BATTLE：デッキ選択 -->
+      <section id="boss-deck-screen" class="screen boss-screen">
+        <div class="boss-nav"><button id="btn-back-from-deck" class="btn-text-back">◀ ボス選択へ</button></div>
+        <span id="boss-deck-label" class="boss-eyebrow">DECK SELECT</span>
+        <h2 id="boss-deck-title" class="boss-page-title"></h2>
+        <p class="boss-deck-instruction">所持カードから異なる5種類を選択してください。</p>
+        <div class="deck-summary">
+          <div><span>DECK ATK</span><strong id="deck-atk">0</strong></div>
+          <div><span>DECK HP</span><strong id="deck-hp">0</strong></div>
+          <div><span>DECK TIME</span><strong id="deck-time">+0秒</strong></div>
+        </div>
+        <p id="deck-selection-count" class="deck-selection-count">0 / 5 枚選択中</p>
+        <div id="boss-deck-grid" class="boss-deck-grid"></div>
+        <p id="boss-deck-warning" class="boss-deck-warning" aria-live="polite"></p>
+        <button id="btn-start-boss-battle" class="btn-boss-start" disabled>戦闘開始</button>
+      </section>
+
+      <!-- 7. BOSS BATTLE：戦闘 -->
+      <section id="boss-battle-screen" class="screen boss-screen">
+        <div class="boss-battle-header">
+          <div><span id="boss-battle-label" class="boss-eyebrow"></span><h2 id="boss-name"></h2><p id="boss-english-name"></p></div>
+          <div id="boss-question-counter" class="boss-question-counter">QUESTION 1 / 4</div>
+        </div>
+        <div class="battle-hp-block boss-hp-block"><div class="battle-hp-label"><span>BOSS HP</span><strong id="boss-hp-text">3600 / 3600</strong></div><div class="battle-hp-track"><div id="boss-hp-fill" class="battle-hp-fill"></div></div></div>
+        <div class="boss-question-container">
+          <p id="boss-setup"></p>
+          <img id="boss-setup-image" class="boss-setup-image" alt="" hidden>
+          <p id="boss-question-text"></p>
+        </div>
+        <div class="boss-timer"><div class="boss-timer-heading"><span>TIME</span><strong id="boss-timer-text">0s</strong></div><div class="boss-timer-track"><div id="boss-timer-fill"></div></div></div>
+        <div class="battle-hp-block player-hp-block"><div class="battle-hp-label"><span>PLAYER HP</span><strong id="player-hp-text">0 / 0</strong></div><div class="battle-hp-track"><div id="player-hp-fill" class="battle-hp-fill"></div></div></div>
+        <form id="boss-number-form" class="boss-number-form" autocomplete="off">
+          <label for="boss-number-answer">答え</label>
+          <div class="boss-number-entry"><input id="boss-number-answer" type="text" inputmode="decimal" autocomplete="off" aria-describedby="boss-answer-unit"><span id="boss-answer-unit"></span></div>
+          <div id="boss-number-keypad" class="boss-number-keypad" aria-label="数値キーパッド"></div>
+          <p id="boss-answer-message" class="boss-answer-message" role="status"></p>
+          <button id="btn-submit-boss-answer" class="btn-boss-start" type="submit">解答する</button>
+        </form>
+        <div id="boss-feedback" class="boss-feedback" style="display:none;"></div>
+        <button id="btn-next-boss-question" class="btn-boss-next" style="display:none;">次の検証へ ➔</button>
+      </section>
+
+      <!-- 8. BOSS BATTLE：リザルト -->
+      <section id="boss-result-screen" class="screen boss-screen">
+        <div class="boss-result-head"><span id="boss-result-status" class="boss-result-status">BOSS DEFEATED</span><h2 id="boss-result-name"></h2><p id="boss-result-theme"></p></div>
+        <div class="boss-result-stats"><div>正解数 <strong id="boss-result-correct">0 / 4</strong></div><div>残りHP <strong id="boss-result-hp">0</strong></div><div>獲得した叡智の欠片 <strong id="boss-result-coins">0</strong></div></div>
+        <div class="boss-reward-list"><h3>REWARD CONDITIONS</h3><div id="boss-reward-first"></div><div id="boss-reward-perfect"></div><div id="boss-reward-hp"></div></div>
+        <div class="boss-result-actions"><button id="btn-boss-rematch" class="btn-boss-start">再戦する</button><button id="btn-boss-result-home" class="btn-secondary">ホームへ戻る</button></div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ==============================================
+       ガチャ演出・獲得モーダル（カード反転式）
+  =============================================== -->
+  <div id="gacha-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-container">
+
+      <!-- 開封直後から立ち上がる、カード背面専用の背景画像レイヤー -->
+      <div id="card-reveal-effects" class="card-reveal-effects" aria-hidden="true"></div>
+
+      <!-- 裏面をタップすると、中央の縦軸を中心に表面へ反転する。 -->
+      <div id="card-result-container" class="card-result-container" style="display: none;">
+        <div class="ten-gacha-skip-row"><button id="btn-ten-gacha-skip" class="ten-gacha-skip" type="button">スキップ</button></div>
+        <div id="new-card-overlay" class="new-card-overlay" style="display: none;" aria-label="初獲得">NEW</div>
+        <div id="gacha-card-scene" class="gacha-card-scene" role="button" tabindex="0" aria-label="カードをめくる">
+          <img class="rarity-halo-a" src="images/effects/flashA.png" alt="" aria-hidden="true">
+          <img class="rarity-halo-b" src="images/effects/flashB.png" alt="" aria-hidden="true">
+          <div id="gacha-card-flipper" class="gacha-card-flipper">
+            <div class="gacha-card-back">
+              <img class="gacha-card-back-image" src="images/card/card_hide.png" alt="カードの裏面">
+              <img class="card-holo-base" src="images/card/透過ホログラムレインボーオーバーレイ.png" alt="" aria-hidden="true">
+              <img class="card-holo-beam" src="images/card/虹色のホログラム光線オーバーレイ.png" alt="" aria-hidden="true">
+            </div>
+            <div id="card-display" class="tc-card rarity-ssr gacha-card-front">
+          <!-- 外枠の立体メタル装飾フレーム -->
+          <div class="tc-frame">
+            <div class="tc-gem tc-gem-top"></div>
+            <div class="tc-gem tc-gem-bottom"></div>
+
+            <!-- カード全景キャンバス (宇宙・星空背景と立ち絵が一体化) -->
+            <div class="tc-canvas">
+              <div class="tc-cosmos-bg"></div>
+
+              <!-- 完成済みカード画像。表示時はカード全体を一枚の画像として使用する。 -->
+              <div class="tc-art-layer">
+                <img id="card-image" class="tc-character-art" src="" alt="カード画像">
+                <div id="card-icon-fallback" class="tc-icon-fallback" style="display: none;">⚛️</div>
+              </div>
+
+              <!-- 上部ヘッダー情報 (立ち絵の上にオーバーレイ) -->
+              <div class="tc-header">
+                <div class="tc-rarity-container">
+                  <img id="card-rarity" class="tc-rarity-logo" src="" alt="SSR">
+                </div>
+                <div class="tc-title-block">
+                  <div id="card-scientist" class="tc-scientist-name">ニュートン</div>
+                  <div id="card-achievement" class="tc-achievement-name">【万有引力】</div>
+                </div>
+              </div>
+
+              <!-- 下部情報パネル (立ち絵下部にオーバーレイ) -->
+              <div class="tc-footer-panel">
+                <div class="tc-desc-box">
+                  <p id="card-desc" class="tc-desc-text">説明文がここに入ります。</p>
+                </div>
+                <div class="tc-meta-row">
+                  <div class="tc-unit-pill">
+                    <span class="tc-unit-icon">⚛️</span>
+                    <span class="tc-unit-label">関連単元</span>
+                  </div>
+                  <div id="card-unit" class="tc-unit-val">力学</div>
+                  <div id="card-owned-badge" class="tc-owned-badge">所持数: 1枚目</div>
+                </div>
+              </div>
+            </div>
+          </div>
+            </div>
+          </div>
+          <div id="ten-card-slider" class="ten-card-slider" aria-hidden="true">
+            <img id="ten-slide-current" class="ten-slide-card ten-slide-current" alt="">
+            <img id="ten-slide-incoming" class="ten-slide-card ten-slide-incoming" alt="">
+          </div>
+        </div>
+        <div class="gacha-flip-hint" aria-hidden="true">カードをタップしてめくる</div>
+        <section id="ten-gacha-summary" class="ten-gacha-summary" aria-label="10連ガチャ結果">
+          <h2>10連ガチャ結果</h2>
+          <div id="ten-gacha-summary-grid" class="ten-gacha-summary-grid"></div>
+        </section>
+
+        <!-- 所持カード図鑑から開いたときだけ表示する、カード本体とは独立したゲーム用情報 -->
+        <section id="card-detail-status" class="card-detail-status" style="display: none;" aria-label="カードステータス">
+          <button id="btn-card-status" class="card-status-toggle" type="button" aria-expanded="false" aria-controls="card-status-content">
+            <span>CARD STATUS</span><span class="card-status-chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div id="card-status-content" class="card-status-content" aria-hidden="true">
+            <div class="card-status-content-inner">
+              <section class="card-info-section">
+                <div class="card-status-title">SCIENTIST</div>
+                <strong id="card-scientist-full-name" class="card-scientist-full-name"></strong>
+                <p id="card-scientist-lifespan" class="card-scientist-lifespan"></p>
+              </section>
+              <section class="card-info-section">
+                <div id="card-knowledge-label" class="card-status-title">公式</div>
+                <div id="card-knowledge-value" class="card-knowledge-value"></div>
+                <div id="card-symbols-section" class="card-symbols-section" style="display: none;">
+                  <div class="card-symbols-title">記号の意味</div>
+                  <div id="card-symbols-list" class="card-symbols-list"></div>
+                </div>
+                <p id="card-knowledge-description" class="card-knowledge-description"></p>
+              </section>
+              <section class="card-info-section">
+                <div class="card-status-title">GAME STATUS</div>
+                <div class="card-status-grid">
+                  <div class="card-status-item"><span>ATK</span><strong id="card-status-atk">0</strong></div>
+                  <div class="card-status-item"><span>HP</span><strong id="card-status-hp">0</strong></div>
+                  <div class="card-status-item"><span>TIME</span><strong id="card-status-time">+0秒</strong></div>
+                  <div class="card-status-item"><span>限界突破</span><strong id="card-status-breakthrough">0 / 10</strong></div>
+                </div>
+              </section>
+              <section id="card-skill-section" class="card-skill-section" style="display: none;">
+                <div class="card-skill-label">SKILL</div>
+                <strong id="card-skill-name" class="card-skill-name"></strong>
+                <p id="card-skill-description" class="card-skill-description"></p>
+              </section>
+            </div>
+          </div>
+        </section>
+
+        <div class="gacha-result-actions">
+          <button id="btn-ten-gacha-next" class="btn-gacha-accent" type="button" style="display: none;">次へ</button>
+          <button id="btn-set-home-character" class="btn-set-home-character" type="button" style="display: none;">
+            ホームに設定
+          </button>
+          <button id="btn-gacha-again" class="btn-gacha-accent">
+            もう1回引く (1,000pt)
+          </button>
+          <button id="btn-close-gacha-modal" class="btn-secondary">
+            閉じる
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==============================================
+       所持カード図鑑モーダル
+  =============================================== -->
+  <div id="collection-modal" class="modal-overlay" style="display: none;">
+    <div class="collection-modal-container">
+      <div class="collection-header">
+        <div class="collection-title-group">
+          <h3 class="collection-title"><span aria-hidden="true">✦</span> 所持カード図鑑</h3>
+          <span class="collection-title-en">CARD COLLECTION</span>
+        </div>
+        <div class="collection-header-actions">
+          <p class="collection-sub">📖 収集状況 <span id="collection-progress-text">0 / 4 種</span></p>
+          <button id="btn-close-collection" class="btn-close-modal" aria-label="図鑑を閉じる">✕</button>
+        </div>
+      </div>
+      <p class="collection-lead">偉人たちの知と、世界を変えた法則の記録</p>
+
+      <div id="collection-grid" class="collection-grid">
+        <!-- JSで動的に全10枚のカードを生成 -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ==============================================
+       ガチャ提供割合モーダル
+  =============================================== -->
+  <div id="gacha-rates-modal" class="modal-overlay gacha-rates-overlay" style="display: none;">
+    <section class="gacha-rates-modal-container" role="dialog" aria-modal="true" aria-labelledby="gacha-rates-title">
+      <header class="gacha-rates-header">
+        <div>
+          <span>GACHA RATES</span>
+          <h3 id="gacha-rates-title">提供割合</h3>
+        </div>
+        <button id="btn-close-gacha-rates" class="gacha-rates-close" type="button" aria-label="提供割合を閉じる">×</button>
+      </header>
+      <div class="gacha-rates-scroll">
+        <section class="gacha-rates-section">
+          <h4>レアリティ別 提供割合</h4>
+          <table class="gacha-rates-table">
+            <thead><tr><th>レアリティ</th><th>提供割合</th></tr></thead>
+            <tbody id="gacha-rarity-rates-list"></tbody>
+          </table>
+        </section>
+        <section class="gacha-rates-section">
+          <h4>提供カード一覧</h4>
+          <table class="gacha-rates-table gacha-card-rates-table">
+            <thead><tr><th>カード</th><th>レアリティ</th><th>個別提供割合</th></tr></thead>
+            <tbody id="gacha-card-rates-list"></tbody>
+          </table>
+        </section>
+      </div>
+    </section>
+  </div>
+
+  <!-- ホーム画面の設定メニュー。コード入力は既存フォームをそのまま使用する。 -->
+  <div id="home-settings-modal" class="home-settings-modal" style="display: none;">
+    <section class="home-settings-panel" role="dialog" aria-modal="true" aria-labelledby="home-settings-title">
+      <button id="btn-close-home-settings" class="home-settings-close" type="button" aria-label="設定を閉じる">×</button>
+      <h2 id="home-settings-title">設定</h2>
+      <div id="home-settings-menu" class="home-settings-view">
+        <nav class="home-settings-options" aria-label="設定項目">
+          <button id="btn-settings-name" class="home-settings-option" type="button">名前設定</button>
+          <button id="btn-settings-code" class="home-settings-option" type="button">コード入力</button>
+          <button id="btn-settings-info" class="home-settings-option" type="button">ゲーム情報</button>
+        </nav>
+      </div>
+      <div id="home-settings-name-view" class="home-settings-view" hidden>
+        <h3>名前設定</h3>
+        <form id="home-settings-name-form" class="home-settings-step" autocomplete="off">
+          <label for="home-settings-name">プレイヤー名</label>
+          <input id="home-settings-name" type="text" maxlength="8" required autocomplete="off">
+          <p id="home-settings-name-message" class="home-settings-message" role="status"></p>
+          <button class="home-settings-submit" type="submit">決定</button>
+        </form>
+        <button id="btn-back-from-settings-name" class="home-settings-nav-button" type="button">戻る</button>
+      </div>
+      <div id="home-settings-code-view" class="home-settings-view" hidden>
+        <h3>コード入力</h3>
+        <form id="home-settings-password-form" class="home-settings-step" autocomplete="off">
+          <label for="home-settings-password">パスワードを入力</label>
+          <input id="home-settings-password" type="password" inputmode="text" maxlength="24" required autocomplete="off">
+          <p id="home-settings-password-message" class="home-settings-message" role="status"></p>
+          <button class="home-settings-submit" type="submit">次へ</button>
+        </form>
+        <form id="home-settings-points-form" class="home-settings-step" hidden autocomplete="off">
+          <label for="home-settings-points">付与するPOINT</label>
+          <input id="home-settings-points" type="number" inputmode="numeric" min="1" step="1" required>
+          <p id="home-settings-points-message" class="home-settings-message" role="status"></p>
+          <button class="home-settings-submit" type="submit">POINTを付与</button>
+        </form>
+        <button id="btn-back-from-settings-code" class="home-settings-nav-button" type="button">戻る</button>
+      </div>
+      <div id="home-settings-info-view" class="home-settings-view" hidden>
+        <h3>ゲーム情報</h3>
+        <div class="home-settings-game-info">
+          <p>高校物理 4択クイズゲーム</p>
+          <p>Ver.0.1</p>
+          <p>物理を学び、<br>偉人と法則のカードを集める<br>高校物理学習ゲーム</p>
+        </div>
+        <button id="btn-back-from-settings-info" class="home-settings-nav-button" type="button">戻る</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- コード入力からのみ開く、現在の端末データの教員用編集画面。 -->
+  <div id="teacher-admin-modal" class="teacher-admin-modal" hidden>
+    <section class="teacher-admin-panel" role="dialog" aria-modal="true" aria-labelledby="teacher-admin-title">
+      <header class="teacher-admin-header">
+        <button id="btn-back-from-teacher-admin" class="teacher-admin-back" type="button">‹ 戻る</button>
+        <h2 id="teacher-admin-title">教員用管理</h2>
+        <p>TEACHER ADMIN</p>
+      </header>
+      <form id="teacher-admin-form" novalidate autocomplete="off">
+        <div class="teacher-admin-values">
+          <label for="teacher-admin-points">POINT
+            <input id="teacher-admin-points" type="number" inputmode="numeric" min="0" step="1" required>
+          </label>
+          <label for="teacher-admin-gems">宝石
+            <input id="teacher-admin-gems" type="number" inputmode="numeric" min="0" step="1" required>
+          </label>
+          <label for="teacher-admin-rank">RANK
+            <input id="teacher-admin-rank" type="number" inputmode="numeric" min="1" step="1" required>
+          </label>
+        </div>
+        <p class="teacher-admin-rank-note">RANK変更時、EXPが新しい上限を超える場合のみ調整します。</p>
+        <section class="teacher-admin-cards" aria-labelledby="teacher-admin-cards-title">
+          <h3 id="teacher-admin-cards-title">所持カード枚数</h3>
+          <label class="teacher-admin-search-label" for="teacher-admin-search">カード名で検索</label>
+          <input id="teacher-admin-search" type="search" autocomplete="off" placeholder="カード名を入力">
+          <div id="teacher-admin-card-list" class="teacher-admin-card-list"></div>
+        </section>
+        <p id="teacher-admin-message" class="teacher-admin-message" role="status" aria-live="polite"></p>
+        <div class="teacher-admin-actions">
+          <button id="btn-save-teacher-admin" class="teacher-admin-save" type="submit">変更を保存</button>
+        </div>
+      </form>
+    </section>
+    <div id="teacher-admin-confirm" class="teacher-admin-confirm" hidden>
+      <section class="teacher-admin-confirm-panel" role="alertdialog" aria-modal="true" aria-labelledby="teacher-admin-confirm-title">
+        <h3 id="teacher-admin-confirm-title">この内容でゲームデータを変更しますか？</h3>
+        <div class="teacher-admin-confirm-actions">
+          <button id="btn-cancel-teacher-admin" class="teacher-admin-cancel" type="button">キャンセル</button>
+          <button id="btn-apply-teacher-admin" class="teacher-admin-save" type="button">変更する</button>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- スクリプト読み込み -->
+  <script src="vendor/katex/katex.min.js"></script>
+  <script src="cards.js"></script>
+  <script src="bosses.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

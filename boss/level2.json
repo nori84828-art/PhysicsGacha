@@ -1,0 +1,192 @@
+{
+  "version": 1,
+  "mode": "boss",
+  "category": "level",
+  "level": 2,
+  "levelName": "標準",
+  "bosses": [
+    {
+      "id": "BOSS-L2-001",
+      "bossName": null,
+      "displayLabel": "BOSS 01",
+      "field": "mechanics",
+      "fieldName": "力学",
+      "theme": "摩擦・仕事とエネルギー・斜面運動",
+      "source": {
+        "university": "福岡大学",
+        "year": 2023,
+        "examType": "公募",
+        "track": "工学部",
+        "question": "物理 I",
+        "sourceType": "adapted"
+      },
+      "sourceNote": "福岡大学2023年度公募・工学部の斜面と摩擦を扱う問題を参考にした改題・類題",
+      "image": null,
+      "setup": "質量2.0 kgの物体を、あらい水平面上の点Aから右向きに10 m/sの速さで滑らせる。Aから9.0 m先の点Pまでは動摩擦係数0.20のあらい水平面で、Pから先は水平面となす角30°のなめらかな斜面である。物体はPを通過して斜面を上る。重力加速度は10 m/s^2とする。",
+      "parts": [
+        {
+          "id": "1",
+          "question": "水平面上で物体にはたらく動摩擦力の大きさを求めよ。",
+          "answerType": "number",
+          "answer": 4.0,
+          "unit": "N",
+          "significantFigures": null,
+          "tolerance": 0,
+          "explanation": "動摩擦力は f=μmg=0.20×2.0×10=4.0 N。"
+        },
+        {
+          "id": "2",
+          "question": "物体が点Pに到達したときの速さを求めよ。",
+          "answerType": "number",
+          "answer": 8.0,
+          "unit": "m/s",
+          "significantFigures": null,
+          "tolerance": 0,
+          "explanation": "水平面上の加速度は -μg=-2.0 m/s^2。v^2=v0^2+2ax より、v^2=10^2+2(-2.0)×9.0=64。したがって v=8.0 m/s。"
+        },
+        {
+          "id": "3",
+          "question": "物体が点Pから斜面に沿って進み、最高点に達するまでの距離を求めよ。",
+          "answerType": "number",
+          "answer": 6.4,
+          "unit": "m",
+          "significantFigures": null,
+          "tolerance": 0,
+          "explanation": "斜面方向の加速度は -g sin30°=-5.0 m/s^2。0^2=8.0^2+2(-5.0)s より s=6.4 m。"
+        },
+        {
+          "id": "4",
+          "question": "物体が点Pを通過してから最高点に達するまでの時間を求めよ。",
+          "answerType": "number",
+          "answer": 1.6,
+          "unit": "s",
+          "significantFigures": null,
+          "tolerance": 0,
+          "explanation": "0=8.0-5.0t より t=1.6 s。"
+        }
+      ]
+    },
+    {
+      "id": "BOSS-L2-002",
+      "bossName": null,
+      "displayLabel": "BOSS 02",
+      "field": "waves",
+      "fieldName": "波",
+      "theme": "気柱の共鳴・定常波",
+      "source": {
+        "university": "福岡大学",
+        "year": 2024,
+        "examType": "系統別",
+        "track": "理系",
+        "question": "物理 I",
+        "sourceType": "adapted"
+      },
+      "sourceNote": "福岡大学2024年度系統別の気柱の定常波・共鳴を扱う問題を参考にした改題・類題",
+      "image": null,
+      "setup": "振動数400 Hzの音叉を、長さを自由に変えられる一端閉管の開口端付近で鳴らす。このとき空気中の音速は320 m/sとする。開口端補正は無視する。",
+      "parts": [
+        {
+          "id": "1",
+          "question": "音叉がつくる音波の波長を求めよ。",
+          "answerType": "number",
+          "answer": 0.8,
+          "unit": "m",
+          "significantFigures": null,
+          "tolerance": 0,
+          "explanation": "v=fλ より、λ=320/400=0.80 m。"
+        },
+        {
+          "id": "2",
+          "question": "管の長さを0から徐々に長くしたとき、最初に共鳴する管の長さを求めよ。",
+          "answerType": "number",
+          "answer": 0.2,
+          "unit": "m",
+          "significantFigures": null,
+          "tolerance": 0,
+          "explanation": "一端閉管の最初の共鳴では L=λ/4。したがって L=0.80/4=0.20 m。"
+        },
+        {
+          "id": "3",
+          "question": "2回目に共鳴する管の長さを求めよ。",
+          "answerType": "number",
+          "answer": 0.6,
+          "unit": "m",
+          "significantFigures": null,
+          "tolerance": 0,
+          "explanation": "一端閉管の共鳴条件は L=(2n-1)λ/4。2回目は L=3λ/4=0.60 m。"
+        },
+        {
+          "id": "4",
+          "question": "音叉の振動数を変えず、音速だけが336 m/sになったとき、最初に共鳴する管の長さを求めよ。",
+          "answerType": "number",
+          "answer": 0.21,
+          "unit": "m",
+          "significantFigures": null,
+          "tolerance": 0,
+          "explanation": "新しい波長は λ=336/400=0.84 m。最初の共鳴では L=λ/4=0.21 m。"
+        }
+      ]
+    },
+    {
+      "id": "BOSS-L2-003",
+      "bossName": null,
+      "displayLabel": "BOSS 03",
+      "field": "electromagnetism",
+      "fieldName": "電磁気",
+      "theme": "電流計・分流器・電圧計",
+      "source": {
+        "university": "福岡大学",
+        "year": 2022,
+        "examType": "前期",
+        "track": "理系",
+        "question": "物理 III",
+        "sourceType": "adapted"
+      },
+      "sourceNote": "福岡大学2022年度前期の電流計の内部抵抗・分流器・電圧計を扱う問題を参考にした改題・類題",
+      "image": null,
+      "setup": "最大50 mAまで測定できる電流計があり、その内部抵抗は2.0 Ωである。この電流計を利用して、より大きな電流を測定する電流計や電圧計を作る。",
+      "parts": [
+        {
+          "id": "1",
+          "question": "この電流計に最大50 mAが流れているとき、電流計の両端電圧を求めよ。",
+          "answerType": "number",
+          "answer": 0.1,
+          "unit": "V",
+          "significantFigures": null,
+          "tolerance": 0,
+          "explanation": "V=Ir=0.050×2.0=0.10 V。"
+        },
+        {
+          "id": "2",
+          "question": "この電流計を最大0.25 Aまで測定できる電流計にするため、電流計と並列に接続する分流器の抵抗値を求めよ。",
+          "answerType": "number",
+          "answer": 0.5,
+          "unit": "Ω",
+          "significantFigures": null,
+          "tolerance": 0,
+          "explanation": "最大0.25 Aのとき、電流計には0.050 A、分流器には0.20 A流れる。両端電圧は0.10 Vで等しいので、R=0.10/0.20=0.50 Ω。"
+        },
+        {
+          "id": "3",
+          "question": "この電流計を最大5.0 Vまで測定できる電圧計にするため、電流計と直列に接続する抵抗の値を求めよ。",
+          "answerType": "number",
+          "answer": 98,
+          "unit": "Ω",
+          "significantFigures": null,
+          "tolerance": 0,
+          "explanation": "最大5.0 Vで50 mA流すには全抵抗が5.0/0.050=100 Ω必要。内部抵抗2.0 Ωを除くと、直列抵抗は98 Ω。"
+        },
+        {
+          "id": "4",
+          "question": "問3で作った電圧計を3.0 Vの電源につないだとき、電流計部分を流れる電流を求めよ。",
+          "answerType": "number",
+          "answer": 30,
+          "unit": "mA",
+          "significantFigures": null,
+          "tolerance": 0,
+          "explanation": "電圧計全体の抵抗は100 Ωなので、I=3.0/100=0.030 A=30 mA。"
+        }
+      ]
+    }
+  ]
+}

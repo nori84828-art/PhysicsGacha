@@ -1,0 +1,193 @@
+{
+  "version": 1,
+  "mode": "boss",
+  "category": "level",
+  "level": 1,
+  "levelName": "入試基礎",
+  "bosses": [
+    {
+      "id": "BOSS-L1-001",
+      "bossName": null,
+      "displayLabel": "BOSS 01",
+      "field": "mechanics",
+      "fieldName": "力学",
+      "theme": "運動方程式・動摩擦力",
+      "source": {
+        "university": "福岡大学",
+        "year": 2025,
+        "examType": "公募推薦",
+        "track": "理学部",
+        "question": "物理 I",
+        "sourceType": "adapted"
+      },
+      "sourceNote": "福岡大学2025年度公募推薦の出題テーマを参考にした改題・類題",
+      "image": null,
+      "setup": "質量2.0 kgの物体をあらい水平面上に置く。物体に右向きに一定の力8.0 Nを加える。動摩擦係数は0.20、重力加速度は10 m/s^2とする。力を加え始めて3.0 s後に、加えていた力を取り除く。",
+      "parts": [
+        {
+          "id": "1",
+          "question": "物体が運動している間にはたらく動摩擦力の大きさを求めよ。",
+          "answerType": "number",
+          "answer": 4.0,
+          "unit": "N",
+          "significantFigures": null,
+          "tolerance": 0,
+          "explanation": "動摩擦力は f=μmg より、f=0.20×2.0×10=4.0 N。"
+        },
+        {
+          "id": "2",
+          "question": "力8.0 Nを加えている間の物体の加速度の大きさを求めよ。",
+          "answerType": "number",
+          "answer": 2.0,
+          "unit": "m/s^2",
+          "significantFigures": null,
+          "tolerance": 0,
+          "explanation": "右向きを正とすると、ma=8.0-4.0。したがって a=2.0 m/s^2。"
+        },
+        {
+          "id": "3",
+          "question": "力を取り除く直前の物体の速さを求めよ。",
+          "answerType": "number",
+          "answer": 6.0,
+          "unit": "m/s",
+          "significantFigures": null,
+          "tolerance": 0,
+          "explanation": "初速度0、加速度2.0 m/s^2で3.0 s運動するので、v=at=2.0×3.0=6.0 m/s。"
+        },
+        {
+          "id": "4",
+          "question": "力を取り除いてから物体が停止するまでに進む距離を求めよ。",
+          "answerType": "number",
+          "answer": 9.0,
+          "unit": "m",
+          "significantFigures": null,
+          "tolerance": 0,
+          "explanation": "力を取り除いた後の加速度は -μg=-2.0 m/s^2。0^2=6.0^2+2(-2.0)x より x=9.0 m。"
+        }
+      ]
+    },
+    {
+      "id": "BOSS-L1-002",
+      "bossName": null,
+      "displayLabel": "BOSS 02",
+      "field": "electromagnetism",
+      "fieldName": "電磁気",
+      "theme": "平行板コンデンサー・電場",
+      "source": {
+        "university": "福岡大学",
+        "year": 2024,
+        "examType": "公募",
+        "track": "理学部",
+        "question": "物理 II",
+        "sourceType": "adapted"
+      },
+      "sourceNote": "福岡大学2024年度公募の出題テーマを参考にした改題・類題",
+      "image": null,
+      "setup": "真空中で、面積2.0×10^-2 m^2の2枚の金属板を2.0×10^-3 mの間隔で平行に向かい合わせ、平行板コンデンサーを作る。真空の誘電率を8.85×10^-12 F/mとする。このコンデンサーに200 Vの電圧を加える。また、電気量3.0×10^-9 Cの正電荷を極板間に置く。",
+      "parts": [
+        {
+          "id": "1",
+          "question": "このコンデンサーの電気容量を求めよ。",
+          "answerType": "number",
+          "answer": 88.5,
+          "unit": "pF",
+          "significantFigures": null,
+          "tolerance": 0,
+          "explanation": "C=ε0S/d より、C=8.85×10^-12×(2.0×10^-2)/(2.0×10^-3)=8.85×10^-11 F=88.5 pF。"
+        },
+        {
+          "id": "2",
+          "question": "極板に蓄えられる電気量の大きさを求めよ。",
+          "answerType": "number",
+          "answer": 17.7,
+          "unit": "nC",
+          "significantFigures": null,
+          "tolerance": 0,
+          "explanation": "Q=CV より、Q=8.85×10^-11×200=1.77×10^-8 C=17.7 nC。"
+        },
+        {
+          "id": "3",
+          "question": "極板間の電場の大きさを求めよ。",
+          "answerType": "number",
+          "answer": 100000,
+          "unit": "V/m",
+          "significantFigures": null,
+          "tolerance": 0,
+          "explanation": "一様電場なので E=V/d=200/(2.0×10^-3)=1.0×10^5 V/m。"
+        },
+        {
+          "id": "4",
+          "question": "極板間に置いた正電荷が受ける静電気力の大きさを求めよ。",
+          "answerType": "number",
+          "answer": 300,
+          "unit": "μN",
+          "significantFigures": null,
+          "tolerance": 0,
+          "explanation": "F=qE=(3.0×10^-9)×(1.0×10^5)=3.0×10^-4 N=300 μN。"
+        }
+      ]
+    },
+    {
+      "id": "BOSS-L1-003",
+      "bossName": null,
+      "displayLabel": "BOSS 03",
+      "field": "electromagnetism",
+      "fieldName": "電磁気",
+      "theme": "直流回路・コンデンサー",
+      "source": {
+        "university": "福岡大学",
+        "year": 2025,
+        "examType": "公募推薦",
+        "track": "工学部",
+        "question": "物理 II",
+        "sourceType": "adapted"
+      },
+      "sourceNote": "福岡大学2025年度公募推薦の出題テーマを参考にした改題・類題",
+      "image": "boss_level1_03.png",
+      "imageStatus": "pending",
+      "setup": "図のように、起電力Eの電池に抵抗R1とR2を直列に接続する。また、スイッチSを閉じることで、電気容量Cのコンデンサーが抵抗R2と並列に接続されるようになっている。E=12 V、R1=4.0 Ω、R2=8.0 Ω、C=5.0 μFとする。はじめ、スイッチSは開いている。",
+      "parts": [
+        {
+          "id": "1",
+          "question": "スイッチSが開いているとき、回路を流れる電流を求めよ。",
+          "answerType": "number",
+          "answer": 1.0,
+          "unit": "A",
+          "significantFigures": null,
+          "tolerance": 0,
+          "explanation": "合成抵抗はR1+R2=12 Ω。したがって I=E/R=12/12=1.0 A。"
+        },
+        {
+          "id": "2",
+          "question": "スイッチSが開いているとき、抵抗R2の両端の電圧を求めよ。",
+          "answerType": "number",
+          "answer": 8.0,
+          "unit": "V",
+          "significantFigures": null,
+          "tolerance": 0,
+          "explanation": "V2=IR2=1.0×8.0=8.0 V。"
+        },
+        {
+          "id": "3",
+          "question": "スイッチSを閉じ、そのまま十分長い時間待った。コンデンサーに蓄えられた電気量を求めよ。",
+          "answerType": "number",
+          "answer": 40,
+          "unit": "μC",
+          "significantFigures": null,
+          "tolerance": 0,
+          "explanation": "十分時間が経つとコンデンサーの電圧はR2の両端電圧8.0 Vに等しい。Q=CV=5.0 μF×8.0 V=40 μC。"
+        },
+        {
+          "id": "4",
+          "question": "十分時間が経ったとき、コンデンサーに蓄えられている静電エネルギーを求めよ。",
+          "answerType": "number",
+          "answer": 160,
+          "unit": "μJ",
+          "significantFigures": null,
+          "tolerance": 0,
+          "explanation": "U=(1/2)CV^2=(1/2)×5.0×10^-6×8.0^2=1.6×10^-4 J=160 μJ。"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1541 @@
+{
+  "field": "thermodynamics",
+  "fieldName": "熱",
+  "units": [
+    "熱とエネルギー",
+    "気体分子の運動",
+    "気体の状態変化"
+  ],
+  "questions": [
+    {
+      "id": "THM-HEA-001",
+      "field": "thermodynamics",
+      "unit": "熱とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "物質を構成する原子・分子の不規則な運動を何というか。",
+      "choices": [
+        "熱運動",
+        "等速運動",
+        "円運動",
+        "単振動"
+      ],
+      "correct": 0,
+      "explanation": "原子・分子が絶えず行っている不規則な運動を熱運動という。",
+      "image": null
+    },
+    {
+      "id": "THM-HEA-002",
+      "field": "thermodynamics",
+      "unit": "熱とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "絶対零度に最も近い温度を選べ。",
+      "choices": [
+        "$0\\,\\mathrm{K}$",
+        "$0\\,^{\\circ}\\mathrm{C}$",
+        "$100\\,\\mathrm{K}$",
+        "$273\\,^{\\circ}\\mathrm{C}$"
+      ],
+      "correct": 0,
+      "explanation": "絶対零度は $0\\,\\mathrm{K}$ で、およそ $-273\\,^{\\circ}\\mathrm{C}$ に相当する。",
+      "image": null
+    },
+    {
+      "id": "THM-HEA-003",
+      "field": "thermodynamics",
+      "unit": "熱とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "セルシウス温度 $t\\,[^{\\circ}\\mathrm{C}]$ と絶対温度 $T\\,[\\mathrm{K}]$ の関係として正しいものを選べ。",
+      "choices": [
+        "$T=t+273$",
+        "$T=t-273$",
+        "$T=273t$",
+        "$T=t/273$"
+      ],
+      "correct": 0,
+      "explanation": "高校物理では通常、$T=t+273$ として換算する。",
+      "image": null
+    },
+    {
+      "id": "THM-HEA-004",
+      "field": "thermodynamics",
+      "unit": "熱とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "物体の内部エネルギーについて正しいものを選べ。",
+      "choices": [
+        "物体を構成する粒子の熱運動の運動エネルギーと相互作用による位置エネルギーの和",
+        "物体全体の重力による位置エネルギーだけ",
+        "物体全体の並進運動の運動エネルギーだけ",
+        "物体にはたらく外力の合力"
+      ],
+      "correct": 0,
+      "explanation": "内部エネルギーは、物体を構成する粒子の熱運動の運動エネルギーと、粒子間相互作用による位置エネルギーなどの和である。",
+      "image": null
+    },
+    {
+      "id": "THM-HEA-005",
+      "field": "thermodynamics",
+      "unit": "熱とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "熱量の単位として正しいものを選べ。",
+      "choices": [
+        "$\\mathrm{J}$",
+        "$\\mathrm{N}$",
+        "$\\mathrm{W}$",
+        "$\\mathrm{Pa}$"
+      ],
+      "correct": 0,
+      "explanation": "熱量もエネルギーなので、SI単位はジュール $\\mathrm{J}$ である。",
+      "image": null
+    },
+    {
+      "id": "THM-HEA-006",
+      "field": "thermodynamics",
+      "unit": "熱とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "熱容量 $C$、加えた熱量 $Q$、温度変化 $\\Delta T$ の関係として正しいものを選べ。",
+      "choices": [
+        "$Q=C\\Delta T$",
+        "$Q=C/\\Delta T$",
+        "$C=Q\\Delta T$",
+        "$Q=\\Delta T/C$"
+      ],
+      "correct": 0,
+      "explanation": "熱容量は、物体の温度を $1\\,\\mathrm{K}$ 上げるのに必要な熱量で、$Q=C\\Delta T$。",
+      "image": null
+    },
+    {
+      "id": "THM-HEA-007",
+      "field": "thermodynamics",
+      "unit": "熱とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "質量 $m$、比熱 $c$ の物体の温度を $\\Delta T$ だけ変化させるのに必要な熱量 $Q$ を表す式を選べ。",
+      "choices": [
+        "$Q=mc\\Delta T$",
+        "$Q=mc/\\Delta T$",
+        "$Q=m\\Delta T/c$",
+        "$Q=c\\Delta T/m$"
+      ],
+      "correct": 0,
+      "explanation": "比熱の定義より $Q=mc\\Delta T$。",
+      "image": null
+    },
+    {
+      "id": "THM-HEA-008",
+      "field": "thermodynamics",
+      "unit": "熱とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "融解熱や蒸発熱など、物質の状態変化に伴って出入りする熱を何というか。",
+      "choices": [
+        "潜熱",
+        "比熱",
+        "熱容量",
+        "仕事率"
+      ],
+      "correct": 0,
+      "explanation": "温度が一定のまま状態変化するときに出入りする熱を潜熱という。",
+      "image": null
+    },
+    {
+      "id": "THM-HEA-009",
+      "field": "thermodynamics",
+      "unit": "熱とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "熱平衡について正しいものを選べ。",
+      "choices": [
+        "接触した物体どうしの温度が等しくなり、熱の移動が見かけ上止まった状態",
+        "2物体の質量が等しくなった状態",
+        "2物体の比熱が等しくなった状態",
+        "2物体の内部エネルギーが必ず等しくなった状態"
+      ],
+      "correct": 0,
+      "explanation": "熱平衡とは、接触する物体どうしの温度が等しくなり、正味の熱移動がなくなった状態である。",
+      "image": null
+    },
+    {
+      "id": "THM-HEA-010",
+      "field": "thermodynamics",
+      "unit": "熱とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "外界との熱の出入りがない系で、高温物体が失った熱量と低温物体が得た熱量の関係として正しいものを選べ。",
+      "choices": [
+        "大きさが等しい",
+        "高温物体が失う熱量の方が必ず大きい",
+        "低温物体が得る熱量の方が必ず大きい",
+        "比熱だけで決まり比較できない"
+      ],
+      "correct": 0,
+      "explanation": "熱量保存より、外界との熱交換がなければ、失った熱量と得た熱量の大きさは等しい。",
+      "image": null
+    },
+    {
+      "id": "THM-HEA-011",
+      "field": "thermodynamics",
+      "unit": "熱とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "長さ $L_0$ の棒の温度を $\\Delta T$ だけ上げたときの伸び $\\Delta L$ を、線膨張率 $\\alpha$ を使って表した式として正しいものを選べ。",
+      "choices": [
+        "$\\Delta L=\\alpha L_0\\Delta T$",
+        "$\\Delta L=\\alpha L_0/\\Delta T$",
+        "$\\Delta L=L_0/(\\alpha\\Delta T)$",
+        "$\\Delta L=\\alpha\\Delta T/L_0$"
+      ],
+      "correct": 0,
+      "explanation": "線膨張では $\\Delta L=\\alpha L_0\\Delta T$ が成り立つ。",
+      "image": null
+    },
+    {
+      "id": "THM-HEA-012",
+      "field": "thermodynamics",
+      "unit": "熱とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "物体の温度を上げても、状態変化中に温度が一定に保たれることがある。このとき加えた熱は主に何に使われるか。",
+      "choices": [
+        "状態変化に必要な潜熱",
+        "物体全体の並進運動",
+        "重力による位置エネルギーだけ",
+        "必ずすべて外部への仕事"
+      ],
+      "correct": 0,
+      "explanation": "融解や沸騰などの状態変化中は、加えた熱が潜熱として使われるため、温度が一定に保たれることがある。",
+      "image": null
+    },
+    {
+      "id": "THM-HEA-013",
+      "field": "thermodynamics",
+      "unit": "熱とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "熱容量 $300\\,\\mathrm{J/K}$ の物体の温度を $20\\,\\mathrm{K}$ 上げるのに必要な熱量は何 $\\mathrm{J}$ か。",
+      "choices": [
+        "$15$",
+        "$280$",
+        "$6000$",
+        "$15000$"
+      ],
+      "correct": 2,
+      "explanation": "$Q=C\\Delta T=300\\times20=6.0\\times10^3\\,\\mathrm{J}$。",
+      "image": null
+    },
+    {
+      "id": "THM-HEA-014",
+      "field": "thermodynamics",
+      "unit": "熱とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "質量 $0.50\\,\\mathrm{kg}$、比熱 $420\\,\\mathrm{J/(kg\\cdot K)}$ の物体の温度を $10\\,\\mathrm{K}$ 上げるのに必要な熱量は何 $\\mathrm{J}$ か。",
+      "choices": [
+        "$210$",
+        "$420$",
+        "$2100$",
+        "$4200$"
+      ],
+      "correct": 2,
+      "explanation": "$Q=mc\\Delta T=0.50\\times420\\times10=2100\\,\\mathrm{J}$。",
+      "image": null
+    },
+    {
+      "id": "THM-HEA-015",
+      "field": "thermodynamics",
+      "unit": "熱とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "質量 $0.20\\,\\mathrm{kg}$ の水に $8.4\\times10^3\\,\\mathrm{J}$ の熱を加えた。水の比熱を $4.2\\times10^3\\,\\mathrm{J/(kg\\cdot K)}$ とすると、温度上昇は何 $\\mathrm{K}$ か。",
+      "choices": [
+        "$1.0$",
+        "$5.0$",
+        "$10$",
+        "$20$"
+      ],
+      "correct": 2,
+      "explanation": "$\\Delta T=Q/(mc)=8.4\\times10^3/(0.20\\times4.2\\times10^3)=10\\,\\mathrm{K}$。",
+      "image": null
+    },
+    {
+      "id": "THM-HEA-016",
+      "field": "thermodynamics",
+      "unit": "熱とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "$20\\,^{\\circ}\\mathrm{C}$ の水 $0.20\\,\\mathrm{kg}$ と $80\\,^{\\circ}\\mathrm{C}$ の水 $0.10\\,\\mathrm{kg}$ を、外部との熱の出入りがない容器で混ぜた。平衡温度は何 $^{\\circ}\\mathrm{C}$ か。",
+      "choices": [
+        "$30$",
+        "$40$",
+        "$50$",
+        "$60$"
+      ],
+      "correct": 1,
+      "explanation": "同じ比熱の水なので、$0.20(T-20)=0.10(80-T)$。これより $T=40\\,^{\\circ}\\mathrm{C}$。",
+      "image": null
+    },
+    {
+      "id": "THM-HEA-017",
+      "field": "thermodynamics",
+      "unit": "熱とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "$0\\,^{\\circ}\\mathrm{C}$ の氷 $0.10\\,\\mathrm{kg}$ をすべて $0\\,^{\\circ}\\mathrm{C}$ の水にするのに必要な熱量を求める。氷の融解熱を $3.3\\times10^5\\,\\mathrm{J/kg}$ とする。",
+      "choices": [
+        "$3.3\\times10^3$",
+        "$3.3\\times10^4$",
+        "$3.3\\times10^5$",
+        "$3.3\\times10^6$"
+      ],
+      "correct": 1,
+      "explanation": "$Q=mL=0.10\\times3.3\\times10^5=3.3\\times10^4\\,\\mathrm{J}$。",
+      "image": null
+    },
+    {
+      "id": "THM-HEA-018",
+      "field": "thermodynamics",
+      "unit": "熱とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "$100\\,^{\\circ}\\mathrm{C}$ の水 $0.050\\,\\mathrm{kg}$ をすべて同温度の水蒸気にするのに必要な熱量はいくらか。水の蒸発熱を $2.3\\times10^6\\,\\mathrm{J/kg}$ とする。",
+      "choices": [
+        "$1.15\\times10^4$",
+        "$1.15\\times10^5$",
+        "$2.30\\times10^5$",
+        "$4.60\\times10^5$"
+      ],
+      "correct": 1,
+      "explanation": "$Q=mL=0.050\\times2.3\\times10^6=1.15\\times10^5\\,\\mathrm{J}$。",
+      "image": null
+    },
+    {
+      "id": "THM-HEA-019",
+      "field": "thermodynamics",
+      "unit": "熱とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "長さ $2.0\\,\\mathrm{m}$ の金属棒の線膨張率が $1.2\\times10^{-5}\\,\\mathrm{K^{-1}}$ である。温度を $50\\,\\mathrm{K}$ 上げたときの伸びは何 m か。",
+      "choices": [
+        "$1.2\\times10^{-5}$",
+        "$6.0\\times10^{-4}$",
+        "$1.2\\times10^{-3}$",
+        "$2.4\\times10^{-3}$"
+      ],
+      "correct": 2,
+      "explanation": "$\\Delta L=\\alpha L_0\\Delta T=1.2\\times10^{-5}\\times2.0\\times50=1.2\\times10^{-3}\\,\\mathrm{m}$。",
+      "image": null
+    },
+    {
+      "id": "THM-HEA-020",
+      "field": "thermodynamics",
+      "unit": "熱とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "質量 $0.20\\,\\mathrm{kg}$、比熱 $500\\,\\mathrm{J/(kg\\cdot K)}$ の金属に $4.0\\times10^3\\,\\mathrm{J}$ の熱を加えた。温度は何 $\\mathrm{K}$ 上昇するか。",
+      "choices": [
+        "$4$",
+        "$20$",
+        "$40$",
+        "$100$"
+      ],
+      "correct": 2,
+      "explanation": "$\\Delta T=Q/(mc)=4000/(0.20\\times500)=40\\,\\mathrm{K}$。",
+      "image": null
+    },
+    {
+      "id": "THM-HEA-021",
+      "field": "thermodynamics",
+      "unit": "熱とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "$80\\,^{\\circ}\\mathrm{C}$ の金属 $0.10\\,\\mathrm{kg}$ を $20\\,^{\\circ}\\mathrm{C}$ の水 $0.20\\,\\mathrm{kg}$ に入れたところ、平衡温度が $25\\,^{\\circ}\\mathrm{C}$ になった。水の比熱を $4.2\\times10^3\\,\\mathrm{J/(kg\\cdot K)}$ とすると、金属の比熱は約何 $\\mathrm{J/(kg\\cdot K)}$ か。",
+      "choices": [
+        "$380$",
+        "$760$",
+        "$1.5\\times10^3$",
+        "$4.2\\times10^3$"
+      ],
+      "correct": 1,
+      "explanation": "水が得た熱は $0.20\\times4.2\\times10^3\\times5=4200\\,\\mathrm{J}$。金属が失った熱 $0.10c(80-25)$ と等しいので、$c\\approx760\\,\\mathrm{J/(kg\\cdot K)}$。",
+      "image": null
+    },
+    {
+      "id": "THM-HEA-022",
+      "field": "thermodynamics",
+      "unit": "熱とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "$20\\,^{\\circ}\\mathrm{C}$ の水 $0.30\\,\\mathrm{kg}$ に $70\\,^{\\circ}\\mathrm{C}$ の水 $0.10\\,\\mathrm{kg}$ を加える。外部との熱の出入りがないとき、平衡温度は何 $^{\\circ}\\mathrm{C}$ か。",
+      "choices": [
+        "$25$",
+        "$32.5$",
+        "$45$",
+        "$50$"
+      ],
+      "correct": 1,
+      "explanation": "同じ比熱なので $0.30(T-20)=0.10(70-T)$。これより $T=32.5\\,^{\\circ}\\mathrm{C}$。",
+      "image": null
+    },
+    {
+      "id": "THM-HEA-023",
+      "field": "thermodynamics",
+      "unit": "熱とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "$0\\,^{\\circ}\\mathrm{C}$ の氷 $0.050\\,\\mathrm{kg}$ を融かし、その後 $20\\,^{\\circ}\\mathrm{C}$ の水にするのに必要な熱量は約何 J か。融解熱 $3.3\\times10^5\\,\\mathrm{J/kg}$、水の比熱 $4.2\\times10^3\\,\\mathrm{J/(kg\\cdot K)}$ とする。",
+      "choices": [
+        "$1.65\\times10^4$",
+        "$2.07\\times10^4$",
+        "$4.2\\times10^4$",
+        "$8.4\\times10^4$"
+      ],
+      "correct": 1,
+      "explanation": "融解に $0.050\\times3.3\\times10^5=1.65\\times10^4\\,\\mathrm{J}$、昇温に $0.050\\times4.2\\times10^3\\times20=4.2\\times10^3\\,\\mathrm{J}$。合計 $2.07\\times10^4\\,\\mathrm{J}$。",
+      "image": null
+    },
+    {
+      "id": "THM-HEA-024",
+      "field": "thermodynamics",
+      "unit": "熱とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "ある物体に $2.0\\times10^3\\,\\mathrm{J}$ の熱を加えると温度が $8.0\\,\\mathrm{K}$ 上昇した。この物体の熱容量は何 $\\mathrm{J/K}$ か。",
+      "choices": [
+        "$16$",
+        "$125$",
+        "$250$",
+        "$16000$"
+      ],
+      "correct": 2,
+      "explanation": "$C=Q/\\Delta T=2000/8.0=250\\,\\mathrm{J/K}$。",
+      "image": null
+    },
+    {
+      "id": "THM-HEA-025",
+      "field": "thermodynamics",
+      "unit": "熱とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "質量 $2.0\\,\\mathrm{kg}$ の金属板を粗い水平面上で滑らせ、摩擦力 $20\\,\\mathrm{N}$ が $5.0\\,\\mathrm{m}$ の間はたらいた。摩擦によって生じた熱がすべて金属板の内部エネルギー増加になったとすると、その増加量は何 J か。",
+      "choices": [
+        "$4.0$",
+        "$25$",
+        "$100$",
+        "$200$"
+      ],
+      "correct": 2,
+      "explanation": "摩擦力のした仕事の大きさは $fs=20\\times5.0=100\\,\\mathrm{J}$。これが内部エネルギーに変わる。",
+      "image": null
+    },
+    {
+      "id": "THM-HEA-026",
+      "field": "thermodynamics",
+      "unit": "熱とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "温度 $30\\,^{\\circ}\\mathrm{C}$ の水 $0.20\\,\\mathrm{kg}$ に、$0\\,^{\\circ}\\mathrm{C}$ の氷を入れた。最終的に $0\\,^{\\circ}\\mathrm{C}$ の水と氷が共存した。水が失った熱量は何 J か。水の比熱を $4.2\\times10^3\\,\\mathrm{J/(kg\\cdot K)}$ とする。",
+      "choices": [
+        "$2.52\\times10^3$",
+        "$1.26\\times10^4$",
+        "$2.52\\times10^4$",
+        "$8.4\\times10^4$"
+      ],
+      "correct": 2,
+      "explanation": "水は $30\\,\\mathrm{K}$ 冷えるので、$Q=0.20\\times4.2\\times10^3\\times30=2.52\\times10^4\\,\\mathrm{J}$。",
+      "image": null
+    },
+    {
+      "id": "THM-HEA-027",
+      "field": "thermodynamics",
+      "unit": "熱とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "ある金属 $0.40\\,\\mathrm{kg}$ を $50\\,\\mathrm{K}$ 上昇させるのに $9.0\\times10^3\\,\\mathrm{J}$ 必要だった。この金属の比熱は何 $\\mathrm{J/(kg\\cdot K)}$ か。",
+      "choices": [
+        "$180$",
+        "$450$",
+        "$900$",
+        "$1125$"
+      ],
+      "correct": 1,
+      "explanation": "$c=Q/(m\\Delta T)=9000/(0.40\\times50)=450\\,\\mathrm{J/(kg\\cdot K)}$。",
+      "image": null
+    },
+    {
+      "id": "THM-HEA-028",
+      "field": "thermodynamics",
+      "unit": "熱とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 3,
+      "question": "$80\\,^{\\circ}\\mathrm{C}$ の金属 $0.20\\,\\mathrm{kg}$ を $20\\,^{\\circ}\\mathrm{C}$ の水 $0.30\\,\\mathrm{kg}$ に入れたところ、平衡温度は $24\\,^{\\circ}\\mathrm{C}$ となった。金属の比熱を $500\\,\\mathrm{J/(kg\\cdot K)}$ とすると、容器の熱容量は約何 $\\mathrm{J/K}$ か。水の比熱は $4.2\\times10^3\\,\\mathrm{J/(kg\\cdot K)}$、容器も初め $20\\,^{\\circ}\\mathrm{C}$ とする。",
+      "choices": [
+        "$140$",
+        "$330$",
+        "$560$",
+        "$1260$"
+      ],
+      "correct": 0,
+      "explanation": "金属が失う熱は $0.20\\times500\\times56=5600\\,\\mathrm{J}$。水が得る熱は $0.30\\times4200\\times4=5040\\,\\mathrm{J}$。残り $560\\,\\mathrm{J}$ が容器へ。$C=560/4=140\\,\\mathrm{J/K}$。",
+      "image": null
+    },
+    {
+      "id": "THM-HEA-029",
+      "field": "thermodynamics",
+      "unit": "熱とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 3,
+      "question": "$-20\\,^{\\circ}\\mathrm{C}$ の氷 $0.10\\,\\mathrm{kg}$ を $20\\,^{\\circ}\\mathrm{C}$ の水にするのに必要な熱量は約何 J か。氷の比熱 $2.1\\times10^3\\,\\mathrm{J/(kg\\cdot K)}$、融解熱 $3.3\\times10^5\\,\\mathrm{J/kg}$、水の比熱 $4.2\\times10^3\\,\\mathrm{J/(kg\\cdot K)}$ とする。",
+      "choices": [
+        "$3.3\\times10^4$",
+        "$4.2\\times10^4$",
+        "$4.56\\times10^4$",
+        "$8.4\\times10^4$"
+      ],
+      "correct": 2,
+      "explanation": "氷を0℃まで温める熱 $4.2\\times10^3$ J、融解 $3.3\\times10^4$ J、水を20℃まで温める熱 $8.4\\times10^3$ J。合計 $4.56\\times10^4\\,\\mathrm{J}$。",
+      "image": null
+    },
+    {
+      "id": "THM-HEA-030",
+      "field": "thermodynamics",
+      "unit": "熱とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 3,
+      "question": "$0\\,^{\\circ}\\mathrm{C}$ の氷 $0.050\\,\\mathrm{kg}$ と $60\\,^{\\circ}\\mathrm{C}$ の水 $0.20\\,\\mathrm{kg}$ を断熱容器で混ぜる。氷はすべて融けるものとする。最終温度は約何 $^{\\circ}\\mathrm{C}$ か。融解熱 $3.3\\times10^5\\,\\mathrm{J/kg}$、水の比熱 $4.2\\times10^3\\,\\mathrm{J/(kg\\cdot K)}$ とする。",
+      "choices": [
+        "$20$",
+        "$30$",
+        "$32$",
+        "$40$"
+      ],
+      "correct": 2,
+      "explanation": "高温水が失う熱 $0.20\\times4200(60-T)$ が、融解熱 $0.050\\times3.3\\times10^5$ と全水 $0.25\\,\\mathrm{kg}$ の昇温 $0.25\\times4200T$ の和に等しい。解くと $T\\approx32\\,^{\\circ}\\mathrm{C}$。",
+      "image": null
+    },
+    {
+      "id": "THM-KIN-001",
+      "field": "thermodynamics",
+      "unit": "気体分子の運動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "温度一定で一定量の気体の圧力 $p$ と体積 $V$ の関係として正しいものを選べ。",
+      "choices": [
+        "$pV=\\text{一定}$",
+        "$p/V=\\text{一定}$",
+        "$pT=\\text{一定}$",
+        "$V/T^2=\\text{一定}$"
+      ],
+      "correct": 0,
+      "explanation": "ボイルの法則より、温度一定では $pV=\\text{一定}$。",
+      "image": null
+    },
+    {
+      "id": "THM-KIN-002",
+      "field": "thermodynamics",
+      "unit": "気体分子の運動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "圧力一定で一定量の気体について、体積 $V$ と絶対温度 $T$ の関係として正しいものを選べ。",
+      "choices": [
+        "$V/T=\\text{一定}$",
+        "$VT=\\text{一定}$",
+        "$V/T^2=\\text{一定}$",
+        "$V^2/T=\\text{一定}$"
+      ],
+      "correct": 0,
+      "explanation": "シャルルの法則より、圧力一定では $V/T=\\text{一定}$。",
+      "image": null
+    },
+    {
+      "id": "THM-KIN-003",
+      "field": "thermodynamics",
+      "unit": "気体分子の運動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "一定量の理想気体について成り立つボイル・シャルルの法則として正しいものを選べ。",
+      "choices": [
+        "$pV/T=\\text{一定}$",
+        "$pVT=\\text{一定}$",
+        "$pT/V=\\text{一定}$",
+        "$V/(pT)=\\text{一定}$"
+      ],
+      "correct": 0,
+      "explanation": "一定量の理想気体では $pV/T=\\text{一定}$。",
+      "image": null
+    },
+    {
+      "id": "THM-KIN-004",
+      "field": "thermodynamics",
+      "unit": "気体分子の運動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "物質量 $n$、圧力 $p$、体積 $V$、絶対温度 $T$ の理想気体の状態方程式を選べ。",
+      "choices": [
+        "$pV=nRT$",
+        "$pT=nRV$",
+        "$V=nRpT$",
+        "$pV=nR/T$"
+      ],
+      "correct": 0,
+      "explanation": "理想気体の状態方程式は $pV=nRT$。",
+      "image": null
+    },
+    {
+      "id": "THM-KIN-005",
+      "field": "thermodynamics",
+      "unit": "気体分子の運動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "$1\\,\\mathrm{mol}$ の粒子数として最も近いものを選べ。",
+      "choices": [
+        "$6.0\\times10^{23}$",
+        "$6.0\\times10^{20}$",
+        "$3.0\\times10^8$",
+        "$9.8$"
+      ],
+      "correct": 0,
+      "explanation": "アボガドロ定数は約 $6.0\\times10^{23}\\,\\mathrm{mol^{-1}}$。",
+      "image": null
+    },
+    {
+      "id": "THM-KIN-006",
+      "field": "thermodynamics",
+      "unit": "気体分子の運動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "理想気体の圧力が生じる主な原因として正しいものを選べ。",
+      "choices": [
+        "気体分子が容器の壁に衝突すること",
+        "気体分子がすべて静止していること",
+        "容器の質量が大きいこと",
+        "気体分子どうしが常に引力だけを及ぼすこと"
+      ],
+      "correct": 0,
+      "explanation": "気体の圧力は、分子が壁に衝突して運動量を変化させ、壁に力を及ぼすことで生じる。",
+      "image": null
+    },
+    {
+      "id": "THM-KIN-007",
+      "field": "thermodynamics",
+      "unit": "気体分子の運動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "気体分子1個の平均運動エネルギーを絶対温度 $T$ とボルツマン定数 $k$ で表す式として正しいものを選べ。",
+      "choices": [
+        "$\\frac32kT$",
+        "$kT$",
+        "$\\frac12kT$",
+        "$3kT$"
+      ],
+      "correct": 0,
+      "explanation": "理想気体分子1個あたりの平均並進運動エネルギーは $\\frac32kT$。",
+      "image": null
+    },
+    {
+      "id": "THM-KIN-008",
+      "field": "thermodynamics",
+      "unit": "気体分子の運動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "単原子分子理想気体 $n\\,\\mathrm{mol}$ の内部エネルギー $U$ として正しいものを選べ。",
+      "choices": [
+        "$U=\\frac32nRT$",
+        "$U=nRT$",
+        "$U=\\frac52nRT$",
+        "$U=3nRT$"
+      ],
+      "correct": 0,
+      "explanation": "単原子分子理想気体では、内部エネルギーは分子の並進運動エネルギーの総和で $U=\\frac32nRT$。",
+      "image": null
+    },
+    {
+      "id": "THM-KIN-009",
+      "field": "thermodynamics",
+      "unit": "気体分子の運動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "同じ温度の異なる種類の理想気体について、分子1個あたりの平均並進運動エネルギーはどうなるか。",
+      "choices": [
+        "気体の種類によらず等しい",
+        "分子量に比例する",
+        "分子量に反比例する",
+        "圧力だけで決まる"
+      ],
+      "correct": 0,
+      "explanation": "平均運動エネルギーは $\\frac32kT$ なので、同じ温度なら気体の種類によらず同じ。",
+      "image": null
+    },
+    {
+      "id": "THM-KIN-010",
+      "field": "thermodynamics",
+      "unit": "気体分子の運動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "同じ温度で、軽い分子と重い分子の2乗平均平方根速度を比較したとき正しいものを選べ。",
+      "choices": [
+        "軽い分子の方が大きい",
+        "重い分子の方が大きい",
+        "必ず等しい",
+        "圧力だけで決まる"
+      ],
+      "correct": 0,
+      "explanation": "$v_{\\mathrm{rms}}=\\sqrt{3RT/M}$ より、モル質量 $M$ が小さいほど速い。",
+      "image": null
+    },
+    {
+      "id": "THM-KIN-011",
+      "field": "thermodynamics",
+      "unit": "気体分子の運動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "一定量の理想気体を体積一定のまま加熱した。圧力はどうなるか。",
+      "choices": [
+        "絶対温度に比例して増加する",
+        "絶対温度に反比例して減少する",
+        "変化しない",
+        "必ず0になる"
+      ],
+      "correct": 0,
+      "explanation": "$pV=nRT$ で $V,n$ 一定なので、$p\\propto T$。",
+      "image": null
+    },
+    {
+      "id": "THM-KIN-012",
+      "field": "thermodynamics",
+      "unit": "気体分子の運動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "一定量の理想気体を圧力一定のまま加熱した。体積はどうなるか。",
+      "choices": [
+        "絶対温度に比例して増加する",
+        "絶対温度に反比例して減少する",
+        "変化しない",
+        "必ず半分になる"
+      ],
+      "correct": 0,
+      "explanation": "シャルルの法則より、圧力一定なら $V\\propto T$。",
+      "image": null
+    },
+    {
+      "id": "THM-KIN-013",
+      "field": "thermodynamics",
+      "unit": "気体分子の運動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "温度一定で、圧力 $1.0\\times10^5\\,\\mathrm{Pa}$、体積 $0.80\\,\\mathrm{m^3}$ の気体を体積 $0.20\\,\\mathrm{m^3}$ に圧縮した。圧力は何 Pa か。",
+      "choices": [
+        "$2.5\\times10^4$",
+        "$1.0\\times10^5$",
+        "$4.0\\times10^5$",
+        "$8.0\\times10^5$"
+      ],
+      "correct": 2,
+      "explanation": "$p_1V_1=p_2V_2$ より、$p_2=1.0\\times10^5\\times0.80/0.20=4.0\\times10^5\\,\\mathrm{Pa}$。",
+      "image": null
+    },
+    {
+      "id": "THM-KIN-014",
+      "field": "thermodynamics",
+      "unit": "気体分子の運動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "圧力一定で、温度 $300\\,\\mathrm{K}$、体積 $0.60\\,\\mathrm{m^3}$ の気体を $450\\,\\mathrm{K}$ に加熱した。体積は何 $\\mathrm{m^3}$ か。",
+      "choices": [
+        "$0.40$",
+        "$0.60$",
+        "$0.90$",
+        "$1.20$"
+      ],
+      "correct": 2,
+      "explanation": "$V_1/T_1=V_2/T_2$ より、$V_2=0.60\\times450/300=0.90\\,\\mathrm{m^3}$。",
+      "image": null
+    },
+    {
+      "id": "THM-KIN-015",
+      "field": "thermodynamics",
+      "unit": "気体分子の運動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "体積一定の理想気体の温度を $300\\,\\mathrm{K}$ から $600\\,\\mathrm{K}$ に上げた。圧力はもとの何倍になるか。",
+      "choices": [
+        "$1/2$",
+        "$1$",
+        "$2$",
+        "$4$"
+      ],
+      "correct": 2,
+      "explanation": "体積一定では $p\\propto T$ なので2倍。",
+      "image": null
+    },
+    {
+      "id": "THM-KIN-016",
+      "field": "thermodynamics",
+      "unit": "気体分子の運動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "圧力 $1.0\\times10^5\\,\\mathrm{Pa}$、体積 $2.5\\times10^{-2}\\,\\mathrm{m^3}$、温度 $300\\,\\mathrm{K}$ の理想気体の物質量は約何 mol か。$R=8.3\\,\\mathrm{J/(mol\\cdot K)}$ とする。",
+      "choices": [
+        "$0.10$",
+        "$1.0$",
+        "$10$",
+        "$100$"
+      ],
+      "correct": 1,
+      "explanation": "$n=pV/(RT)=1.0\\times10^5\\times2.5\\times10^{-2}/(8.3\\times300)\\approx1.0\\,\\mathrm{mol}$。",
+      "image": null
+    },
+    {
+      "id": "THM-KIN-017",
+      "field": "thermodynamics",
+      "unit": "気体分子の運動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "$2.0\\,\\mathrm{mol}$ の理想気体を $300\\,\\mathrm{K}$、体積 $5.0\\times10^{-2}\\,\\mathrm{m^3}$ に保った。圧力は約何 Pa か。$R=8.3\\,\\mathrm{J/(mol\\cdot K)}$ とする。",
+      "choices": [
+        "$1.0\\times10^4$",
+        "$5.0\\times10^4$",
+        "$1.0\\times10^5$",
+        "$2.0\\times10^5$"
+      ],
+      "correct": 2,
+      "explanation": "$p=nRT/V=2.0\\times8.3\\times300/(5.0\\times10^{-2})\\approx1.0\\times10^5\\,\\mathrm{Pa}$。",
+      "image": null
+    },
+    {
+      "id": "THM-KIN-018",
+      "field": "thermodynamics",
+      "unit": "気体分子の運動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "$1.0\\,\\mathrm{mol}$ の単原子分子理想気体が $300\\,\\mathrm{K}$ にある。内部エネルギーは約何 J か。$R=8.3\\,\\mathrm{J/(mol\\cdot K)}$ とする。",
+      "choices": [
+        "$1.2\\times10^3$",
+        "$2.5\\times10^3$",
+        "$3.7\\times10^3$",
+        "$7.5\\times10^3$"
+      ],
+      "correct": 2,
+      "explanation": "$U=\\frac32nRT=1.5\\times1.0\\times8.3\\times300\\approx3.7\\times10^3\\,\\mathrm{J}$。",
+      "image": null
+    },
+    {
+      "id": "THM-KIN-019",
+      "field": "thermodynamics",
+      "unit": "気体分子の運動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "単原子分子理想気体 $2.0\\,\\mathrm{mol}$ の温度を $100\\,\\mathrm{K}$ 上げた。内部エネルギーの増加量は約何 J か。$R=8.3\\,\\mathrm{J/(mol\\cdot K)}$ とする。",
+      "choices": [
+        "$830$",
+        "$1.7\\times10^3$",
+        "$2.5\\times10^3$",
+        "$5.0\\times10^3$"
+      ],
+      "correct": 2,
+      "explanation": "$\\Delta U=\\frac32nR\\Delta T=1.5\\times2.0\\times8.3\\times100\\approx2.5\\times10^3\\,\\mathrm{J}$。",
+      "image": null
+    },
+    {
+      "id": "THM-KIN-020",
+      "field": "thermodynamics",
+      "unit": "気体分子の運動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "理想気体分子1個の平均運動エネルギーは、温度を $300\\,\\mathrm{K}$ から $600\\,\\mathrm{K}$ にすると何倍になるか。",
+      "choices": [
+        "$1/2$",
+        "$1$",
+        "$2$",
+        "$4$"
+      ],
+      "correct": 2,
+      "explanation": "平均運動エネルギー $\\frac32kT$ は絶対温度に比例するので2倍。",
+      "image": null
+    },
+    {
+      "id": "THM-KIN-021",
+      "field": "thermodynamics",
+      "unit": "気体分子の運動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "同じ気体の2乗平均平方根速度は、絶対温度を4倍にすると何倍になるか。",
+      "choices": [
+        "$1/2$",
+        "$2$",
+        "$4$",
+        "$16$"
+      ],
+      "correct": 1,
+      "explanation": "$v_{\\mathrm{rms}}\\propto\\sqrt{T}$ なので、温度4倍で速度2倍。",
+      "image": null
+    },
+    {
+      "id": "THM-KIN-022",
+      "field": "thermodynamics",
+      "unit": "気体分子の運動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "同じ温度で、水素分子のモル質量が酸素分子の $1/16$ であるとする。水素分子の2乗平均平方根速度は酸素分子の何倍か。",
+      "choices": [
+        "$1/4$",
+        "$1$",
+        "$4$",
+        "$16$"
+      ],
+      "correct": 2,
+      "explanation": "$v_{\\mathrm{rms}}\\propto1/\\sqrt{M}$。モル質量が $1/16$ なら速度は4倍。",
+      "image": null
+    },
+    {
+      "id": "THM-KIN-023",
+      "field": "thermodynamics",
+      "unit": "気体分子の運動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "温度 $300\\,\\mathrm{K}$ の理想気体を、体積を半分にしつつ温度を $600\\,\\mathrm{K}$ にした。圧力はもとの何倍になるか。",
+      "choices": [
+        "$1$",
+        "$2$",
+        "$4$",
+        "$8$"
+      ],
+      "correct": 2,
+      "explanation": "$p\\propto T/V$。温度2倍、体積1/2なので圧力は $2/(1/2)=4$ 倍。",
+      "image": null
+    },
+    {
+      "id": "THM-KIN-024",
+      "field": "thermodynamics",
+      "unit": "気体分子の運動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "圧力 $2.0\\times10^5\\,\\mathrm{Pa}$、体積 $3.0\\times10^{-3}\\,\\mathrm{m^3}$、温度 $300\\,\\mathrm{K}$ の気体を、圧力 $1.0\\times10^5\\,\\mathrm{Pa}$、温度 $400\\,\\mathrm{K}$ にした。体積は何 $\\mathrm{m^3}$ か。",
+      "choices": [
+        "$2.0\\times10^{-3}$",
+        "$4.0\\times10^{-3}$",
+        "$8.0\\times10^{-3}$",
+        "$1.2\\times10^{-2}$"
+      ],
+      "correct": 2,
+      "explanation": "$p_1V_1/T_1=p_2V_2/T_2$ より、$V_2=2.0\\times10^5\\times3.0\\times10^{-3}\\times400/(300\\times1.0\\times10^5)=8.0\\times10^{-3}\\,\\mathrm{m^3}$。",
+      "image": null
+    },
+    {
+      "id": "THM-KIN-025",
+      "field": "thermodynamics",
+      "unit": "気体分子の運動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "同温同圧の理想気体AとBがあり、Aは $2.0\\,\\mathrm{mol}$、Bは $3.0\\,\\mathrm{mol}$ である。両者の体積比 $V_A:V_B$ はいくらか。",
+      "choices": [
+        "$2:3$",
+        "$3:2$",
+        "$1:1$",
+        "$4:9$"
+      ],
+      "correct": 0,
+      "explanation": "同温同圧なら $V\\propto n$ なので、$V_A:V_B=2:3$。",
+      "image": null
+    },
+    {
+      "id": "THM-KIN-026",
+      "field": "thermodynamics",
+      "unit": "気体分子の運動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "剛体容器内の理想気体を加熱して、分子1個の平均運動エネルギーを3倍にした。気体の絶対温度と圧力はそれぞれ何倍になるか。",
+      "choices": [
+        "温度3倍・圧力3倍",
+        "温度3倍・圧力1倍",
+        "温度1倍・圧力3倍",
+        "温度9倍・圧力3倍"
+      ],
+      "correct": 0,
+      "explanation": "平均運動エネルギーは $T$ に比例するので温度3倍。体積一定なら圧力も $T$ に比例し3倍。",
+      "image": null
+    },
+    {
+      "id": "THM-KIN-027",
+      "field": "thermodynamics",
+      "unit": "気体分子の運動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "密閉容器中の理想気体の分子数を2倍にし、体積と温度を変えないとき、圧力はどうなるか。",
+      "choices": [
+        "$1/2$ 倍",
+        "変わらない",
+        "2倍",
+        "4倍"
+      ],
+      "correct": 2,
+      "explanation": "状態方程式 $pV=NkT$ より、$V,T$ 一定なら $p\\propto N$。",
+      "image": null
+    },
+    {
+      "id": "THM-KIN-028",
+      "field": "thermodynamics",
+      "unit": "気体分子の運動",
+      "course": "物理",
+      "difficulty": 3,
+      "question": "断熱された2つの容器A、Bをコックでつないでいる。Aには $300\\,\\mathrm{K}$、$2.0\\,\\mathrm{mol}$ の理想気体、Bには $600\\,\\mathrm{K}$、$1.0\\,\\mathrm{mol}$ の同じ単原子分子理想気体が入っている。コックを開いて十分時間が経った後の温度は何 K か。外部への仕事はないものとする。",
+      "choices": [
+        "$300$",
+        "$400$",
+        "$450$",
+        "$500$"
+      ],
+      "correct": 1,
+      "explanation": "同じ単原子気体なので内部エネルギー保存より $\\frac32R(2\\times300+1\\times600)=\\frac32R(3T)$。よって $T=400\\,\\mathrm{K}$。",
+      "image": null
+    },
+    {
+      "id": "THM-KIN-029",
+      "field": "thermodynamics",
+      "unit": "気体分子の運動",
+      "course": "物理",
+      "difficulty": 3,
+      "question": "圧力 $p$、体積 $V$ の単原子分子理想気体の内部エネルギーを $p,V$ で表した式として正しいものを選べ。",
+      "choices": [
+        "$U=\\frac32pV$",
+        "$U=pV$",
+        "$U=\\frac52pV$",
+        "$U=3pV$"
+      ],
+      "correct": 0,
+      "explanation": "$U=\\frac32nRT$ と $pV=nRT$ より、$U=\\frac32pV$。",
+      "image": null
+    },
+    {
+      "id": "THM-KIN-030",
+      "field": "thermodynamics",
+      "unit": "気体分子の運動",
+      "course": "物理",
+      "difficulty": 3,
+      "question": "理想気体の分子運動論で、分子1個の質量を $m$、分子数密度を $n$、速度の2乗平均を $\\overline{v^2}$ とすると、圧力 $p$ を表す式として正しいものを選べ。",
+      "choices": [
+        "$p=\\frac13nm\\overline{v^2}$",
+        "$p=nm\\overline{v^2}$",
+        "$p=\\frac12nm\\overline{v^2}$",
+        "$p=3nm\\overline{v^2}$"
+      ],
+      "correct": 0,
+      "explanation": "気体分子運動論より、等方的な分子運動では $p=\\frac13nm\\overline{v^2}$ が成り立つ。",
+      "image": null
+    },
+    {
+      "id": "THM-TRN-001",
+      "field": "thermodynamics",
+      "unit": "気体の状態変化",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "気体が外部から熱量 $Q$ を受け取り、外部に仕事 $W$ をしたとき、熱力学第1法則として正しい式を選べ。",
+      "choices": [
+        "$Q=\\Delta U+W$",
+        "$Q=\\Delta U-W$",
+        "$Q=W-\\Delta U$",
+        "$Q=\\Delta U\\,W$"
+      ],
+      "correct": 0,
+      "explanation": "この符号規約では、気体が外部にした仕事を正として $Q=\\Delta U+W$。",
+      "image": null
+    },
+    {
+      "id": "THM-TRN-002",
+      "field": "thermodynamics",
+      "unit": "気体の状態変化",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "$p-V$ グラフで、気体が体積 $V_1$ から $V_2$ まで膨張するとき、気体が外部にする仕事は何に対応するか。",
+      "choices": [
+        "曲線の下の面積",
+        "曲線の傾き",
+        "曲線の長さ",
+        "圧力の最大値だけ"
+      ],
+      "correct": 0,
+      "explanation": "準静的変化では気体のした仕事は $W=\\int p\\,dV$ で、$p-V$ グラフの曲線下の面積に等しい。",
+      "image": null
+    },
+    {
+      "id": "THM-TRN-003",
+      "field": "thermodynamics",
+      "unit": "気体の状態変化",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "体積一定の変化で、気体が外部にする仕事 $W$ はいくらか。",
+      "choices": [
+        "$0$",
+        "$pV$",
+        "$nRT$",
+        "$Q$ と常に等しい"
+      ],
+      "correct": 0,
+      "explanation": "体積変化がないので $dV=0$、したがって仕事は0。",
+      "image": null
+    },
+    {
+      "id": "THM-TRN-004",
+      "field": "thermodynamics",
+      "unit": "気体の状態変化",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "単原子分子理想気体の定積モル比熱 $C_V$ として正しいものを選べ。",
+      "choices": [
+        "$\\frac32R$",
+        "$\\frac52R$",
+        "$R$",
+        "$3R$"
+      ],
+      "correct": 0,
+      "explanation": "単原子分子理想気体では $C_V=\\frac32R$。",
+      "image": null
+    },
+    {
+      "id": "THM-TRN-005",
+      "field": "thermodynamics",
+      "unit": "気体の状態変化",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "単原子分子理想気体の定圧モル比熱 $C_P$ として正しいものを選べ。",
+      "choices": [
+        "$\\frac32R$",
+        "$\\frac52R$",
+        "$R$",
+        "$3R$"
+      ],
+      "correct": 1,
+      "explanation": "単原子分子理想気体では $C_P=C_V+R=\\frac52R$。",
+      "image": null
+    },
+    {
+      "id": "THM-TRN-006",
+      "field": "thermodynamics",
+      "unit": "気体の状態変化",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "理想気体の定圧モル比熱 $C_P$ と定積モル比熱 $C_V$ の関係として正しいものを選べ。",
+      "choices": [
+        "$C_P-C_V=R$",
+        "$C_P+C_V=R$",
+        "$C_P=C_V$",
+        "$C_V-C_P=R$"
+      ],
+      "correct": 0,
+      "explanation": "マイヤーの関係より $C_P-C_V=R$。",
+      "image": null
+    },
+    {
+      "id": "THM-TRN-007",
+      "field": "thermodynamics",
+      "unit": "気体の状態変化",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "理想気体の等温変化について、内部エネルギーの変化 $\\Delta U$ はどうなるか。",
+      "choices": [
+        "$0$",
+        "必ず正",
+        "必ず負",
+        "圧力に等しい"
+      ],
+      "correct": 0,
+      "explanation": "理想気体の内部エネルギーは温度だけで決まるため、等温変化では $\\Delta U=0$。",
+      "image": null
+    },
+    {
+      "id": "THM-TRN-008",
+      "field": "thermodynamics",
+      "unit": "気体の状態変化",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "断熱変化について正しいものを選べ。",
+      "choices": [
+        "外界との熱の出入りがなく $Q=0$",
+        "体積が常に一定",
+        "圧力が常に一定",
+        "温度が常に一定"
+      ],
+      "correct": 0,
+      "explanation": "断熱変化では外界との熱交換がなく、$Q=0$。",
+      "image": null
+    },
+    {
+      "id": "THM-TRN-009",
+      "field": "thermodynamics",
+      "unit": "気体の状態変化",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "定積変化で気体に熱量 $Q$ を加えたとき、熱力学第1法則より内部エネルギー変化 $\\Delta U$ はどうなるか。",
+      "choices": [
+        "$\\Delta U=Q$",
+        "$\\Delta U=-Q$",
+        "$\\Delta U=0$",
+        "$\\Delta U=2Q$"
+      ],
+      "correct": 0,
+      "explanation": "定積変化では仕事 $W=0$ なので $Q=\\Delta U$。",
+      "image": null
+    },
+    {
+      "id": "THM-TRN-010",
+      "field": "thermodynamics",
+      "unit": "気体の状態変化",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "等温膨張する理想気体が外部に正の仕事をした。このとき気体が受け取る熱量 $Q$ はどうなるか。",
+      "choices": [
+        "$Q=W$",
+        "$Q=0$",
+        "$Q=-W$",
+        "$Q=2W$"
+      ],
+      "correct": 0,
+      "explanation": "等温変化では $\\Delta U=0$ なので、$Q=W$。",
+      "image": null
+    },
+    {
+      "id": "THM-TRN-011",
+      "field": "thermodynamics",
+      "unit": "気体の状態変化",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "断熱膨張する理想気体について一般に正しいものを選べ。",
+      "choices": [
+        "温度が下がる",
+        "温度が上がる",
+        "温度は変化しない",
+        "圧力は必ず一定"
+      ],
+      "correct": 0,
+      "explanation": "断熱膨張では気体が仕事をする分だけ内部エネルギーが減少し、温度が低下する。",
+      "image": null
+    },
+    {
+      "id": "THM-TRN-012",
+      "field": "thermodynamics",
+      "unit": "気体の状態変化",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "熱機関が高温熱源から吸収する熱量を $Q_1$、低温熱源へ放出する熱量を $Q_2$、外部にする仕事を $W$ とするとき正しい関係を選べ。",
+      "choices": [
+        "$W=Q_1-Q_2$",
+        "$W=Q_1+Q_2$",
+        "$W=Q_2-Q_1$",
+        "$W=Q_1Q_2$"
+      ],
+      "correct": 0,
+      "explanation": "1サイクルで内部エネルギーは元に戻るので、エネルギー保存より $W=Q_1-Q_2$。",
+      "image": null
+    },
+    {
+      "id": "THM-TRN-013",
+      "field": "thermodynamics",
+      "unit": "気体の状態変化",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "気体が $500\\,\\mathrm{J}$ の熱を受け取り、外部に $200\\,\\mathrm{J}$ の仕事をした。内部エネルギーの増加量は何 J か。",
+      "choices": [
+        "$200$",
+        "$300$",
+        "$500$",
+        "$700$"
+      ],
+      "correct": 1,
+      "explanation": "$Q=\\Delta U+W$ より、$\\Delta U=500-200=300\\,\\mathrm{J}$。",
+      "image": null
+    },
+    {
+      "id": "THM-TRN-014",
+      "field": "thermodynamics",
+      "unit": "気体の状態変化",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "気体の内部エネルギーが $150\\,\\mathrm{J}$ 増加し、外部に $50\\,\\mathrm{J}$ の仕事をした。気体が受け取った熱量は何 J か。",
+      "choices": [
+        "$100$",
+        "$150$",
+        "$200$",
+        "$300$"
+      ],
+      "correct": 2,
+      "explanation": "$Q=\\Delta U+W=150+50=200\\,\\mathrm{J}$。",
+      "image": null
+    },
+    {
+      "id": "THM-TRN-015",
+      "field": "thermodynamics",
+      "unit": "気体の状態変化",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "圧力 $2.0\\times10^5\\,\\mathrm{Pa}$ のもとで、気体が $3.0\\times10^{-3}\\,\\mathrm{m^3}$ 膨張した。気体が外部にした仕事は何 J か。",
+      "choices": [
+        "$60$",
+        "$200$",
+        "$600$",
+        "$6.0\\times10^3$"
+      ],
+      "correct": 2,
+      "explanation": "定圧変化なので $W=p\\Delta V=2.0\\times10^5\\times3.0\\times10^{-3}=600\\,\\mathrm{J}$。",
+      "image": null
+    },
+    {
+      "id": "THM-TRN-016",
+      "field": "thermodynamics",
+      "unit": "気体の状態変化",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "$2.0\\,\\mathrm{mol}$ の単原子分子理想気体を体積一定のまま $100\\,\\mathrm{K}$ 加熱した。内部エネルギーの増加量は約何 J か。$R=8.3\\,\\mathrm{J/(mol\\cdot K)}$ とする。",
+      "choices": [
+        "$830$",
+        "$1.7\\times10^3$",
+        "$2.5\\times10^3$",
+        "$4.2\\times10^3$"
+      ],
+      "correct": 2,
+      "explanation": "$\\Delta U=nC_V\\Delta T=2.0\\times\\frac32\\times8.3\\times100\\approx2.5\\times10^3\\,\\mathrm{J}$。",
+      "image": null
+    },
+    {
+      "id": "THM-TRN-017",
+      "field": "thermodynamics",
+      "unit": "気体の状態変化",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "$1.0\\,\\mathrm{mol}$ の単原子分子理想気体を定圧で $120\\,\\mathrm{K}$ 加熱した。気体が外部にする仕事は約何 J か。$R=8.3\\,\\mathrm{J/(mol\\cdot K)}$ とする。",
+      "choices": [
+        "$500$",
+        "$1.0\\times10^3$",
+        "$1.5\\times10^3$",
+        "$2.5\\times10^3$"
+      ],
+      "correct": 1,
+      "explanation": "定圧変化では $W=p\\Delta V=nR\\Delta T=1.0\\times8.3\\times120\\approx1.0\\times10^3\\,\\mathrm{J}$。",
+      "image": null
+    },
+    {
+      "id": "THM-TRN-018",
+      "field": "thermodynamics",
+      "unit": "気体の状態変化",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "$1.0\\,\\mathrm{mol}$ の単原子分子理想気体を定圧で $100\\,\\mathrm{K}$ 加熱した。気体が吸収する熱量は約何 J か。$R=8.3\\,\\mathrm{J/(mol\\cdot K)}$ とする。",
+      "choices": [
+        "$830$",
+        "$1.25\\times10^3$",
+        "$2.1\\times10^3$",
+        "$4.2\\times10^3$"
+      ],
+      "correct": 2,
+      "explanation": "$Q=nC_P\\Delta T=1.0\\times\\frac52\\times8.3\\times100\\approx2.1\\times10^3\\,\\mathrm{J}$。",
+      "image": null
+    },
+    {
+      "id": "THM-TRN-019",
+      "field": "thermodynamics",
+      "unit": "気体の状態変化",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "理想気体が等温膨張し、外部に $400\\,\\mathrm{J}$ の仕事をした。気体が吸収した熱量は何 J か。",
+      "choices": [
+        "$0$",
+        "$200$",
+        "$400$",
+        "$800$"
+      ],
+      "correct": 2,
+      "explanation": "等温変化では $\\Delta U=0$ なので $Q=W=400\\,\\mathrm{J}$。",
+      "image": null
+    },
+    {
+      "id": "THM-TRN-020",
+      "field": "thermodynamics",
+      "unit": "気体の状態変化",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "理想気体が断熱膨張し、外部に $300\\,\\mathrm{J}$ の仕事をした。内部エネルギーの変化は何 J か。",
+      "choices": [
+        "$-300$",
+        "$0$",
+        "$300$",
+        "$600$"
+      ],
+      "correct": 0,
+      "explanation": "断熱変化では $Q=0$。$0=\\Delta U+300$ より $\\Delta U=-300\\,\\mathrm{J}$。",
+      "image": null
+    },
+    {
+      "id": "THM-TRN-021",
+      "field": "thermodynamics",
+      "unit": "気体の状態変化",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "熱機関が高温熱源から $1000\\,\\mathrm{J}$ の熱を吸収し、低温熱源へ $600\\,\\mathrm{J}$ 放出した。熱効率はいくらか。",
+      "choices": [
+        "$0.20$",
+        "$0.40$",
+        "$0.60$",
+        "$1.67$"
+      ],
+      "correct": 1,
+      "explanation": "仕事は $W=1000-600=400\\,\\mathrm{J}$。熱効率は $\\eta=W/Q_1=400/1000=0.40$。",
+      "image": null
+    },
+    {
+      "id": "THM-TRN-022",
+      "field": "thermodynamics",
+      "unit": "気体の状態変化",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "熱効率 $30\\%$ の熱機関が高温熱源から $2.0\\times10^3\\,\\mathrm{J}$ の熱を吸収した。外部にする仕事は何 J か。",
+      "choices": [
+        "$300$",
+        "$600$",
+        "$1400$",
+        "$2000$"
+      ],
+      "correct": 1,
+      "explanation": "$W=\\eta Q_1=0.30\\times2000=600\\,\\mathrm{J}$。",
+      "image": null
+    },
+    {
+      "id": "THM-TRN-023",
+      "field": "thermodynamics",
+      "unit": "気体の状態変化",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "単原子分子理想気体 $1.0\\,\\mathrm{mol}$ の定積モル比熱と定圧モル比熱の比 $\\gamma=C_P/C_V$ はいくらか。",
+      "choices": [
+        "$1$",
+        "$4/3$",
+        "$5/3$",
+        "$2$"
+      ],
+      "correct": 2,
+      "explanation": "$C_V=\\frac32R$、$C_P=\\frac52R$ より、$\\gamma=(5/2)/(3/2)=5/3$。",
+      "image": null
+    },
+    {
+      "id": "THM-TRN-024",
+      "field": "thermodynamics",
+      "unit": "気体の状態変化",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "理想気体の断熱変化で成り立つ関係として正しいものを選べ。比熱比を $\\gamma$ とする。",
+      "choices": [
+        "$pV^\\gamma=\\text{一定}$",
+        "$pV=\\text{一定}$",
+        "$V/T=\\text{一定}$",
+        "$p/T=\\text{一定}$"
+      ],
+      "correct": 0,
+      "explanation": "可逆な断熱変化ではポアソンの関係 $pV^\\gamma=\\text{一定}$ が成り立つ。",
+      "image": null
+    },
+    {
+      "id": "THM-TRN-025",
+      "field": "thermodynamics",
+      "unit": "気体の状態変化",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "理想気体を定積で加熱する場合と定圧で同じ温度だけ加熱する場合を比べる。必要な熱量が大きいのはどちらか。",
+      "choices": [
+        "定圧加熱",
+        "定積加熱",
+        "等しい",
+        "気体量に関係なく0"
+      ],
+      "correct": 0,
+      "explanation": "定圧変化では内部エネルギー増加に加えて外部への仕事も必要なので、$C_P>C_V$ となり必要熱量が大きい。",
+      "image": null
+    },
+    {
+      "id": "THM-TRN-026",
+      "field": "thermodynamics",
+      "unit": "気体の状態変化",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "気体が1サイクルの状態変化を終えて初めの状態に戻った。1サイクルでの内部エネルギー変化 $\\Delta U$ はどうなるか。",
+      "choices": [
+        "$0$",
+        "必ず正",
+        "必ず負",
+        "仕事に等しい"
+      ],
+      "correct": 0,
+      "explanation": "内部エネルギーは状態量なので、初めの状態に戻れば1サイクルの変化量は0。",
+      "image": null
+    },
+    {
+      "id": "THM-TRN-027",
+      "field": "thermodynamics",
+      "unit": "気体の状態変化",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "$p-V$ 図上で気体が時計回りに1周するサイクルを描いた。1サイクルで気体が外部にする正味の仕事はどうなるか。",
+      "choices": [
+        "囲まれた面積に等しい正の値",
+        "囲まれた面積に等しい負の値",
+        "必ず0",
+        "圧力の最大値に等しい"
+      ],
+      "correct": 0,
+      "explanation": "時計回りのサイクルでは膨張時の仕事が圧縮時より大きく、正味の仕事は囲まれた面積に等しい正の値となる。",
+      "image": null
+    },
+    {
+      "id": "THM-TRN-028",
+      "field": "thermodynamics",
+      "unit": "気体の状態変化",
+      "course": "物理",
+      "difficulty": 3,
+      "question": "$1.0\\,\\mathrm{mol}$ の単原子分子理想気体が、$300\\,\\mathrm{K}$ から $500\\,\\mathrm{K}$ まで定圧で加熱された。気体が吸収した熱量、内部エネルギー増加、外部にした仕事の組として最も近いものを選べ。$R=8.3\\,\\mathrm{J/(mol\\cdot K)}$ とする。",
+      "choices": [
+        "$Q=4.2\\times10^3\\,\\mathrm{J},\\ \\Delta U=2.5\\times10^3\\,\\mathrm{J},\\ W=1.7\\times10^3\\,\\mathrm{J}$",
+        "$Q=2.5\\times10^3\\,\\mathrm{J},\\ \\Delta U=4.2\\times10^3\\,\\mathrm{J},\\ W=1.7\\times10^3\\,\\mathrm{J}$",
+        "$Q=1.7\\times10^3\\,\\mathrm{J},\\ \\Delta U=2.5\\times10^3\\,\\mathrm{J},\\ W=4.2\\times10^3\\,\\mathrm{J}$",
+        "$Q=4.2\\times10^3\\,\\mathrm{J},\\ \\Delta U=1.7\\times10^3\\,\\mathrm{J},\\ W=2.5\\times10^3\\,\\mathrm{J}$"
+      ],
+      "correct": 0,
+      "explanation": "$\\Delta T=200$ K。$Q=nC_P\\Delta T=\\frac52R\\times200\\approx4.2\\times10^3$ J、$\\Delta U=\\frac32R\\times200\\approx2.5\\times10^3$ J、$W=nR\\Delta T\\approx1.7\\times10^3$ J。",
+      "image": null
+    },
+    {
+      "id": "THM-TRN-029",
+      "field": "thermodynamics",
+      "unit": "気体の状態変化",
+      "course": "物理",
+      "difficulty": 3,
+      "question": "単原子分子理想気体が断熱膨張し、体積が2倍になった。比熱比を $\\gamma=5/3$ とすると、圧力はもとの何倍か。",
+      "choices": [
+        "$1/2$",
+        "$1/2^{5/3}$",
+        "$2^{5/3}$",
+        "$1/4$"
+      ],
+      "correct": 1,
+      "explanation": "断熱変化では $pV^\\gamma=\\text{一定}$。体積が2倍なので $p_2/p_1=(V_1/V_2)^\\gamma=1/2^{5/3}$。",
+      "image": null
+    },
+    {
+      "id": "THM-TRN-030",
+      "field": "thermodynamics",
+      "unit": "気体の状態変化",
+      "course": "物理",
+      "difficulty": 3,
+      "question": "ある熱機関が高温熱源から $Q_1=1500\\,\\mathrm{J}$ を吸収し、1サイクルで $W=600\\,\\mathrm{J}$ の仕事をした。この熱機関の熱効率と低温熱源へ放出する熱量 $Q_2$ の組として正しいものを選べ。",
+      "choices": [
+        "$\\eta=0.40,\\ Q_2=900\\,\\mathrm{J}$",
+        "$\\eta=0.60,\\ Q_2=900\\,\\mathrm{J}$",
+        "$\\eta=0.40,\\ Q_2=2100\\,\\mathrm{J}$",
+        "$\\eta=0.60,\\ Q_2=600\\,\\mathrm{J}$"
+      ],
+      "correct": 0,
+      "explanation": "$\\eta=W/Q_1=600/1500=0.40$。また $Q_1=W+Q_2$ より $Q_2=900\\,\\mathrm{J}$。",
+      "image": null
+    }
+  ]
+}

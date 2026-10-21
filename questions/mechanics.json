@@ -1,0 +1,5118 @@
+{
+  "field": "mechanics",
+  "fieldName": "力学",
+  "units": [
+    "運動の表し方",
+    "落体の運動",
+    "力",
+    "運動の法則",
+    "剛体のつり合い",
+    "仕事とエネルギー",
+    "運動量",
+    "円運動",
+    "単振動",
+    "万有引力"
+  ],
+  "questions": [
+    {
+      "id": "MEC-MOT-001",
+      "field": "mechanics",
+      "unit": "運動の表し方",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "次の物理量のうち、ベクトル量を選べ。",
+      "choices": [
+        "速さ",
+        "時間",
+        "変位",
+        "距離"
+      ],
+      "correct": 2,
+      "explanation": "変位は大きさと向きをもつベクトル量である。速さ・時間・距離はスカラー量である。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOT-002",
+      "field": "mechanics",
+      "unit": "運動の表し方",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "物体が $60\\,\\mathrm{m}$ を $12\\,\\mathrm{s}$ で進んだ。平均の速さは何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$3.0$",
+        "$5.0$",
+        "$6.0$",
+        "$12$"
+      ],
+      "correct": 1,
+      "explanation": "平均の速さは $\\frac{\\mathrm{移動距離}}{\\mathrm{所要時間}}=\\frac{60}{12}=5.0\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOT-003",
+      "field": "mechanics",
+      "unit": "運動の表し方",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "$72\\,\\mathrm{km/h}$ は何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$15$",
+        "$20$",
+        "$25$",
+        "$30$"
+      ],
+      "correct": 1,
+      "explanation": "$72\\div3.6=20$ より $20\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOT-004",
+      "field": "mechanics",
+      "unit": "運動の表し方",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "物体が $x=2.0\\,\\mathrm{m}$ から $x=14.0\\,\\mathrm{m}$ まで $4.0\\,\\mathrm{s}$ で移動した。平均速度は何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$2.0$",
+        "$3.0$",
+        "$3.5$",
+        "$4.0$"
+      ],
+      "correct": 1,
+      "explanation": "変位は $14.0-2.0=12.0\\,\\mathrm{m}$。平均速度は $12.0/4.0=3.0\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOT-005",
+      "field": "mechanics",
+      "unit": "運動の表し方",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "東向きを正とする。物体が東へ $30\\,\\mathrm{m}$、その後西へ $10\\,\\mathrm{m}$ 移動した。変位はどれか。",
+      "choices": [
+        "東向き $20\\,\\mathrm{m}$",
+        "西向き $20\\,\\mathrm{m}$",
+        "東向き $40\\,\\mathrm{m}$",
+        "西向き $40\\,\\mathrm{m}$"
+      ],
+      "correct": 0,
+      "explanation": "変位は $+30+(-10)=+20\\,\\mathrm{m}$ なので東向き $20\\,\\mathrm{m}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOT-006",
+      "field": "mechanics",
+      "unit": "運動の表し方",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "等速直線運動で、初期位置を $x_0$、速度を $v$、時刻を $t$ とする。位置 $x$ を表す式を選べ。",
+      "choices": [
+        "$x=x_0+vt$",
+        "$x=vt^2$",
+        "$x=x_0+\\frac12vt^2$",
+        "$x=x_0+\\frac vt$"
+      ],
+      "correct": 0,
+      "explanation": "等速直線運動では速度が一定なので、変位は $vt$。したがって $x=x_0+vt$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOT-007",
+      "field": "mechanics",
+      "unit": "運動の表し方",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "時刻 $t=0$ に $x=5.0\\,\\mathrm{m}$ にいた物体が、正の向きへ $3.0\\,\\mathrm{m/s}$ の一定速度で進む。$4.0\\,\\mathrm{s}$ 後の位置は何 $\\mathrm{m}$ か。",
+      "choices": [
+        "$7.0$",
+        "$12$",
+        "$17$",
+        "$20$"
+      ],
+      "correct": 2,
+      "explanation": "$x=x_0+vt=5.0+3.0\\times4.0=17\\,\\mathrm{m}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOT-008",
+      "field": "mechanics",
+      "unit": "運動の表し方",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "$x-t$ グラフの傾きが表す物理量はどれか。",
+      "choices": [
+        "位置",
+        "速度",
+        "加速度",
+        "移動距離"
+      ],
+      "correct": 1,
+      "explanation": "$x-t$ グラフの傾きは $\\Delta x/\\Delta t$ なので速度を表す。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOT-009",
+      "field": "mechanics",
+      "unit": "運動の表し方",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "等速直線運動を表す $v-t$ グラフとして適切なものはどれか。",
+      "choices": [
+        "時間軸に平行な直線",
+        "原点を通る右上がりの直線",
+        "右下がりの直線",
+        "放物線"
+      ],
+      "correct": 0,
+      "explanation": "等速直線運動では速度が一定なので、$v-t$ グラフは時間軸に平行な直線になる。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOT-010",
+      "field": "mechanics",
+      "unit": "運動の表し方",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "東向きに $4.0\\,\\mathrm{m/s}$、北向きに $3.0\\,\\mathrm{m/s}$ の速度成分をもつ物体の速さは何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$1.0$",
+        "$5.0$",
+        "$7.0$",
+        "$12$"
+      ],
+      "correct": 1,
+      "explanation": "速度成分は直交するので、速さは $\\sqrt{4.0^2+3.0^2}=5.0\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOT-011",
+      "field": "mechanics",
+      "unit": "運動の表し方",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "速さ $10\\,\\mathrm{m/s}$ の速度ベクトルが水平方向となす角が $30^\\circ$ である。水平方向の速度成分は何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$5.0$",
+        "$5\\sqrt2$",
+        "$5\\sqrt3$",
+        "$10$"
+      ],
+      "correct": 2,
+      "explanation": "水平方向成分は $10\\cos30^\\circ=5\\sqrt3\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOT-012",
+      "field": "mechanics",
+      "unit": "運動の表し方",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "地面に対して東向きに $12\\,\\mathrm{m/s}$ で走る列車内で、人が列車に対して東向きに $3.0\\,\\mathrm{m/s}$ で歩いている。地面から見た人の速度は何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$9.0$",
+        "$12$",
+        "$15$",
+        "$36$"
+      ],
+      "correct": 2,
+      "explanation": "列車の地面に対する速度と、人の列車に対する速度はともに東向きなので、地面から見た人の速度は $12+3.0=15\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOT-013",
+      "field": "mechanics",
+      "unit": "運動の表し方",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "東向きに $20\\,\\mathrm{m/s}$ で走る車Aから、東向きに $14\\,\\mathrm{m/s}$ で走る車Bを見る。Aから見たBの相対速度はどれか。",
+      "choices": [
+        "東向き $6.0\\,\\mathrm{m/s}$",
+        "西向き $6.0\\,\\mathrm{m/s}$",
+        "東向き $34\\,\\mathrm{m/s}$",
+        "西向き $34\\,\\mathrm{m/s}$"
+      ],
+      "correct": 1,
+      "explanation": "$v_{BA}=v_B-v_A=14-20=-6.0\\,\\mathrm{m/s}$。したがって西向き $6.0\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOT-014",
+      "field": "mechanics",
+      "unit": "運動の表し方",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "川の水が東向きに $3.0\\,\\mathrm{m/s}$ で流れている。船が水に対して北向きに $4.0\\,\\mathrm{m/s}$ で進むとき、岸から見た船の速さは何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$1.0$",
+        "$5.0$",
+        "$7.0$",
+        "$12$"
+      ],
+      "correct": 1,
+      "explanation": "岸から見た速度は流れと船の対水速度のベクトル和。$\\sqrt{3.0^2+4.0^2}=5.0\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOT-015",
+      "field": "mechanics",
+      "unit": "運動の表し方",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "速度が $2.0\\,\\mathrm{m/s}$ から $8.0\\,\\mathrm{m/s}$ まで $3.0\\,\\mathrm{s}$ で変化した。平均加速度は何 $\\mathrm{m/s^2}$ か。",
+      "choices": [
+        "$1.0$",
+        "$2.0$",
+        "$3.0$",
+        "$6.0$"
+      ],
+      "correct": 1,
+      "explanation": "$a=\\frac{\\Delta v}{\\Delta t}=\\frac{8.0-2.0}{3.0}=2.0\\,\\mathrm{m/s^2}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOT-016",
+      "field": "mechanics",
+      "unit": "運動の表し方",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "正の向きに $6.0\\,\\mathrm{m/s}$ で進む物体が、$2.0\\,\\mathrm{s}$ 後に正の向きに $2.0\\,\\mathrm{m/s}$ となった。平均加速度はどれか。",
+      "choices": [
+        "$-2.0\\,\\mathrm{m/s^2}$",
+        "$-1.0\\,\\mathrm{m/s^2}$",
+        "$2.0\\,\\mathrm{m/s^2}$",
+        "$4.0\\,\\mathrm{m/s^2}$"
+      ],
+      "correct": 0,
+      "explanation": "$a=(2.0-6.0)/2.0=-2.0\\,\\mathrm{m/s^2}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOT-017",
+      "field": "mechanics",
+      "unit": "運動の表し方",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "等加速度直線運動で、初速度 $v_0$、加速度 $a$、時刻 $t$ の速度 $v$ を表す式はどれか。",
+      "choices": [
+        "$v=v_0+at$",
+        "$v=v_0+\\frac12at^2$",
+        "$v^2=v_0^2+at$",
+        "$v=at^2$"
+      ],
+      "correct": 0,
+      "explanation": "等加速度直線運動の速度は $v=v_0+at$ で表される。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOT-018",
+      "field": "mechanics",
+      "unit": "運動の表し方",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "等加速度直線運動で、初期位置を $x_0$ とする。位置 $x$ を表す式はどれか。",
+      "choices": [
+        "$x=x_0+v_0t+\\frac12at^2$",
+        "$x=x_0+at$",
+        "$x=x_0+v_0t+at^2$",
+        "$x=x_0+\\frac12v_0t^2$"
+      ],
+      "correct": 0,
+      "explanation": "等加速度直線運動の位置は $x=x_0+v_0t+\\frac12at^2$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOT-019",
+      "field": "mechanics",
+      "unit": "運動の表し方",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "初速度 $4.0\\,\\mathrm{m/s}$、加速度 $2.0\\,\\mathrm{m/s^2}$ で直線運動する物体の $3.0\\,\\mathrm{s}$ 後の速度は何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$6.0$",
+        "$8.0$",
+        "$10$",
+        "$14$"
+      ],
+      "correct": 2,
+      "explanation": "$v=v_0+at=4.0+2.0\\times3.0=10\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOT-020",
+      "field": "mechanics",
+      "unit": "運動の表し方",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "静止していた物体が $3.0\\,\\mathrm{m/s^2}$ の一定加速度で運動を始めた。$4.0\\,\\mathrm{s}$ 間の変位は何 $\\mathrm{m}$ か。",
+      "choices": [
+        "$6.0$",
+        "$12$",
+        "$24$",
+        "$48$"
+      ],
+      "correct": 2,
+      "explanation": "$x-x_0=\\frac12at^2=\\frac12\\times3.0\\times4.0^2=24\\,\\mathrm{m}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOT-021",
+      "field": "mechanics",
+      "unit": "運動の表し方",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "初速度 $10\\,\\mathrm{m/s}$ の物体が一定の加速度 $-2.0\\,\\mathrm{m/s^2}$ で運動する。停止するまでの時間は何 $\\mathrm{s}$ か。",
+      "choices": [
+        "$2.0$",
+        "$4.0$",
+        "$5.0$",
+        "$10$"
+      ],
+      "correct": 2,
+      "explanation": "$0=10-2.0t$ より $t=5.0\\,\\mathrm{s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOT-022",
+      "field": "mechanics",
+      "unit": "運動の表し方",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "初速度 $3.0\\,\\mathrm{m/s}$、加速度 $2.0\\,\\mathrm{m/s^2}$ の等加速度直線運動で、$4.0\\,\\mathrm{s}$ 間の変位は何 $\\mathrm{m}$ か。",
+      "choices": [
+        "$16$",
+        "$20$",
+        "$28$",
+        "$44$"
+      ],
+      "correct": 2,
+      "explanation": "$\\Delta x=v_0t+\\frac12at^2=3.0\\times4.0+\\frac12\\times2.0\\times4.0^2=28\\,\\mathrm{m}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOT-023",
+      "field": "mechanics",
+      "unit": "運動の表し方",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "初速度 $6.0\\,\\mathrm{m/s}$、加速度 $2.0\\,\\mathrm{m/s^2}$ で運動する物体が $40\\,\\mathrm{m}$ 進んだときの速さは何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$10$",
+        "$12$",
+        "$14$",
+        "$16$"
+      ],
+      "correct": 2,
+      "explanation": "$v^2-v_0^2=2a\\Delta x$ より $v^2=6.0^2+2\\times2.0\\times40=196$。よって $v=14\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOT-024",
+      "field": "mechanics",
+      "unit": "運動の表し方",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "$v-t$ グラフで、$0$～$5.0\\,\\mathrm{s}$ の間、速度が一定で $4.0\\,\\mathrm{m/s}$ であった。この間の変位は何 $\\mathrm{m}$ か。",
+      "choices": [
+        "$0.80$",
+        "$9.0$",
+        "$20$",
+        "$25$"
+      ],
+      "correct": 2,
+      "explanation": "$v-t$ グラフと時間軸で囲まれる面積が変位を表す。$4.0\\times5.0=20\\,\\mathrm{m}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOT-025",
+      "field": "mechanics",
+      "unit": "運動の表し方",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "$v-t$ グラフで、速度が $0\\,\\mathrm{m/s}$ から $6.0\\,\\mathrm{m/s}$ まで $3.0\\,\\mathrm{s}$ の間に直線的に増加した。加速度は何 $\\mathrm{m/s^2}$ か。",
+      "choices": [
+        "$1.0$",
+        "$2.0$",
+        "$3.0$",
+        "$18$"
+      ],
+      "correct": 1,
+      "explanation": "$v-t$ グラフの傾きが加速度。$(6.0-0)/3.0=2.0\\,\\mathrm{m/s^2}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOT-026",
+      "field": "mechanics",
+      "unit": "運動の表し方",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "$v-t$ グラフで、速度が $2.0\\,\\mathrm{m/s}$ から $8.0\\,\\mathrm{m/s}$ まで $4.0\\,\\mathrm{s}$ の間に直線的に増加した。この間の変位は何 $\\mathrm{m}$ か。",
+      "choices": [
+        "$12$",
+        "$20$",
+        "$24$",
+        "$40$"
+      ],
+      "correct": 1,
+      "explanation": "変位はグラフ下の台形の面積。$\\frac{2.0+8.0}{2}\\times4.0=20\\,\\mathrm{m}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOT-027",
+      "field": "mechanics",
+      "unit": "運動の表し方",
+      "course": "物理基礎",
+      "difficulty": 3,
+      "question": "静止していた物体が $2.0\\,\\mathrm{m/s^2}$ で $4.0\\,\\mathrm{s}$ 加速し、その後は得られた速度のまま $3.0\\,\\mathrm{s}$ 進んだ。全変位は何 $\\mathrm{m}$ か。",
+      "choices": [
+        "$16$",
+        "$24$",
+        "$32$",
+        "$40$"
+      ],
+      "correct": 3,
+      "explanation": "最初の4.0 sで速度は8.0 m/s、変位は16 m。その後の変位は $8.0\\times3.0=24$ m。合計40 m。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOT-028",
+      "field": "mechanics",
+      "unit": "運動の表し方",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "東向きを正とする。東向きに $5.0\\,\\mathrm{m/s}$ で進む物体が一定加速度で運動し、$4.0\\,\\mathrm{s}$ 後に西向き $3.0\\,\\mathrm{m/s}$ となった。加速度は何 $\\mathrm{m/s^2}$ か。",
+      "choices": [
+        "$-2.0$",
+        "$-0.50$",
+        "$0.50$",
+        "$2.0$"
+      ],
+      "correct": 0,
+      "explanation": "$v_0=+5.0$、$v=-3.0$ より $a=(-3.0-5.0)/4.0=-2.0\\,\\mathrm{m/s^2}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOT-029",
+      "field": "mechanics",
+      "unit": "運動の表し方",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "川幅が $60\\,\\mathrm{m}$ で、川の流れは東向き $3.0\\,\\mathrm{m/s}$。船が水に対して北向き $4.0\\,\\mathrm{m/s}$ で進む。対岸に着くまでの時間は何 $\\mathrm{s}$ か。",
+      "choices": [
+        "$12$",
+        "$15$",
+        "$20$",
+        "$25$"
+      ],
+      "correct": 1,
+      "explanation": "川を横切る北向き成分は $4.0\\,\\mathrm{m/s}$。したがって $60/4.0=15\\,\\mathrm{s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOT-030",
+      "field": "mechanics",
+      "unit": "運動の表し方",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "川幅が $60\\,\\mathrm{m}$ で、川の流れは東向き $3.0\\,\\mathrm{m/s}$ である。船が水に対して北向き $4.0\\,\\mathrm{m/s}$ で進むとき、船が対岸に着くまでに東向きに流される距離は何 $\\mathrm{m}$ か。",
+      "choices": [
+        "$20$",
+        "$36$",
+        "$45$",
+        "$60$"
+      ],
+      "correct": 2,
+      "explanation": "対岸まで進む北向き成分は $4.0\\,\\mathrm{m/s}$ なので、渡る時間は $60/4.0=15\\,\\mathrm{s}$。この間、東向きに $3.0\\,\\mathrm{m/s}$ で流されるため、$3.0\\times15=45\\,\\mathrm{m}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-FAL-001",
+      "field": "mechanics",
+      "unit": "落体の運動",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "空気抵抗を無視できるとき、地表付近で自由落下する物体の加速度について正しいものを選べ。",
+      "choices": [
+        "物体が重いほど大きい",
+        "物体が速くなるほど大きい",
+        "鉛直下向きにほぼ一定である",
+        "最高点では0になる"
+      ],
+      "correct": 2,
+      "explanation": "空気抵抗を無視すれば、地表付近の落体には質量や速さによらず、鉛直下向きにほぼ一定の重力加速度 $g\\simeq9.8\\,\\mathrm{m/s^2}$ がはたらく。",
+      "image": null
+    },
+    {
+      "id": "MEC-FAL-002",
+      "field": "mechanics",
+      "unit": "落体の運動",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "小球を静かに落とした。$2.0\\,\\mathrm{s}$ 後の速さは何 $\\mathrm{m/s}$ か。$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$4.9$",
+        "$9.8$",
+        "$19.6$",
+        "$39.2$"
+      ],
+      "correct": 2,
+      "explanation": "自由落下では $v=gt$ なので、$v=9.8\\times2.0=19.6\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-FAL-003",
+      "field": "mechanics",
+      "unit": "落体の運動",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "小球を静かに落とした。$2.0\\,\\mathrm{s}$ の間に落下する距離は何 $\\mathrm{m}$ か。$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$9.8$",
+        "$19.6$",
+        "$29.4$",
+        "$39.2$"
+      ],
+      "correct": 1,
+      "explanation": "自由落下では $y=\\frac12gt^2$。したがって $y=\\frac12\\times9.8\\times(2.0)^2=19.6\\,\\mathrm{m}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-FAL-004",
+      "field": "mechanics",
+      "unit": "落体の運動",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "小球を静かに落としたところ、$44.1\\,\\mathrm{m}$ 落下した。直後の速さは何 $\\mathrm{m/s}$ か。$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$19.6$",
+        "$24.5$",
+        "$29.4$",
+        "$44.1$"
+      ],
+      "correct": 2,
+      "explanation": "自由落下では $v^2=2gy$。よって $v=\\sqrt{2\\times9.8\\times44.1}=29.4\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-FAL-005",
+      "field": "mechanics",
+      "unit": "落体の運動",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "高さ $19.6\\,\\mathrm{m}$ から小球を静かに落とした。地面に達するまで何 $\\mathrm{s}$ か。$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$1.0$",
+        "$2.0$",
+        "$3.0$",
+        "$4.0$"
+      ],
+      "correct": 1,
+      "explanation": "$19.6=\\frac12\\times9.8\\times t^2$ より $t^2=4$、したがって $t=2.0\\,\\mathrm{s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-FAL-006",
+      "field": "mechanics",
+      "unit": "落体の運動",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "小球を鉛直下向きに $4.9\\,\\mathrm{m/s}$ で投げ下ろした。$2.0\\,\\mathrm{s}$ 後の速さは何 $\\mathrm{m/s}$ か。$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$14.7$",
+        "$19.6$",
+        "$24.5$",
+        "$29.4$"
+      ],
+      "correct": 2,
+      "explanation": "下向きを正にとると $v=v_0+gt=4.9+9.8\\times2.0=24.5\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-FAL-007",
+      "field": "mechanics",
+      "unit": "落体の運動",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "小球を鉛直下向きに $9.8\\,\\mathrm{m/s}$ で投げ下ろした。$2.0\\,\\mathrm{s}$ 後までに落下した距離は何 $\\mathrm{m}$ か。$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$19.6$",
+        "$29.4$",
+        "$39.2$",
+        "$58.8$"
+      ],
+      "correct": 2,
+      "explanation": "下向きを正にとると $y=v_0t+\\frac12gt^2=9.8\\times2.0+\\frac12\\times9.8\\times(2.0)^2=39.2\\,\\mathrm{m}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-FAL-008",
+      "field": "mechanics",
+      "unit": "落体の運動",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "鉛直上向きを正とする。小球を $29.4\\,\\mathrm{m/s}$ で鉛直上向きに投げた。$2.0\\,\\mathrm{s}$ 後の速度は何 $\\mathrm{m/s}$ か。$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$-9.8$",
+        "$0$",
+        "$9.8$",
+        "$19.6$"
+      ],
+      "correct": 2,
+      "explanation": "$v=v_0-gt=29.4-9.8\\times2.0=9.8\\,\\mathrm{m/s}$。正なのでまだ上向きに運動している。",
+      "image": null
+    },
+    {
+      "id": "MEC-FAL-009",
+      "field": "mechanics",
+      "unit": "落体の運動",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "小球を $24.5\\,\\mathrm{m/s}$ で鉛直上向きに投げた。最高点に達するまでの時間は何 $\\mathrm{s}$ か。$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$1.5$",
+        "$2.0$",
+        "$2.5$",
+        "$5.0$"
+      ],
+      "correct": 2,
+      "explanation": "最高点では速度が0なので、$0=24.5-9.8t$。したがって $t=2.5\\,\\mathrm{s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-FAL-010",
+      "field": "mechanics",
+      "unit": "落体の運動",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "小球を $19.6\\,\\mathrm{m/s}$ で鉛直上向きに投げた。投げた位置から最高点までの高さは何 $\\mathrm{m}$ か。$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$9.8$",
+        "$14.7$",
+        "$19.6$",
+        "$39.2$"
+      ],
+      "correct": 2,
+      "explanation": "最高点で $v=0$。$v^2=v_0^2-2gy$ より、$y=19.6^2/(2\\times9.8)=19.6\\,\\mathrm{m}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-FAL-011",
+      "field": "mechanics",
+      "unit": "落体の運動",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "小球を地面から $29.4\\,\\mathrm{m/s}$ で鉛直上向きに投げた。元の高さに戻るまでの時間は何 $\\mathrm{s}$ か。$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$3.0$",
+        "$4.0$",
+        "$6.0$",
+        "$9.0$"
+      ],
+      "correct": 2,
+      "explanation": "最高点までの時間は $29.4/9.8=3.0\\,\\mathrm{s}$。上昇と下降は最高点について対称なので、元の高さに戻るまで $6.0\\,\\mathrm{s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-FAL-012",
+      "field": "mechanics",
+      "unit": "落体の運動",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "小球を $29.4\\,\\mathrm{m/s}$ で鉛直上向きに投げた。空気抵抗を無視すると、元の高さへ戻ってきたときの速さは何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$0$",
+        "$9.8$",
+        "$19.6$",
+        "$29.4$"
+      ],
+      "correct": 3,
+      "explanation": "鉛直投げ上げでは、同じ高さを通過するときの速さの大きさは上昇時と下降時で等しい。したがって $29.4\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-FAL-013",
+      "field": "mechanics",
+      "unit": "落体の運動",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "小球を $19.6\\,\\mathrm{m/s}$ で鉛直上向きに投げた。$1.0\\,\\mathrm{s}$ 後の投げた位置からの高さは何 $\\mathrm{m}$ か。$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$4.9$",
+        "$9.8$",
+        "$14.7$",
+        "$19.6$"
+      ],
+      "correct": 2,
+      "explanation": "$y=v_0t-\\frac12gt^2=19.6\\times1.0-4.9=14.7\\,\\mathrm{m}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-FAL-014",
+      "field": "mechanics",
+      "unit": "落体の運動",
+      "course": "物理基礎",
+      "difficulty": 3,
+      "question": "小球を $19.6\\,\\mathrm{m/s}$ で鉛直上向きに投げた。投げた位置から $14.7\\,\\mathrm{m}$ の高さを通過する時刻の組として正しいものはどれか。$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$0.5\\,\\mathrm{s}$ と $3.5\\,\\mathrm{s}$",
+        "$1.0\\,\\mathrm{s}$ と $3.0\\,\\mathrm{s}$",
+        "$1.5\\,\\mathrm{s}$ と $2.5\\,\\mathrm{s}$",
+        "$2.0\\,\\mathrm{s}$ の1回だけ"
+      ],
+      "correct": 1,
+      "explanation": "$14.7=19.6t-4.9t^2$ より $t^2-4t+3=0$。したがって $t=1.0,3.0\\,\\mathrm{s}$。上昇時と下降時の2回通過する。",
+      "image": null
+    },
+    {
+      "id": "MEC-FAL-015",
+      "field": "mechanics",
+      "unit": "落体の運動",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "鉛直上向きを正にして投げ上げ運動の $v-t$ グラフを描くとき、グラフの傾きとして正しいものを選べ。",
+      "choices": [
+        "常に $+g$",
+        "常に $-g$",
+        "最高点でのみ0",
+        "時間とともに大きくなる"
+      ],
+      "correct": 1,
+      "explanation": "速度の時間変化率は加速度である。鉛直上向きを正にすると重力加速度は $-g$ なので、$v-t$ グラフの傾きは常に $-g$。",
+      "image": null
+    },
+    {
+      "id": "MEC-FAL-016",
+      "field": "mechanics",
+      "unit": "落体の運動",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "鉛直投げ上げされた小球が最高点に達した瞬間の速度と加速度の組として正しいものを選べ。",
+      "choices": [
+        "速度0、加速度0",
+        "速度0、加速度は鉛直下向きに $g$",
+        "速度は上向き、加速度0",
+        "速度は下向き、加速度は上向きに $g$"
+      ],
+      "correct": 1,
+      "explanation": "最高点では瞬間的に速度は0になるが、重力ははたらき続けるため加速度は鉛直下向きに $g$ である。",
+      "image": null
+    },
+    {
+      "id": "MEC-FAL-017",
+      "field": "mechanics",
+      "unit": "落体の運動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "高さ $19.6\\,\\mathrm{m}$ の場所から小球を水平方向に投げた。地面に達するまでの時間は何 $\\mathrm{s}$ か。$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$1.0$",
+        "$2.0$",
+        "$3.0$",
+        "$4.0$"
+      ],
+      "correct": 1,
+      "explanation": "鉛直方向は初速度0の自由落下なので、$19.6=\\frac12\\times9.8\\times t^2$。よって $t=2.0\\,\\mathrm{s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-FAL-018",
+      "field": "mechanics",
+      "unit": "落体の運動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "高さ $19.6\\,\\mathrm{m}$ の場所から小球を水平に $14.7\\,\\mathrm{m/s}$ で投げた。地面に達するまでの水平到達距離は何 $\\mathrm{m}$ か。$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$19.6$",
+        "$24.5$",
+        "$29.4$",
+        "$39.2$"
+      ],
+      "correct": 2,
+      "explanation": "落下時間は $2.0\\,\\mathrm{s}$。水平方向は等速運動なので $x=v_0t=14.7\\times2.0=29.4\\,\\mathrm{m}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-FAL-019",
+      "field": "mechanics",
+      "unit": "落体の運動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "高さ $19.6\\,\\mathrm{m}$ の場所から小球を水平に $14.7\\,\\mathrm{m/s}$ で投げた。地面に達する直前の速さは何 $\\mathrm{m/s}$ か。$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$19.6$",
+        "$24.5$",
+        "$29.4$",
+        "$34.3$"
+      ],
+      "correct": 1,
+      "explanation": "落下時間は $2.0\\,\\mathrm{s}$ なので、$v_x=14.7$、$v_y=19.6\\,\\mathrm{m/s}$。速さは $\\sqrt{14.7^2+19.6^2}=24.5\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-FAL-020",
+      "field": "mechanics",
+      "unit": "落体の運動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "空気抵抗を無視した水平投射について正しい説明を選べ。",
+      "choices": [
+        "水平方向にも重力加速度 $g$ がはたらく",
+        "水平方向は等速運動、鉛直方向は自由落下として考えられる",
+        "鉛直方向の速度は一定である",
+        "水平速度は時間とともに0へ近づく"
+      ],
+      "correct": 1,
+      "explanation": "水平投射では、水平方向には加速度がなく等速運動、鉛直方向には重力加速度がはたらき自由落下となる。",
+      "image": null
+    },
+    {
+      "id": "MEC-FAL-021",
+      "field": "mechanics",
+      "unit": "落体の運動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "小球を速さ $19.6\\,\\mathrm{m/s}$、水平面から仰角 $30^\\circ$ で投げた。初速度の鉛直成分は何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$4.9$",
+        "$9.8$",
+        "$17.0$",
+        "$19.6$"
+      ],
+      "correct": 1,
+      "explanation": "鉛直成分は $v_{0y}=v_0\\sin30^\\circ=19.6\\times\\frac12=9.8\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-FAL-022",
+      "field": "mechanics",
+      "unit": "落体の運動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "小球を速さ $39.2\\,\\mathrm{m/s}$、水平面から仰角 $30^\\circ$ で投げた。最高点に達するまでの時間は何 $\\mathrm{s}$ か。$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$1.0$",
+        "$2.0$",
+        "$3.0$",
+        "$4.0$"
+      ],
+      "correct": 1,
+      "explanation": "初速度の鉛直成分は $39.2\\sin30^\\circ=19.6\\,\\mathrm{m/s}$。最高点で $v_y=0$ なので $t=19.6/9.8=2.0\\,\\mathrm{s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-FAL-023",
+      "field": "mechanics",
+      "unit": "落体の運動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "小球を速さ $39.2\\,\\mathrm{m/s}$、水平面から仰角 $30^\\circ$ で投げた。投射点から最高点までの高さは何 $\\mathrm{m}$ か。$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$9.8$",
+        "$19.6$",
+        "$29.4$",
+        "$39.2$"
+      ],
+      "correct": 1,
+      "explanation": "鉛直初速度は $19.6\\,\\mathrm{m/s}$。最高点までの高さは $v_{0y}^2/(2g)=19.6\\,\\mathrm{m}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-FAL-024",
+      "field": "mechanics",
+      "unit": "落体の運動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "小球を水平な地面から速さ $39.2\\,\\mathrm{m/s}$、仰角 $30^\\circ$ で投げた。同じ高さの地面に落ちるまでの時間は何 $\\mathrm{s}$ か。$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$2.0$",
+        "$3.0$",
+        "$4.0$",
+        "$6.0$"
+      ],
+      "correct": 2,
+      "explanation": "鉛直初速度は $19.6\\,\\mathrm{m/s}$。最高点まで2.0 sで、同じ高さへ戻るまでその2倍の $4.0\\,\\mathrm{s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-FAL-025",
+      "field": "mechanics",
+      "unit": "落体の運動",
+      "course": "物理",
+      "difficulty": 3,
+      "question": "水平な地面から速さ $19.6\\,\\mathrm{m/s}$、仰角 $45^\\circ$ で小球を投げた。同じ高さの地面に落ちるまでの水平到達距離は何 $\\mathrm{m}$ か。$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$19.6$",
+        "$29.4$",
+        "$39.2$",
+        "$58.8$"
+      ],
+      "correct": 2,
+      "explanation": "水平面上への斜方投射の射程は $R=\\frac{v_0^2\\sin2\\theta}{g}$。$\\theta=45^\\circ$ なので $R=19.6^2/9.8=39.2\\,\\mathrm{m}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-FAL-026",
+      "field": "mechanics",
+      "unit": "落体の運動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "同じ速さで水平な地面から斜方投射するとき、空気抵抗を無視すれば水平到達距離が最大になる仰角はどれか。",
+      "choices": [
+        "$30^\\circ$",
+        "$45^\\circ$",
+        "$60^\\circ$",
+        "$90^\\circ$"
+      ],
+      "correct": 1,
+      "explanation": "射程 $R=\\frac{v_0^2\\sin2\\theta}{g}$ は $\\sin2\\theta=1$ のとき最大。したがって $2\\theta=90^\\circ$、$\\theta=45^\\circ$。",
+      "image": null
+    },
+    {
+      "id": "MEC-FAL-027",
+      "field": "mechanics",
+      "unit": "落体の運動",
+      "course": "物理",
+      "difficulty": 3,
+      "question": "高さ $19.6\\,\\mathrm{m}$ の場所から小球を水平に $9.8\\,\\mathrm{m/s}$ で投げた。地面に達する直前の速度が水平方向となす角を $\\theta$ とすると、$\\tan\\theta$ はいくらか。$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$0.5$",
+        "$1.0$",
+        "$2.0$",
+        "$4.0$"
+      ],
+      "correct": 2,
+      "explanation": "落下時間は2.0 sなので、衝突直前は $v_x=9.8$、$|v_y|=19.6$。したがって $\\tan\\theta=|v_y|/v_x=2.0$。",
+      "image": null
+    },
+    {
+      "id": "MEC-FAL-028",
+      "field": "mechanics",
+      "unit": "落体の運動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "鉛直上向きに $4.9\\,\\mathrm{m/s}$ で上昇中の気球から、気球に対して鉛直上向きに $9.8\\,\\mathrm{m/s}$ で小球を投げた。投げた直後の小球の地面に対する速度は何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "上向き $4.9$",
+        "上向き $9.8$",
+        "上向き $14.7$",
+        "下向き $4.9$"
+      ],
+      "correct": 2,
+      "explanation": "地面に対する速度は、気球の上向き速度と気球に対する小球の上向き速度の和なので $4.9+9.8=14.7\\,\\mathrm{m/s}$ 上向き。",
+      "image": null
+    },
+    {
+      "id": "MEC-FAL-029",
+      "field": "mechanics",
+      "unit": "落体の運動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "一定速度で水平飛行する飛行機から物体を静かに落とした。空気抵抗を無視すると、飛行機に乗っている人から物体はどのように見えるか。",
+      "choices": [
+        "真下へ落ちる",
+        "後方へ斜め直線に進む",
+        "前方へ斜め直線に進む",
+        "飛行機と同じ高さにとどまる"
+      ],
+      "correct": 0,
+      "explanation": "物体は落とした瞬間に飛行機と同じ水平速度をもつ。飛行機も同じ水平速度で進み続けるため、飛行機から見ると相対的な水平移動はなく、真下へ落ちる。",
+      "image": null
+    },
+    {
+      "id": "MEC-FAL-030",
+      "field": "mechanics",
+      "unit": "落体の運動",
+      "course": "物理基礎",
+      "difficulty": 3,
+      "question": "地面から $14.7\\,\\mathrm{m}$ の高さで、小球を鉛直上向きに $9.8\\,\\mathrm{m/s}$ で投げた。地面に達するまでの時間は何 $\\mathrm{s}$ か。$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$1.0$",
+        "$2.0$",
+        "$3.0$",
+        "$4.0$"
+      ],
+      "correct": 2,
+      "explanation": "地面を $y=0$、上向きを正とすると $0=14.7+9.8t-4.9t^2$。$t^2-2t-3=0$ より、正の解は $t=3.0\\,\\mathrm{s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-FOR-001",
+      "field": "mechanics",
+      "unit": "力",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "力を表すときに必要な「力の三要素」の組として正しいものを選べ。",
+      "choices": [
+        "大きさ・向き・作用点",
+        "質量・速さ・向き",
+        "大きさ・時間・作用点",
+        "質量・加速度・作用点"
+      ],
+      "correct": 0,
+      "explanation": "力はベクトル量であり、「大きさ」「向き」「作用点」の3つで表す。これらを力の三要素という。",
+      "image": null
+    },
+    {
+      "id": "MEC-FOR-002",
+      "field": "mechanics",
+      "unit": "力",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "力の単位 $1\\,\\mathrm{N}$ の説明として正しいものを選べ。",
+      "choices": [
+        "$1\\,\\mathrm{kg}$ の物体に $1\\,\\mathrm{m/s}$ の速さを与える力",
+        "$1\\,\\mathrm{kg}$ の物体に $1\\,\\mathrm{m/s^2}$ の加速度を生じさせる力",
+        "$1\\,\\mathrm{g}$ の物体を $1\\,\\mathrm{m}$ 持ち上げる力",
+        "$1\\,\\mathrm{kg}$ の物体を $1\\,\\mathrm{s}$ 動かす力"
+      ],
+      "correct": 1,
+      "explanation": "$1\\,\\mathrm{N}$ は、質量 $1\\,\\mathrm{kg}$ の物体に $1\\,\\mathrm{m/s^2}$ の加速度を生じさせる大きさの力である。",
+      "image": null
+    },
+    {
+      "id": "MEC-FOR-003",
+      "field": "mechanics",
+      "unit": "力",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "ばねを自然の長さから伸ばしたとき、ばねが物体を引き戻そうとする力を何というか。",
+      "choices": [
+        "弾性力",
+        "浮力",
+        "摩擦力",
+        "万有引力"
+      ],
+      "correct": 0,
+      "explanation": "変形したばねが自然の長さに戻ろうとして及ぼす力を弾性力という。",
+      "image": null
+    },
+    {
+      "id": "MEC-FOR-004",
+      "field": "mechanics",
+      "unit": "力",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "ばね定数が $20\\,\\mathrm{N/m}$ のばねを自然の長さから $0.15\\,\\mathrm{m}$ 伸ばした。弾性力の大きさは何 $\\mathrm{N}$ か。",
+      "choices": [
+        "$1.3$",
+        "$3.0$",
+        "$20$",
+        "$30$"
+      ],
+      "correct": 1,
+      "explanation": "フックの法則 $F=kx$ より、$F=20\\times0.15=3.0\\,\\mathrm{N}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-FOR-005",
+      "field": "mechanics",
+      "unit": "力",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "あるばねを $0.20\\,\\mathrm{m}$ 伸ばすと、弾性力の大きさが $6.0\\,\\mathrm{N}$ になった。このばねのばね定数は何 $\\mathrm{N/m}$ か。",
+      "choices": [
+        "$1.2$",
+        "$12$",
+        "$30$",
+        "$60$"
+      ],
+      "correct": 2,
+      "explanation": "$F=kx$ より、$k=F/x=6.0/0.20=30\\,\\mathrm{N/m}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-FOR-006",
+      "field": "mechanics",
+      "unit": "力",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "物体に東向き $3.0\\,\\mathrm{N}$ と東向き $4.0\\,\\mathrm{N}$ の力が同時にはたらく。合力を選べ。",
+      "choices": [
+        "東向き $1.0\\,\\mathrm{N}$",
+        "西向き $1.0\\,\\mathrm{N}$",
+        "東向き $7.0\\,\\mathrm{N}$",
+        "西向き $7.0\\,\\mathrm{N}$"
+      ],
+      "correct": 2,
+      "explanation": "同じ向きの力の合力は大きさを加える。$3.0+4.0=7.0\\,\\mathrm{N}$ で東向き。",
+      "image": null
+    },
+    {
+      "id": "MEC-FOR-007",
+      "field": "mechanics",
+      "unit": "力",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "物体に東向き $8.0\\,\\mathrm{N}$ と西向き $3.0\\,\\mathrm{N}$ の力が同時にはたらく。合力を選べ。",
+      "choices": [
+        "東向き $5.0\\,\\mathrm{N}$",
+        "西向き $5.0\\,\\mathrm{N}$",
+        "東向き $11\\,\\mathrm{N}$",
+        "西向き $11\\,\\mathrm{N}$"
+      ],
+      "correct": 0,
+      "explanation": "反対向きの力の合力は大きさの差で、向きは大きい方に一致する。$8.0-3.0=5.0\\,\\mathrm{N}$ で東向き。",
+      "image": null
+    },
+    {
+      "id": "MEC-FOR-008",
+      "field": "mechanics",
+      "unit": "力",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "互いに垂直な $3.0\\,\\mathrm{N}$ と $4.0\\,\\mathrm{N}$ の2力の合力の大きさは何 $\\mathrm{N}$ か。",
+      "choices": [
+        "$1.0$",
+        "$5.0$",
+        "$7.0$",
+        "$12$"
+      ],
+      "correct": 1,
+      "explanation": "2力が直角なので、合力の大きさは $\\sqrt{3.0^2+4.0^2}=5.0\\,\\mathrm{N}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-FOR-009",
+      "field": "mechanics",
+      "unit": "力",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "大きさ $10\\,\\mathrm{N}$ の力が、水平方向から上向きに $30^\\circ$ の向きにはたらく。水平成分と鉛直成分の組として正しいものを選べ。",
+      "choices": [
+        "水平 $5\\sqrt{3}\\,\\mathrm{N}$、鉛直 $5\\,\\mathrm{N}$",
+        "水平 $5\\,\\mathrm{N}$、鉛直 $5\\sqrt{3}\\,\\mathrm{N}$",
+        "水平 $10\\,\\mathrm{N}$、鉛直 $5\\,\\mathrm{N}$",
+        "水平 $5\\sqrt{2}\\,\\mathrm{N}$、鉛直 $5\\sqrt{2}\\,\\mathrm{N}$"
+      ],
+      "correct": 0,
+      "explanation": "水平成分は $10\\cos30^\\circ=5\\sqrt3\\,\\mathrm{N}$、鉛直成分は $10\\sin30^\\circ=5\\,\\mathrm{N}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-FOR-010",
+      "field": "mechanics",
+      "unit": "力",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "大きさ $20\\,\\mathrm{N}$ の力が、水平方向から上向きに $60^\\circ$ の向きにはたらく。水平成分と鉛直成分の組として正しいものを選べ。",
+      "choices": [
+        "水平 $10\\sqrt3\\,\\mathrm{N}$、鉛直 $10\\,\\mathrm{N}$",
+        "水平 $10\\,\\mathrm{N}$、鉛直 $10\\sqrt3\\,\\mathrm{N}$",
+        "水平 $20\\,\\mathrm{N}$、鉛直 $10\\sqrt3\\,\\mathrm{N}$",
+        "水平 $10\\sqrt2\\,\\mathrm{N}$、鉛直 $10\\sqrt2\\,\\mathrm{N}$"
+      ],
+      "correct": 1,
+      "explanation": "水平成分は $20\\cos60^\\circ=10\\,\\mathrm{N}$、鉛直成分は $20\\sin60^\\circ=10\\sqrt3\\,\\mathrm{N}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-FOR-011",
+      "field": "mechanics",
+      "unit": "力",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "1つの物体に2つの力だけがはたらき、その物体がつり合っている。2力の関係として正しいものを選べ。",
+      "choices": [
+        "大きさが等しく、同じ向きにはたらく",
+        "大きさが等しく、反対向きで同一直線上にはたらく",
+        "大きさが異なり、反対向きにはたらく",
+        "必ず互いに垂直にはたらく"
+      ],
+      "correct": 1,
+      "explanation": "2力だけでつり合うためには、2力の大きさが等しく、向きが反対で、同一直線上にある必要がある。",
+      "image": null
+    },
+    {
+      "id": "MEC-FOR-012",
+      "field": "mechanics",
+      "unit": "力",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "物体に東向き $6.0\\,\\mathrm{N}$ と北向き $8.0\\,\\mathrm{N}$ の力がはたらいている。物体をつり合わせるために加える1つの力として正しいものを選べ。",
+      "choices": [
+        "北東向き $10\\,\\mathrm{N}$",
+        "南西向き $10\\,\\mathrm{N}$",
+        "南東向き $14\\,\\mathrm{N}$",
+        "北西向き $14\\,\\mathrm{N}$"
+      ],
+      "correct": 1,
+      "explanation": "2力の合力は北東向きで大きさ $\\sqrt{6.0^2+8.0^2}=10\\,\\mathrm{N}$。つり合わせる力はその反対向きなので南西向き $10\\,\\mathrm{N}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-FOR-013",
+      "field": "mechanics",
+      "unit": "力",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "重さ $10\\,\\mathrm{N}$ の物体を、左右対称な2本の糸で静止させている。各糸は水平方向となす角が $60^\\circ$ である。各糸の張力の大きさはどれか。",
+      "choices": [
+        "$5.0\\,\\mathrm{N}$",
+        "$\\frac{10}{\\sqrt3}\\,\\mathrm{N}$",
+        "$10\\,\\mathrm{N}$",
+        "$10\\sqrt3\\,\\mathrm{N}$"
+      ],
+      "correct": 1,
+      "explanation": "左右の水平成分は打ち消し合う。鉛直方向で $2T\\sin60^\\circ=10$ より、$T=10/\\sqrt3\\,\\mathrm{N}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-FOR-014",
+      "field": "mechanics",
+      "unit": "力",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "ばね定数 $49\\,\\mathrm{N/m}$ の軽いばねに質量 $0.50\\,\\mathrm{kg}$ の物体をつるしたところ静止した。ばねの伸びは何 $\\mathrm{m}$ か。$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$0.050$",
+        "$0.10$",
+        "$0.20$",
+        "$0.50$"
+      ],
+      "correct": 1,
+      "explanation": "つり合いより $kx=mg$。したがって $x=0.50\\times9.8/49=0.10\\,\\mathrm{m}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-FOR-015",
+      "field": "mechanics",
+      "unit": "力",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "なめらかな $30^\\circ$ の斜面上に重さ $9.8\\,\\mathrm{N}$ の物体があり、斜面に平行な糸で静止させている。糸の張力は何 $\\mathrm{N}$ か。",
+      "choices": [
+        "$4.9$",
+        "$8.5$",
+        "$9.8$",
+        "$19.6$"
+      ],
+      "correct": 0,
+      "explanation": "斜面方向の重力成分は $9.8\\sin30^\\circ=4.9\\,\\mathrm{N}$。静止しているので張力も $4.9\\,\\mathrm{N}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-FOR-016",
+      "field": "mechanics",
+      "unit": "力",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "なめらかな水平面に物体が静止している。物体には重力 $12\\,\\mathrm{N}$ が鉛直下向きにはたらく。このとき床から受ける垂直抗力の大きさは何 $\\mathrm{N}$ か。",
+      "choices": [
+        "$0$",
+        "$6.0$",
+        "$12$",
+        "$24$"
+      ],
+      "correct": 2,
+      "explanation": "鉛直方向でつり合っているため、垂直抗力と重力の大きさは等しい。よって $12\\,\\mathrm{N}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-FOR-017",
+      "field": "mechanics",
+      "unit": "力",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "机の上に本が静止している。「本が机を下向きに押す力」と作用・反作用の関係にある力を選べ。",
+      "choices": [
+        "本にはたらく重力",
+        "机が本を上向きに押す力",
+        "机にはたらく重力",
+        "床が机を上向きに押す力"
+      ],
+      "correct": 1,
+      "explanation": "作用・反作用の2力は異なる物体にはたらく。「本が机を押す力」に対する反作用は「机が本を押す力」である。",
+      "image": null
+    },
+    {
+      "id": "MEC-FOR-018",
+      "field": "mechanics",
+      "unit": "力",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "作用・反作用の2力について正しいものを選べ。",
+      "choices": [
+        "同じ物体にはたらくので互いに打ち消し合う",
+        "大きさは等しく、向きは反対で、異なる物体にはたらく",
+        "大きさは常に異なる",
+        "物体が静止しているときだけ生じる"
+      ],
+      "correct": 1,
+      "explanation": "作用・反作用の2力は、大きさが等しく向きが反対で、互いに異なる物体にはたらく。",
+      "image": null
+    },
+    {
+      "id": "MEC-FOR-019",
+      "field": "mechanics",
+      "unit": "力",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "物体に東向き $3.0\\,\\mathrm{N}$ と北向き $4.0\\,\\mathrm{N}$ の力がはたらいている。この物体を静止させるために必要な3つ目の力を選べ。",
+      "choices": [
+        "北東向き $5.0\\,\\mathrm{N}$",
+        "南西向き $5.0\\,\\mathrm{N}$",
+        "南東向き $7.0\\,\\mathrm{N}$",
+        "北西向き $7.0\\,\\mathrm{N}$"
+      ],
+      "correct": 1,
+      "explanation": "2力の合力は北東向き $5.0\\,\\mathrm{N}$。つり合わせる3つ目の力はその反対向きの南西向き $5.0\\,\\mathrm{N}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-FOR-020",
+      "field": "mechanics",
+      "unit": "力",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "大きさがともに $4.0\\,\\mathrm{N}$ の2力が、互いに $60^\\circ$ の角をなしてはたらく。合力の大きさはどれか。",
+      "choices": [
+        "$4.0\\,\\mathrm{N}$",
+        "$4\\sqrt2\\,\\mathrm{N}$",
+        "$4\\sqrt3\\,\\mathrm{N}$",
+        "$8.0\\,\\mathrm{N}$"
+      ],
+      "correct": 2,
+      "explanation": "余弦定理より $R=\\sqrt{4^2+4^2+2\\cdot4\\cdot4\\cos60^\\circ}=4\\sqrt3\\,\\mathrm{N}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-FOR-021",
+      "field": "mechanics",
+      "unit": "力",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "大きさがともに $6.0\\,\\mathrm{N}$ の2力が、互いに $120^\\circ$ の角をなしてはたらく。合力の大きさは何 $\\mathrm{N}$ か。",
+      "choices": [
+        "$3.0$",
+        "$6.0$",
+        "$6\\sqrt2$",
+        "$12$"
+      ],
+      "correct": 1,
+      "explanation": "$R=\\sqrt{6^2+6^2+2\\cdot6\\cdot6\\cos120^\\circ}=\\sqrt{36}=6.0\\,\\mathrm{N}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-FOR-022",
+      "field": "mechanics",
+      "unit": "力",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "あるばねの弾性力 $F$ と伸び $x$ の関係が原点を通る直線で、$x=0.50\\,\\mathrm{m}$ のとき $F=10\\,\\mathrm{N}$ であった。このばねを $0.80\\,\\mathrm{m}$ 伸ばしたときの弾性力は何 $\\mathrm{N}$ か。",
+      "choices": [
+        "$8.0$",
+        "$12$",
+        "$16$",
+        "$20$"
+      ],
+      "correct": 2,
+      "explanation": "ばね定数は $k=10/0.50=20\\,\\mathrm{N/m}$。したがって $F=20\\times0.80=16\\,\\mathrm{N}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-FOR-023",
+      "field": "mechanics",
+      "unit": "力",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "なめらかな $30^\\circ$ の斜面上に、重さ $20\\,\\mathrm{N}$ の物体が静止している。斜面から受ける垂直抗力の大きさはどれか。",
+      "choices": [
+        "$10\\,\\mathrm{N}$",
+        "$10\\sqrt3\\,\\mathrm{N}$",
+        "$20\\,\\mathrm{N}$",
+        "$20\\sqrt3\\,\\mathrm{N}$"
+      ],
+      "correct": 1,
+      "explanation": "斜面に垂直な重力成分は $20\\cos30^\\circ=10\\sqrt3\\,\\mathrm{N}$。これと垂直抗力がつり合う。",
+      "image": null
+    },
+    {
+      "id": "MEC-FOR-024",
+      "field": "mechanics",
+      "unit": "力",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "重さ $39.2\\,\\mathrm{N}$ の物体を、左右対称な2本の糸で静止させる。各糸は水平方向となす角が $45^\\circ$ である。各糸の張力の大きさはどれか。",
+      "choices": [
+        "$9.8\\sqrt2\\,\\mathrm{N}$",
+        "$19.6\\,\\mathrm{N}$",
+        "$19.6\\sqrt2\\,\\mathrm{N}$",
+        "$39.2\\sqrt2\\,\\mathrm{N}$"
+      ],
+      "correct": 2,
+      "explanation": "鉛直方向で $2T\\sin45^\\circ=39.2$。よって $T=39.2/\\sqrt2=19.6\\sqrt2\\,\\mathrm{N}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-FOR-025",
+      "field": "mechanics",
+      "unit": "力",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "軽くて摩擦のない固定滑車に1本の軽い糸をかける。糸の一端を $5.0\\,\\mathrm{N}$ の力で引くとき、糸の他端が物体を引く力の大きさはどれか。",
+      "choices": [
+        "$2.5\\,\\mathrm{N}$",
+        "$5.0\\,\\mathrm{N}$",
+        "$10\\,\\mathrm{N}$",
+        "$25\\,\\mathrm{N}$"
+      ],
+      "correct": 1,
+      "explanation": "理想的な軽い糸と摩擦のない固定滑車では、糸の張力の大きさはどの部分でも等しい。したがって $5.0\\,\\mathrm{N}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-FOR-026",
+      "field": "mechanics",
+      "unit": "力",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "軽くて摩擦のない固定滑車に糸をかけ、左右に同じ重さ $1.0\\,\\mathrm{N}$ の物体をつるして静止させた。糸の張力の大きさは何 $\\mathrm{N}$ か。",
+      "choices": [
+        "$0.50$",
+        "$1.0$",
+        "$2.0$",
+        "$4.0$"
+      ],
+      "correct": 1,
+      "explanation": "各物体は静止しているので、各物体について張力と重力がつり合う。よって張力は $1.0\\,\\mathrm{N}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-FOR-027",
+      "field": "mechanics",
+      "unit": "力",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "水平面上の物体を右向きに $12\\,\\mathrm{N}$、左向きに $7.0\\,\\mathrm{N}$ で引いている。さらに物体をつり合わせるには、どの力を加えればよいか。",
+      "choices": [
+        "右向き $5.0\\,\\mathrm{N}$",
+        "左向き $5.0\\,\\mathrm{N}$",
+        "右向き $19\\,\\mathrm{N}$",
+        "左向き $19\\,\\mathrm{N}$"
+      ],
+      "correct": 1,
+      "explanation": "現在の合力は右向き $12-7.0=5.0\\,\\mathrm{N}$。つり合わせるには左向き $5.0\\,\\mathrm{N}$ を加える。",
+      "image": null
+    },
+    {
+      "id": "MEC-FOR-028",
+      "field": "mechanics",
+      "unit": "力",
+      "course": "物理基礎",
+      "difficulty": 3,
+      "question": "なめらかな $30^\\circ$ の斜面上に質量 $2.0\\,\\mathrm{kg}$ の物体を置き、斜面に平行なばねにつないだ。ばね定数は $49\\,\\mathrm{N/m}$ である。物体が静止するとき、ばねの伸びは何 $\\mathrm{m}$ か。$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$0.10$",
+        "$0.20$",
+        "$0.30$",
+        "$0.40$"
+      ],
+      "correct": 1,
+      "explanation": "斜面方向で $kx=mg\\sin30^\\circ$。よって $x=(2.0\\times9.8\\times0.5)/49=0.20\\,\\mathrm{m}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-FOR-029",
+      "field": "mechanics",
+      "unit": "力",
+      "course": "物理基礎",
+      "difficulty": 3,
+      "question": "1点に大きさ $6.0\\,\\mathrm{N}$ と $8.0\\,\\mathrm{N}$ の2力が互いに直角にはたらく。この2力とつり合う第3の力について正しいものを選べ。",
+      "choices": [
+        "大きさ $2.0\\,\\mathrm{N}$ で、$6.0\\,\\mathrm{N}$ の力と同じ向き",
+        "大きさ $10\\,\\mathrm{N}$ で、2力の合力と反対向き",
+        "大きさ $14\\,\\mathrm{N}$ で、2力の合力と同じ向き",
+        "大きさ $48\\,\\mathrm{N}$ で、2力に垂直な向き"
+      ],
+      "correct": 1,
+      "explanation": "2力の合力の大きさは $\\sqrt{6.0^2+8.0^2}=10\\,\\mathrm{N}$。つり合う第3の力は、合力と同じ大きさで反対向きである。",
+      "image": null
+    },
+    {
+      "id": "MEC-FOR-030",
+      "field": "mechanics",
+      "unit": "力",
+      "course": "物理基礎",
+      "difficulty": 3,
+      "question": "重さ $12\\,\\mathrm{N}$ の物体が、天井から2本の糸で左右対称につり下げられて静止している。各糸が鉛直方向となす角が $60^\\circ$ のとき、各糸の張力の大きさは何 $\\mathrm{N}$ か。",
+      "choices": [
+        "$4.0$",
+        "$6.0$",
+        "$12$",
+        "$24$"
+      ],
+      "correct": 2,
+      "explanation": "各糸の鉛直成分は $T\\cos60^\\circ$。つり合いより $2T\\cos60^\\circ=12$ なので $T=12\\,\\mathrm{N}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-LAW-001",
+      "field": "mechanics",
+      "unit": "運動の法則",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "物体に外力がはたらかない、またははたらく力の合力が $0$ のとき、物体の運動について正しいものを選べ。",
+      "choices": [
+        "必ず静止する",
+        "静止している物体は静止を続け、運動している物体は等速直線運動を続ける",
+        "必ず加速する",
+        "必ず円運動をする"
+      ],
+      "correct": 1,
+      "explanation": "これは慣性の法則（ニュートンの運動の第1法則）である。合力が $0$ なら加速度は $0$ で、静止または等速直線運動を続ける。",
+      "image": null
+    },
+    {
+      "id": "MEC-LAW-002",
+      "field": "mechanics",
+      "unit": "運動の法則",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "質量 $m$ の物体にはたらく力の合力を $F$、加速度を $a$ とするとき、運動方程式として正しいものを選べ。",
+      "choices": [
+        "$F=ma$",
+        "$F=mv$",
+        "$F=m/a$",
+        "$F=at$"
+      ],
+      "correct": 0,
+      "explanation": "ニュートンの運動の第2法則より、運動方程式は $F=ma$ である。",
+      "image": null
+    },
+    {
+      "id": "MEC-LAW-003",
+      "field": "mechanics",
+      "unit": "運動の法則",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "作用・反作用の2力について正しいものを選べ。",
+      "choices": [
+        "同じ物体にはたらき、必ず打ち消し合う",
+        "大きさは等しく、向きは反対で、異なる物体にはたらく",
+        "大きさは異なり、向きは同じである",
+        "一方の力がなくなってから、もう一方の力が生じる"
+      ],
+      "correct": 1,
+      "explanation": "作用・反作用の2力は、大きさが等しく向きが反対で、互いに異なる物体にはたらく。",
+      "image": null
+    },
+    {
+      "id": "MEC-LAW-004",
+      "field": "mechanics",
+      "unit": "運動の法則",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "$1\\,\\mathrm{N}$ の説明として正しいものを選べ。",
+      "choices": [
+        "$1\\,\\mathrm{kg}$ の物体に $1\\,\\mathrm{m/s^2}$ の加速度を生じさせる力",
+        "$1\\,\\mathrm{kg}$ の物体を $1\\,\\mathrm{m}$ 動かす力",
+        "$1\\,\\mathrm{m/s}$ の速さを生じさせる力",
+        "$1\\,\\mathrm{kg}$ の物体にはたらく重力そのもの"
+      ],
+      "correct": 0,
+      "explanation": "$1\\,\\mathrm{N}$ は、質量 $1\\,\\mathrm{kg}$ の物体に $1\\,\\mathrm{m/s^2}$ の加速度を生じさせる力である。",
+      "image": null
+    },
+    {
+      "id": "MEC-LAW-005",
+      "field": "mechanics",
+      "unit": "運動の法則",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "質量 $5.0\\,\\mathrm{kg}$ の物体に力を加えたところ、$0.40\\,\\mathrm{m/s^2}$ の加速度が生じた。力の合力は何 $\\mathrm{N}$ か。",
+      "choices": [
+        "$0.080$",
+        "$2.0$",
+        "$5.4$",
+        "$12.5$"
+      ],
+      "correct": 1,
+      "explanation": "$F=ma=5.0\\times0.40=2.0\\,\\mathrm{N}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-LAW-006",
+      "field": "mechanics",
+      "unit": "運動の法則",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "質量 $2.0\\,\\mathrm{kg}$ の物体にはたらく力の合力が $6.0\\,\\mathrm{N}$ である。加速度の大きさは何 $\\mathrm{m/s^2}$ か。",
+      "choices": [
+        "$0.33$",
+        "$2.0$",
+        "$3.0$",
+        "$12$"
+      ],
+      "correct": 2,
+      "explanation": "$a=F/m=6.0/2.0=3.0\\,\\mathrm{m/s^2}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-LAW-007",
+      "field": "mechanics",
+      "unit": "運動の法則",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "質量 $1.5\\,\\mathrm{kg}$ の物体にはたらく重力の大きさは何 $\\mathrm{N}$ か。$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$6.5$",
+        "$9.8$",
+        "$14.7$",
+        "$19.6$"
+      ],
+      "correct": 2,
+      "explanation": "重力の大きさは $W=mg=1.5\\times9.8=14.7\\,\\mathrm{N}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-LAW-008",
+      "field": "mechanics",
+      "unit": "運動の法則",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "質量と重さについて正しいものを選べ。",
+      "choices": [
+        "質量も重さも場所によって必ず変化する",
+        "質量は物体に固有の量で、重さは重力による力である",
+        "重さの単位は $\\mathrm{kg}$ である",
+        "質量の単位は $\\mathrm{N}$ である"
+      ],
+      "correct": 1,
+      "explanation": "質量は物体に固有の量で単位は $\\mathrm{kg}$、重さは重力による力で単位は $\\mathrm{N}$ である。",
+      "image": null
+    },
+    {
+      "id": "MEC-LAW-009",
+      "field": "mechanics",
+      "unit": "運動の法則",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "静止している物体にはたらく静止摩擦力について正しいものを選べ。",
+      "choices": [
+        "常に最大静止摩擦力と等しい",
+        "物体が動き出さない範囲で、必要な大きさに変化する",
+        "垂直抗力には無関係である",
+        "物体の運動方向と必ず同じ向きにはたらく"
+      ],
+      "correct": 1,
+      "explanation": "静止摩擦力は、物体が静止を保つ範囲で外力に応じて変化し、最大静止摩擦力を超えると物体が動き出す。",
+      "image": null
+    },
+    {
+      "id": "MEC-LAW-010",
+      "field": "mechanics",
+      "unit": "運動の法則",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "最大静止摩擦力 $F_0$、静止摩擦係数 $\\mu$、垂直抗力 $N$ の関係として正しいものを選べ。",
+      "choices": [
+        "$F_0=\\mu N$",
+        "$F_0=N/\\mu$",
+        "$F_0=\\mu/N$",
+        "$F_0=\\mu mgN$"
+      ],
+      "correct": 0,
+      "explanation": "最大静止摩擦力は $F_0=\\mu N$ で表される。",
+      "image": null
+    },
+    {
+      "id": "MEC-LAW-011",
+      "field": "mechanics",
+      "unit": "運動の法則",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "水平面上の物体に対する垂直抗力が $19.6\\,\\mathrm{N}$、最大静止摩擦力が $9.8\\,\\mathrm{N}$ であった。静止摩擦係数はいくらか。",
+      "choices": [
+        "$0.20$",
+        "$0.50$",
+        "$2.0$",
+        "$9.8$"
+      ],
+      "correct": 1,
+      "explanation": "$\\mu=F_0/N=9.8/19.6=0.50$。",
+      "image": null
+    },
+    {
+      "id": "MEC-LAW-012",
+      "field": "mechanics",
+      "unit": "運動の法則",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "あらい水平面上の物体を水平方向に $9.8\\,\\mathrm{N}$ の力で引くと、物体は一定の速さで運動した。このとき動摩擦力の大きさは何 $\\mathrm{N}$ か。",
+      "choices": [
+        "$0$",
+        "$4.9$",
+        "$9.8$",
+        "$19.6$"
+      ],
+      "correct": 2,
+      "explanation": "一定速度なので加速度は $0$、水平方向の合力も $0$。したがって動摩擦力は引く力と同じ $9.8\\,\\mathrm{N}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-LAW-013",
+      "field": "mechanics",
+      "unit": "運動の法則",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "質量 $5.0\\,\\mathrm{kg}$ の物体が水平面上を滑っている。動摩擦係数が $0.20$ のとき、動摩擦力の大きさは何 $\\mathrm{N}$ か。$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$4.9$",
+        "$9.8$",
+        "$19.6$",
+        "$49$"
+      ],
+      "correct": 1,
+      "explanation": "水平面では $N=mg=49\\,\\mathrm{N}$。よって $F=\\mu'N=0.20\\times49=9.8\\,\\mathrm{N}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-LAW-014",
+      "field": "mechanics",
+      "unit": "運動の法則",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "質量 $4.0\\,\\mathrm{kg}$ の物体が傾角 $30^\\circ$ の斜面上にある。斜面から受ける垂直抗力の大きさは約何 $\\mathrm{N}$ か。$g=9.8\\,\\mathrm{m/s^2}$、$\\cos30^\\circ=0.866$ とする。",
+      "choices": [
+        "$19.6$",
+        "$28$",
+        "$34$",
+        "$39.2$"
+      ],
+      "correct": 2,
+      "explanation": "$N=mg\\cos30^\\circ=4.0\\times9.8\\times0.866\\approx34\\,\\mathrm{N}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-LAW-015",
+      "field": "mechanics",
+      "unit": "運動の法則",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "質量 $4.0\\,\\mathrm{kg}$ の物体が傾角 $30^\\circ$ の斜面を滑っている。動摩擦係数が $0.20$ のとき、動摩擦力の大きさは約何 $\\mathrm{N}$ か。$g=9.8\\,\\mathrm{m/s^2}$、$\\cos30^\\circ=0.866$ とする。",
+      "choices": [
+        "$3.4$",
+        "$6.8$",
+        "$9.8$",
+        "$19.6$"
+      ],
+      "correct": 1,
+      "explanation": "$N=mg\\cos30^\\circ\\approx34\\,\\mathrm{N}$ より、$F=\\mu'N\\approx0.20\\times34=6.8\\,\\mathrm{N}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-LAW-016",
+      "field": "mechanics",
+      "unit": "運動の法則",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "空気抵抗が速さに比例して $f=kv$ と表される物体が鉛直下向きに落下している。終端速度に達したときの関係として正しいものを選べ。",
+      "choices": [
+        "$mg=0$",
+        "$kv=0$",
+        "$mg=kv$",
+        "$ma=mg+kv$"
+      ],
+      "correct": 2,
+      "explanation": "終端速度では加速度が $0$ となり、重力と空気抵抗がつり合うので $mg=kv$。",
+      "image": null
+    },
+    {
+      "id": "MEC-LAW-017",
+      "field": "mechanics",
+      "unit": "運動の法則",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "質量 $0.50\\,\\mathrm{kg}$ の物体が落下し、空気抵抗が $f=kv$、$k=0.20\\,\\mathrm{N\\,s/m}$ である。終端速度は何 $\\mathrm{m/s}$ か。$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$2.5$",
+        "$9.8$",
+        "$19.6$",
+        "$24.5$"
+      ],
+      "correct": 3,
+      "explanation": "終端速度では $mg=kv$。したがって $v=mg/k=0.50\\times9.8/0.20=24.5\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-LAW-018",
+      "field": "mechanics",
+      "unit": "運動の法則",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "面積 $4.0\\,\\mathrm{m^2}$ の面を垂直に $60\\,\\mathrm{N}$ の力で押した。圧力は何 $\\mathrm{Pa}$ か。",
+      "choices": [
+        "$15$",
+        "$60$",
+        "$240$",
+        "$0.067$"
+      ],
+      "correct": 0,
+      "explanation": "圧力は $p=F/S=60/4.0=15\\,\\mathrm{Pa}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-LAW-019",
+      "field": "mechanics",
+      "unit": "運動の法則",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "水面から $0.50\\,\\mathrm{m}$ の深さで、水による圧力は約何 $\\mathrm{Pa}$ か。水の密度を $1.0\\times10^3\\,\\mathrm{kg/m^3}$、$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$4.9\\times10^2$",
+        "$4.9\\times10^3$",
+        "$9.8\\times10^3$",
+        "$4.9\\times10^4$"
+      ],
+      "correct": 1,
+      "explanation": "$p=\\rho gh=1.0\\times10^3\\times9.8\\times0.50=4.9\\times10^3\\,\\mathrm{Pa}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-LAW-020",
+      "field": "mechanics",
+      "unit": "運動の法則",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "大気圧が $1.0\\times10^5\\,\\mathrm{Pa}$ のとき、水面から $1.0\\,\\mathrm{m}$ の深さでの圧力は約何 $\\mathrm{Pa}$ か。水の密度を $1.0\\times10^3\\,\\mathrm{kg/m^3}$、$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$9.8\\times10^3$",
+        "$9.02\\times10^4$",
+        "$1.00\\times10^5$",
+        "$1.098\\times10^5$"
+      ],
+      "correct": 3,
+      "explanation": "$p=p_0+\\rho gh=1.0\\times10^5+9.8\\times10^3=1.098\\times10^5\\,\\mathrm{Pa}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-LAW-021",
+      "field": "mechanics",
+      "unit": "運動の法則",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "体積 $2.0\\times10^{-3}\\,\\mathrm{m^3}$ の物体を水中に完全に沈めた。物体にはたらく浮力は何 $\\mathrm{N}$ か。水の密度を $1.0\\times10^3\\,\\mathrm{kg/m^3}$、$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$2.0$",
+        "$9.8$",
+        "$19.6$",
+        "$196$"
+      ],
+      "correct": 2,
+      "explanation": "浮力は $F=\\rho Vg=1.0\\times10^3\\times2.0\\times10^{-3}\\times9.8=19.6\\,\\mathrm{N}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-LAW-022",
+      "field": "mechanics",
+      "unit": "運動の法則",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "液体中の物体にはたらく浮力について正しいものを選べ。",
+      "choices": [
+        "物体の質量だけで決まる",
+        "押しのけた液体の重さに等しい",
+        "水深だけで決まり、体積には無関係である",
+        "常に物体の重さより大きい"
+      ],
+      "correct": 1,
+      "explanation": "アルキメデスの原理より、浮力は物体が押しのけた液体の重さに等しい。",
+      "image": null
+    },
+    {
+      "id": "MEC-LAW-023",
+      "field": "mechanics",
+      "unit": "運動の法則",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "なめらかな水平面上の質量 $8.0\\,\\mathrm{kg}$ の物体に、右向き $5.0\\,\\mathrm{N}$、左向き $3.0\\,\\mathrm{N}$ の力がはたらく。加速度の大きさと向きとして正しいものを選べ。",
+      "choices": [
+        "右向き $0.25\\,\\mathrm{m/s^2}$",
+        "左向き $0.25\\,\\mathrm{m/s^2}$",
+        "右向き $1.0\\,\\mathrm{m/s^2}$",
+        "加速度は $0$"
+      ],
+      "correct": 0,
+      "explanation": "合力は右向きに $5.0-3.0=2.0\\,\\mathrm{N}$。よって $a=2.0/8.0=0.25\\,\\mathrm{m/s^2}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-LAW-024",
+      "field": "mechanics",
+      "unit": "運動の法則",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "なめらかな水平面上で、質量 $2.0\\,\\mathrm{kg}$ の物体Aと質量 $3.0\\,\\mathrm{kg}$ の物体Bを軽い糸でつなぎ、Bを水平方向に $10\\,\\mathrm{N}$ で引く。2物体の加速度は何 $\\mathrm{m/s^2}$ か。",
+      "choices": [
+        "$1.0$",
+        "$2.0$",
+        "$3.3$",
+        "$5.0$"
+      ],
+      "correct": 1,
+      "explanation": "AとBを一体として見ると全質量は $5.0\\,\\mathrm{kg}$。$a=10/5.0=2.0\\,\\mathrm{m/s^2}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-LAW-025",
+      "field": "mechanics",
+      "unit": "運動の法則",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "前問と同じ状況で、AとBをつなぐ糸の張力は何 $\\mathrm{N}$ か。",
+      "choices": [
+        "$2.0$",
+        "$4.0$",
+        "$6.0$",
+        "$10$"
+      ],
+      "correct": 1,
+      "explanation": "Aだけを見ると水平方向の力は張力 $T$ のみ。$T=m_Aa=2.0\\times2.0=4.0\\,\\mathrm{N}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-LAW-026",
+      "field": "mechanics",
+      "unit": "運動の法則",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "質量 $2.0\\,\\mathrm{kg}$ と $3.0\\,\\mathrm{kg}$ の物体を軽い糸でつなぎ、なめらかな滑車にかけて鉛直につるした。加速度の大きさは何 $\\mathrm{m/s^2}$ か。$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$0.98$",
+        "$1.96$",
+        "$4.9$",
+        "$9.8$"
+      ],
+      "correct": 1,
+      "explanation": "系全体の駆動力は $(3.0-2.0)g=9.8\\,\\mathrm{N}$、全質量は $5.0\\,\\mathrm{kg}$。よって $a=9.8/5.0=1.96\\,\\mathrm{m/s^2}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-LAW-027",
+      "field": "mechanics",
+      "unit": "運動の法則",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "質量 $50\\,\\mathrm{kg}$ の人が、上向きに $2.0\\,\\mathrm{m/s^2}$ の加速度で動くエレベーター内の体重計に乗っている。体重計が人を押す力は何 $\\mathrm{N}$ か。$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$390$",
+        "$490$",
+        "$590$",
+        "$980$"
+      ],
+      "correct": 2,
+      "explanation": "上向きを正にすると $N-mg=ma$。$N=m(g+a)=50(9.8+2.0)=590\\,\\mathrm{N}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-LAW-028",
+      "field": "mechanics",
+      "unit": "運動の法則",
+      "course": "物理基礎",
+      "difficulty": 3,
+      "question": "質量 $50\\,\\mathrm{kg}$ の人が、下向きに $2.0\\,\\mathrm{m/s^2}$ の加速度で動くエレベーター内の体重計に乗っている。体重計が人を押す力は何 $\\mathrm{N}$ か。$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$390$",
+        "$490$",
+        "$590$",
+        "$690$"
+      ],
+      "correct": 0,
+      "explanation": "上向きを正にすると $N-mg=-ma$。よって $N=m(g-a)=50(9.8-2.0)=390\\,\\mathrm{N}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-LAW-029",
+      "field": "mechanics",
+      "unit": "運動の法則",
+      "course": "物理基礎",
+      "difficulty": 3,
+      "question": "傾角 $30^\\circ$ のあらい斜面を物体が下向きに滑っている。動摩擦係数が $0.20$ のとき、斜面方向の加速度は約何 $\\mathrm{m/s^2}$ か。$g=9.8\\,\\mathrm{m/s^2}$、$\\sin30^\\circ=0.50$、$\\cos30^\\circ=0.866$ とする。",
+      "choices": [
+        "$1.7$",
+        "$3.2$",
+        "$4.9$",
+        "$6.6$"
+      ],
+      "correct": 1,
+      "explanation": "斜面下向きを正にすると $a=g(\\sin30^\\circ-\\mu'\\cos30^\\circ)=9.8(0.50-0.20\\times0.866)\\approx3.2\\,\\mathrm{m/s^2}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-LAW-030",
+      "field": "mechanics",
+      "unit": "運動の法則",
+      "course": "物理基礎",
+      "difficulty": 3,
+      "question": "なめらかな傾角 $30^\\circ$ の斜面上に質量 $2.0\\,\\mathrm{kg}$ の物体Aを置き、軽い糸と滑車を介して質量 $0.50\\,\\mathrm{kg}$ の物体Bを鉛直につるす。Aが斜面を下る向きに動くとき、加速度の大きさは約何 $\\mathrm{m/s^2}$ か。$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$0$",
+        "$0.98$",
+        "$1.96$",
+        "$4.9$"
+      ],
+      "correct": 2,
+      "explanation": "Aの斜面下向き成分は $2.0\\times9.8\\times\\sin30^\\circ=9.8\\,\\mathrm{N}$、Bの重力は $4.9\\,\\mathrm{N}$。系を動かす合力は $4.9\\,\\mathrm{N}$、全質量は $2.5\\,\\mathrm{kg}$ なので $a=4.9/2.5=1.96\\,\\mathrm{m/s^2}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-RIG-001",
+      "field": "mechanics",
+      "unit": "剛体のつり合い",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "剛体についての説明として最も適切なものを選べ。",
+      "choices": [
+        "力を加えても形や大きさが変化しないとみなした物体",
+        "質量が0の物体",
+        "必ず静止している物体",
+        "回転運動をしない物体"
+      ],
+      "correct": 0,
+      "explanation": "剛体とは、力がはたらいても形や大きさが変化しないとみなした物体である。",
+      "image": null
+    },
+    {
+      "id": "MEC-RIG-002",
+      "field": "mechanics",
+      "unit": "剛体のつり合い",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "点Oのまわりの力のモーメントの大きさを表す式として正しいものを選べ。力の大きさを $F$、Oから作用点までの距離を $l$、位置ベクトルと力のなす角を $\\theta$ とする。",
+      "choices": [
+        "$M=Fl\\sin\\theta$",
+        "$M=Fl\\cos\\theta$",
+        "$M=F/l$",
+        "$M=Fl^2$"
+      ],
+      "correct": 0,
+      "explanation": "力のモーメントの大きさは $M=Fl\\sin\\theta$ で表される。これは $M=Fd$（$d$ は作用線までの垂直距離）とも書ける。",
+      "image": null
+    },
+    {
+      "id": "MEC-RIG-003",
+      "field": "mechanics",
+      "unit": "剛体のつり合い",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "力のモーメントの単位として正しいものを選べ。",
+      "choices": [
+        "$\\mathrm{N\\,m}$",
+        "$\\mathrm{N/m}$",
+        "$\\mathrm{kg\\,m/s}$",
+        "$\\mathrm{J/s}$"
+      ],
+      "correct": 0,
+      "explanation": "力のモーメントは「力×距離」なので、単位は $\\mathrm{N\\,m}$ である。",
+      "image": null
+    },
+    {
+      "id": "MEC-RIG-004",
+      "field": "mechanics",
+      "unit": "剛体のつり合い",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "剛体が静止したままつり合っているための条件として正しいものを選べ。",
+      "choices": [
+        "力の合力だけが0であればよい",
+        "力のモーメントの和だけが0であればよい",
+        "力の合力が0で、かつ力のモーメントの和も0である",
+        "物体には力が1つもはたらいていない"
+      ],
+      "correct": 2,
+      "explanation": "剛体のつり合いには、並進運動をしないための「力の合力が0」と、回転しないための「力のモーメントの和が0」の両方が必要である。",
+      "image": null
+    },
+    {
+      "id": "MEC-RIG-005",
+      "field": "mechanics",
+      "unit": "剛体のつり合い",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "大きさ $3.0\\,\\mathrm{N}$ と $5.0\\,\\mathrm{N}$ の同じ向きの平行な2力を合成した。合力の大きさは何 $\\mathrm{N}$ か。",
+      "choices": [
+        "$2.0$",
+        "$5.0$",
+        "$8.0$",
+        "$15$"
+      ],
+      "correct": 2,
+      "explanation": "同じ向きの平行な2力の合力の大きさは和なので、$3.0+5.0=8.0\\,\\mathrm{N}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-RIG-006",
+      "field": "mechanics",
+      "unit": "剛体のつり合い",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "偶力について正しいものを選べ。",
+      "choices": [
+        "大きさが等しく、向きが反対で、平行な2力からなる",
+        "同じ作用線上にある同じ向きの2力からなる",
+        "合力も力のモーメントも必ず0になる",
+        "1つの物体にはたらく重力と垂直抗力だけをいう"
+      ],
+      "correct": 0,
+      "explanation": "偶力は、大きさが等しく向きが反対で平行な2力からなる。合力は0だが、回転させる効果（偶力のモーメント）は残る。",
+      "image": null
+    },
+    {
+      "id": "MEC-RIG-007",
+      "field": "mechanics",
+      "unit": "剛体のつり合い",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "大きさ $F$ の2力からなる偶力で、2力の作用線間の距離が $d$ のとき、偶力のモーメントの大きさはどれか。",
+      "choices": [
+        "$Fd$",
+        "$F/d$",
+        "$2Fd$",
+        "$Fd/2$"
+      ],
+      "correct": 0,
+      "explanation": "偶力のモーメントは $M=Fd$ で表される。",
+      "image": null
+    },
+    {
+      "id": "MEC-RIG-008",
+      "field": "mechanics",
+      "unit": "剛体のつり合い",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "物体の重心について正しいものを選べ。",
+      "choices": [
+        "物体にはたらく重力の合力が作用するとみなせる点",
+        "必ず物体の内部にある点",
+        "必ず物体の最下部にある点",
+        "力のモーメントが常に最大になる点"
+      ],
+      "correct": 0,
+      "explanation": "重心は、物体の各部分にはたらく重力を合成したとき、その合力が作用するとみなせる点である。形によっては物体の外部に位置することもある。",
+      "image": null
+    },
+    {
+      "id": "MEC-RIG-009",
+      "field": "mechanics",
+      "unit": "剛体のつり合い",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "一様な細い棒の重心の位置として正しいものを選べ。",
+      "choices": [
+        "棒の中央",
+        "棒の左端",
+        "棒の右端",
+        "棒の長さの4分の1の位置"
+      ],
+      "correct": 0,
+      "explanation": "一様な棒では質量が均等に分布しているので、重心は棒の中央にある。",
+      "image": null
+    },
+    {
+      "id": "MEC-RIG-010",
+      "field": "mechanics",
+      "unit": "剛体のつり合い",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "支点から $3.0\\,\\mathrm{m}$ 離れた点に、棒と垂直な向きに $2.0\\,\\mathrm{N}$ の力を加えた。支点まわりの力のモーメントの大きさは何 $\\mathrm{N\\,m}$ か。",
+      "choices": [
+        "$1.5$",
+        "$5.0$",
+        "$6.0$",
+        "$9.0$"
+      ],
+      "correct": 2,
+      "explanation": "$M=Fl=2.0\\times3.0=6.0\\,\\mathrm{N\\,m}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-RIG-011",
+      "field": "mechanics",
+      "unit": "剛体のつり合い",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "支点から $4.0\\,\\mathrm{m}$ 離れた点に $5.0\\,\\mathrm{N}$ の力を加える。位置ベクトルと力のなす角が $30^\\circ$ のとき、力のモーメントの大きさは何 $\\mathrm{N\\,m}$ か。",
+      "choices": [
+        "$5.0$",
+        "$10$",
+        "$17$",
+        "$20$"
+      ],
+      "correct": 1,
+      "explanation": "$M=Fl\\sin30^\\circ=5.0\\times4.0\\times0.50=10\\,\\mathrm{N\\,m}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-RIG-012",
+      "field": "mechanics",
+      "unit": "剛体のつり合い",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "ある力の作用線が回転軸を通っている。この力の回転軸まわりの力のモーメントはどうなるか。",
+      "choices": [
+        "0になる",
+        "力の大きさに等しくなる",
+        "必ず最大になる",
+        "回転軸からの距離に関係なく一定になる"
+      ],
+      "correct": 0,
+      "explanation": "回転軸から力の作用線までの垂直距離が0なので、$M=Fd=0$ となる。",
+      "image": null
+    },
+    {
+      "id": "MEC-RIG-013",
+      "field": "mechanics",
+      "unit": "剛体のつり合い",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "水平な棒の支点Oから左に $2.0\\,\\mathrm{m}$ の位置に下向き $6.0\\,\\mathrm{N}$ の力がはたらく。右に $3.0\\,\\mathrm{m}$ の位置に下向きの力 $F$ を加えて棒を回転しないようにした。$F$ は何 $\\mathrm{N}$ か。",
+      "choices": [
+        "$2.0$",
+        "$4.0$",
+        "$6.0$",
+        "$9.0$"
+      ],
+      "correct": 1,
+      "explanation": "Oまわりのモーメントがつり合うので、$6.0\\times2.0=F\\times3.0$。よって $F=4.0\\,\\mathrm{N}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-RIG-014",
+      "field": "mechanics",
+      "unit": "剛体のつり合い",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "同じ向きの平行な2力 $3.0\\,\\mathrm{N}$ と $6.0\\,\\mathrm{N}$ が $3.0\\,\\mathrm{m}$ 離れてはたらいている。$3.0\\,\\mathrm{N}$ の力の作用線から合力の作用線までの距離は何 $\\mathrm{m}$ か。",
+      "choices": [
+        "$1.0$",
+        "$1.5$",
+        "$2.0$",
+        "$3.0$"
+      ],
+      "correct": 2,
+      "explanation": "合力は $9.0\\,\\mathrm{N}$。$3.0\\,\\mathrm{N}$ の力の作用線まわりでモーメントを考えると、$9.0x=6.0\\times3.0$ より $x=2.0\\,\\mathrm{m}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-RIG-015",
+      "field": "mechanics",
+      "unit": "剛体のつり合い",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "大きさ $5.0\\,\\mathrm{N}$ の2力が偶力をつくっており、2力の作用線間の距離は $0.40\\,\\mathrm{m}$ である。偶力のモーメントの大きさは何 $\\mathrm{N\\,m}$ か。",
+      "choices": [
+        "$0.80$",
+        "$2.0$",
+        "$5.4$",
+        "$10$"
+      ],
+      "correct": 1,
+      "explanation": "$M=Fd=5.0\\times0.40=2.0\\,\\mathrm{N\\,m}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-RIG-016",
+      "field": "mechanics",
+      "unit": "剛体のつり合い",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "$x=0\\,\\mathrm{m}$ に質量 $1.0\\,\\mathrm{kg}$、$x=4.0\\,\\mathrm{m}$ に質量 $3.0\\,\\mathrm{kg}$ の質点がある。この2質点からなる系の重心の $x$ 座標は何 $\\mathrm{m}$ か。",
+      "choices": [
+        "$1.0$",
+        "$2.0$",
+        "$3.0$",
+        "$4.0$"
+      ],
+      "correct": 2,
+      "explanation": "$x_G=(1.0\\times0+3.0\\times4.0)/(1.0+3.0)=3.0\\,\\mathrm{m}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-RIG-017",
+      "field": "mechanics",
+      "unit": "剛体のつり合い",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "$x=-1.0\\,\\mathrm{m}$ に質量 $2.0\\,\\mathrm{kg}$、$x=1.0\\,\\mathrm{m}$ に質量 $6.0\\,\\mathrm{kg}$ の質点がある。この系の重心の $x$ 座標は何 $\\mathrm{m}$ か。",
+      "choices": [
+        "$-0.50$",
+        "$0$",
+        "$0.50$",
+        "$1.0$"
+      ],
+      "correct": 2,
+      "explanation": "$x_G=(2.0\\times(-1.0)+6.0\\times1.0)/(2.0+6.0)=0.50\\,\\mathrm{m}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-RIG-018",
+      "field": "mechanics",
+      "unit": "剛体のつり合い",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "長さ $4.0\\,\\mathrm{m}$、質量 $2.0\\,\\mathrm{kg}$ の一様な棒の右端に、質量 $1.0\\,\\mathrm{kg}$ の小物体を取り付けた。棒の左端を $x=0$ とすると、全体の重心の $x$ 座標は何 $\\mathrm{m}$ か。",
+      "choices": [
+        "$2.0$",
+        "$2.5$",
+        "$2.67$",
+        "$3.0$"
+      ],
+      "correct": 2,
+      "explanation": "棒の重心は $x=2.0\\,\\mathrm{m}$。したがって $x_G=(2.0\\times2.0+1.0\\times4.0)/3.0=8/3\\approx2.67\\,\\mathrm{m}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-RIG-019",
+      "field": "mechanics",
+      "unit": "剛体のつり合い",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "長さ $4.0\\,\\mathrm{m}$ の一様な水平棒を両端A、Bで支えている。棒の重さが $100\\,\\mathrm{N}$ のとき、A、Bが棒を支える力の大きさはそれぞれ何 $\\mathrm{N}$ か。",
+      "choices": [
+        "A：$25$、B：$75$",
+        "A：$50$、B：$50$",
+        "A：$75$、B：$25$",
+        "A：$100$、B：$100$"
+      ],
+      "correct": 1,
+      "explanation": "一様な棒の重力は中央にはたらく。左右対称なので、両端の支持力は等しく、合計が $100\\,\\mathrm{N}$ となるため各 $50\\,\\mathrm{N}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-RIG-020",
+      "field": "mechanics",
+      "unit": "剛体のつり合い",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "長さ $4.0\\,\\mathrm{m}$、重さ $100\\,\\mathrm{N}$ の一様な水平棒を両端A、Bで支える。Aから $1.0\\,\\mathrm{m}$ の位置に重さ $50\\,\\mathrm{N}$ の物体を置いた。Bが棒を支える力は何 $\\mathrm{N}$ か。",
+      "choices": [
+        "$50$",
+        "$62.5$",
+        "$75$",
+        "$87.5$"
+      ],
+      "correct": 1,
+      "explanation": "Aまわりのモーメントのつり合いより、$R_B\\times4.0=100\\times2.0+50\\times1.0$。よって $R_B=62.5\\,\\mathrm{N}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-RIG-021",
+      "field": "mechanics",
+      "unit": "剛体のつり合い",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "前問と同じ状況で、Aが棒を支える力は何 $\\mathrm{N}$ か。",
+      "choices": [
+        "$50$",
+        "$62.5$",
+        "$75$",
+        "$87.5$"
+      ],
+      "correct": 3,
+      "explanation": "鉛直方向の力のつり合いより、$R_A+R_B=150\\,\\mathrm{N}$。$R_B=62.5\\,\\mathrm{N}$ なので $R_A=87.5\\,\\mathrm{N}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-RIG-022",
+      "field": "mechanics",
+      "unit": "剛体のつり合い",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "釘抜きの支点から手で力を加える点までの垂直距離が $0.50\\,\\mathrm{m}$、支点から釘に力を及ぼす作用線までの垂直距離が $0.040\\,\\mathrm{m}$ である。手で $100\\,\\mathrm{N}$ の力を加えたとき、釘に加わる力の大きさを何 $\\mathrm{N}$ とみなせるか。",
+      "choices": [
+        "$125$",
+        "$800$",
+        "$1.25\\times10^3$",
+        "$5.0\\times10^3$"
+      ],
+      "correct": 2,
+      "explanation": "モーメントのつり合いより $100\\times0.50=F\\times0.040$。したがって $F=1250\\,\\mathrm{N}=1.25\\times10^3\\,\\mathrm{N}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-RIG-023",
+      "field": "mechanics",
+      "unit": "剛体のつり合い",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "物体が転倒し始める条件として最も適切なものを選べ。",
+      "choices": [
+        "重心を通る鉛直線が支持面の端に達するとき",
+        "重心が必ず物体の外に出たとき",
+        "垂直抗力が重力より大きくなったとき",
+        "物体にはたらく力の合力が必ず最大になったとき"
+      ],
+      "correct": 0,
+      "explanation": "転倒の限界では、重心を通る重力の作用線が支持面の端を通る。そこを越えると転倒する向きのモーメントが生じる。",
+      "image": null
+    },
+    {
+      "id": "MEC-RIG-024",
+      "field": "mechanics",
+      "unit": "剛体のつり合い",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "同じ支点から同じ距離の位置に同じ大きさの力を加えるとき、力のモーメントが最大になるのは、位置ベクトルと力のなす角が何度のときか。",
+      "choices": [
+        "$0^\\circ$",
+        "$30^\\circ$",
+        "$60^\\circ$",
+        "$90^\\circ$"
+      ],
+      "correct": 3,
+      "explanation": "$M=Fl\\sin\\theta$ なので、$\\sin\\theta$ が最大の1となる $\\theta=90^\\circ$ のとき、力のモーメントが最大になる。",
+      "image": null
+    },
+    {
+      "id": "MEC-RIG-025",
+      "field": "mechanics",
+      "unit": "剛体のつり合い",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "長さ $3.0\\,\\mathrm{m}$、重さ $30\\,\\mathrm{N}$ の一様な水平棒の左端を壁に固定し、右端を鉛直な糸で支える。さらに棒の右端に重さ $60\\,\\mathrm{N}$ の物体をつるす。糸の張力は何 $\\mathrm{N}$ か。",
+      "choices": [
+        "$45$",
+        "$60$",
+        "$75$",
+        "$90$"
+      ],
+      "correct": 2,
+      "explanation": "左端まわりのモーメントのつり合いより、$T\\times3.0=30\\times1.5+60\\times3.0$。したがって $T=75\\,\\mathrm{N}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-RIG-026",
+      "field": "mechanics",
+      "unit": "剛体のつり合い",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "水平な棒に複数の力がはたらいている。ある点Oまわりで時計回りのモーメントの総和が $18\\,\\mathrm{N\\,m}$、反時計回りのモーメントの総和が $18\\,\\mathrm{N\\,m}$ であった。このとき回転についてどういえるか。",
+      "choices": [
+        "回転のつり合いが成り立っている",
+        "必ず時計回りに回転する",
+        "必ず反時計回りに回転する",
+        "力の合力も必ず0である"
+      ],
+      "correct": 0,
+      "explanation": "時計回りと反時計回りのモーメントが等しいので、Oまわりのモーメントの和は0となり、回転についてつり合っている。ただし、これだけでは力の合力が0とは限らない。",
+      "image": null
+    },
+    {
+      "id": "MEC-RIG-027",
+      "field": "mechanics",
+      "unit": "剛体のつり合い",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "一様な棒ABが水平につり合っている。Aを支点とし、棒の中央には重さ $40\\,\\mathrm{N}$、Bには下向き $20\\,\\mathrm{N}$ の力がはたらく。棒の長さを $L$ とすると、Aまわりの時計回りのモーメントの合計はいくらか。",
+      "choices": [
+        "$20L\\,\\mathrm{N\\,m}$",
+        "$30L\\,\\mathrm{N\\,m}$",
+        "$40L\\,\\mathrm{N\\,m}$",
+        "$60L\\,\\mathrm{N\\,m}$"
+      ],
+      "correct": 2,
+      "explanation": "中央の重力によるモーメントは $40\\times(L/2)=20L$、Bの力によるモーメントは $20L$。合計は $40L\\,\\mathrm{N\\,m}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-RIG-028",
+      "field": "mechanics",
+      "unit": "剛体のつり合い",
+      "course": "物理",
+      "difficulty": 3,
+      "question": "長さ $6.0\\,\\mathrm{m}$、質量 $10\\,\\mathrm{kg}$ の一様なはしごを、水平な床と鉛直な壁に立てかけ、床との角を $60^\\circ$ とする。壁はなめらかで、床との静止摩擦係数は $0.50$ である。質量 $50\\,\\mathrm{kg}$ の人がはしごを上る。滑り出す直前に、人がはしごの下端からはしごに沿って進める距離は約何 $\\mathrm{m}$ か。$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$2.8$",
+        "$4.0$",
+        "$5.6$",
+        "$6.0$"
+      ],
+      "correct": 2,
+      "explanation": "滑り出す直前、床の摩擦力は $\\mu N=0.50\\times60g=30g$。壁からの垂直抗力も $30g$。下端まわりのモーメントをとると、$30g(6\\sin60^\\circ)=10g(3\\cos60^\\circ)+50g(s\\cos60^\\circ)$。これを解いて $s\\approx5.6\\,\\mathrm{m}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-RIG-029",
+      "field": "mechanics",
+      "unit": "剛体のつり合い",
+      "course": "物理",
+      "difficulty": 3,
+      "question": "長さ $4.0\\,\\mathrm{m}$、重さ $80\\,\\mathrm{N}$ の一様な棒ABを水平に保ち、Aを支点とする。Bには棒となす角 $30^\\circ$ の向きに張力 $T$ の糸を取り付けて棒をつり合わせた。張力 $T$ は何 $\\mathrm{N}$ か。",
+      "choices": [
+        "$40$",
+        "$80$",
+        "$120$",
+        "$160$"
+      ],
+      "correct": 1,
+      "explanation": "Aまわりのモーメントのつり合いより、$T\\sin30^\\circ\\times4.0=80\\times2.0$。したがって $2T=160$ より $T=80\\,\\mathrm{N}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-RIG-030",
+      "field": "mechanics",
+      "unit": "剛体のつり合い",
+      "course": "物理",
+      "difficulty": 3,
+      "question": "水平な一様な棒AB（長さ $4.0\\,\\mathrm{m}$、重さ $40\\,\\mathrm{N}$）をAとBで支えている。Aから $3.0\\,\\mathrm{m}$ の位置に重さ $120\\,\\mathrm{N}$ の物体を置いた。A、Bの支持力の組として正しいものを選べ。",
+      "choices": [
+        "A：$30\\,\\mathrm{N}$、B：$130\\,\\mathrm{N}$",
+        "A：$50\\,\\mathrm{N}$、B：$110\\,\\mathrm{N}$",
+        "A：$70\\,\\mathrm{N}$、B：$90\\,\\mathrm{N}$",
+        "A：$80\\,\\mathrm{N}$、B：$80\\,\\mathrm{N}$"
+      ],
+      "correct": 1,
+      "explanation": "Aまわりのモーメントより $R_B\\times4.0=40\\times2.0+120\\times3.0=440$ なので $R_B=110\\,\\mathrm{N}$。鉛直方向のつり合いより $R_A=160-110=50\\,\\mathrm{N}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-ENE-001",
+      "field": "mechanics",
+      "unit": "仕事とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "一定の力 $F$ が物体の移動方向となす角を $\\theta$、移動距離を $s$ とするとき、この力がした仕事 $W$ を表す式として正しいものを選べ。",
+      "choices": [
+        "$W=Fs\\cos\\theta$",
+        "$W=Fs\\sin\\theta$",
+        "$W=F/s$",
+        "$W=Fs^2$"
+      ],
+      "correct": 0,
+      "explanation": "仕事は、力の移動方向成分 $F\\cos\\theta$ と移動距離 $s$ の積なので、$W=Fs\\cos\\theta$。",
+      "image": null
+    },
+    {
+      "id": "MEC-ENE-002",
+      "field": "mechanics",
+      "unit": "仕事とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "力と物体の変位が同じ向きのとき、力 $F$ が距離 $s$ だけ物体を動かしてした仕事はどれか。",
+      "choices": [
+        "$0$",
+        "$Fs$",
+        "$-Fs$",
+        "$F/s$"
+      ],
+      "correct": 1,
+      "explanation": "$\\theta=0^\\circ$ なので $W=Fs\\cos0^\\circ=Fs$。",
+      "image": null
+    },
+    {
+      "id": "MEC-ENE-003",
+      "field": "mechanics",
+      "unit": "仕事とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "力と物体の変位が反対向きのとき、その力がした仕事の符号はどうなるか。",
+      "choices": [
+        "正",
+        "負",
+        "0",
+        "必ず一定しない"
+      ],
+      "correct": 1,
+      "explanation": "$\\theta=180^\\circ$ では $\\cos180^\\circ=-1$ なので、仕事は負になる。",
+      "image": null
+    },
+    {
+      "id": "MEC-ENE-004",
+      "field": "mechanics",
+      "unit": "仕事とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "物体の変位に対して垂直な向きに力がはたらいている。この力のした仕事はいくらか。",
+      "choices": [
+        "$Fs$",
+        "$-Fs$",
+        "$0$",
+        "$F/s$"
+      ],
+      "correct": 2,
+      "explanation": "$\\theta=90^\\circ$ で $\\cos90^\\circ=0$ のため、仕事は0。",
+      "image": null
+    },
+    {
+      "id": "MEC-ENE-005",
+      "field": "mechanics",
+      "unit": "仕事とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "仕事率 $P$ を、仕事 $W$ とそれに要した時間 $t$ を使って表した式として正しいものを選べ。",
+      "choices": [
+        "$P=Wt$",
+        "$P=W/t$",
+        "$P=t/W$",
+        "$P=W+t$"
+      ],
+      "correct": 1,
+      "explanation": "仕事率は単位時間あたりの仕事なので $P=W/t$。",
+      "image": null
+    },
+    {
+      "id": "MEC-ENE-006",
+      "field": "mechanics",
+      "unit": "仕事とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "仕事率の単位として正しいものを選べ。",
+      "choices": [
+        "$\\mathrm{J}$",
+        "$\\mathrm{W}$",
+        "$\\mathrm{N}$",
+        "$\\mathrm{Pa}$"
+      ],
+      "correct": 1,
+      "explanation": "仕事率の単位はワット（$\\mathrm{W}$）で、$1\\,\\mathrm{W}=1\\,\\mathrm{J/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-ENE-007",
+      "field": "mechanics",
+      "unit": "仕事とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "質量 $m$、速さ $v$ の物体の運動エネルギー $K$ を表す式として正しいものを選べ。",
+      "choices": [
+        "$K=mv$",
+        "$K=mv^2$",
+        "$K=\\frac12 mv^2$",
+        "$K=\\frac12 m^2v$"
+      ],
+      "correct": 2,
+      "explanation": "運動エネルギーは $K=\\frac12 mv^2$ で表される。",
+      "image": null
+    },
+    {
+      "id": "MEC-ENE-008",
+      "field": "mechanics",
+      "unit": "仕事とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "基準面から高さ $h$ にある質量 $m$ の物体の重力による位置エネルギー $U$ を表す式として正しいものを選べ。",
+      "choices": [
+        "$U=mgh$",
+        "$U=mg/h$",
+        "$U=mh/g$",
+        "$U=\\frac12 mgh$"
+      ],
+      "correct": 0,
+      "explanation": "重力による位置エネルギーは、基準面からの高さを $h$ として $U=mgh$。",
+      "image": null
+    },
+    {
+      "id": "MEC-ENE-009",
+      "field": "mechanics",
+      "unit": "仕事とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "ばね定数 $k$ のばねを自然長から $x$ だけ伸ばしたとき、ばねの弾性力による位置エネルギーはいくらか。",
+      "choices": [
+        "$kx$",
+        "$kx^2$",
+        "$\\frac12 kx^2$",
+        "$\\frac12 k^2x$"
+      ],
+      "correct": 2,
+      "explanation": "ばねの弾性力による位置エネルギーは $U=\\frac12 kx^2$。",
+      "image": null
+    },
+    {
+      "id": "MEC-ENE-010",
+      "field": "mechanics",
+      "unit": "仕事とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "物体にされた仕事 $W$ と運動エネルギーの変化の関係として正しいものを選べ。",
+      "choices": [
+        "$W=K_1+K_2$",
+        "$W=K_2-K_1$",
+        "$W=K_1-K_2$",
+        "$W=0$"
+      ],
+      "correct": 1,
+      "explanation": "仕事と運動エネルギーの関係より、物体にされた仕事は運動エネルギーの増加量に等しく、$W=K_2-K_1$。",
+      "image": null
+    },
+    {
+      "id": "MEC-ENE-011",
+      "field": "mechanics",
+      "unit": "仕事とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "重力や弾性力などの保存力だけが仕事をする場合、一定に保たれる量はどれか。",
+      "choices": [
+        "運動量",
+        "力",
+        "力学的エネルギー",
+        "加速度"
+      ],
+      "correct": 2,
+      "explanation": "保存力だけが仕事をする場合、運動エネルギーと位置エネルギーの和である力学的エネルギーが保存される。",
+      "image": null
+    },
+    {
+      "id": "MEC-ENE-012",
+      "field": "mechanics",
+      "unit": "仕事とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "保存力以外の力が仕事をした場合、その仕事と力学的エネルギーの変化の関係として正しいものを選べ。",
+      "choices": [
+        "保存力以外の力の仕事＝力学的エネルギーの変化",
+        "保存力以外の力の仕事＝運動量の変化",
+        "保存力以外の力の仕事＝位置エネルギーそのもの",
+        "保存力以外の力が仕事をしても力学的エネルギーは必ず一定"
+      ],
+      "correct": 0,
+      "explanation": "非保存力がした仕事は、物体の力学的エネルギーの変化量に等しい。",
+      "image": null
+    },
+    {
+      "id": "MEC-ENE-013",
+      "field": "mechanics",
+      "unit": "仕事とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "水平面上の物体を、進行方向に $5.0\\,\\mathrm{N}$ の力で $3.0\\,\\mathrm{m}$ 動かした。この力のした仕事は何 $\\mathrm{J}$ か。",
+      "choices": [
+        "$1.7$",
+        "$8.0$",
+        "$15$",
+        "$45$"
+      ],
+      "correct": 2,
+      "explanation": "$W=Fs=5.0\\times3.0=15\\,\\mathrm{J}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-ENE-014",
+      "field": "mechanics",
+      "unit": "仕事とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "物体を水平に $4.0\\,\\mathrm{m}$ 動かす間、進行方向となす角 $60^\\circ$ の向きに $10\\,\\mathrm{N}$ の力を加えた。この力のした仕事は何 $\\mathrm{J}$ か。",
+      "choices": [
+        "$10$",
+        "$20$",
+        "$35$",
+        "$40$"
+      ],
+      "correct": 1,
+      "explanation": "$W=Fs\\cos60^\\circ=10\\times4.0\\times0.50=20\\,\\mathrm{J}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-ENE-015",
+      "field": "mechanics",
+      "unit": "仕事とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "$1200\\,\\mathrm{J}$ の仕事を $6.0\\,\\mathrm{s}$ で行った。仕事率は何 $\\mathrm{W}$ か。",
+      "choices": [
+        "$72$",
+        "$200$",
+        "$720$",
+        "$7200$"
+      ],
+      "correct": 1,
+      "explanation": "$P=W/t=1200/6.0=200\\,\\mathrm{W}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-ENE-016",
+      "field": "mechanics",
+      "unit": "仕事とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "質量 $2.0\\,\\mathrm{kg}$ の物体が $3.0\\,\\mathrm{m/s}$ で運動している。運動エネルギーは何 $\\mathrm{J}$ か。",
+      "choices": [
+        "$3.0$",
+        "$6.0$",
+        "$9.0$",
+        "$18$"
+      ],
+      "correct": 2,
+      "explanation": "$K=\\frac12 mv^2=\\frac12\\times2.0\\times3.0^2=9.0\\,\\mathrm{J}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-ENE-017",
+      "field": "mechanics",
+      "unit": "仕事とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "質量 $4.0\\,\\mathrm{kg}$ の物体を基準面から $5.0\\,\\mathrm{m}$ の高さに置いた。重力による位置エネルギーは何 $\\mathrm{J}$ か。$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$19.6$",
+        "$49$",
+        "$98$",
+        "$196$"
+      ],
+      "correct": 3,
+      "explanation": "$U=mgh=4.0\\times9.8\\times5.0=196\\,\\mathrm{J}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-ENE-018",
+      "field": "mechanics",
+      "unit": "仕事とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "ばね定数 $800\\,\\mathrm{N/m}$ のばねを自然長から $0.20\\,\\mathrm{m}$ 伸ばした。弾性力による位置エネルギーは何 $\\mathrm{J}$ か。",
+      "choices": [
+        "$8.0$",
+        "$16$",
+        "$32$",
+        "$80$"
+      ],
+      "correct": 1,
+      "explanation": "$U=\\frac12 kx^2=\\frac12\\times800\\times0.20^2=16\\,\\mathrm{J}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-ENE-019",
+      "field": "mechanics",
+      "unit": "仕事とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "静止していた質量 $2.0\\,\\mathrm{kg}$ の物体に $25\\,\\mathrm{J}$ の仕事をした。物体の速さは何 $\\mathrm{m/s}$ になるか。",
+      "choices": [
+        "$2.5$",
+        "$5.0$",
+        "$7.1$",
+        "$25$"
+      ],
+      "correct": 1,
+      "explanation": "$25=\\frac12\\times2.0\\times v^2$ より $v^2=25$、したがって $v=5.0\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-ENE-020",
+      "field": "mechanics",
+      "unit": "仕事とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "質量 $2.0\\,\\mathrm{kg}$ の物体が $8.0\\,\\mathrm{m/s}$ から $6.0\\,\\mathrm{m/s}$ に減速した。物体にされた仕事は何 $\\mathrm{J}$ か。",
+      "choices": [
+        "$-28$",
+        "$-14$",
+        "$28$",
+        "$100$"
+      ],
+      "correct": 0,
+      "explanation": "$W=\\Delta K=\\frac12\\times2.0(6.0^2-8.0^2)=36-64=-28\\,\\mathrm{J}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-ENE-021",
+      "field": "mechanics",
+      "unit": "仕事とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "高さ $5.0\\,\\mathrm{m}$ の位置から物体を静かに落下させる。空気抵抗を無視すると、地面に達する直前の速さは約何 $\\mathrm{m/s}$ か。$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$4.9$",
+        "$7.0$",
+        "$9.9$",
+        "$14$"
+      ],
+      "correct": 2,
+      "explanation": "力学的エネルギー保存より $mgh=\\frac12 mv^2$。$v=\\sqrt{2gh}=\\sqrt{98}\\approx9.9\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-ENE-022",
+      "field": "mechanics",
+      "unit": "仕事とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "小球を鉛直上向きに $10\\,\\mathrm{m/s}$ で投げ上げた。空気抵抗を無視すると、最高点までの高さは約何 $\\mathrm{m}$ か。$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$2.6$",
+        "$5.1$",
+        "$9.8$",
+        "$10$"
+      ],
+      "correct": 1,
+      "explanation": "$\\frac12 mv_0^2=mgh$ より $h=v_0^2/(2g)=100/19.6\\approx5.1\\,\\mathrm{m}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-ENE-023",
+      "field": "mechanics",
+      "unit": "仕事とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "ばね定数 $200\\,\\mathrm{N/m}$ のばねを $0.10\\,\\mathrm{m}$ 圧縮し、質量 $0.50\\,\\mathrm{kg}$ の物体をなめらかな水平面上で発射した。ばねが自然長になったときの物体の速さは何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$1.0$",
+        "$2.0$",
+        "$4.0$",
+        "$10$"
+      ],
+      "correct": 1,
+      "explanation": "$\\frac12kx^2=\\frac12mv^2$ より、$v=x\\sqrt{k/m}=0.10\\sqrt{200/0.50}=2.0\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-ENE-024",
+      "field": "mechanics",
+      "unit": "仕事とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "質量 $1.0\\,\\mathrm{kg}$ の物体が速さ $6.0\\,\\mathrm{m/s}$ で水平なあらい面に入り、$9.0\\,\\mathrm{m}$ 進んで停止した。動摩擦力の大きさは何 $\\mathrm{N}$ か。",
+      "choices": [
+        "$1.0$",
+        "$2.0$",
+        "$4.0$",
+        "$18$"
+      ],
+      "correct": 1,
+      "explanation": "初めの運動エネルギーは $\\frac12\\times1.0\\times6.0^2=18\\,\\mathrm{J}$。摩擦力の仕事 $-fs=-18$ より $f=18/9.0=2.0\\,\\mathrm{N}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-ENE-025",
+      "field": "mechanics",
+      "unit": "仕事とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "質量 $2.0\\,\\mathrm{kg}$ の物体を高さ $3.0\\,\\mathrm{m}$ から滑らせたところ、最下点での速さが $6.0\\,\\mathrm{m/s}$ であった。重力による位置エネルギーの減少量と運動エネルギーの増加量の差は何 $\\mathrm{J}$ か。$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$0$",
+        "$9.6$",
+        "$22.8$",
+        "$58.8$"
+      ],
+      "correct": 2,
+      "explanation": "位置エネルギーの減少量は $mgh=58.8\\,\\mathrm{J}$、運動エネルギーの増加量は $\\frac12mv^2=36\\,\\mathrm{J}$。差は $22.8\\,\\mathrm{J}$ で、摩擦などによって失われた力学的エネルギーに相当する。",
+      "image": null
+    },
+    {
+      "id": "MEC-ENE-026",
+      "field": "mechanics",
+      "unit": "仕事とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "質量 $50\\,\\mathrm{kg}$ の人が階段を上って $10\\,\\mathrm{m}$ 高い場所まで $20\\,\\mathrm{s}$ で移動した。重力に逆らってする平均の仕事率は何 $\\mathrm{W}$ か。$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$98$",
+        "$245$",
+        "$490$",
+        "$980$"
+      ],
+      "correct": 1,
+      "explanation": "仕事は $mgh=50\\times9.8\\times10=4900\\,\\mathrm{J}$。仕事率は $4900/20=245\\,\\mathrm{W}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-ENE-027",
+      "field": "mechanics",
+      "unit": "仕事とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "一定の速さ $4.0\\,\\mathrm{m/s}$ で進む物体に、進行方向へ $30\\,\\mathrm{N}$ の力を加え続けている。この力の仕事率は何 $\\mathrm{W}$ か。",
+      "choices": [
+        "$7.5$",
+        "$34$",
+        "$120$",
+        "$240$"
+      ],
+      "correct": 2,
+      "explanation": "力と速度が同じ向きなので $P=Fv=30\\times4.0=120\\,\\mathrm{W}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-ENE-028",
+      "field": "mechanics",
+      "unit": "仕事とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 3,
+      "question": "質量 $2.0\\,\\mathrm{kg}$ の物体を、ばね定数 $100\\,\\mathrm{N/m}$ のばねを $0.40\\,\\mathrm{m}$ 圧縮して斜面下端から打ち出す。斜面はなめらかである。物体が上昇できる鉛直方向の最大高さは約何 $\\mathrm{m}$ か。$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$0.20$",
+        "$0.41$",
+        "$0.82$",
+        "$1.6$"
+      ],
+      "correct": 1,
+      "explanation": "最大高さでは速さ0。$\\frac12kx^2=mgh$ より、$h=\\frac{100\\times0.40^2}{2\\times2.0\\times9.8}\\approx0.41\\,\\mathrm{m}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-ENE-029",
+      "field": "mechanics",
+      "unit": "仕事とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 3,
+      "question": "質量 $1.0\\,\\mathrm{kg}$ の物体を、ばね定数 $200\\,\\mathrm{N/m}$ のばねを $0.30\\,\\mathrm{m}$ 圧縮して水平に発射した。ばねが自然長になるまでの間に摩擦力がした仕事が $-3.0\\,\\mathrm{J}$ であった。ばねが自然長になったときの物体の速さは約何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$2.4$",
+        "$3.5$",
+        "$4.2$",
+        "$6.0$"
+      ],
+      "correct": 1,
+      "explanation": "初めの弾性エネルギーは $\\frac12\\times200\\times0.30^2=9.0\\,\\mathrm{J}$。摩擦が $-3.0\\,\\mathrm{J}$ の仕事をするので運動エネルギーは $6.0\\,\\mathrm{J}$。$\\frac12v^2=6.0$ より $v=\\sqrt{12}\\approx3.5\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-ENE-030",
+      "field": "mechanics",
+      "unit": "仕事とエネルギー",
+      "course": "物理基礎",
+      "difficulty": 3,
+      "question": "質量 $2.0\\,\\mathrm{kg}$ の物体を斜面上向きに $8.0\\,\\mathrm{m/s}$ で投げ上げた。物体が最高点に達するまでに、摩擦力が $20\\,\\mathrm{J}$ の負の仕事をした。物体が上昇した鉛直方向の高さは約何 $\\mathrm{m}$ か。$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$1.1$",
+        "$2.2$",
+        "$3.3$",
+        "$4.4$"
+      ],
+      "correct": 1,
+      "explanation": "初めの運動エネルギーは $\\frac12\\times2.0\\times8.0^2=64\\,\\mathrm{J}$。摩擦で $20\\,\\mathrm{J}$ 失われるので、最高点での位置エネルギー増加は $44\\,\\mathrm{J}$。$2.0\\times9.8\\times h=44$ より $h\\approx2.2\\,\\mathrm{m}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOM-001",
+      "field": "mechanics",
+      "unit": "運動量",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "質量 $m$、速度 $\\vec{v}$ の物体の運動量 $\\vec{p}$ を表す式として正しいものを選べ。",
+      "choices": [
+        "$\\vec{p}=m\\vec{v}$",
+        "$\\vec{p}=m\\vec{a}$",
+        "$\\vec{p}=\\frac12 mv^2$",
+        "$\\vec{p}=\\vec{F}t^2$"
+      ],
+      "correct": 0,
+      "explanation": "運動量は質量と速度の積で、$\\vec{p}=m\\vec{v}$ と表される。運動量の向きは速度の向きと同じである。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOM-002",
+      "field": "mechanics",
+      "unit": "運動量",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "運動量の単位として正しいものを選べ。",
+      "choices": [
+        "$\\mathrm{kg\\,m/s}$",
+        "$\\mathrm{N/m}$",
+        "$\\mathrm{J/s}$",
+        "$\\mathrm{kg\\,m/s^2}$"
+      ],
+      "correct": 0,
+      "explanation": "運動量 $p=mv$ より、単位は $\\mathrm{kg\\,m/s}$ である。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOM-003",
+      "field": "mechanics",
+      "unit": "運動量",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "一定の力 $\\vec{F}$ が時間 $\\Delta t$ だけ物体にはたらいたとき、力積 $\\vec{I}$ を表す式として正しいものを選べ。",
+      "choices": [
+        "$\\vec{I}=\\vec{F}\\Delta t$",
+        "$\\vec{I}=\\vec{F}/\\Delta t$",
+        "$\\vec{I}=m\\vec{F}$",
+        "$\\vec{I}=\\vec{F}(\\Delta t)^2$"
+      ],
+      "correct": 0,
+      "explanation": "力積は力とその力がはたらいた時間の積で、$\\vec{I}=\\vec{F}\\Delta t$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOM-004",
+      "field": "mechanics",
+      "unit": "運動量",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "物体が受けた力積と、その物体の運動量の変化との関係として正しいものを選べ。",
+      "choices": [
+        "力積は運動量の変化に等しい",
+        "力積は運動量そのものに常に等しい",
+        "力積は運動エネルギーの変化に等しい",
+        "力積は速度の変化だけに等しい"
+      ],
+      "correct": 0,
+      "explanation": "運動量の変化と力積の関係は $\\Delta\\vec{p}=\\vec{I}$、すなわち $m\\vec{v}'-m\\vec{v}=\\vec{F}\\Delta t$ である。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOM-005",
+      "field": "mechanics",
+      "unit": "運動量",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "質量 $0.20\\,\\mathrm{kg}$ のボールが右向きに $10\\,\\mathrm{m/s}$ で進んでいる。右向きを正とすると、ボールの運動量はいくらか。",
+      "choices": [
+        "$0.020\\,\\mathrm{kg\\,m/s}$",
+        "$2.0\\,\\mathrm{kg\\,m/s}$",
+        "$20\\,\\mathrm{kg\\,m/s}$",
+        "$50\\,\\mathrm{kg\\,m/s}$"
+      ],
+      "correct": 1,
+      "explanation": "$p=mv=0.20\\times10=2.0\\,\\mathrm{kg\\,m/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOM-006",
+      "field": "mechanics",
+      "unit": "運動量",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "$5.0\\,\\mathrm{N}$ の一定の力が $0.40\\,\\mathrm{s}$ はたらいた。力積の大きさは何 $\\mathrm{N\\,s}$ か。",
+      "choices": [
+        "$0.80$",
+        "$2.0$",
+        "$5.4$",
+        "$12.5$"
+      ],
+      "correct": 1,
+      "explanation": "$I=F\\Delta t=5.0\\times0.40=2.0\\,\\mathrm{N\\,s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOM-007",
+      "field": "mechanics",
+      "unit": "運動量",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "外力の合力が $0$ とみなせる物体系について成り立つ法則を選べ。",
+      "choices": [
+        "運動量保存の法則",
+        "フックの法則",
+        "万有引力の法則",
+        "オームの法則"
+      ],
+      "correct": 0,
+      "explanation": "物体系に外力がはたらかない、または外力の合力が0とみなせるとき、系全体の運動量は保存される。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOM-008",
+      "field": "mechanics",
+      "unit": "運動量",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "一直線上の2物体の衝突で、衝突前後の運動量保存を表す式として正しいものを選べ。",
+      "choices": [
+        "$m_1v_1+m_2v_2=m_1v_1'+m_2v_2'$",
+        "$m_1v_1-m_2v_2=m_1v_1'-m_2v_2'$",
+        "$v_1+v_2=v_1'+v_2'$",
+        "$m_1+m_2=m_1v_1'+m_2v_2'$"
+      ],
+      "correct": 0,
+      "explanation": "速度の正負を同じ座標軸で表せば、衝突前後で全運動量が等しくなり、$m_1v_1+m_2v_2=m_1v_1'+m_2v_2'$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOM-009",
+      "field": "mechanics",
+      "unit": "運動量",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "反発係数 $e$ を表す式として正しいものを選べ。一直線上の衝突で、衝突前の速度を $v_1,v_2$、衝突後を $v_1',v_2'$ とする。",
+      "choices": [
+        "$e=-\\dfrac{v_2'-v_1'}{v_2-v_1}$",
+        "$e=\\dfrac{v_2+v_1}{v_2'+v_1'}$",
+        "$e=\\dfrac{v_1'v_2'}{v_1v_2}$",
+        "$e=\\dfrac{v_1-v_2}{v_1'+v_2'}$"
+      ],
+      "correct": 0,
+      "explanation": "反発係数は「離れる相対速度÷近づく相対速度」で、符号を含めると $e=-\\dfrac{v_2'-v_1'}{v_2-v_1}$ と表される。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOM-010",
+      "field": "mechanics",
+      "unit": "運動量",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "反発係数が $e=1$ の衝突を何というか。",
+      "choices": [
+        "完全弾性衝突",
+        "完全非弾性衝突",
+        "等速衝突",
+        "自由落下"
+      ],
+      "correct": 0,
+      "explanation": "$e=1$ の衝突は弾性衝突で、特に完全弾性衝突という。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOM-011",
+      "field": "mechanics",
+      "unit": "運動量",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "反発係数が $e=0$ の衝突について正しいものを選べ。",
+      "choices": [
+        "衝突後、2物体の相対速度が0になる",
+        "衝突後、必ず2物体が反対向きに同じ速さで進む",
+        "運動量が保存されない",
+        "衝突前後で各物体の速度が変化しない"
+      ],
+      "correct": 0,
+      "explanation": "$e=0$ では衝突後の離れる相対速度が0となる。典型的には2物体が一体となって動く。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOM-012",
+      "field": "mechanics",
+      "unit": "運動量",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "床や壁に衝突する物体について、反発係数を考える際に基準となる速度はどれか。",
+      "choices": [
+        "衝突面に垂直な方向の速度成分",
+        "衝突面に平行な方向の速度成分だけ",
+        "速度の大きさだけで方向は無関係",
+        "加速度"
+      ],
+      "correct": 0,
+      "explanation": "なめらかな面との衝突では、反発係数は衝突面に垂直な方向の速度成分について考える。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOM-013",
+      "field": "mechanics",
+      "unit": "運動量",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "静止していた質量 $0.10\\,\\mathrm{kg}$ の物体に $20\\,\\mathrm{N}$ の力を $0.20\\,\\mathrm{s}$ 加えた。力を加え終えた直後の速さは何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$4.0$",
+        "$20$",
+        "$40$",
+        "$100$"
+      ],
+      "correct": 2,
+      "explanation": "力積は $20\\times0.20=4.0\\,\\mathrm{N\\,s}$。これは運動量の増加 $mv$ に等しいので、$0.10v=4.0$ より $v=40\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOM-014",
+      "field": "mechanics",
+      "unit": "運動量",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "質量 $2.0\\,\\mathrm{kg}$ の物体が右向き $4.0\\,\\mathrm{m/s}$ から右向き $7.0\\,\\mathrm{m/s}$ に変化した。この間に受けた力積は、右向きを正として何 $\\mathrm{N\\,s}$ か。",
+      "choices": [
+        "$3.0$",
+        "$6.0$",
+        "$14$",
+        "$22$"
+      ],
+      "correct": 1,
+      "explanation": "$I=\\Delta p=m(v'-v)=2.0(7.0-4.0)=6.0\\,\\mathrm{N\\,s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOM-015",
+      "field": "mechanics",
+      "unit": "運動量",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "質量 $2.0\\,\\mathrm{kg}$ の物体が右向き $3.0\\,\\mathrm{m/s}$ で進み、質量 $1.0\\,\\mathrm{kg}$ の静止物体に衝突して一体となった。衝突後の速さは何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$1.0$",
+        "$2.0$",
+        "$3.0$",
+        "$6.0$"
+      ],
+      "correct": 1,
+      "explanation": "運動量保存より $2.0\\times3.0=(2.0+1.0)v$。よって $v=2.0\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOM-016",
+      "field": "mechanics",
+      "unit": "運動量",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "質量 $3.0\\,\\mathrm{kg}$ の物体Aが右向き $4.0\\,\\mathrm{m/s}$、質量 $1.0\\,\\mathrm{kg}$ の物体Bが左向き $2.0\\,\\mathrm{m/s}$ で進み、衝突後一体となった。右向きを正とすると、衝突後の速度は何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$1.0$",
+        "$2.5$",
+        "$3.5$",
+        "$10$"
+      ],
+      "correct": 1,
+      "explanation": "運動量保存より $3.0\\times4.0+1.0\\times(-2.0)=4.0v$。したがって $10=4v$ で、$v=2.5\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOM-017",
+      "field": "mechanics",
+      "unit": "運動量",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "質量 $2.0\\,\\mathrm{kg}$ の物体Aが右向き $6.0\\,\\mathrm{m/s}$、質量 $4.0\\,\\mathrm{kg}$ の物体Bが静止している。衝突後Aが右向き $2.0\\,\\mathrm{m/s}$ となったとき、Bの速度は何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$1.0$",
+        "$2.0$",
+        "$3.0$",
+        "$4.0$"
+      ],
+      "correct": 1,
+      "explanation": "運動量保存より $2.0\\times6.0=2.0\\times2.0+4.0v_B$。よって $v_B=2.0\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOM-018",
+      "field": "mechanics",
+      "unit": "運動量",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "同質量の2物体A、Bが一直線上を運動している。Aは右向き $5.0\\,\\mathrm{m/s}$、Bは右向き $1.0\\,\\mathrm{m/s}$ で、衝突後Aが右向き $2.0\\,\\mathrm{m/s}$ になった。Bの衝突後の速度は何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$2.0$",
+        "$3.0$",
+        "$4.0$",
+        "$6.0$"
+      ],
+      "correct": 2,
+      "explanation": "質量が同じなので運動量保存は $5.0+1.0=2.0+v_B'$。よって $v_B'=4.0\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOM-019",
+      "field": "mechanics",
+      "unit": "運動量",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "一直線上で、物体Aが右向き $10\\,\\mathrm{m/s}$、物体Bが左向き $5.0\\,\\mathrm{m/s}$ で近づき、衝突後Aが左向き $3.5\\,\\mathrm{m/s}$、Bが右向き $4.0\\,\\mathrm{m/s}$ となった。反発係数はいくらか。",
+      "choices": [
+        "$0.25$",
+        "$0.50$",
+        "$0.75$",
+        "$1.0$"
+      ],
+      "correct": 1,
+      "explanation": "近づく相対速度は $10-(-5)=15\\,\\mathrm{m/s}$、離れる相対速度は $4.0-(-3.5)=7.5\\,\\mathrm{m/s}$。よって $e=7.5/15=0.50$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOM-020",
+      "field": "mechanics",
+      "unit": "運動量",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "あるボールを床に向けて $8.0\\,\\mathrm{m/s}$ で衝突させたところ、$6.0\\,\\mathrm{m/s}$ で鉛直上向きにはね返った。床とボールの反発係数はいくらか。",
+      "choices": [
+        "$0.25$",
+        "$0.50$",
+        "$0.75$",
+        "$1.3$"
+      ],
+      "correct": 2,
+      "explanation": "床は静止しているので、反発係数は $e=6.0/8.0=0.75$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOM-021",
+      "field": "mechanics",
+      "unit": "運動量",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "物体にはたらく力 $F$ と時間 $t$ のグラフが三角形で、底辺が $0.20\\,\\mathrm{s}$、高さが $12\\,\\mathrm{N}$ である。この間の力積の大きさは何 $\\mathrm{N\\,s}$ か。",
+      "choices": [
+        "$0.60$",
+        "$1.2$",
+        "$2.4$",
+        "$12$"
+      ],
+      "correct": 1,
+      "explanation": "力積は $F-t$ グラフの面積。三角形の面積より $I=\\frac12\\times0.20\\times12=1.2\\,\\mathrm{N\\,s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOM-022",
+      "field": "mechanics",
+      "unit": "運動量",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "静止していた質量 $0.60\\,\\mathrm{kg}$ のボールに、$F-t$ グラフの面積が $3.0\\,\\mathrm{N\\,s}$ となる力積を与えた。直後の速さは何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$0.20$",
+        "$1.8$",
+        "$5.0$",
+        "$18$"
+      ],
+      "correct": 2,
+      "explanation": "$I=\\Delta p=mv$ より、$v=3.0/0.60=5.0\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOM-023",
+      "field": "mechanics",
+      "unit": "運動量",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "静止していた物体が内部の作用によって、質量 $2.0\\,\\mathrm{kg}$ の部分Aと質量 $3.0\\,\\mathrm{kg}$ の部分Bに分かれた。Aが右向き $6.0\\,\\mathrm{m/s}$ で飛び出したとき、Bの速度はどうなるか。",
+      "choices": [
+        "右向き $4.0\\,\\mathrm{m/s}$",
+        "左向き $4.0\\,\\mathrm{m/s}$",
+        "右向き $9.0\\,\\mathrm{m/s}$",
+        "左向き $9.0\\,\\mathrm{m/s}$"
+      ],
+      "correct": 1,
+      "explanation": "初めの全運動量は0。$2.0\\times6.0+3.0v_B=0$ より $v_B=-4.0\\,\\mathrm{m/s}$。左向き $4.0\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOM-024",
+      "field": "mechanics",
+      "unit": "運動量",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "なめらかな水平面上で静止していた質量 $60\\,\\mathrm{kg}$ の台車から、質量 $40\\,\\mathrm{kg}$ の人が右向きに $3.0\\,\\mathrm{m/s}$ で地面に対して飛び降りた。台車の速度は何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "右向き $2.0$",
+        "左向き $2.0$",
+        "右向き $3.0$",
+        "左向き $3.0$"
+      ],
+      "correct": 1,
+      "explanation": "初めの運動量は0。$40\\times3.0+60v=0$ より $v=-2.0\\,\\mathrm{m/s}$。台車は左向きに進む。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOM-025",
+      "field": "mechanics",
+      "unit": "運動量",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "水平面上で、物体Aの運動量が東向き $6.0\\,\\mathrm{kg\\,m/s}$、物体Bの運動量が北向き $8.0\\,\\mathrm{kg\\,m/s}$ である。2物体を1つの系とみたとき、全運動量の大きさは何 $\\mathrm{kg\\,m/s}$ か。",
+      "choices": [
+        "$2.0$",
+        "$7.0$",
+        "$10$",
+        "$14$"
+      ],
+      "correct": 2,
+      "explanation": "互いに垂直なので、全運動量の大きさは $\\sqrt{6.0^2+8.0^2}=10\\,\\mathrm{kg\\,m/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOM-026",
+      "field": "mechanics",
+      "unit": "運動量",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "水平面上で静止していた物体が3つの部分に分裂した。2つの部分の運動量がそれぞれ東向き $3.0\\,\\mathrm{kg\\,m/s}$、北向き $4.0\\,\\mathrm{kg\\,m/s}$ である。3つ目の部分の運動量の大きさは何 $\\mathrm{kg\\,m/s}$ か。",
+      "choices": [
+        "$1.0$",
+        "$5.0$",
+        "$7.0$",
+        "$12$"
+      ],
+      "correct": 1,
+      "explanation": "初めの運動量は0なので、3つ目は最初の2つの合成運動量と反対向き。大きさは $\\sqrt{3.0^2+4.0^2}=5.0\\,\\mathrm{kg\\,m/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOM-027",
+      "field": "mechanics",
+      "unit": "運動量",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "なめらかな鉛直壁に、小球が壁の法線となす角 $30^\\circ$、速さ $10\\,\\mathrm{m/s}$ で衝突した。反発係数が $0.50$ のとき、衝突後の壁に垂直な速度成分の大きさは何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$2.5$",
+        "$4.3$",
+        "$5.0$",
+        "$8.7$"
+      ],
+      "correct": 1,
+      "explanation": "衝突前の壁に垂直な成分は $10\\cos30^\\circ\\approx8.66\\,\\mathrm{m/s}$。反発後はその $0.50$ 倍なので約 $4.3\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOM-028",
+      "field": "mechanics",
+      "unit": "運動量",
+      "course": "物理",
+      "difficulty": 3,
+      "question": "質量 $2.0\\,\\mathrm{kg}$ の物体Aが右向き $6.0\\,\\mathrm{m/s}$、質量 $3.0\\,\\mathrm{kg}$ の物体Bが静止している。一直線上で衝突し、反発係数が $0.50$ であった。衝突後のAの速度は何 $\\mathrm{m/s}$ か。右向きを正とする。",
+      "choices": [
+        "$-1.2$",
+        "$0$",
+        "$1.2$",
+        "$3.0$"
+      ],
+      "correct": 2,
+      "explanation": "運動量保存より $12=2v_A'+3v_B'$。反発係数より $v_B'-v_A'=0.50\\times6.0=3.0$。連立すると $v_A'=1.2\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOM-029",
+      "field": "mechanics",
+      "unit": "運動量",
+      "course": "物理",
+      "difficulty": 3,
+      "question": "前問と同じ衝突で、衝突後の物体Bの速度は何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$1.8$",
+        "$3.0$",
+        "$4.2$",
+        "$6.0$"
+      ],
+      "correct": 2,
+      "explanation": "反発係数の式 $v_B'-v_A'=3.0$ と $v_A'=1.2\\,\\mathrm{m/s}$ より、$v_B'=4.2\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-MOM-030",
+      "field": "mechanics",
+      "unit": "運動量",
+      "course": "物理",
+      "difficulty": 3,
+      "question": "質量 $1.0\\,\\mathrm{kg}$ の小球が、水平面に対して $30^\\circ$ 下向き、速さ $8.0\\,\\mathrm{m/s}$ でなめらかな水平床に衝突した。床との反発係数が $0.50$ のとき、衝突によって小球が床から受ける力積の大きさは何 $\\mathrm{N\\,s}$ か。衝突時間中の重力の力積は無視する。",
+      "choices": [
+        "$2.0$",
+        "$4.0$",
+        "$6.0$",
+        "$8.0$"
+      ],
+      "correct": 2,
+      "explanation": "床に垂直な衝突前速度は下向き $8.0\\sin30^\\circ=4.0\\,\\mathrm{m/s}$。衝突後は上向き $0.50\\times4.0=2.0\\,\\mathrm{m/s}$。鉛直上向きを正とすると運動量変化は $1.0[2.0-(-4.0)]=6.0\\,\\mathrm{N\\,s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-CIR-001",
+      "field": "mechanics",
+      "unit": "円運動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "半径 $r$ の円で、弧の長さが $l$ のとき、弧度法による角 $\\theta$ を表す式として正しいものを選べ。",
+      "choices": [
+        "$\\theta=l/r$",
+        "$\\theta=lr$",
+        "$\\theta=r/l$",
+        "$\\theta=2\\pi r/l$"
+      ],
+      "correct": 0,
+      "explanation": "弧度法では、中心角は弧の長さを半径で割った $\\theta=l/r$ で表す。",
+      "image": null
+    },
+    {
+      "id": "MEC-CIR-002",
+      "field": "mechanics",
+      "unit": "円運動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "$180^\\circ$ は何 rad か。",
+      "choices": [
+        "$\\pi/2$",
+        "$\\pi$",
+        "$2\\pi$",
+        "$180\\pi$"
+      ],
+      "correct": 1,
+      "explanation": "$180^\\circ=\\pi\\,\\mathrm{rad}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-CIR-003",
+      "field": "mechanics",
+      "unit": "円運動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "角速度 $\\omega$ の定義として正しいものを選べ。",
+      "choices": [
+        "$\\omega=\\theta/t$",
+        "$\\omega=rt$",
+        "$\\omega=r/\\theta$",
+        "$\\omega=v^2/r$"
+      ],
+      "correct": 0,
+      "explanation": "角速度は単位時間あたりの回転角で、$\\omega=\\theta/t$。",
+      "image": null
+    },
+    {
+      "id": "MEC-CIR-004",
+      "field": "mechanics",
+      "unit": "円運動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "半径 $r$、角速度 $\\omega$ の等速円運動をする物体の速さ $v$ を表す式として正しいものを選べ。",
+      "choices": [
+        "$v=r\\omega$",
+        "$v=r/\\omega$",
+        "$v=\\omega/r$",
+        "$v=r\\omega^2$"
+      ],
+      "correct": 0,
+      "explanation": "等速円運動の速さは $v=r\\omega$。",
+      "image": null
+    },
+    {
+      "id": "MEC-CIR-005",
+      "field": "mechanics",
+      "unit": "円運動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "角速度 $\\omega$ と周期 $T$ の関係として正しいものを選べ。",
+      "choices": [
+        "$\\omega=2\\pi/T$",
+        "$\\omega=T/2\\pi$",
+        "$\\omega=2\\pi T$",
+        "$\\omega=1/T^2$"
+      ],
+      "correct": 0,
+      "explanation": "1周で角度は $2\\pi$ rad なので、$\\omega=2\\pi/T$。",
+      "image": null
+    },
+    {
+      "id": "MEC-CIR-006",
+      "field": "mechanics",
+      "unit": "円運動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "回転数 $n$ と周期 $T$ の関係として正しいものを選べ。",
+      "choices": [
+        "$n=1/T$",
+        "$n=T$",
+        "$n=2\\pi T$",
+        "$n=T^2$"
+      ],
+      "correct": 0,
+      "explanation": "回転数は1秒あたりの回転数なので、周期の逆数 $n=1/T$。",
+      "image": null
+    },
+    {
+      "id": "MEC-CIR-007",
+      "field": "mechanics",
+      "unit": "円運動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "等速円運動の向心加速度の大きさとして正しいものを選べ。",
+      "choices": [
+        "$a=v^2/r$",
+        "$a=vr$",
+        "$a=v/r^2$",
+        "$a=r/v^2$"
+      ],
+      "correct": 0,
+      "explanation": "等速円運動の向心加速度は円の中心向きで、大きさは $a=v^2/r=r\\omega^2$。",
+      "image": null
+    },
+    {
+      "id": "MEC-CIR-008",
+      "field": "mechanics",
+      "unit": "円運動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "質量 $m$、速さ $v$、半径 $r$ の等速円運動に必要な向心力の大きさを表す式として正しいものを選べ。",
+      "choices": [
+        "$F=mv^2/r$",
+        "$F=mvr$",
+        "$F=mr/v^2$",
+        "$F=mv/r^2$"
+      ],
+      "correct": 0,
+      "explanation": "向心力は $F=ma$ に $a=v^2/r$ を代入して $F=mv^2/r$。",
+      "image": null
+    },
+    {
+      "id": "MEC-CIR-009",
+      "field": "mechanics",
+      "unit": "円運動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "等速円運動をしている物体の速度の向きについて正しいものを選べ。",
+      "choices": [
+        "常に円の接線方向",
+        "常に円の中心方向",
+        "常に円の外向き",
+        "常に鉛直上向き"
+      ],
+      "correct": 0,
+      "explanation": "等速円運動では、速度は各瞬間で円の接線方向を向く。",
+      "image": null
+    },
+    {
+      "id": "MEC-CIR-010",
+      "field": "mechanics",
+      "unit": "円運動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "向心加速度の向きとして正しいものを選べ。",
+      "choices": [
+        "円の中心向き",
+        "円の外向き",
+        "速度と同じ接線方向",
+        "回転面に垂直な方向"
+      ],
+      "correct": 0,
+      "explanation": "向心加速度は常に円の中心方向を向く。",
+      "image": null
+    },
+    {
+      "id": "MEC-CIR-011",
+      "field": "mechanics",
+      "unit": "円運動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "加速度 $\\vec{a}$ で動く観測者から、質量 $m$ の物体の運動を見るときに導入する慣性力として正しいものを選べ。",
+      "choices": [
+        "$-m\\vec{a}$",
+        "$m\\vec{a}$",
+        "$m\\vec{v}$",
+        "$-m\\vec{v}$"
+      ],
+      "correct": 0,
+      "explanation": "加速度運動する観測者から見る場合、観測者の加速度と反対向きに $-m\\vec{a}$ の慣性力を考える。",
+      "image": null
+    },
+    {
+      "id": "MEC-CIR-012",
+      "field": "mechanics",
+      "unit": "円運動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "等速円運動する観測者から見た遠心力の向きとして正しいものを選べ。",
+      "choices": [
+        "円の中心から外向き",
+        "円の中心向き",
+        "接線方向",
+        "鉛直下向き"
+      ],
+      "correct": 0,
+      "explanation": "回転する観測者から見ると、向心加速度と反対向き、つまり円の外向きに遠心力を導入する。",
+      "image": null
+    },
+    {
+      "id": "MEC-CIR-013",
+      "field": "mechanics",
+      "unit": "円運動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "1分間に30回転する物体の角速度は何 $\\mathrm{rad/s}$ か。$\\pi=3.14$ とする。",
+      "choices": [
+        "$1.57$",
+        "$3.14$",
+        "$6.28$",
+        "$30$"
+      ],
+      "correct": 1,
+      "explanation": "30回/分は $0.50$ 回/s。したがって $\\omega=2\\pi\\times0.50=\\pi\\approx3.14\\,\\mathrm{rad/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-CIR-014",
+      "field": "mechanics",
+      "unit": "円運動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "半径 $0.20\\,\\mathrm{m}$ の円周上を、1秒間に1回転する物体がある。速さは約何 $\\mathrm{m/s}$ か。$\\pi=3.14$ とする。",
+      "choices": [
+        "$0.20$",
+        "$0.63$",
+        "$1.26$",
+        "$3.14$"
+      ],
+      "correct": 2,
+      "explanation": "$\\omega=2\\pi\\,\\mathrm{rad/s}$、$v=r\\omega=0.20\\times2\\times3.14=1.256\\approx1.26\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-CIR-015",
+      "field": "mechanics",
+      "unit": "円運動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "周期 $4.0\\,\\mathrm{s}$ の等速円運動をする物体の角速度は約何 $\\mathrm{rad/s}$ か。$\\pi=3.14$ とする。",
+      "choices": [
+        "$0.79$",
+        "$1.57$",
+        "$3.14$",
+        "$6.28$"
+      ],
+      "correct": 1,
+      "explanation": "$\\omega=2\\pi/T=2\\times3.14/4.0=1.57\\,\\mathrm{rad/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-CIR-016",
+      "field": "mechanics",
+      "unit": "円運動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "半径 $0.25\\,\\mathrm{m}$ の円周上を、速さ $2.0\\,\\mathrm{m/s}$ で等速円運動する物体の向心加速度は何 $\\mathrm{m/s^2}$ か。",
+      "choices": [
+        "$2.0$",
+        "$4.0$",
+        "$8.0$",
+        "$16$"
+      ],
+      "correct": 3,
+      "explanation": "$a=v^2/r=2.0^2/0.25=16\\,\\mathrm{m/s^2}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-CIR-017",
+      "field": "mechanics",
+      "unit": "円運動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "質量 $0.15\\,\\mathrm{kg}$ の物体が、半径 $0.20\\,\\mathrm{m}$ の円周上を速さ $4.0\\,\\mathrm{m/s}$ で等速円運動している。向心力の大きさは何 $\\mathrm{N}$ か。",
+      "choices": [
+        "$3.0$",
+        "$6.0$",
+        "$12$",
+        "$30$"
+      ],
+      "correct": 2,
+      "explanation": "$F=mv^2/r=0.15\\times4.0^2/0.20=12\\,\\mathrm{N}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-CIR-018",
+      "field": "mechanics",
+      "unit": "円運動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "半径 $20\\,\\mathrm{m}$ の円形道路を、質量 $50\\,\\mathrm{kg}$ の人が速さ $10\\,\\mathrm{m/s}$ で円運動している。必要な向心力の大きさは何 $\\mathrm{N}$ か。",
+      "choices": [
+        "$25$",
+        "$250$",
+        "$500$",
+        "$2500$"
+      ],
+      "correct": 1,
+      "explanation": "$F=mv^2/r=50\\times100/20=250\\,\\mathrm{N}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-CIR-019",
+      "field": "mechanics",
+      "unit": "円運動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "長さ $L$ の糸の先に質量 $m$ の小球をつけ、糸が鉛直線となす角 $\\theta$ を一定に保って水平面内で等速円運動させる。糸の張力を $T$ とすると、鉛直方向のつり合いを表す式はどれか。",
+      "choices": [
+        "$T\\cos\\theta=mg$",
+        "$T\\sin\\theta=mg$",
+        "$T=mg\\sin\\theta$",
+        "$T\\cos\\theta=mv^2/L$"
+      ],
+      "correct": 0,
+      "explanation": "円すい振り子では鉛直方向に加速度がないため、張力の鉛直成分と重力がつり合い $T\\cos\\theta=mg$。",
+      "image": null
+    },
+    {
+      "id": "MEC-CIR-020",
+      "field": "mechanics",
+      "unit": "円運動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "円すい振り子で、糸の長さを $L$、糸と鉛直線のなす角を $\\theta$ とする。小球が描く円の半径はどれか。",
+      "choices": [
+        "$L\\sin\\theta$",
+        "$L\\cos\\theta$",
+        "$L\\tan\\theta$",
+        "$L/\\sin\\theta$"
+      ],
+      "correct": 0,
+      "explanation": "水平面内の円運動の半径は、糸の水平成分に相当する $r=L\\sin\\theta$。",
+      "image": null
+    },
+    {
+      "id": "MEC-CIR-021",
+      "field": "mechanics",
+      "unit": "円運動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "円すい振り子で、糸の長さ $L$、糸と鉛直線のなす角 $\\theta$、重力加速度 $g$ とする。角速度 $\\omega$ の関係として正しいものを選べ。",
+      "choices": [
+        "$\\omega^2=g/(L\\cos\\theta)$",
+        "$\\omega^2=gL\\cos\\theta$",
+        "$\\omega^2=g/(L\\sin\\theta)$",
+        "$\\omega^2=L\\cos\\theta/g$"
+      ],
+      "correct": 0,
+      "explanation": "$T\\cos\\theta=mg$ と $T\\sin\\theta=m\\omega^2(L\\sin\\theta)$ より、$T=m\\omega^2L$。したがって $\\omega^2=g/(L\\cos\\theta)$。",
+      "image": null
+    },
+    {
+      "id": "MEC-CIR-022",
+      "field": "mechanics",
+      "unit": "円運動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "水平な床の上にある物体を、加速度 $a$ で右向きに動く台車上の観測者から見る。物体に導入する慣性力の向きはどちらか。",
+      "choices": [
+        "左向き",
+        "右向き",
+        "鉛直上向き",
+        "鉛直下向き"
+      ],
+      "correct": 0,
+      "explanation": "加速度運動する観測者から見た慣性力は、観測者の加速度と反対向きなので左向き。",
+      "image": null
+    },
+    {
+      "id": "MEC-CIR-023",
+      "field": "mechanics",
+      "unit": "円運動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "質量 $50\\,\\mathrm{kg}$ の人がエレベーターに乗っている。エレベーターが上向きに $2.0\\,\\mathrm{m/s^2}$ で加速するとき、床から受ける垂直抗力は何 $\\mathrm{N}$ か。$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$390$",
+        "$490$",
+        "$590$",
+        "$690$"
+      ],
+      "correct": 2,
+      "explanation": "$N-mg=ma$ より、$N=m(g+a)=50(9.8+2.0)=590\\,\\mathrm{N}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-CIR-024",
+      "field": "mechanics",
+      "unit": "円運動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "半径 $r$ の水平な回転台上に物体を置き、角速度 $\\omega$ で回している。物体が回転台に対して静止しているとき、物体に必要な向心力の大きさはどれか。",
+      "choices": [
+        "$mr\\omega^2$",
+        "$m\\omega/r$",
+        "$mr/\\omega^2$",
+        "$m\\omega^2/r$"
+      ],
+      "correct": 0,
+      "explanation": "向心加速度は $r\\omega^2$ なので、必要な向心力は $F=mr\\omega^2$。",
+      "image": null
+    },
+    {
+      "id": "MEC-CIR-025",
+      "field": "mechanics",
+      "unit": "円運動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "水平な回転台上で、物体と台の間の最大静止摩擦力が $\\mu mg$ である。物体が半径 $r$ の位置で台と一緒に回転できるための角速度の条件として正しいものを選べ。",
+      "choices": [
+        "$\\omega\\le\\sqrt{\\mu g/r}$",
+        "$\\omega\\ge\\sqrt{\\mu g/r}$",
+        "$\\omega\\le\\mu gr$",
+        "$\\omega\\ge\\mu gr$"
+      ],
+      "correct": 0,
+      "explanation": "向心力 $mr\\omega^2$ を静止摩擦力が担うので、$mr\\omega^2\\le\\mu mg$。したがって $\\omega\\le\\sqrt{\\mu g/r}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-CIR-026",
+      "field": "mechanics",
+      "unit": "円運動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "小球を糸につけて鉛直面内で円運動させる。円の最高点で、糸がたるまないための最小の速さ $v$ はどれか。円の半径を $r$、重力加速度を $g$ とする。",
+      "choices": [
+        "$\\sqrt{gr}$",
+        "$\\sqrt{2gr}$",
+        "$gr$",
+        "$2gr$"
+      ],
+      "correct": 0,
+      "explanation": "最高点で最小条件は張力 $T=0$。このとき $mg=mv^2/r$ なので $v=\\sqrt{gr}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-CIR-027",
+      "field": "mechanics",
+      "unit": "円運動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "半径 $r$ の鉛直円運動で、最下点を速さ $v$ で通過する質量 $m$ の小球に糸の張力 $T$ がはたらく。最下点での運動方程式として正しいものを選べ。",
+      "choices": [
+        "$T-mg=mv^2/r$",
+        "$T+mg=mv^2/r$",
+        "$mg-T=mv^2/r$",
+        "$T=mg$"
+      ],
+      "correct": 0,
+      "explanation": "最下点では円の中心向きが上向きなので、上向きを正として $T-mg=mv^2/r$。",
+      "image": null
+    },
+    {
+      "id": "MEC-CIR-028",
+      "field": "mechanics",
+      "unit": "円運動",
+      "course": "物理",
+      "difficulty": 3,
+      "question": "長さ $1.0\\,\\mathrm{m}$ の糸につないだ小球を円すい振り子として運動させる。糸が鉛直線となす角が $60^\\circ$ のとき、角速度は約何 $\\mathrm{rad/s}$ か。$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$2.2$",
+        "$3.1$",
+        "$4.4$",
+        "$6.3$"
+      ],
+      "correct": 2,
+      "explanation": "$\\omega^2=g/(L\\cos60^\\circ)=9.8/(1.0\\times0.50)=19.6$。よって $\\omega\\approx4.4\\,\\mathrm{rad/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-CIR-029",
+      "field": "mechanics",
+      "unit": "円運動",
+      "course": "物理",
+      "difficulty": 3,
+      "question": "半径 $0.50\\,\\mathrm{m}$ の水平回転台上に物体があり、物体と台の間の静止摩擦係数は $0.40$ である。物体が滑らずに回転できる最大角速度は約何 $\\mathrm{rad/s}$ か。$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$1.4$",
+        "$2.0$",
+        "$2.8$",
+        "$4.0$"
+      ],
+      "correct": 2,
+      "explanation": "$mr\\omega^2\\le\\mu mg$ より $\\omega_{\\max}=\\sqrt{\\mu g/r}=\\sqrt{0.40\\times9.8/0.50}=\\sqrt{7.84}\\approx2.8\\,\\mathrm{rad/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-CIR-030",
+      "field": "mechanics",
+      "unit": "円運動",
+      "course": "物理",
+      "difficulty": 3,
+      "question": "半径 $0.80\\,\\mathrm{m}$ の鉛直円運動をする小球が、円の最高点をちょうど糸がたるまない最小の速さで通過した。このとき最高点での速さは約何 $\\mathrm{m/s}$ か。$g=9.8\\,\\mathrm{m/s^2}$ とする。",
+      "choices": [
+        "$1.4$",
+        "$2.0$",
+        "$2.8$",
+        "$3.9$"
+      ],
+      "correct": 2,
+      "explanation": "最小条件では $v=\\sqrt{gr}=\\sqrt{9.8\\times0.80}=\\sqrt{7.84}\\approx2.8\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-SHM-001",
+      "field": "mechanics",
+      "unit": "単振動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "単振動についての説明として正しいものを選べ。",
+      "choices": [
+        "一定の振幅・一定の周期で正弦曲線または余弦曲線に従う往復運動",
+        "常に一定の速さで進む直線運動",
+        "円周上を一定の速さで回る運動だけを指す",
+        "加速度が常に0である運動"
+      ],
+      "correct": 0,
+      "explanation": "単振動は、一定の振幅と周期をもち、変位が正弦・余弦関数で表される往復運動である。",
+      "image": null
+    },
+    {
+      "id": "MEC-SHM-002",
+      "field": "mechanics",
+      "unit": "単振動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "単振動の変位が $x=A\\sin\\omega t$ で表されるとき、振幅はどれか。",
+      "choices": [
+        "$A$",
+        "$\\omega$",
+        "$t$",
+        "$A\\omega$"
+      ],
+      "correct": 0,
+      "explanation": "$x=A\\sin\\omega t$ において、$A$ が振幅を表す。",
+      "image": null
+    },
+    {
+      "id": "MEC-SHM-003",
+      "field": "mechanics",
+      "unit": "単振動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "単振動 $x=A\\sin\\omega t$ の速度 $v$ を表す式として正しいものを選べ。",
+      "choices": [
+        "$v=A\\omega\\cos\\omega t$",
+        "$v=-A\\omega\\sin\\omega t$",
+        "$v=A\\omega^2\\cos\\omega t$",
+        "$v=-A\\omega^2\\sin\\omega t$"
+      ],
+      "correct": 0,
+      "explanation": "変位 $x=A\\sin\\omega t$ を時間で微分すると、$v=A\\omega\\cos\\omega t$。",
+      "image": null
+    },
+    {
+      "id": "MEC-SHM-004",
+      "field": "mechanics",
+      "unit": "単振動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "単振動 $x=A\\sin\\omega t$ の加速度 $a$ を表す式として正しいものを選べ。",
+      "choices": [
+        "$a=-A\\omega^2\\sin\\omega t$",
+        "$a=A\\omega\\cos\\omega t$",
+        "$a=A\\omega^2\\sin\\omega t$",
+        "$a=-A\\omega\\sin\\omega t$"
+      ],
+      "correct": 0,
+      "explanation": "速度をさらに時間で微分すると $a=-A\\omega^2\\sin\\omega t=-\\omega^2x$。",
+      "image": null
+    },
+    {
+      "id": "MEC-SHM-005",
+      "field": "mechanics",
+      "unit": "単振動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "単振動における加速度 $a$ と変位 $x$ の関係として正しいものを選べ。",
+      "choices": [
+        "$a=-\\omega^2x$",
+        "$a=\\omega x$",
+        "$a=\\omega^2x$",
+        "$a=-\\omega x^2$"
+      ],
+      "correct": 0,
+      "explanation": "単振動では、加速度は変位に比例し、向きは振動の中心向きなので $a=-\\omega^2x$。",
+      "image": null
+    },
+    {
+      "id": "MEC-SHM-006",
+      "field": "mechanics",
+      "unit": "単振動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "単振動をする物体の加速度の向きについて正しいものを選べ。",
+      "choices": [
+        "常に振動の中心向き",
+        "常に振動の中心から外向き",
+        "常に速度と同じ向き",
+        "常に鉛直下向き"
+      ],
+      "correct": 0,
+      "explanation": "$a=-\\omega^2x$ より、加速度は常に変位と反対向き、すなわち振動の中心を向く。",
+      "image": null
+    },
+    {
+      "id": "MEC-SHM-007",
+      "field": "mechanics",
+      "unit": "単振動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "単振動の周期 $T$ と角振動数 $\\omega$ の関係として正しいものを選べ。",
+      "choices": [
+        "$T=2\\pi/\\omega$",
+        "$T=\\omega/2\\pi$",
+        "$T=2\\pi\\omega$",
+        "$T=1/\\omega^2$"
+      ],
+      "correct": 0,
+      "explanation": "1周期で位相は $2\\pi$ 進むため、$T=2\\pi/\\omega$。",
+      "image": null
+    },
+    {
+      "id": "MEC-SHM-008",
+      "field": "mechanics",
+      "unit": "単振動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "振動数 $f$ と周期 $T$ の関係として正しいものを選べ。",
+      "choices": [
+        "$f=1/T$",
+        "$f=T$",
+        "$f=2\\pi T$",
+        "$f=T^2$"
+      ],
+      "correct": 0,
+      "explanation": "振動数は1秒あたりの振動回数なので、周期の逆数 $f=1/T$。",
+      "image": null
+    },
+    {
+      "id": "MEC-SHM-009",
+      "field": "mechanics",
+      "unit": "単振動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "ばね定数 $K$ のばねにつながれた質量 $m$ の物体の単振動について、周期 $T$ として正しいものを選べ。",
+      "choices": [
+        "$T=2\\pi\\sqrt{m/K}$",
+        "$T=2\\pi\\sqrt{K/m}$",
+        "$T=2\\pi m/K$",
+        "$T=\\sqrt{mK}$"
+      ],
+      "correct": 0,
+      "explanation": "ばね振り子の周期は $T=2\\pi\\sqrt{m/K}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-SHM-010",
+      "field": "mechanics",
+      "unit": "単振動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "長さ $L$ の単振り子を小さく振らせたときの周期 $T$ として正しいものを選べ。",
+      "choices": [
+        "$T=2\\pi\\sqrt{L/g}$",
+        "$T=2\\pi\\sqrt{g/L}$",
+        "$T=2\\pi L/g$",
+        "$T=\\sqrt{Lg}$"
+      ],
+      "correct": 0,
+      "explanation": "単振り子の周期は、小振幅では $T=2\\pi\\sqrt{L/g}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-SHM-011",
+      "field": "mechanics",
+      "unit": "単振動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "単振動の中心を通過するとき、物体の速さについて正しいものを選べ。",
+      "choices": [
+        "最大になる",
+        "0になる",
+        "必ず一定になる",
+        "振幅に関係なく $1\\,\\mathrm{m/s}$ になる"
+      ],
+      "correct": 0,
+      "explanation": "単振動では中心 $x=0$ で速度の大きさが最大となる。",
+      "image": null
+    },
+    {
+      "id": "MEC-SHM-012",
+      "field": "mechanics",
+      "unit": "単振動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "単振動で変位の大きさが振幅 $A$ に等しい端の位置にあるとき、速さはいくらか。",
+      "choices": [
+        "$0$",
+        "$A\\omega$",
+        "$A\\omega^2$",
+        "$\\omega$"
+      ],
+      "correct": 0,
+      "explanation": "振動の端では向きを変える瞬間なので速度は0。",
+      "image": null
+    },
+    {
+      "id": "MEC-SHM-013",
+      "field": "mechanics",
+      "unit": "単振動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "変位が $x=0.40\\sin(\\pi t)$ [m] で表される単振動の振幅は何 m か。",
+      "choices": [
+        "$0.20$",
+        "$0.40$",
+        "$\\pi$",
+        "$2.0$"
+      ],
+      "correct": 1,
+      "explanation": "$x=A\\sin\\omega t$ と比較すると、振幅は $A=0.40\\,\\mathrm{m}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-SHM-014",
+      "field": "mechanics",
+      "unit": "単振動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "変位が $x=0.40\\sin(\\pi t)$ [m] で表される単振動の周期は何 s か。",
+      "choices": [
+        "$0.50$",
+        "$1.0$",
+        "$2.0$",
+        "$4.0$"
+      ],
+      "correct": 2,
+      "explanation": "$\\omega=\\pi\\,\\mathrm{rad/s}$ なので、$T=2\\pi/\\omega=2.0\\,\\mathrm{s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-SHM-015",
+      "field": "mechanics",
+      "unit": "単振動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "振幅 $0.20\\,\\mathrm{m}$、角振動数 $5.0\\,\\mathrm{rad/s}$ の単振動で、最大速度は何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$0.040$",
+        "$0.25$",
+        "$1.0$",
+        "$5.2$"
+      ],
+      "correct": 2,
+      "explanation": "最大速度は $v_{\\max}=A\\omega=0.20\\times5.0=1.0\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-SHM-016",
+      "field": "mechanics",
+      "unit": "単振動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "振幅 $0.10\\,\\mathrm{m}$、角振動数 $4.0\\,\\mathrm{rad/s}$ の単振動で、加速度の最大値は何 $\\mathrm{m/s^2}$ か。",
+      "choices": [
+        "$0.40$",
+        "$1.6$",
+        "$4.0$",
+        "$16$"
+      ],
+      "correct": 1,
+      "explanation": "加速度の最大値は $a_{\\max}=A\\omega^2=0.10\\times4.0^2=1.6\\,\\mathrm{m/s^2}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-SHM-017",
+      "field": "mechanics",
+      "unit": "単振動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "ある単振動で $\\omega=3.0\\,\\mathrm{rad/s}$、変位が $x=0.20\\,\\mathrm{m}$ である。この瞬間の加速度は何 $\\mathrm{m/s^2}$ か。",
+      "choices": [
+        "$-1.8$",
+        "$-0.60$",
+        "$0.60$",
+        "$1.8$"
+      ],
+      "correct": 0,
+      "explanation": "$a=-\\omega^2x=-3.0^2\\times0.20=-1.8\\,\\mathrm{m/s^2}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-SHM-018",
+      "field": "mechanics",
+      "unit": "単振動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "質量 $0.50\\,\\mathrm{kg}$ の物体をばね定数 $200\\,\\mathrm{N/m}$ のばねにつないで単振動させる。角振動数は何 $\\mathrm{rad/s}$ か。",
+      "choices": [
+        "$10$",
+        "$20$",
+        "$40$",
+        "$100$"
+      ],
+      "correct": 1,
+      "explanation": "$\\omega=\\sqrt{K/m}=\\sqrt{200/0.50}=\\sqrt{400}=20\\,\\mathrm{rad/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-SHM-019",
+      "field": "mechanics",
+      "unit": "単振動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "質量 $1.0\\,\\mathrm{kg}$ の物体をばね定数 $4.0\\pi^2\\,\\mathrm{N/m}$ のばねにつないだ。周期は何 s か。",
+      "choices": [
+        "$0.50$",
+        "$1.0$",
+        "$2.0$",
+        "$2\\pi$"
+      ],
+      "correct": 1,
+      "explanation": "$T=2\\pi\\sqrt{m/K}=2\\pi\\sqrt{1/(4\\pi^2)}=1.0\\,\\mathrm{s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-SHM-020",
+      "field": "mechanics",
+      "unit": "単振動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "ばね振り子で、質量を4倍にし、ばね定数を変えないと周期はもとの何倍になるか。",
+      "choices": [
+        "$1/4$",
+        "$1/2$",
+        "$2$",
+        "$4$"
+      ],
+      "correct": 2,
+      "explanation": "$T=2\\pi\\sqrt{m/K}$ より、質量を4倍にすると周期は $\\sqrt{4}=2$ 倍。",
+      "image": null
+    },
+    {
+      "id": "MEC-SHM-021",
+      "field": "mechanics",
+      "unit": "単振動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "ばね振り子で、ばね定数を4倍にし、質量を変えないと周期はもとの何倍になるか。",
+      "choices": [
+        "$1/4$",
+        "$1/2$",
+        "$2$",
+        "$4$"
+      ],
+      "correct": 1,
+      "explanation": "$T\\propto1/\\sqrt{K}$ なので、ばね定数を4倍にすると周期は $1/2$ 倍。",
+      "image": null
+    },
+    {
+      "id": "MEC-SHM-022",
+      "field": "mechanics",
+      "unit": "単振動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "長さ $1.0\\,\\mathrm{m}$ の単振り子の周期は約何 s か。$g=9.8\\,\\mathrm{m/s^2}$、$\\pi=3.14$ とする。",
+      "choices": [
+        "$1.0$",
+        "$2.0$",
+        "$3.1$",
+        "$6.3$"
+      ],
+      "correct": 1,
+      "explanation": "$T=2\\pi\\sqrt{L/g}=2\\times3.14\\sqrt{1.0/9.8}\\approx2.0\\,\\mathrm{s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-SHM-023",
+      "field": "mechanics",
+      "unit": "単振動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "単振り子の長さを4倍にすると、周期はもとの何倍になるか。",
+      "choices": [
+        "$1/2$",
+        "$1$",
+        "$2$",
+        "$4$"
+      ],
+      "correct": 2,
+      "explanation": "$T=2\\pi\\sqrt{L/g}$ より、長さを4倍にすると周期は2倍。",
+      "image": null
+    },
+    {
+      "id": "MEC-SHM-024",
+      "field": "mechanics",
+      "unit": "単振動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "質量 $0.20\\,\\mathrm{kg}$、角振動数 $5.0\\,\\mathrm{rad/s}$、振幅 $0.40\\,\\mathrm{m}$ の単振動の力学的エネルギーは何 J か。",
+      "choices": [
+        "$0.20$",
+        "$0.40$",
+        "$1.0$",
+        "$2.0$"
+      ],
+      "correct": 1,
+      "explanation": "単振動の力学的エネルギーは $E=\\frac12m\\omega^2A^2$。よって $E=\\frac12\\times0.20\\times25\\times0.16=0.40\\,\\mathrm{J}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-SHM-025",
+      "field": "mechanics",
+      "unit": "単振動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "単振動の力学的エネルギー $E$ と振幅 $A$ の関係について、質量と振動数が一定のとき正しいものを選べ。",
+      "choices": [
+        "$E$ は $A^2$ に比例する",
+        "$E$ は $A$ に反比例する",
+        "$E$ は $A$ に無関係である",
+        "$E$ は $A^3$ に比例する"
+      ],
+      "correct": 0,
+      "explanation": "$E=\\frac12m\\omega^2A^2$ より、質量と角振動数が一定なら力学的エネルギーは振幅の2乗に比例する。",
+      "image": null
+    },
+    {
+      "id": "MEC-SHM-026",
+      "field": "mechanics",
+      "unit": "単振動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "単振動する物体が振動の中心から端へ向かって移動している。この間の速さと加速度の大きさの変化として正しいものを選べ。",
+      "choices": [
+        "速さは減少し、加速度の大きさは増加する",
+        "速さは増加し、加速度の大きさは減少する",
+        "速さも加速度の大きさも増加する",
+        "速さも加速度の大きさも一定"
+      ],
+      "correct": 0,
+      "explanation": "中心では速さが最大・加速度0、端では速さ0・加速度の大きさ最大なので、中心から端へ向かう間は速さが減り、加速度の大きさが増える。",
+      "image": null
+    },
+    {
+      "id": "MEC-SHM-027",
+      "field": "mechanics",
+      "unit": "単振動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "鉛直につるしたばねに質量 $m$ の物体をつるすと、自然長から $x_0$ だけ伸びて静止した。ばね定数を $K$ とすると、つり合いの関係として正しいものを選べ。",
+      "choices": [
+        "$Kx_0=mg$",
+        "$K/x_0=mg$",
+        "$Kx_0^2=mg$",
+        "$K=mgx_0$"
+      ],
+      "correct": 0,
+      "explanation": "静止しているので、ばねの弾性力と重力がつり合い $Kx_0=mg$。",
+      "image": null
+    },
+    {
+      "id": "MEC-SHM-028",
+      "field": "mechanics",
+      "unit": "単振動",
+      "course": "物理",
+      "difficulty": 3,
+      "question": "鉛直ばねに質量 $0.10\\,\\mathrm{kg}$ の物体をつるすと、ばねが自然長から $0.050\\,\\mathrm{m}$ 伸びて静止した。この物体を鉛直方向に小さく振動させたときの周期は約何 s か。$g=9.8\\,\\mathrm{m/s^2}$、$\\pi=3.14$ とする。",
+      "choices": [
+        "$0.23$",
+        "$0.45$",
+        "$0.90$",
+        "$1.4$"
+      ],
+      "correct": 1,
+      "explanation": "静止時に $Kx_0=mg$ より $K=0.10\\times9.8/0.050=19.6\\,\\mathrm{N/m}$。周期は $T=2\\pi\\sqrt{m/K}\\approx0.45\\,\\mathrm{s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-SHM-029",
+      "field": "mechanics",
+      "unit": "単振動",
+      "course": "物理",
+      "difficulty": 3,
+      "question": "ばね定数 $100\\,\\mathrm{N/m}$ のばねに質量 $1.0\\,\\mathrm{kg}$ の物体をつなぎ、振幅 $0.20\\,\\mathrm{m}$ で単振動させる。変位が $0.12\\,\\mathrm{m}$ のときの速さは何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$0.80$",
+        "$1.2$",
+        "$1.6$",
+        "$2.0$"
+      ],
+      "correct": 2,
+      "explanation": "$\\omega=\\sqrt{K/m}=10\\,\\mathrm{rad/s}$。単振動では $v^2=\\omega^2(A^2-x^2)$ より、$v=10\\sqrt{0.20^2-0.12^2}=1.6\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-SHM-030",
+      "field": "mechanics",
+      "unit": "単振動",
+      "course": "物理",
+      "difficulty": 3,
+      "question": "長さ $L$ の単振り子の周期が $T$ である。同じ場所で、長さを $9L$ にした単振り子の周期はどうなるか。",
+      "choices": [
+        "$T/3$",
+        "$T$",
+        "$3T$",
+        "$9T$"
+      ],
+      "correct": 2,
+      "explanation": "単振り子の周期は $T\\propto\\sqrt{L}$。長さを9倍にすると周期は $\\sqrt{9}=3$ 倍となる。",
+      "image": null
+    },
+    {
+      "id": "MEC-GRV-001",
+      "field": "mechanics",
+      "unit": "万有引力",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "ケプラーの第1法則について正しいものを選べ。",
+      "choices": [
+        "惑星は太陽を1つの焦点とする楕円軌道上を運動する",
+        "惑星は必ず太陽を中心とする円軌道上を運動する",
+        "惑星の速さは軌道上のどこでも一定である",
+        "惑星の公転周期は太陽からの距離に無関係である"
+      ],
+      "correct": 0,
+      "explanation": "ケプラーの第1法則では、惑星は太陽を1つの焦点とする楕円軌道上を運動する。",
+      "image": null
+    },
+    {
+      "id": "MEC-GRV-002",
+      "field": "mechanics",
+      "unit": "万有引力",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "ケプラーの第2法則として正しいものを選べ。",
+      "choices": [
+        "惑星と太陽を結ぶ線分が単位時間に掃く面積は一定である",
+        "惑星の速さは常に一定である",
+        "惑星の公転周期の2乗は軌道長半径の2乗に比例する",
+        "惑星には万有引力がはたらかない"
+      ],
+      "correct": 0,
+      "explanation": "ケプラーの第2法則は面積速度一定の法則で、惑星と太陽を結ぶ線分が単位時間に掃く面積は一定である。",
+      "image": null
+    },
+    {
+      "id": "MEC-GRV-003",
+      "field": "mechanics",
+      "unit": "万有引力",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "ケプラーの第3法則について、惑星の公転周期を $T$、楕円軌道の長半径を $a$ としたとき正しい関係を選べ。",
+      "choices": [
+        "$T^2\\propto a^3$",
+        "$T\\propto a^3$",
+        "$T^3\\propto a^2$",
+        "$T^2\\propto a$"
+      ],
+      "correct": 0,
+      "explanation": "ケプラーの第3法則より、公転周期の2乗は楕円軌道の長半径の3乗に比例する。",
+      "image": null
+    },
+    {
+      "id": "MEC-GRV-004",
+      "field": "mechanics",
+      "unit": "万有引力",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "質量 $m_1,m_2$ の2物体が距離 $r$ だけ離れているとき、万有引力の大きさを表す式として正しいものを選べ。",
+      "choices": [
+        "$F=G\\dfrac{m_1m_2}{r^2}$",
+        "$F=G\\dfrac{m_1+m_2}{r^2}$",
+        "$F=Gm_1m_2r^2$",
+        "$F=G\\dfrac{m_1m_2}{r}$"
+      ],
+      "correct": 0,
+      "explanation": "万有引力の法則より、$F=Gm_1m_2/r^2$。",
+      "image": null
+    },
+    {
+      "id": "MEC-GRV-005",
+      "field": "mechanics",
+      "unit": "万有引力",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "地球の質量を $M$、地球の半径を $R$、万有引力定数を $G$ とすると、地表での重力加速度 $g$ を表す式はどれか。",
+      "choices": [
+        "$g=GM/R^2$",
+        "$g=GMR^2$",
+        "$g=GR/M$",
+        "$g=GM/R$"
+      ],
+      "correct": 0,
+      "explanation": "地表の物体について $mg=GMm/R^2$ だから、$g=GM/R^2$。",
+      "image": null
+    },
+    {
+      "id": "MEC-GRV-006",
+      "field": "mechanics",
+      "unit": "万有引力",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "地表すれすれを円運動する人工衛星の速さ（第1宇宙速度）を、地表の重力加速度 $g$ と地球半径 $R$ を使って表した式として正しいものを選べ。",
+      "choices": [
+        "$\\sqrt{gR}$",
+        "$gR$",
+        "$\\sqrt{g/R}$",
+        "$g/R$"
+      ],
+      "correct": 0,
+      "explanation": "万有引力が向心力となる条件 $mg=mv^2/R$ より、第1宇宙速度は $v=\\sqrt{gR}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-GRV-007",
+      "field": "mechanics",
+      "unit": "万有引力",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "静止衛星について正しいものを選べ。",
+      "choices": [
+        "地上から見ると常に同じ位置に静止して見える",
+        "地球の自転とは逆向きに公転する",
+        "北極の真上を通る軌道を運動する",
+        "公転周期は地球の自転周期と無関係である"
+      ],
+      "correct": 0,
+      "explanation": "静止衛星は赤道上空を地球の自転と同じ向き・同じ周期で公転するため、地上から常に同じ位置に見える。",
+      "image": null
+    },
+    {
+      "id": "MEC-GRV-008",
+      "field": "mechanics",
+      "unit": "万有引力",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "質量 $M$ の天体から距離 $r$ の位置にある質量 $m$ の物体の万有引力による位置エネルギー $U$ として正しいものを選べ。無限遠を基準とする。",
+      "choices": [
+        "$U=-GMm/r$",
+        "$U=GMm/r$",
+        "$U=-GMmr$",
+        "$U=GMm/r^2$"
+      ],
+      "correct": 0,
+      "explanation": "無限遠を位置エネルギー0とすると、万有引力による位置エネルギーは $U=-GMm/r$。",
+      "image": null
+    },
+    {
+      "id": "MEC-GRV-009",
+      "field": "mechanics",
+      "unit": "万有引力",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "質量 $m$ の物体が質量 $M$ の天体のまわりを半径 $r$ の円軌道で運動している。この物体の力学的エネルギー $E$ として正しいものを選べ。",
+      "choices": [
+        "$E=-GMm/(2r)$",
+        "$E=GMm/(2r)$",
+        "$E=-GMm/r$",
+        "$E=0$"
+      ],
+      "correct": 0,
+      "explanation": "円軌道では $K=GMm/(2r)$、$U=-GMm/r$ なので、$E=K+U=-GMm/(2r)$。",
+      "image": null
+    },
+    {
+      "id": "MEC-GRV-010",
+      "field": "mechanics",
+      "unit": "万有引力",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "地表から物体を打ち上げ、地球の重力を振り切って無限遠まで到達させるための最小速度を何というか。",
+      "choices": [
+        "第2宇宙速度",
+        "第1宇宙速度",
+        "終端速度",
+        "角速度"
+      ],
+      "correct": 0,
+      "explanation": "地球の重力圏から脱出するために必要な最小速度を第2宇宙速度という。",
+      "image": null
+    },
+    {
+      "id": "MEC-GRV-011",
+      "field": "mechanics",
+      "unit": "万有引力",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "2物体間の距離だけを2倍にしたとき、万有引力の大きさはもとの何倍になるか。",
+      "choices": [
+        "$1/4$",
+        "$1/2$",
+        "$2$",
+        "$4$"
+      ],
+      "correct": 0,
+      "explanation": "万有引力は距離の2乗に反比例するので、距離を2倍にすると $1/2^2=1/4$ 倍になる。",
+      "image": null
+    },
+    {
+      "id": "MEC-GRV-012",
+      "field": "mechanics",
+      "unit": "万有引力",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "質量 $M$ の球対称な天体の中心から距離 $r$ の位置における重力加速度の大きさを表す式として正しいものを選べ。",
+      "choices": [
+        "$g=GM/r^2$",
+        "$g=GMr^2$",
+        "$g=GM/r$",
+        "$g=Gr/M$"
+      ],
+      "correct": 0,
+      "explanation": "天体の外部では、中心に全質量が集中したとみなせるので、重力加速度は $g=GM/r^2$。",
+      "image": null
+    },
+    {
+      "id": "MEC-GRV-013",
+      "field": "mechanics",
+      "unit": "万有引力",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "質量 $5.0\\,\\mathrm{kg}$ と $2.0\\,\\mathrm{kg}$ の物体が $1.0\\,\\mathrm{m}$ 離れている。両物体間にはたらく万有引力の大きさは約何 N か。$G=6.67\\times10^{-11}\\,\\mathrm{N\\,m^2/kg^2}$ とする。",
+      "choices": [
+        "$6.67\\times10^{-11}$",
+        "$6.67\\times10^{-10}$",
+        "$3.34\\times10^{-10}$",
+        "$1.33\\times10^{-9}$"
+      ],
+      "correct": 1,
+      "explanation": "$F=Gm_1m_2/r^2=6.67\\times10^{-11}\\times5.0\\times2.0=6.67\\times10^{-10}\\,\\mathrm{N}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-GRV-014",
+      "field": "mechanics",
+      "unit": "万有引力",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "地球表面で $g=9.8\\,\\mathrm{m/s^2}$、地球半径 $R=6.4\\times10^6\\,\\mathrm{m}$、$G=6.67\\times10^{-11}\\,\\mathrm{N\\,m^2/kg^2}$ とする。地球の質量は約何 kg か。",
+      "choices": [
+        "$6.0\\times10^{22}$",
+        "$6.0\\times10^{23}$",
+        "$6.0\\times10^{24}$",
+        "$6.0\\times10^{25}$"
+      ],
+      "correct": 2,
+      "explanation": "$g=GM/R^2$ より $M=gR^2/G\\approx6.0\\times10^{24}\\,\\mathrm{kg}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-GRV-015",
+      "field": "mechanics",
+      "unit": "万有引力",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "地表すれすれを円運動する人工衛星の第1宇宙速度を求める。$g=9.8\\,\\mathrm{m/s^2}$、$R=6.4\\times10^6\\,\\mathrm{m}$ とすると、約何 km/s か。",
+      "choices": [
+        "$3.2$",
+        "$5.6$",
+        "$7.9$",
+        "$11.2$"
+      ],
+      "correct": 2,
+      "explanation": "$v=\\sqrt{gR}=\\sqrt{9.8\\times6.4\\times10^6}\\approx7.9\\times10^3\\,\\mathrm{m/s}=7.9\\,\\mathrm{km/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-GRV-016",
+      "field": "mechanics",
+      "unit": "万有引力",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "地球表面からの第2宇宙速度は、第1宇宙速度の何倍か。",
+      "choices": [
+        "$1/\\sqrt{2}$",
+        "$1$",
+        "$\\sqrt{2}$",
+        "$2$"
+      ],
+      "correct": 2,
+      "explanation": "第1宇宙速度は $\\sqrt{GM/R}$、第2宇宙速度は $\\sqrt{2GM/R}$ なので、第2宇宙速度は第1宇宙速度の $\\sqrt{2}$ 倍。",
+      "image": null
+    },
+    {
+      "id": "MEC-GRV-017",
+      "field": "mechanics",
+      "unit": "万有引力",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "地球の第2宇宙速度は約何 km/s か。第1宇宙速度を $7.9\\,\\mathrm{km/s}$ とする。",
+      "choices": [
+        "$5.6$",
+        "$7.9$",
+        "$11.2$",
+        "$15.8$"
+      ],
+      "correct": 2,
+      "explanation": "第2宇宙速度は第1宇宙速度の $\\sqrt{2}$ 倍なので、$7.9\\times\\sqrt{2}\\approx11.2\\,\\mathrm{km/s}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-GRV-018",
+      "field": "mechanics",
+      "unit": "万有引力",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "質量 $M$ の天体のまわりを半径 $r$ の円軌道で運動する人工衛星の速さを表す式として正しいものを選べ。",
+      "choices": [
+        "$\\sqrt{GM/r}$",
+        "$\\sqrt{GMr}$",
+        "$GM/r$",
+        "$GM/r^2$"
+      ],
+      "correct": 0,
+      "explanation": "$GMm/r^2=mv^2/r$ より、$v=\\sqrt{GM/r}$。",
+      "image": null
+    },
+    {
+      "id": "MEC-GRV-019",
+      "field": "mechanics",
+      "unit": "万有引力",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "同じ天体のまわりを円運動する人工衛星について、軌道半径を4倍にすると速さはもとの何倍になるか。",
+      "choices": [
+        "$1/4$",
+        "$1/2$",
+        "$2$",
+        "$4$"
+      ],
+      "correct": 1,
+      "explanation": "$v=\\sqrt{GM/r}$ より、速さは軌道半径の平方根に反比例する。半径4倍なら速さは $1/2$ 倍。",
+      "image": null
+    },
+    {
+      "id": "MEC-GRV-020",
+      "field": "mechanics",
+      "unit": "万有引力",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "同じ天体のまわりを円運動する人工衛星について、軌道半径を4倍にすると公転周期はもとの何倍になるか。",
+      "choices": [
+        "$2$",
+        "$4$",
+        "$8$",
+        "$16$"
+      ],
+      "correct": 2,
+      "explanation": "ケプラーの第3法則より $T^2\\propto r^3$。したがって $r$ が4倍なら $T$ は $4^{3/2}=8$ 倍。",
+      "image": null
+    },
+    {
+      "id": "MEC-GRV-021",
+      "field": "mechanics",
+      "unit": "万有引力",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "地球半径を $R$ とする。地表から高さ $R$ の位置、すなわち地球中心から $2R$ の位置での重力加速度は、地表の何倍か。",
+      "choices": [
+        "$1/4$",
+        "$1/2$",
+        "$2$",
+        "$4$"
+      ],
+      "correct": 0,
+      "explanation": "重力加速度は中心からの距離の2乗に反比例するので、距離が $R$ から $2R$ になると $1/4$ 倍。",
+      "image": null
+    },
+    {
+      "id": "MEC-GRV-022",
+      "field": "mechanics",
+      "unit": "万有引力",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "地球中心から距離 $R$ の位置での万有引力による位置エネルギーを $U_R$ とする。距離 $2R$ の位置での位置エネルギーはどれか。",
+      "choices": [
+        "$U_R/2$",
+        "$2U_R$",
+        "$U_R/4$",
+        "$4U_R$"
+      ],
+      "correct": 0,
+      "explanation": "$U=-GMm/r$ なので、距離を2倍にすると位置エネルギーは $U_R/2$ になる。どちらも負の値である。",
+      "image": null
+    },
+    {
+      "id": "MEC-GRV-023",
+      "field": "mechanics",
+      "unit": "万有引力",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "質量 $m$ の物体を地球表面から無限遠までゆっくり運ぶために、外力がする最小の仕事を表す式として正しいものを選べ。地球の質量を $M$、半径を $R$ とする。",
+      "choices": [
+        "$GMm/R$",
+        "$GMm/(2R)$",
+        "$2GMm/R$",
+        "$0$"
+      ],
+      "correct": 0,
+      "explanation": "地表での位置エネルギーは $-GMm/R$、無限遠では0なので、必要な仕事は位置エネルギーの増加量 $GMm/R$。",
+      "image": null
+    },
+    {
+      "id": "MEC-GRV-024",
+      "field": "mechanics",
+      "unit": "万有引力",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "地球と同じ質量をもち、半径だけが地球の半分である天体の表面重力加速度は、地球表面の何倍か。",
+      "choices": [
+        "$1/4$",
+        "$1/2$",
+        "$2$",
+        "$4$"
+      ],
+      "correct": 3,
+      "explanation": "$g=GM/R^2$ より、質量が同じで半径が $R/2$ なら $g$ は $1/(1/2)^2=4$ 倍。",
+      "image": null
+    },
+    {
+      "id": "MEC-GRV-025",
+      "field": "mechanics",
+      "unit": "万有引力",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "地球半径を $R$ とする。地球中心から $2R$ の円軌道を回る人工衛星の速さは、第1宇宙速度の何倍か。",
+      "choices": [
+        "$1/2$",
+        "$1/\\sqrt{2}$",
+        "$\\sqrt{2}$",
+        "$2$"
+      ],
+      "correct": 1,
+      "explanation": "$v=\\sqrt{GM/r}$。地表すれすれでは $r=R$、中心から $2R$ では $v$ は $1/\\sqrt{2}$ 倍になる。",
+      "image": null
+    },
+    {
+      "id": "MEC-GRV-026",
+      "field": "mechanics",
+      "unit": "万有引力",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "人工衛星が半径 $r$ の円軌道を運動している。軌道上の運動エネルギー $K$ と万有引力による位置エネルギー $U$ の関係として正しいものを選べ。",
+      "choices": [
+        "$K=-U/2$",
+        "$K=U$",
+        "$K=-2U$",
+        "$K=0$"
+      ],
+      "correct": 0,
+      "explanation": "円軌道では $K=GMm/(2r)$、$U=-GMm/r$ なので、$K=-U/2$。",
+      "image": null
+    },
+    {
+      "id": "MEC-GRV-027",
+      "field": "mechanics",
+      "unit": "万有引力",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "物体を地球表面から打ち上げたとき、地球の重力を振り切って無限遠まで到達できる最小条件として、力学的エネルギー $E$ はどうなればよいか。",
+      "choices": [
+        "$E=0$",
+        "$E<0$",
+        "$E=-GMm/R$",
+        "$E$ は必ず負でなければならない"
+      ],
+      "correct": 0,
+      "explanation": "脱出の最小条件では、無限遠で速さが0となるため全力学的エネルギーは0になる。",
+      "image": null
+    },
+    {
+      "id": "MEC-GRV-028",
+      "field": "mechanics",
+      "unit": "万有引力",
+      "course": "物理",
+      "difficulty": 3,
+      "question": "地球が角速度 $\\omega$ で自転しているとする。赤道上で地球とともに回転する質量 $m$ の物体について、地球中心向きを正とした運動方程式として正しいものを選べ。地球半径を $R$、万有引力による力を $GMm/R^2$ とする。",
+      "choices": [
+        "$\\dfrac{GMm}{R^2}-N=mR\\omega^2$",
+        "$\\dfrac{GMm}{R^2}+N=mR\\omega^2$",
+        "$N-\\dfrac{GMm}{R^2}=mR\\omega^2$",
+        "$N=\\dfrac{GMm}{R^2}+mR\\omega^2$"
+      ],
+      "correct": 0,
+      "explanation": "赤道では万有引力が中心向き、地面からの垂直抗力 $N$ が外向きにはたらき、その合力が向心力になるので $GMm/R^2-N=mR\\omega^2$。",
+      "image": null
+    },
+    {
+      "id": "MEC-GRV-029",
+      "field": "mechanics",
+      "unit": "万有引力",
+      "course": "物理",
+      "difficulty": 3,
+      "question": "密度が一様な地球を仮定し、地球内部の中心から距離 $r$ の点にある物体を考える。地球内部で物体にはたらく重力の大きさは $r$ とどのような関係になるか。",
+      "choices": [
+        "$r$ に比例する",
+        "$r^2$ に比例する",
+        "$1/r$ に比例する",
+        "$1/r^2$ に比例する"
+      ],
+      "correct": 0,
+      "explanation": "一様密度なら半径 $r$ 内部の質量は $r^3$ に比例し、重力は $GM(r)m/r^2$ なので $r$ に比例する。したがって地球を貫くトンネル内の運動は単振動として扱える。",
+      "image": null
+    },
+    {
+      "id": "MEC-GRV-030",
+      "field": "mechanics",
+      "unit": "万有引力",
+      "course": "物理",
+      "difficulty": 3,
+      "question": "惑星が太陽のまわりを楕円軌道で運動している。近日点と遠日点では速度は軌道に垂直である。近日点距離を $r_1$、速さを $v_1$、遠日点距離を $r_2$、速さを $v_2$ とすると、ケプラーの第2法則から得られる関係として正しいものを選べ。",
+      "choices": [
+        "$r_1v_1=r_2v_2$",
+        "$r_1v_2=r_2v_1$",
+        "$r_1^2v_1=r_2^2v_2$",
+        "$v_1=v_2$"
+      ],
+      "correct": 0,
+      "explanation": "面積速度一定より、近日点と遠日点では $\\frac12r_1v_1=\\frac12r_2v_2$。したがって $r_1v_1=r_2v_2$。",
+      "image": null
+    }
+  ]
+}

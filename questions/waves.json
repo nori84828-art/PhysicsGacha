@@ -1,0 +1,4607 @@
+{
+  "field": "waves",
+  "fieldName": "波",
+  "units": [
+    "波の伝わり方",
+    "正弦波を表す式",
+    "波の干渉・回折・反射・屈折",
+    "音の性質",
+    "音源の振動",
+    "ドップラー効果",
+    "光の性質",
+    "レンズと球面鏡",
+    "光の回折と干渉"
+  ],
+  "questions": [
+    {
+      "id": "WAV-PROP-001",
+      "field": "waves",
+      "unit": "波の伝わり方",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "波の速さ $v$、振動数 $f$、波長 $\\lambda$ の関係として正しいものを選べ。",
+      "choices": [
+        "$v=f\\lambda$",
+        "$v=f/\\lambda$",
+        "$v=\\lambda/f$",
+        "$v=f+\\lambda$"
+      ],
+      "correct": 0,
+      "explanation": "波の基本式は $v=f\\lambda$ である。",
+      "image": null
+    },
+    {
+      "id": "WAV-PROP-002",
+      "field": "waves",
+      "unit": "波の伝わり方",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "周期 $T$ と振動数 $f$ の関係として正しいものを選べ。",
+      "choices": [
+        "$f=1/T$",
+        "$f=T$",
+        "$f=2\\pi T$",
+        "$f=T^2$"
+      ],
+      "correct": 0,
+      "explanation": "周期と振動数は互いに逆数で、$f=1/T$。",
+      "image": null
+    },
+    {
+      "id": "WAV-PROP-003",
+      "field": "waves",
+      "unit": "波の伝わり方",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "媒質の振動方向が波の進行方向に垂直な波を何というか。",
+      "choices": [
+        "横波",
+        "縦波",
+        "定常波",
+        "衝撃波"
+      ],
+      "correct": 0,
+      "explanation": "媒質の振動方向が進行方向と垂直な波を横波という。",
+      "image": null
+    },
+    {
+      "id": "WAV-PROP-004",
+      "field": "waves",
+      "unit": "波の伝わり方",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "媒質の振動方向が波の進行方向と平行な波を何というか。",
+      "choices": [
+        "縦波",
+        "横波",
+        "定常波",
+        "反射波"
+      ],
+      "correct": 0,
+      "explanation": "媒質の振動方向が進行方向と平行な波を縦波という。",
+      "image": null
+    },
+    {
+      "id": "WAV-PROP-005",
+      "field": "waves",
+      "unit": "波の伝わり方",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "2つの波が同じ場所で重なったとき、各波の変位を加え合わせて合成波を考えられる原理を何というか。",
+      "choices": [
+        "波の重ね合わせの原理",
+        "反射の法則",
+        "屈折の法則",
+        "ホイヘンスの原理"
+      ],
+      "correct": 0,
+      "explanation": "波が重なったときの変位は各波の変位の和となる。これを重ね合わせの原理という。",
+      "image": null
+    },
+    {
+      "id": "WAV-PROP-006",
+      "field": "waves",
+      "unit": "波の伝わり方",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "同じ振幅・振動数の2つの波が逆向きに進み、節と腹が一定の位置に現れる波を何というか。",
+      "choices": [
+        "定常波",
+        "進行波",
+        "縦波",
+        "パルス波"
+      ],
+      "correct": 0,
+      "explanation": "逆向きに進む同じ振動数の波の重ね合わせで、節と腹が固定された定常波ができる。",
+      "image": null
+    },
+    {
+      "id": "WAV-PROP-007",
+      "field": "waves",
+      "unit": "波の伝わり方",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "定常波で、常に変位が0となる点を何というか。",
+      "choices": [
+        "節",
+        "腹",
+        "山",
+        "谷"
+      ],
+      "correct": 0,
+      "explanation": "常に変位が0の点を節という。",
+      "image": null
+    },
+    {
+      "id": "WAV-PROP-008",
+      "field": "waves",
+      "unit": "波の伝わり方",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "定常波で、振幅が最大になる点を何というか。",
+      "choices": [
+        "腹",
+        "節",
+        "山",
+        "波源"
+      ],
+      "correct": 0,
+      "explanation": "定常波で振幅が最大になる点を腹という。",
+      "image": null
+    },
+    {
+      "id": "WAV-PROP-009",
+      "field": "waves",
+      "unit": "波の伝わり方",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "固定端で波が反射するとき、反射波の位相は入射波に対してどうなるか。",
+      "choices": [
+        "逆位相になる",
+        "同位相のまま",
+        "必ず $\\pi/2$ 進む",
+        "位相は定義できない"
+      ],
+      "correct": 0,
+      "explanation": "固定端反射では反射波は位相が $\\pi$ だけ反転する。",
+      "image": null
+    },
+    {
+      "id": "WAV-PROP-010",
+      "field": "waves",
+      "unit": "波の伝わり方",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "自由端で波が反射するとき、反射波の位相は入射波に対してどうなるか。",
+      "choices": [
+        "同位相のまま",
+        "逆位相になる",
+        "必ず $\\pi/2$ 遅れる",
+        "必ず $2\\pi$ 進む"
+      ],
+      "correct": 0,
+      "explanation": "自由端反射では位相の反転は起こらない。",
+      "image": null
+    },
+    {
+      "id": "WAV-PROP-011",
+      "field": "waves",
+      "unit": "波の伝わり方",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "定常波で隣り合う節どうしの距離は波長 $\\lambda$ の何倍か。",
+      "choices": [
+        "$1/2$",
+        "$1/4$",
+        "$1$",
+        "$2$"
+      ],
+      "correct": 0,
+      "explanation": "隣り合う節の間隔は $\\lambda/2$。",
+      "image": null
+    },
+    {
+      "id": "WAV-PROP-012",
+      "field": "waves",
+      "unit": "波の伝わり方",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "定常波で、節とそれに最も近い腹との距離は波長 $\\lambda$ の何倍か。",
+      "choices": [
+        "$1/4$",
+        "$1/2$",
+        "$1$",
+        "$2$"
+      ],
+      "correct": 0,
+      "explanation": "節から最寄りの腹までの距離は $\\lambda/4$。",
+      "image": null
+    },
+    {
+      "id": "WAV-PROP-013",
+      "field": "waves",
+      "unit": "波の伝わり方",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "波長が $0.5\\,\\mathrm{m}$、速さが $340\\,\\mathrm{m/s}$ の波の振動数は何 $\\mathrm{Hz}$ か。",
+      "choices": [
+        "$680$",
+        "$340$",
+        "$1.36e+03$",
+        "$170$"
+      ],
+      "correct": 0,
+      "explanation": "$f=v/\\lambda=340/0.5=680\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-PROP-014",
+      "field": "waves",
+      "unit": "波の伝わり方",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "波長が $7\\,\\mathrm{m}$、周期が $2\\,\\mathrm{s}$ の波の速さは何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$3.5$",
+        "$7$",
+        "$1.75$",
+        "$14$"
+      ],
+      "correct": 0,
+      "explanation": "$f=1/T=0.5\\,\\mathrm{Hz}$、したがって $v=f\\lambda=3.5\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-PROP-015",
+      "field": "waves",
+      "unit": "波の伝わり方",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "波長が $2\\,\\mathrm{m}$、速さが $5\\,\\mathrm{m/s}$ の波の振動数は何 $\\mathrm{Hz}$ か。",
+      "choices": [
+        "$2.5$",
+        "$1.25$",
+        "$5$",
+        "$10$"
+      ],
+      "correct": 0,
+      "explanation": "$f=v/\\lambda=5/2=2.5\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-PROP-016",
+      "field": "waves",
+      "unit": "波の伝わり方",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "波長が $1.5\\,\\mathrm{m}$、周期が $4\\,\\mathrm{s}$ の波の速さは何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$0.375$",
+        "$0.75$",
+        "$0.188$",
+        "$6$"
+      ],
+      "correct": 0,
+      "explanation": "$f=1/T=0.25\\,\\mathrm{Hz}$、したがって $v=f\\lambda=0.375\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-PROP-017",
+      "field": "waves",
+      "unit": "波の伝わり方",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "波長が $0.8\\,\\mathrm{m}$、速さが $10\\,\\mathrm{m/s}$ の波の振動数は何 $\\mathrm{Hz}$ か。",
+      "choices": [
+        "$12.5$",
+        "$6.25$",
+        "$25$",
+        "$8$"
+      ],
+      "correct": 0,
+      "explanation": "$f=v/\\lambda=10/0.8=12.5\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-PROP-018",
+      "field": "waves",
+      "unit": "波の伝わり方",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "波長が $12\\,\\mathrm{m}$、周期が $0.75\\,\\mathrm{s}$ の波の速さは何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$16$",
+        "$32$",
+        "$8$",
+        "$9$"
+      ],
+      "correct": 0,
+      "explanation": "$f=1/T=1.33\\,\\mathrm{Hz}$、したがって $v=f\\lambda=16\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-PROP-019",
+      "field": "waves",
+      "unit": "波の伝わり方",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "波長が $3\\,\\mathrm{m}$、速さが $6\\,\\mathrm{m/s}$ の波の振動数は何 $\\mathrm{Hz}$ か。",
+      "choices": [
+        "$2$",
+        "$1$",
+        "$4$",
+        "$18$"
+      ],
+      "correct": 0,
+      "explanation": "$f=v/\\lambda=6/3=2\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-PROP-020",
+      "field": "waves",
+      "unit": "波の伝わり方",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "波長が $5\\,\\mathrm{m}$、周期が $2.5\\,\\mathrm{s}$ の波の速さは何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$2$",
+        "$4$",
+        "$1$",
+        "$12.5$"
+      ],
+      "correct": 0,
+      "explanation": "$f=1/T=0.4\\,\\mathrm{Hz}$、したがって $v=f\\lambda=2\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-PROP-021",
+      "field": "waves",
+      "unit": "波の伝わり方",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "波長が $0.25\\,\\mathrm{m}$、速さが $8\\,\\mathrm{m/s}$ の波の振動数は何 $\\mathrm{Hz}$ か。",
+      "choices": [
+        "$32$",
+        "$16$",
+        "$64$",
+        "$2$"
+      ],
+      "correct": 0,
+      "explanation": "$f=v/\\lambda=8/0.25=32\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-PROP-022",
+      "field": "waves",
+      "unit": "波の伝わり方",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "波長が $4\\,\\mathrm{m}$、周期が $1.6\\,\\mathrm{s}$ の波の速さは何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$2.5$",
+        "$5$",
+        "$1.25$",
+        "$6.4$"
+      ],
+      "correct": 0,
+      "explanation": "$f=1/T=0.625\\,\\mathrm{Hz}$、したがって $v=f\\lambda=2.5\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-PROP-023",
+      "field": "waves",
+      "unit": "波の伝わり方",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "波長が $6\\,\\mathrm{m}$、速さが $3\\,\\mathrm{m/s}$ の波の振動数は何 $\\mathrm{Hz}$ か。",
+      "choices": [
+        "$0.5$",
+        "$0.25$",
+        "$1$",
+        "$18$"
+      ],
+      "correct": 0,
+      "explanation": "$f=v/\\lambda=3/6=0.5\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-PROP-024",
+      "field": "waves",
+      "unit": "波の伝わり方",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "波長が $2.4\\,\\mathrm{m}$、周期が $1.2\\,\\mathrm{s}$ の波の速さは何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$2$",
+        "$4$",
+        "$1$",
+        "$2.88$"
+      ],
+      "correct": 0,
+      "explanation": "$f=1/T=0.833\\,\\mathrm{Hz}$、したがって $v=f\\lambda=2\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-PROP-025",
+      "field": "waves",
+      "unit": "波の伝わり方",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "波長が $9\\,\\mathrm{m}$、速さが $3\\,\\mathrm{m/s}$ の波の振動数は何 $\\mathrm{Hz}$ か。",
+      "choices": [
+        "$0.333$",
+        "$0.167$",
+        "$0.667$",
+        "$27$"
+      ],
+      "correct": 0,
+      "explanation": "$f=v/\\lambda=3/9=0.333\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-PROP-026",
+      "field": "waves",
+      "unit": "波の伝わり方",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "波長が $1.2\\,\\mathrm{m}$、周期が $0.3\\,\\mathrm{s}$ の波の速さは何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$4$",
+        "$8$",
+        "$2$",
+        "$0.36$"
+      ],
+      "correct": 0,
+      "explanation": "$f=1/T=3.33\\,\\mathrm{Hz}$、したがって $v=f\\lambda=4\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-PROP-027",
+      "field": "waves",
+      "unit": "波の伝わり方",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "波長が $8\\,\\mathrm{m}$、速さが $4\\,\\mathrm{m/s}$ の波の振動数は何 $\\mathrm{Hz}$ か。",
+      "choices": [
+        "$0.5$",
+        "$0.25$",
+        "$1$",
+        "$32$"
+      ],
+      "correct": 0,
+      "explanation": "$f=v/\\lambda=4/8=0.5\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-PROP-028",
+      "field": "waves",
+      "unit": "波の伝わり方",
+      "course": "物理基礎",
+      "difficulty": 3,
+      "question": "同じ振幅・同じ波長の2つの正弦波が同一直線上を逆向きに進み、定常波をつくっている。隣り合う節の間隔が $0.40\\,\\mathrm{m}$ のとき、もとの進行波の波長は何 m か。",
+      "choices": [
+        "$0.20$",
+        "$0.40$",
+        "$0.80$",
+        "$1.60$"
+      ],
+      "correct": 2,
+      "explanation": "隣り合う節の間隔は $\\lambda/2$ なので、$\\lambda=0.80\\,\\mathrm{m}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-PROP-029",
+      "field": "waves",
+      "unit": "波の伝わり方",
+      "course": "物理基礎",
+      "difficulty": 3,
+      "question": "定常波で、ある節から右へ $0.75\\,\\mathrm{m}$ の位置に3つ目の腹がある。波長は何 m か。",
+      "choices": [
+        "$0.30$",
+        "$0.50$",
+        "$0.60$",
+        "$1.00$"
+      ],
+      "correct": 2,
+      "explanation": "節から腹は $\\lambda/4,3\\lambda/4,5\\lambda/4,\\dots$。3つ目の腹なので $5\\lambda/4=0.75$、よって $\\lambda=0.60\\,\\mathrm{m}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-PROP-030",
+      "field": "waves",
+      "unit": "波の伝わり方",
+      "course": "物理基礎",
+      "difficulty": 3,
+      "question": "波長 $1.2\\,\\mathrm{m}$ の波が固定端で反射して定常波をつくる。固定端から最初の腹までの距離は何 m か。",
+      "choices": [
+        "$0.15$",
+        "$0.30$",
+        "$0.60$",
+        "$1.20$"
+      ],
+      "correct": 1,
+      "explanation": "固定端は節となるので、最初の腹までは $\\lambda/4=1.2/4=0.30\\,\\mathrm{m}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SINE-001",
+      "field": "waves",
+      "unit": "正弦波を表す式",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "正弦波 $y=A\\sin 2\\pi\\left(\\frac{t}{T}-\\frac{x}{\\lambda}\\right)$ が表す波の進行方向を選べ。",
+      "choices": [
+        "$+x$ 方向",
+        "$-x$ 方向",
+        "$+y$ 方向",
+        "進行しない"
+      ],
+      "correct": 0,
+      "explanation": "位相が $t/T-x/\\lambda$ の形なら $+x$ 方向へ進む波である。",
+      "image": null
+    },
+    {
+      "id": "WAV-SINE-002",
+      "field": "waves",
+      "unit": "正弦波を表す式",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "正弦波 $y=A\\sin 2\\pi\\left(\\frac{t}{T}+\\frac{x}{\\lambda}\\right)$ が表す波の進行方向を選べ。",
+      "choices": [
+        "$-x$ 方向",
+        "$+x$ 方向",
+        "$+y$ 方向",
+        "進行しない"
+      ],
+      "correct": 0,
+      "explanation": "位相が $t/T+x/\\lambda$ の形なら $-x$ 方向へ進む。",
+      "image": null
+    },
+    {
+      "id": "WAV-SINE-003",
+      "field": "waves",
+      "unit": "正弦波を表す式",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "$y=A\\sin 2\\pi\\left(\\frac{t}{T}-\\frac{x}{\\lambda}\\right)$ における $A$ は何を表すか。",
+      "choices": [
+        "振幅",
+        "周期",
+        "波長",
+        "速さ"
+      ],
+      "correct": 0,
+      "explanation": "$A$ は振幅を表す。",
+      "image": null
+    },
+    {
+      "id": "WAV-SINE-004",
+      "field": "waves",
+      "unit": "正弦波を表す式",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "$y=A\\sin 2\\pi\\left(\\frac{t}{T}-\\frac{x}{\\lambda}\\right)$ における $T$ は何を表すか。",
+      "choices": [
+        "周期",
+        "振幅",
+        "波長",
+        "位相差"
+      ],
+      "correct": 0,
+      "explanation": "$T$ は周期を表す。",
+      "image": null
+    },
+    {
+      "id": "WAV-SINE-005",
+      "field": "waves",
+      "unit": "正弦波を表す式",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "$y=A\\sin 2\\pi\\left(\\frac{t}{T}-\\frac{x}{\\lambda}\\right)$ における $\\lambda$ は何を表すか。",
+      "choices": [
+        "波長",
+        "周期",
+        "振幅",
+        "角速度"
+      ],
+      "correct": 0,
+      "explanation": "$\\lambda$ は波長を表す。",
+      "image": null
+    },
+    {
+      "id": "WAV-SINE-006",
+      "field": "waves",
+      "unit": "正弦波を表す式",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "正弦波の速さを周期 $T$ と波長 $\\lambda$ で表す式を選べ。",
+      "choices": [
+        "$v=\\lambda/T$",
+        "$v=T/\\lambda$",
+        "$v=\\lambda T$",
+        "$v=2\\pi\\lambda T$"
+      ],
+      "correct": 0,
+      "explanation": "波の基本式 $v=f\\lambda$ と $f=1/T$ より $v=\\lambda/T$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SINE-007",
+      "field": "waves",
+      "unit": "正弦波を表す式",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "正弦波の角振動数 $\\omega$ と周期 $T$ の関係として正しいものを選べ。",
+      "choices": [
+        "$\\omega=2\\pi/T$",
+        "$\\omega=T/2\\pi$",
+        "$\\omega=2\\pi T$",
+        "$\\omega=T^2$"
+      ],
+      "correct": 0,
+      "explanation": "$1$ 周期で位相が $2\\pi$ 進むので $\\omega=2\\pi/T$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SINE-008",
+      "field": "waves",
+      "unit": "正弦波を表す式",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "波数 $k$ と波長 $\\lambda$ の関係として正しいものを選べ。",
+      "choices": [
+        "$k=2\\pi/\\lambda$",
+        "$k=\\lambda/2\\pi$",
+        "$k=2\\pi\\lambda$",
+        "$k=1/\\lambda^2$"
+      ],
+      "correct": 0,
+      "explanation": "波数は $k=2\\pi/\\lambda$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SINE-009",
+      "field": "waves",
+      "unit": "正弦波を表す式",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "式 $y=A\\sin(\\omega t-kx)$ はどちら向きに進む波か。",
+      "choices": [
+        "$+x$ 方向",
+        "$-x$ 方向",
+        "進行しない",
+        "$+y$ 方向"
+      ],
+      "correct": 0,
+      "explanation": "$\\omega t-kx$ の形は $+x$ 方向へ進む。",
+      "image": null
+    },
+    {
+      "id": "WAV-SINE-010",
+      "field": "waves",
+      "unit": "正弦波を表す式",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "式 $y=A\\sin(\\omega t+kx)$ はどちら向きに進む波か。",
+      "choices": [
+        "$-x$ 方向",
+        "$+x$ 方向",
+        "進行しない",
+        "$+y$ 方向"
+      ],
+      "correct": 0,
+      "explanation": "$\\omega t+kx$ の形は $-x$ 方向へ進む。",
+      "image": null
+    },
+    {
+      "id": "WAV-SINE-011",
+      "field": "waves",
+      "unit": "正弦波を表す式",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "同じ波の中で、位置が波長 $\\lambda$ だけ離れた2点の位相差は何 rad か。",
+      "choices": [
+        "$2\\pi$",
+        "$\\pi$",
+        "$\\pi/2$",
+        "$0.5\\pi$"
+      ],
+      "correct": 0,
+      "explanation": "1波長離れると位相は1周期分、すなわち $2\\pi$ 異なる。",
+      "image": null
+    },
+    {
+      "id": "WAV-SINE-012",
+      "field": "waves",
+      "unit": "正弦波を表す式",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "同じ波の中で、位置が $\\lambda/2$ だけ離れた2点の位相差は何 rad か。",
+      "choices": [
+        "$\\pi$",
+        "$2\\pi$",
+        "$\\pi/2$",
+        "$\\pi/4$"
+      ],
+      "correct": 0,
+      "explanation": "距離 $\\lambda/2$ に対応する位相差は $2\\pi\\times1/2=\\pi$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SINE-013",
+      "field": "waves",
+      "unit": "正弦波を表す式",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "正弦波 $y=3\\sin 2\\pi\\left(\\frac{t}{4}-\\frac{x}{2}\\right)$ で表される波の速さは何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$0.5$",
+        "$1$",
+        "$0.25$",
+        "$8$"
+      ],
+      "correct": 0,
+      "explanation": "$v=\\lambda/T=2/4=0.5\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SINE-014",
+      "field": "waves",
+      "unit": "正弦波を表す式",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "正弦波 $y=4\\sin 2\\pi\\left(\\frac{t}{6}-\\frac{x}{3}\\right)$ の振動数は何 $\\mathrm{Hz}$ か。",
+      "choices": [
+        "$0.167$",
+        "$0.333$",
+        "$0.0833$",
+        "$6$"
+      ],
+      "correct": 0,
+      "explanation": "$f=1/T=1/6=0.167\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SINE-015",
+      "field": "waves",
+      "unit": "正弦波を表す式",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "正弦波 $y=5\\sin 2\\pi\\left(\\frac{t}{3}-\\frac{x}{1.5}\\right)$ の振幅は何 m か。",
+      "choices": [
+        "$5$",
+        "$2.5$",
+        "$10$",
+        "$1.5$"
+      ],
+      "correct": 0,
+      "explanation": "式の係数より振幅は $A=5\\,\\mathrm{m}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SINE-016",
+      "field": "waves",
+      "unit": "正弦波を表す式",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "正弦波 $y=2\\sin 2\\pi\\left(\\frac{t}{0.4}-\\frac{x}{0.8}\\right)$ で表される波の速さは何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$2$",
+        "$4$",
+        "$1$",
+        "$0.32$"
+      ],
+      "correct": 0,
+      "explanation": "$v=\\lambda/T=0.8/0.4=2\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SINE-017",
+      "field": "waves",
+      "unit": "正弦波を表す式",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "正弦波 $y=3\\sin 2\\pi\\left(\\frac{t}{10}-\\frac{x}{5}\\right)$ の振動数は何 $\\mathrm{Hz}$ か。",
+      "choices": [
+        "$0.1$",
+        "$0.2$",
+        "$0.05$",
+        "$10$"
+      ],
+      "correct": 0,
+      "explanation": "$f=1/T=1/10=0.1\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SINE-018",
+      "field": "waves",
+      "unit": "正弦波を表す式",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "正弦波 $y=4\\sin 2\\pi\\left(\\frac{t}{1.2}-\\frac{x}{2.4}\\right)$ の振幅は何 m か。",
+      "choices": [
+        "$4$",
+        "$2$",
+        "$8$",
+        "$2.4$"
+      ],
+      "correct": 0,
+      "explanation": "式の係数より振幅は $A=4\\,\\mathrm{m}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SINE-019",
+      "field": "waves",
+      "unit": "正弦波を表す式",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "正弦波 $y=5\\sin 2\\pi\\left(\\frac{t}{2}-\\frac{x}{4}\\right)$ で表される波の速さは何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$2$",
+        "$4$",
+        "$1$",
+        "$8$"
+      ],
+      "correct": 0,
+      "explanation": "$v=\\lambda/T=4/2=2\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SINE-020",
+      "field": "waves",
+      "unit": "正弦波を表す式",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "正弦波 $y=2\\sin 2\\pi\\left(\\frac{t}{3}-\\frac{x}{6}\\right)$ の振動数は何 $\\mathrm{Hz}$ か。",
+      "choices": [
+        "$0.333$",
+        "$0.667$",
+        "$0.167$",
+        "$3$"
+      ],
+      "correct": 0,
+      "explanation": "$f=1/T=1/3=0.333\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SINE-021",
+      "field": "waves",
+      "unit": "正弦波を表す式",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "正弦波 $y=3\\sin 2\\pi\\left(\\frac{t}{0.25}-\\frac{x}{0.5}\\right)$ の振幅は何 m か。",
+      "choices": [
+        "$3$",
+        "$1.5$",
+        "$6$",
+        "$0.5$"
+      ],
+      "correct": 0,
+      "explanation": "式の係数より振幅は $A=3\\,\\mathrm{m}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SINE-022",
+      "field": "waves",
+      "unit": "正弦波を表す式",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "正弦波 $y=4\\sin 2\\pi\\left(\\frac{t}{4}-\\frac{x}{8}\\right)$ で表される波の速さは何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$2$",
+        "$4$",
+        "$1$",
+        "$32$"
+      ],
+      "correct": 0,
+      "explanation": "$v=\\lambda/T=8/4=2\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SINE-023",
+      "field": "waves",
+      "unit": "正弦波を表す式",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "正弦波 $y=5\\sin 2\\pi\\left(\\frac{t}{1.8}-\\frac{x}{3.6}\\right)$ の振動数は何 $\\mathrm{Hz}$ か。",
+      "choices": [
+        "$0.556$",
+        "$1.11$",
+        "$0.278$",
+        "$1.8$"
+      ],
+      "correct": 0,
+      "explanation": "$f=1/T=1/1.8=0.556\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SINE-024",
+      "field": "waves",
+      "unit": "正弦波を表す式",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "正弦波 $y=2\\sin 2\\pi\\left(\\frac{t}{0.6}-\\frac{x}{1.2}\\right)$ の振幅は何 m か。",
+      "choices": [
+        "$2$",
+        "$1$",
+        "$4$",
+        "$1.2$"
+      ],
+      "correct": 0,
+      "explanation": "式の係数より振幅は $A=2\\,\\mathrm{m}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SINE-025",
+      "field": "waves",
+      "unit": "正弦波を表す式",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "正弦波 $y=3\\sin 2\\pi\\left(\\frac{t}{5}-\\frac{x}{2.5}\\right)$ で表される波の速さは何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$0.5$",
+        "$1$",
+        "$0.25$",
+        "$12.5$"
+      ],
+      "correct": 0,
+      "explanation": "$v=\\lambda/T=2.5/5=0.5\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SINE-026",
+      "field": "waves",
+      "unit": "正弦波を表す式",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "正弦波 $y=4\\sin 2\\pi\\left(\\frac{t}{14}-\\frac{x}{7}\\right)$ の振動数は何 $\\mathrm{Hz}$ か。",
+      "choices": [
+        "$0.0714$",
+        "$0.143$",
+        "$0.0357$",
+        "$14$"
+      ],
+      "correct": 0,
+      "explanation": "$f=1/T=1/14=0.0714\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SINE-027",
+      "field": "waves",
+      "unit": "正弦波を表す式",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "正弦波 $y=5\\sin 2\\pi\\left(\\frac{t}{0.3}-\\frac{x}{0.9}\\right)$ の振幅は何 m か。",
+      "choices": [
+        "$5$",
+        "$2.5$",
+        "$10$",
+        "$0.9$"
+      ],
+      "correct": 0,
+      "explanation": "式の係数より振幅は $A=5\\,\\mathrm{m}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SINE-028",
+      "field": "waves",
+      "unit": "正弦波を表す式",
+      "course": "物理",
+      "difficulty": 3,
+      "question": "波 $y=3.0\\sin 2\\pi\\left(\\frac{t}{0.50}-\\frac{x}{2.0}\\right)$ において、$x=0.50\\,\\mathrm{m}$ の点は $x=0$ の点に対して位相が何 rad だけ遅れているか。",
+      "choices": [
+        "$\\pi/4$",
+        "$\\pi/2$",
+        "$\\pi$",
+        "$2\\pi$"
+      ],
+      "correct": 1,
+      "explanation": "位置による位相差は $2\\pi\\Delta x/\\lambda=2\\pi\\times0.50/2.0=\\pi/2$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SINE-029",
+      "field": "waves",
+      "unit": "正弦波を表す式",
+      "course": "物理",
+      "difficulty": 3,
+      "question": "波 $y=4.0\\sin(8\\pi t-2\\pi x)$ で、$x$ の単位を m、$t$ の単位を s とする。この波の速さは何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$2$",
+        "$4$",
+        "$8$",
+        "$16$"
+      ],
+      "correct": 1,
+      "explanation": "$\\omega=8\\pi$、$k=2\\pi$ なので $v=\\omega/k=4\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SINE-030",
+      "field": "waves",
+      "unit": "正弦波を表す式",
+      "course": "物理",
+      "difficulty": 3,
+      "question": "波 $y=A\\sin(6\\pi t+3\\pi x)$ が表す波について正しいものを選べ。",
+      "choices": [
+        "$-x$ 方向へ $2\\,\\mathrm{m/s}$",
+        "$+x$ 方向へ $2\\,\\mathrm{m/s}$",
+        "$-x$ 方向へ $0.5\\,\\mathrm{m/s}$",
+        "$+x$ 方向へ $0.5\\,\\mathrm{m/s}$"
+      ],
+      "correct": 0,
+      "explanation": "$\\omega=6\\pi$、$k=3\\pi$ なので速さは $v=\\omega/k=2\\,\\mathrm{m/s}$。$\\omega t+kx$ の形なので $-x$ 方向へ進む。",
+      "image": null
+    },
+    {
+      "id": "WAV-INTF-001",
+      "field": "waves",
+      "unit": "波の干渉・回折・反射・屈折",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "同位相で振動する2つの波源からの波が強め合う条件として正しいものを選べ。経路差を $\\Delta L$ とする。",
+      "choices": [
+        "$\\Delta L=m\\lambda$",
+        "$\\Delta L=(m+1/2)\\lambda$",
+        "$\\Delta L=\\lambda/4$ のみ",
+        "$\\Delta L$ に無関係"
+      ],
+      "correct": 0,
+      "explanation": "同位相の2波が強め合う条件は経路差が波長の整数倍であること。",
+      "image": null
+    },
+    {
+      "id": "WAV-INTF-002",
+      "field": "waves",
+      "unit": "波の干渉・回折・反射・屈折",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "同位相で振動する2つの波源からの波が弱め合う条件を選べ。",
+      "choices": [
+        "$\\Delta L=(m+1/2)\\lambda$",
+        "$\\Delta L=m\\lambda$",
+        "$\\Delta L=2m\\lambda$ のみ",
+        "$\\Delta L=0$"
+      ],
+      "correct": 0,
+      "explanation": "同位相の2波が弱め合うのは経路差が半波長の奇数倍のとき。",
+      "image": null
+    },
+    {
+      "id": "WAV-INTF-003",
+      "field": "waves",
+      "unit": "波の干渉・回折・反射・屈折",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "波が障害物の背後や狭いすき間の先へ回り込む現象を何というか。",
+      "choices": [
+        "回折",
+        "屈折",
+        "反射",
+        "偏光"
+      ],
+      "correct": 0,
+      "explanation": "波が障害物の背後へ回り込む現象を回折という。",
+      "image": null
+    },
+    {
+      "id": "WAV-INTF-004",
+      "field": "waves",
+      "unit": "波の干渉・回折・反射・屈折",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "波の反射で成り立つ関係として正しいものを選べ。",
+      "choices": [
+        "入射角＝反射角",
+        "入射角＋反射角＝90°",
+        "入射角＝屈折角",
+        "反射角は常に0°"
+      ],
+      "correct": 0,
+      "explanation": "反射の法則より、入射角と反射角は等しい。",
+      "image": null
+    },
+    {
+      "id": "WAV-INTF-005",
+      "field": "waves",
+      "unit": "波の干渉・回折・反射・屈折",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "屈折率 $n_{21}$ を、媒質1での入射角 $i$ と媒質2での屈折角 $r$ を用いて表した式を選べ。",
+      "choices": [
+        "$n_{21}=\\sin i/\\sin r$",
+        "$n_{21}=\\sin r/\\sin i$",
+        "$n_{21}=i/r$",
+        "$n_{21}=r/i$"
+      ],
+      "correct": 0,
+      "explanation": "屈折の法則より $n_{21}=\\sin i/\\sin r$。",
+      "image": null
+    },
+    {
+      "id": "WAV-INTF-006",
+      "field": "waves",
+      "unit": "波の干渉・回折・反射・屈折",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "媒質1,2での波の速さを $v_1,v_2$ とすると、媒質1に対する媒質2の屈折率 $n_{21}$ はどれか。",
+      "choices": [
+        "$v_1/v_2$",
+        "$v_2/v_1$",
+        "$v_1v_2$",
+        "$1/(v_1v_2)$"
+      ],
+      "correct": 0,
+      "explanation": "$n_{21}=v_1/v_2$。",
+      "image": null
+    },
+    {
+      "id": "WAV-INTF-007",
+      "field": "waves",
+      "unit": "波の干渉・回折・反射・屈折",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "屈折しても変化しない波の量を選べ。",
+      "choices": [
+        "振動数",
+        "波長",
+        "速さ",
+        "進行方向"
+      ],
+      "correct": 0,
+      "explanation": "境界を越えても振動数は波源によって決まり変化しない。",
+      "image": null
+    },
+    {
+      "id": "WAV-INTF-008",
+      "field": "waves",
+      "unit": "波の干渉・回折・反射・屈折",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "屈折で、速さが小さくなる媒質へ進むとき、波は法線に対して一般にどう曲がるか。",
+      "choices": [
+        "法線に近づく",
+        "法線から遠ざかる",
+        "必ず反射する",
+        "直進のみ"
+      ],
+      "correct": 0,
+      "explanation": "速さが小さい媒質へ入ると、屈折角は小さくなり法線に近づく。",
+      "image": null
+    },
+    {
+      "id": "WAV-INTF-009",
+      "field": "waves",
+      "unit": "波の干渉・回折・反射・屈折",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "ホイヘンスの原理について正しいものを選べ。",
+      "choices": [
+        "波面上の各点を新たな波源とみなし、その包絡面が次の波面になる",
+        "波は粒子だけで伝わる",
+        "波長は常に0になる",
+        "反射だけを説明する法則"
+      ],
+      "correct": 0,
+      "explanation": "ホイヘンスの原理では波面上の各点から素元波が出ると考える。",
+      "image": null
+    },
+    {
+      "id": "WAV-INTF-010",
+      "field": "waves",
+      "unit": "波の干渉・回折・反射・屈折",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "2つの波の重ね合わせで振幅が大きくなる現象を何というか。",
+      "choices": [
+        "強め合い",
+        "弱め合い",
+        "全反射",
+        "偏光"
+      ],
+      "correct": 0,
+      "explanation": "同位相に近い波が重なると振幅が大きくなり強め合う。",
+      "image": null
+    },
+    {
+      "id": "WAV-INTF-011",
+      "field": "waves",
+      "unit": "波の干渉・回折・反射・屈折",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "2つの波の重ね合わせで振幅が小さくなる現象を何というか。",
+      "choices": [
+        "弱め合い",
+        "強め合い",
+        "屈折",
+        "散乱"
+      ],
+      "correct": 0,
+      "explanation": "逆位相に近い波が重なると振幅が小さくなる。",
+      "image": null
+    },
+    {
+      "id": "WAV-INTF-012",
+      "field": "waves",
+      "unit": "波の干渉・回折・反射・屈折",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "波の回折が顕著になりやすいのは、すき間の幅と波長の関係がどういうときか。",
+      "choices": [
+        "すき間の幅が波長と同程度またはそれ以下",
+        "すき間が波長よりはるかに大きいときだけ",
+        "波長が0のとき",
+        "振幅が0のとき"
+      ],
+      "correct": 0,
+      "explanation": "回折は、開口幅が波長と同程度か小さいほど目立つ。",
+      "image": null
+    },
+    {
+      "id": "WAV-INTF-013",
+      "field": "waves",
+      "unit": "波の干渉・回折・反射・屈折",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "同位相の2波源からの波が点Pで重なる。波長が $0.5\\,\\mathrm{m}$、経路差が $1\\,\\mathrm{m}$ のとき、点Pではどうなるか。",
+      "choices": [
+        "強め合う",
+        "弱め合う",
+        "必ず全反射する",
+        "判断できない"
+      ],
+      "correct": 0,
+      "explanation": "$\\Delta L/\\lambda=2$。整数なら強め合い、半整数なら弱め合う。したがって強め合う。",
+      "image": null
+    },
+    {
+      "id": "WAV-INTF-014",
+      "field": "waves",
+      "unit": "波の干渉・回折・反射・屈折",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "同位相の2波源からの波が点Pで重なる。波長が $0.4\\,\\mathrm{m}$、経路差が $0.6\\,\\mathrm{m}$ のとき、点Pではどうなるか。",
+      "choices": [
+        "強め合う",
+        "弱め合う",
+        "必ず全反射する",
+        "判断できない"
+      ],
+      "correct": 1,
+      "explanation": "$\\Delta L/\\lambda=1.5$。整数なら強め合い、半整数なら弱め合う。したがって弱め合う。",
+      "image": null
+    },
+    {
+      "id": "WAV-INTF-015",
+      "field": "waves",
+      "unit": "波の干渉・回折・反射・屈折",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "同位相の2波源からの波が点Pで重なる。波長が $0.3\\,\\mathrm{m}$、経路差が $0.9\\,\\mathrm{m}$ のとき、点Pではどうなるか。",
+      "choices": [
+        "強め合う",
+        "弱め合う",
+        "必ず全反射する",
+        "判断できない"
+      ],
+      "correct": 0,
+      "explanation": "$\\Delta L/\\lambda=3$。整数なら強め合い、半整数なら弱め合う。したがって強め合う。",
+      "image": null
+    },
+    {
+      "id": "WAV-INTF-016",
+      "field": "waves",
+      "unit": "波の干渉・回折・反射・屈折",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "同位相の2波源からの波が点Pで重なる。波長が $0.8\\,\\mathrm{m}$、経路差が $1.2\\,\\mathrm{m}$ のとき、点Pではどうなるか。",
+      "choices": [
+        "強め合う",
+        "弱め合う",
+        "必ず全反射する",
+        "判断できない"
+      ],
+      "correct": 1,
+      "explanation": "$\\Delta L/\\lambda=1.5$。整数なら強め合い、半整数なら弱め合う。したがって弱め合う。",
+      "image": null
+    },
+    {
+      "id": "WAV-INTF-017",
+      "field": "waves",
+      "unit": "波の干渉・回折・反射・屈折",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "同位相の2波源からの波が点Pで重なる。波長が $0.25\\,\\mathrm{m}$、経路差が $0.5\\,\\mathrm{m}$ のとき、点Pではどうなるか。",
+      "choices": [
+        "強め合う",
+        "弱め合う",
+        "必ず全反射する",
+        "判断できない"
+      ],
+      "correct": 0,
+      "explanation": "$\\Delta L/\\lambda=2$。整数なら強め合い、半整数なら弱め合う。したがって強め合う。",
+      "image": null
+    },
+    {
+      "id": "WAV-INTF-018",
+      "field": "waves",
+      "unit": "波の干渉・回折・反射・屈折",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "波が境界面に入射角 $30^\\circ$ で入射した。反射角は何度か。",
+      "choices": [
+        "$30^\\circ$",
+        "$60^\\circ$",
+        "$15^\\circ$",
+        "$40^\\circ$"
+      ],
+      "correct": 0,
+      "explanation": "反射の法則より、反射角は入射角に等しい。",
+      "image": null
+    },
+    {
+      "id": "WAV-INTF-019",
+      "field": "waves",
+      "unit": "波の干渉・回折・反射・屈折",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "波が境界面に入射角 $45^\\circ$ で入射した。反射角は何度か。",
+      "choices": [
+        "$45^\\circ$",
+        "$45^\\circ$",
+        "$22.5^\\circ$",
+        "$55^\\circ$"
+      ],
+      "correct": 0,
+      "explanation": "反射の法則より、反射角は入射角に等しい。",
+      "image": null
+    },
+    {
+      "id": "WAV-INTF-020",
+      "field": "waves",
+      "unit": "波の干渉・回折・反射・屈折",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "波が境界面に入射角 $60^\\circ$ で入射した。反射角は何度か。",
+      "choices": [
+        "$60^\\circ$",
+        "$30^\\circ$",
+        "$30^\\circ$",
+        "$70^\\circ$"
+      ],
+      "correct": 0,
+      "explanation": "反射の法則より、反射角は入射角に等しい。",
+      "image": null
+    },
+    {
+      "id": "WAV-INTF-021",
+      "field": "waves",
+      "unit": "波の干渉・回折・反射・屈折",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "波が境界面に入射角 $20^\\circ$ で入射した。反射角は何度か。",
+      "choices": [
+        "$20^\\circ$",
+        "$70^\\circ$",
+        "$10^\\circ$",
+        "$30^\\circ$"
+      ],
+      "correct": 0,
+      "explanation": "反射の法則より、反射角は入射角に等しい。",
+      "image": null
+    },
+    {
+      "id": "WAV-INTF-022",
+      "field": "waves",
+      "unit": "波の干渉・回折・反射・屈折",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "波が境界面に入射角 $35^\\circ$ で入射した。反射角は何度か。",
+      "choices": [
+        "$35^\\circ$",
+        "$55^\\circ$",
+        "$17.5^\\circ$",
+        "$45^\\circ$"
+      ],
+      "correct": 0,
+      "explanation": "反射の法則より、反射角は入射角に等しい。",
+      "image": null
+    },
+    {
+      "id": "WAV-INTF-023",
+      "field": "waves",
+      "unit": "波の干渉・回折・反射・屈折",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "空気から屈折率 $1.5$ の媒質へ、入射角 $30^\\circ$ で波が入射する。屈折角は約何度か。",
+      "choices": [
+        "$19.5^\\circ$",
+        "$30.0^\\circ$",
+        "$9.7^\\circ$",
+        "$29.2^\\circ$"
+      ],
+      "correct": 0,
+      "explanation": "$\\sin r=\\sin 30^\\circ/1.5$ より $r\\approx19.5^\\circ$。",
+      "image": null
+    },
+    {
+      "id": "WAV-INTF-024",
+      "field": "waves",
+      "unit": "波の干渉・回折・反射・屈折",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "空気から屈折率 $2$ の媒質へ、入射角 $30^\\circ$ で波が入射する。屈折角は約何度か。",
+      "choices": [
+        "$14.5^\\circ$",
+        "$30.0^\\circ$",
+        "$7.2^\\circ$",
+        "$21.7^\\circ$"
+      ],
+      "correct": 0,
+      "explanation": "$\\sin r=\\sin 30^\\circ/2$ より $r\\approx14.5^\\circ$。",
+      "image": null
+    },
+    {
+      "id": "WAV-INTF-025",
+      "field": "waves",
+      "unit": "波の干渉・回折・反射・屈折",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "空気から屈折率 $1.33$ の媒質へ、入射角 $45^\\circ$ で波が入射する。屈折角は約何度か。",
+      "choices": [
+        "$32.1^\\circ$",
+        "$45.0^\\circ$",
+        "$16.1^\\circ$",
+        "$48.2^\\circ$"
+      ],
+      "correct": 0,
+      "explanation": "$\\sin r=\\sin 45^\\circ/1.33$ より $r\\approx32.1^\\circ$。",
+      "image": null
+    },
+    {
+      "id": "WAV-INTF-026",
+      "field": "waves",
+      "unit": "波の干渉・回折・反射・屈折",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "空気から屈折率 $1.5$ の媒質へ、入射角 $45^\\circ$ で波が入射する。屈折角は約何度か。",
+      "choices": [
+        "$28.1^\\circ$",
+        "$45.0^\\circ$",
+        "$14.1^\\circ$",
+        "$42.2^\\circ$"
+      ],
+      "correct": 0,
+      "explanation": "$\\sin r=\\sin 45^\\circ/1.5$ より $r\\approx28.1^\\circ$。",
+      "image": null
+    },
+    {
+      "id": "WAV-INTF-027",
+      "field": "waves",
+      "unit": "波の干渉・回折・反射・屈折",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "空気から屈折率 $2$ の媒質へ、入射角 $20^\\circ$ で波が入射する。屈折角は約何度か。",
+      "choices": [
+        "$9.8^\\circ$",
+        "$20.0^\\circ$",
+        "$4.9^\\circ$",
+        "$14.8^\\circ$"
+      ],
+      "correct": 0,
+      "explanation": "$\\sin r=\\sin 20^\\circ/2$ より $r\\approx9.8^\\circ$。",
+      "image": null
+    },
+    {
+      "id": "WAV-INTF-028",
+      "field": "waves",
+      "unit": "波の干渉・回折・反射・屈折",
+      "course": "物理",
+      "difficulty": 3,
+      "question": "同位相の2波源 $S_1,S_2$ から波長 $0.40\\,\\mathrm{m}$ の波が出ている。点Pまでの距離がそれぞれ $3.2\\,\\mathrm{m}$ と $4.0\\,\\mathrm{m}$ のとき、点Pの干渉状態を選べ。",
+      "choices": [
+        "強め合う",
+        "弱め合う",
+        "完全反射する",
+        "回折しない"
+      ],
+      "correct": 0,
+      "explanation": "経路差は $0.8\\,\\mathrm{m}=2\\lambda$ なので強め合う。",
+      "image": null
+    },
+    {
+      "id": "WAV-INTF-029",
+      "field": "waves",
+      "unit": "波の干渉・回折・反射・屈折",
+      "course": "物理",
+      "difficulty": 3,
+      "question": "媒質1から媒質2へ進む波について、$v_1=6.0\\,\\mathrm{m/s}$、$v_2=4.0\\,\\mathrm{m/s}$、入射角 $30^\\circ$ である。屈折角は約何度か。",
+      "choices": [
+        "$19.5^\\circ$",
+        "$30^\\circ$",
+        "$48.6^\\circ$",
+        "$60^\\circ$"
+      ],
+      "correct": 0,
+      "explanation": "$\\sin i/\\sin r=v_1/v_2=1.5$ より、$\\sin r=0.5/1.5=1/3$、したがって $r\\approx19.5^\\circ$。",
+      "image": null
+    },
+    {
+      "id": "WAV-INTF-030",
+      "field": "waves",
+      "unit": "波の干渉・回折・反射・屈折",
+      "course": "物理",
+      "difficulty": 3,
+      "question": "同位相の2波源による干渉で、ある点では経路差が $5\\lambda/2$ であった。この点の状態として正しいものを選べ。",
+      "choices": [
+        "弱め合う",
+        "強め合う",
+        "必ず節ではない",
+        "反射角が0になる"
+      ],
+      "correct": 0,
+      "explanation": "$5\\lambda/2=(2+1/2)\\lambda$ は半波長の奇数倍なので弱め合う。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOUND-001",
+      "field": "waves",
+      "unit": "音の性質",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "気温 $t\\,[^{\\circ}\\mathrm{C}]$ における空気中の音速 $v\\,[\\mathrm{m/s}]$ の近似式として正しいものを選べ。",
+      "choices": [
+        "$v=331.5+0.6t$",
+        "$v=331.5-0.6t$",
+        "$v=0.6+331.5t$",
+        "$v=340t$"
+      ],
+      "correct": 0,
+      "explanation": "空気中の音速はおよそ $v=331.5+0.6t$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOUND-002",
+      "field": "waves",
+      "unit": "音の性質",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "音の三要素に含まれないものを選べ。",
+      "choices": [
+        "波長",
+        "高さ",
+        "大きさ",
+        "音色"
+      ],
+      "correct": 0,
+      "explanation": "音の三要素は高さ・大きさ・音色である。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOUND-003",
+      "field": "waves",
+      "unit": "音の性質",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "音の高さを主に決める物理量はどれか。",
+      "choices": [
+        "振動数",
+        "振幅",
+        "波の速さ",
+        "位相"
+      ],
+      "correct": 0,
+      "explanation": "振動数が大きいほど音は高く聞こえる。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOUND-004",
+      "field": "waves",
+      "unit": "音の性質",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "音の大きさに最も関係する量を選べ。",
+      "choices": [
+        "振幅",
+        "振動数",
+        "波長だけ",
+        "位相速度だけ"
+      ],
+      "correct": 0,
+      "explanation": "一般に振幅が大きいほど音は大きく聞こえる。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOUND-005",
+      "field": "waves",
+      "unit": "音の性質",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "音色の違いに関係するものを選べ。",
+      "choices": [
+        "波形や倍音の含まれ方",
+        "音速だけ",
+        "波長だけ",
+        "媒質の密度だけ"
+      ],
+      "correct": 0,
+      "explanation": "音色は波形や含まれる倍音成分に関係する。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOUND-006",
+      "field": "waves",
+      "unit": "音の性質",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "音が壁などで跳ね返る現象を何というか。",
+      "choices": [
+        "反射",
+        "屈折",
+        "回折",
+        "偏光"
+      ],
+      "correct": 0,
+      "explanation": "音も波なので境界で反射する。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOUND-007",
+      "field": "waves",
+      "unit": "音の性質",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "音が障害物の背後へ回り込む現象を何というか。",
+      "choices": [
+        "回折",
+        "反射",
+        "屈折",
+        "共振"
+      ],
+      "correct": 0,
+      "explanation": "音波も回折する。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOUND-008",
+      "field": "waves",
+      "unit": "音の性質",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "2つの音波が重なって強め合ったり弱め合ったりする現象を何というか。",
+      "choices": [
+        "干渉",
+        "偏光",
+        "散乱",
+        "分散"
+      ],
+      "correct": 0,
+      "explanation": "波の重ね合わせにより干渉が起こる。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOUND-009",
+      "field": "waves",
+      "unit": "音の性質",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "うなりが生じるのはどのようなときか。",
+      "choices": [
+        "振動数がわずかに異なる2つの音を同時に鳴らすとき",
+        "同じ音を1つだけ鳴らすとき",
+        "音速が0のとき",
+        "完全に真空のとき"
+      ],
+      "correct": 0,
+      "explanation": "わずかに異なる振動数の2音を重ねるとうなりが生じる。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOUND-010",
+      "field": "waves",
+      "unit": "音の性質",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "うなりの振動数 $f_b$ と2つの音の振動数 $f_1,f_2$ の関係を選べ。",
+      "choices": [
+        "$f_b=|f_1-f_2|$",
+        "$f_b=f_1+f_2$",
+        "$f_b=f_1f_2$",
+        "$f_b=|f_1+f_2|/2$"
+      ],
+      "correct": 0,
+      "explanation": "うなりの振動数は2振動数の差の絶対値。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOUND-011",
+      "field": "waves",
+      "unit": "音の性質",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "音は真空中を伝わることができるか。",
+      "choices": [
+        "できない",
+        "必ず光速で伝わる",
+        "液体より速く伝わる",
+        "振幅が大きければ伝わる"
+      ],
+      "correct": 0,
+      "explanation": "音は媒質の振動によって伝わるため、真空中では伝わらない。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOUND-012",
+      "field": "waves",
+      "unit": "音の性質",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "音速が一定のとき、振動数が高くなると波長はどうなるか。",
+      "choices": [
+        "短くなる",
+        "長くなる",
+        "変わらない",
+        "必ず2倍になる"
+      ],
+      "correct": 0,
+      "explanation": "$v=f\\lambda$ より、音速一定なら振動数が大きいほど波長は短い。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOUND-013",
+      "field": "waves",
+      "unit": "音の性質",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "気温 $0\\,^{\\circ}\\mathrm{C}$ の空気中の音速は約何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$331.5$",
+        "$319.5$",
+        "$343.5$",
+        "$331.5$"
+      ],
+      "correct": 0,
+      "explanation": "$v=331.5+0.6\\times0=331.5\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOUND-014",
+      "field": "waves",
+      "unit": "音の性質",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "気温 $10\\,^{\\circ}\\mathrm{C}$ の空気中の音速は約何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$337.5$",
+        "$325.5$",
+        "$349.5$",
+        "$331.5$"
+      ],
+      "correct": 0,
+      "explanation": "$v=331.5+0.6\\times10=337.5\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOUND-015",
+      "field": "waves",
+      "unit": "音の性質",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "気温 $20\\,^{\\circ}\\mathrm{C}$ の空気中の音速は約何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$343.5$",
+        "$331.5$",
+        "$355.5$",
+        "$331.5$"
+      ],
+      "correct": 0,
+      "explanation": "$v=331.5+0.6\\times20=343.5\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOUND-016",
+      "field": "waves",
+      "unit": "音の性質",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "気温 $25\\,^{\\circ}\\mathrm{C}$ の空気中の音速は約何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$346.5$",
+        "$334.5$",
+        "$358.5$",
+        "$331.5$"
+      ],
+      "correct": 0,
+      "explanation": "$v=331.5+0.6\\times25=346.5\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOUND-017",
+      "field": "waves",
+      "unit": "音の性質",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "気温 $30\\,^{\\circ}\\mathrm{C}$ の空気中の音速は約何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$349.5$",
+        "$337.5$",
+        "$361.5$",
+        "$331.5$"
+      ],
+      "correct": 0,
+      "explanation": "$v=331.5+0.6\\times30=349.5\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOUND-018",
+      "field": "waves",
+      "unit": "音の性質",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "音速が $340\\,\\mathrm{m/s}$、振動数が $680\\,\\mathrm{Hz}$ の音の波長は何 m か。",
+      "choices": [
+        "$0.5$",
+        "$1$",
+        "$0.25$",
+        "$2.31e+05$"
+      ],
+      "correct": 0,
+      "explanation": "$\\lambda=v/f=340/680=0.5\\,\\mathrm{m}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOUND-019",
+      "field": "waves",
+      "unit": "音の性質",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "音速が $340\\,\\mathrm{m/s}$、振動数が $850\\,\\mathrm{Hz}$ の音の波長は何 m か。",
+      "choices": [
+        "$0.4$",
+        "$0.8$",
+        "$0.2$",
+        "$2.89e+05$"
+      ],
+      "correct": 0,
+      "explanation": "$\\lambda=v/f=340/850=0.4\\,\\mathrm{m}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOUND-020",
+      "field": "waves",
+      "unit": "音の性質",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "音速が $343\\,\\mathrm{m/s}$、振動数が $343\\,\\mathrm{Hz}$ の音の波長は何 m か。",
+      "choices": [
+        "$1$",
+        "$2$",
+        "$0.5$",
+        "$1.18e+05$"
+      ],
+      "correct": 0,
+      "explanation": "$\\lambda=v/f=343/343=1\\,\\mathrm{m}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOUND-021",
+      "field": "waves",
+      "unit": "音の性質",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "音速が $330\\,\\mathrm{m/s}$、振動数が $550\\,\\mathrm{Hz}$ の音の波長は何 m か。",
+      "choices": [
+        "$0.6$",
+        "$1.2$",
+        "$0.3$",
+        "$1.82e+05$"
+      ],
+      "correct": 0,
+      "explanation": "$\\lambda=v/f=330/550=0.6\\,\\mathrm{m}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOUND-022",
+      "field": "waves",
+      "unit": "音の性質",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "音速が $345\\,\\mathrm{m/s}$、振動数が $690\\,\\mathrm{Hz}$ の音の波長は何 m か。",
+      "choices": [
+        "$0.5$",
+        "$1$",
+        "$0.25$",
+        "$2.38e+05$"
+      ],
+      "correct": 0,
+      "explanation": "$\\lambda=v/f=345/690=0.5\\,\\mathrm{m}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOUND-023",
+      "field": "waves",
+      "unit": "音の性質",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "$440\\,\\mathrm{Hz}$ と $444\\,\\mathrm{Hz}$ の音を同時に鳴らした。1秒間のうなりの回数は何回か。",
+      "choices": [
+        "$4$",
+        "$884$",
+        "$440$",
+        "$444$"
+      ],
+      "correct": 0,
+      "explanation": "うなりの振動数は $|440-444|=4\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOUND-024",
+      "field": "waves",
+      "unit": "音の性質",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "$256\\,\\mathrm{Hz}$ と $260\\,\\mathrm{Hz}$ の音を同時に鳴らした。1秒間のうなりの回数は何回か。",
+      "choices": [
+        "$4$",
+        "$516$",
+        "$256$",
+        "$260$"
+      ],
+      "correct": 0,
+      "explanation": "うなりの振動数は $|256-260|=4\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOUND-025",
+      "field": "waves",
+      "unit": "音の性質",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "$500\\,\\mathrm{Hz}$ と $507\\,\\mathrm{Hz}$ の音を同時に鳴らした。1秒間のうなりの回数は何回か。",
+      "choices": [
+        "$7$",
+        "$1007$",
+        "$500$",
+        "$507$"
+      ],
+      "correct": 0,
+      "explanation": "うなりの振動数は $|500-507|=7\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOUND-026",
+      "field": "waves",
+      "unit": "音の性質",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "$320\\,\\mathrm{Hz}$ と $323\\,\\mathrm{Hz}$ の音を同時に鳴らした。1秒間のうなりの回数は何回か。",
+      "choices": [
+        "$3$",
+        "$643$",
+        "$320$",
+        "$323$"
+      ],
+      "correct": 0,
+      "explanation": "うなりの振動数は $|320-323|=3\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOUND-027",
+      "field": "waves",
+      "unit": "音の性質",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "$880\\,\\mathrm{Hz}$ と $875\\,\\mathrm{Hz}$ の音を同時に鳴らした。1秒間のうなりの回数は何回か。",
+      "choices": [
+        "$5$",
+        "$1755$",
+        "$875$",
+        "$880$"
+      ],
+      "correct": 0,
+      "explanation": "うなりの振動数は $|880-875|=5\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOUND-028",
+      "field": "waves",
+      "unit": "音の性質",
+      "course": "物理基礎",
+      "difficulty": 3,
+      "question": "音速を $340\\,\\mathrm{m/s}$ とする。振動数 $680\\,\\mathrm{Hz}$ の音源Aと、未知の音源Bを同時に鳴らすと毎秒6回のうなりが聞こえた。Bの振動数として可能なものを選べ。",
+      "choices": [
+        "$674\\,\\mathrm{Hz}$ または $686\\,\\mathrm{Hz}$",
+        "$340\\,\\mathrm{Hz}$ のみ",
+        "$680\\,\\mathrm{Hz}$ のみ",
+        "$1360\\,\\mathrm{Hz}$ のみ"
+      ],
+      "correct": 0,
+      "explanation": "$|f_B-680|=6$ より、$f_B=674$ または $686\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOUND-029",
+      "field": "waves",
+      "unit": "音の性質",
+      "course": "物理基礎",
+      "difficulty": 3,
+      "question": "気温 $20\\,^{\\circ}\\mathrm{C}$ で、ある音の波長が $0.50\\,\\mathrm{m}$ である。振動数は約何 Hz か。",
+      "choices": [
+        "$687$",
+        "$343$",
+        "$171$",
+        "$1372$"
+      ],
+      "correct": 0,
+      "explanation": "音速は $331.5+0.6\\times20=343.5\\,\\mathrm{m/s}$。$f=v/\\lambda=343.5/0.50\\approx687\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOUND-030",
+      "field": "waves",
+      "unit": "音の性質",
+      "course": "物理基礎",
+      "difficulty": 3,
+      "question": "同じ振動数の音が空気から水へ入る。水中で音速が大きくなると、波長はどうなるか。",
+      "choices": [
+        "長くなる",
+        "短くなる",
+        "変わらない",
+        "0になる"
+      ],
+      "correct": 0,
+      "explanation": "境界を越えても振動数は変わらない。$\\lambda=v/f$ なので速さが増せば波長は長くなる。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOURCE-001",
+      "field": "waves",
+      "unit": "音源の振動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "両端固定の弦にできる基本振動で、弦の長さを $L$ とすると波長はどれか。",
+      "choices": [
+        "$2L$",
+        "$L$",
+        "$L/2$",
+        "$4L$"
+      ],
+      "correct": 0,
+      "explanation": "両端が節なので基本振動では $L=\\lambda/2$、よって $\\lambda=2L$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOURCE-002",
+      "field": "waves",
+      "unit": "音源の振動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "両端固定の弦の第 $m$ 倍振動の波長として正しいものを選べ。",
+      "choices": [
+        "$\\lambda_m=2L/m$",
+        "$\\lambda_m=mL$",
+        "$\\lambda_m=L/(2m)$",
+        "$\\lambda_m=4L/m$"
+      ],
+      "correct": 0,
+      "explanation": "両端固定弦では $L=m\\lambda/2$ より $\\lambda_m=2L/m$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOURCE-003",
+      "field": "waves",
+      "unit": "音源の振動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "両端固定の弦の第 $m$ 倍振動の振動数を、基本振動数 $f_1$ で表すとどうなるか。",
+      "choices": [
+        "$f_m=mf_1$",
+        "$f_m=f_1/m$",
+        "$f_m=m^2f_1$",
+        "$f_m=2mf_1$"
+      ],
+      "correct": 0,
+      "explanation": "弦では整数倍の倍音が現れ、$f_m=mf_1$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOURCE-004",
+      "field": "waves",
+      "unit": "音源の振動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "両端開口の気柱の基本振動で、管の長さを $L$ とすると波長はどれか。",
+      "choices": [
+        "$2L$",
+        "$4L$",
+        "$L$",
+        "$L/2$"
+      ],
+      "correct": 0,
+      "explanation": "両端開口では両端が腹となり、基本振動で $L=\\lambda/2$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOURCE-005",
+      "field": "waves",
+      "unit": "音源の振動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "一端閉口・一端開口の気柱の基本振動で、管の長さを $L$ とすると波長はどれか。",
+      "choices": [
+        "$4L$",
+        "$2L$",
+        "$L$",
+        "$L/4$"
+      ],
+      "correct": 0,
+      "explanation": "閉口端が節、開口端が腹なので基本振動では $L=\\lambda/4$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOURCE-006",
+      "field": "waves",
+      "unit": "音源の振動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "一端閉口の気柱で現れる倍音について正しいものを選べ。",
+      "choices": [
+        "基本振動数の奇数倍が現れる",
+        "整数倍すべてが現れる",
+        "偶数倍だけが現れる",
+        "倍音は現れない"
+      ],
+      "correct": 0,
+      "explanation": "一端閉口管では基本振動の1,3,5,…倍の振動が許される。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOURCE-007",
+      "field": "waves",
+      "unit": "音源の振動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "開口端補正について正しい説明を選べ。",
+      "choices": [
+        "開口端の腹は管の端より少し外側にあるとみなす",
+        "閉口端が腹になることをいう",
+        "音速を0とする補正",
+        "振動数を半分にする補正"
+      ],
+      "correct": 0,
+      "explanation": "開口端では変位の腹が実際の端より少し外側にあるため、有効長を少し長くとる。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOURCE-008",
+      "field": "waves",
+      "unit": "音源の振動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "共鳴とはどのような現象か。",
+      "choices": [
+        "外力の振動数が固有振動数に近いと振幅が大きくなる現象",
+        "振動が必ず止まる現象",
+        "音速が変化しない現象",
+        "波長が0になる現象"
+      ],
+      "correct": 0,
+      "explanation": "外力の振動数が固有振動数に一致または近づくと振幅が大きくなる。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOURCE-009",
+      "field": "waves",
+      "unit": "音源の振動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "固有振動とは何か。",
+      "choices": [
+        "物体が自由に振動するときに現れる固有の振動",
+        "外力で一定速度運動すること",
+        "波が屈折すること",
+        "熱運動のこと"
+      ],
+      "correct": 0,
+      "explanation": "物体を自由に振動させたときの固有の振動数での振動を固有振動という。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOURCE-010",
+      "field": "waves",
+      "unit": "音源の振動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "弦を伝わる波の速さ $v$ と、弦の張力 $S$、線密度 $\\rho$ の関係として正しいものを選べ。",
+      "choices": [
+        "$v=\\sqrt{S/\\rho}$",
+        "$v=S\\rho$",
+        "$v=\\rho/S$",
+        "$v=\\sqrt{S\\rho}$"
+      ],
+      "correct": 0,
+      "explanation": "弦を伝わる波の速さは $v=\\sqrt{S/\\rho}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOURCE-011",
+      "field": "waves",
+      "unit": "音源の振動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "うなりは何によって生じるか。",
+      "choices": [
+        "わずかに異なる振動数の音の重ね合わせ",
+        "同じ振動数の1つの音",
+        "真空中の音",
+        "光の偏光"
+      ],
+      "correct": 0,
+      "explanation": "近い振動数の2音の干渉で振幅が周期的に変化し、うなりが生じる。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOURCE-012",
+      "field": "waves",
+      "unit": "音源の振動",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "共鳴管実験で、隣り合う共鳴位置の間隔は波長 $\\lambda$ の何倍か。",
+      "choices": [
+        "$1/2$",
+        "$1/4$",
+        "$1$",
+        "$2$"
+      ],
+      "correct": 0,
+      "explanation": "閉管の共鳴位置は有効長が $\\lambda/4,3\\lambda/4,5\\lambda/4,\\dots$ となるので、隣り合う差は $\\lambda/2$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOURCE-013",
+      "field": "waves",
+      "unit": "音源の振動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "長さ $0.4\\,\\mathrm{m}$ の両端固定弦が基本振動し、振動数が $200\\,\\mathrm{Hz}$ である。弦を伝わる波の速さは何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$160$",
+        "$80$",
+        "$320$",
+        "$500$"
+      ],
+      "correct": 0,
+      "explanation": "基本振動では $\\lambda=2L=0.8\\,\\mathrm{m}$。よって $v=f\\lambda=160\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOURCE-014",
+      "field": "waves",
+      "unit": "音源の振動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "長さ $0.8\\,\\mathrm{m}$ の両端固定弦が基本振動し、振動数が $250\\,\\mathrm{Hz}$ である。弦を伝わる波の速さは何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$400$",
+        "$200$",
+        "$800$",
+        "$312$"
+      ],
+      "correct": 0,
+      "explanation": "基本振動では $\\lambda=2L=1.6\\,\\mathrm{m}$。よって $v=f\\lambda=400\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOURCE-015",
+      "field": "waves",
+      "unit": "音源の振動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "長さ $0.6\\,\\mathrm{m}$ の両端固定弦が基本振動し、振動数が $300\\,\\mathrm{Hz}$ である。弦を伝わる波の速さは何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$360$",
+        "$180$",
+        "$720$",
+        "$500$"
+      ],
+      "correct": 0,
+      "explanation": "基本振動では $\\lambda=2L=1.2\\,\\mathrm{m}$。よって $v=f\\lambda=360\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOURCE-016",
+      "field": "waves",
+      "unit": "音源の振動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "長さ $1\\,\\mathrm{m}$ の両端固定弦が基本振動し、振動数が $170\\,\\mathrm{Hz}$ である。弦を伝わる波の速さは何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$340$",
+        "$170$",
+        "$680$",
+        "$170$"
+      ],
+      "correct": 0,
+      "explanation": "基本振動では $\\lambda=2L=2\\,\\mathrm{m}$。よって $v=f\\lambda=340\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOURCE-017",
+      "field": "waves",
+      "unit": "音源の振動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "長さ $0.5\\,\\mathrm{m}$ の両端固定弦が基本振動し、振動数が $340\\,\\mathrm{Hz}$ である。弦を伝わる波の速さは何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$340$",
+        "$170$",
+        "$680$",
+        "$680$"
+      ],
+      "correct": 0,
+      "explanation": "基本振動では $\\lambda=2L=1\\,\\mathrm{m}$。よって $v=f\\lambda=340\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOURCE-018",
+      "field": "waves",
+      "unit": "音源の振動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "長さ $0.5\\,\\mathrm{m}$ の両端開口管の基本振動数は何 Hz か。音速を $340\\,\\mathrm{m/s}$ とする。",
+      "choices": [
+        "$340$",
+        "$170$",
+        "$680$",
+        "$680$"
+      ],
+      "correct": 0,
+      "explanation": "基本振動では $\\lambda=2L$ なので $f=v/(2L)=340\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOURCE-019",
+      "field": "waves",
+      "unit": "音源の振動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "長さ $0.85\\,\\mathrm{m}$ の両端開口管の基本振動数は何 Hz か。音速を $340\\,\\mathrm{m/s}$ とする。",
+      "choices": [
+        "$200$",
+        "$100$",
+        "$400$",
+        "$400$"
+      ],
+      "correct": 0,
+      "explanation": "基本振動では $\\lambda=2L$ なので $f=v/(2L)=200\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOURCE-020",
+      "field": "waves",
+      "unit": "音源の振動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "長さ $1\\,\\mathrm{m}$ の両端開口管の基本振動数は何 Hz か。音速を $340\\,\\mathrm{m/s}$ とする。",
+      "choices": [
+        "$170$",
+        "$85$",
+        "$340$",
+        "$340$"
+      ],
+      "correct": 0,
+      "explanation": "基本振動では $\\lambda=2L$ なので $f=v/(2L)=170\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOURCE-021",
+      "field": "waves",
+      "unit": "音源の振動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "長さ $0.6\\,\\mathrm{m}$ の両端開口管の基本振動数は何 Hz か。音速を $330\\,\\mathrm{m/s}$ とする。",
+      "choices": [
+        "$275$",
+        "$138$",
+        "$550$",
+        "$550$"
+      ],
+      "correct": 0,
+      "explanation": "基本振動では $\\lambda=2L$ なので $f=v/(2L)=275\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOURCE-022",
+      "field": "waves",
+      "unit": "音源の振動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "長さ $0.4\\,\\mathrm{m}$ の両端開口管の基本振動数は何 Hz か。音速を $320\\,\\mathrm{m/s}$ とする。",
+      "choices": [
+        "$400$",
+        "$200$",
+        "$800$",
+        "$800$"
+      ],
+      "correct": 0,
+      "explanation": "基本振動では $\\lambda=2L$ なので $f=v/(2L)=400\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOURCE-023",
+      "field": "waves",
+      "unit": "音源の振動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "長さ $0.25\\,\\mathrm{m}$ の一端閉口管の基本振動数は何 Hz か。音速を $340\\,\\mathrm{m/s}$ とする。",
+      "choices": [
+        "$340$",
+        "$170$",
+        "$680$",
+        "$680$"
+      ],
+      "correct": 0,
+      "explanation": "一端閉口管の基本振動では $\\lambda=4L$。よって $f=v/(4L)=340\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOURCE-024",
+      "field": "waves",
+      "unit": "音源の振動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "長さ $0.5\\,\\mathrm{m}$ の一端閉口管の基本振動数は何 Hz か。音速を $340\\,\\mathrm{m/s}$ とする。",
+      "choices": [
+        "$170$",
+        "$85$",
+        "$340$",
+        "$340$"
+      ],
+      "correct": 0,
+      "explanation": "一端閉口管の基本振動では $\\lambda=4L$。よって $f=v/(4L)=170\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOURCE-025",
+      "field": "waves",
+      "unit": "音源の振動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "長さ $0.4\\,\\mathrm{m}$ の一端閉口管の基本振動数は何 Hz か。音速を $320\\,\\mathrm{m/s}$ とする。",
+      "choices": [
+        "$200$",
+        "$100$",
+        "$400$",
+        "$400$"
+      ],
+      "correct": 0,
+      "explanation": "一端閉口管の基本振動では $\\lambda=4L$。よって $f=v/(4L)=200\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOURCE-026",
+      "field": "waves",
+      "unit": "音源の振動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "長さ $0.75\\,\\mathrm{m}$ の一端閉口管の基本振動数は何 Hz か。音速を $300\\,\\mathrm{m/s}$ とする。",
+      "choices": [
+        "$100$",
+        "$50$",
+        "$200$",
+        "$200$"
+      ],
+      "correct": 0,
+      "explanation": "一端閉口管の基本振動では $\\lambda=4L$。よって $f=v/(4L)=100\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOURCE-027",
+      "field": "waves",
+      "unit": "音源の振動",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "長さ $0.2\\,\\mathrm{m}$ の一端閉口管の基本振動数は何 Hz か。音速を $320\\,\\mathrm{m/s}$ とする。",
+      "choices": [
+        "$400$",
+        "$200$",
+        "$800$",
+        "$800$"
+      ],
+      "correct": 0,
+      "explanation": "一端閉口管の基本振動では $\\lambda=4L$。よって $f=v/(4L)=400\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOURCE-028",
+      "field": "waves",
+      "unit": "音源の振動",
+      "course": "物理",
+      "difficulty": 3,
+      "question": "長さ $0.80\\,\\mathrm{m}$ の両端固定弦で、基本振動数が $200\\,\\mathrm{Hz}$ である。第3倍振動の振動数と波長の組として正しいものを選べ。",
+      "choices": [
+        "$600\\,\\mathrm{Hz},\\ 0.533\\,\\mathrm{m}$",
+        "$600\\,\\mathrm{Hz},\\ 1.60\\,\\mathrm{m}$",
+        "$200\\,\\mathrm{Hz},\\ 0.533\\,\\mathrm{m}$",
+        "$66.7\\,\\mathrm{Hz},\\ 1.60\\,\\mathrm{m}$"
+      ],
+      "correct": 0,
+      "explanation": "第3倍振動は $f_3=3f_1=600\\,\\mathrm{Hz}$、$\\lambda_3=2L/3=1.6/3\\approx0.533\\,\\mathrm{m}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOURCE-029",
+      "field": "waves",
+      "unit": "音源の振動",
+      "course": "物理",
+      "difficulty": 3,
+      "question": "共鳴管実験で、隣り合う2つの共鳴位置の差が $0.42\\,\\mathrm{m}$ であった。音の振動数が $400\\,\\mathrm{Hz}$ のとき、音速は何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$168$",
+        "$336$",
+        "$400$",
+        "$840$"
+      ],
+      "correct": 1,
+      "explanation": "隣り合う共鳴位置の差は $\\lambda/2$ なので $\\lambda=0.84\\,\\mathrm{m}$。よって $v=f\\lambda=400\\times0.84=336\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-SOURCE-030",
+      "field": "waves",
+      "unit": "音源の振動",
+      "course": "物理",
+      "difficulty": 3,
+      "question": "一端閉口管の基本振動数が $200\\,\\mathrm{Hz}$ である。この管で次に現れる共鳴振動数は何 Hz か。",
+      "choices": [
+        "$300$",
+        "$400$",
+        "$600$",
+        "$800$"
+      ],
+      "correct": 2,
+      "explanation": "一端閉口管では奇数倍のみが現れるので、基本の次は3倍振動。$3\\times200=600\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-DOP-001",
+      "field": "waves",
+      "unit": "ドップラー効果",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "音源が静止した観測者に近づくと、観測される振動数は音源の振動数と比べてどうなるか。",
+      "choices": [
+        "大きくなる",
+        "小さくなる",
+        "変わらない",
+        "必ず0になる"
+      ],
+      "correct": 0,
+      "explanation": "近づく音源では波面間隔が狭くなり、観測振動数は大きくなる。",
+      "image": null
+    },
+    {
+      "id": "WAV-DOP-002",
+      "field": "waves",
+      "unit": "ドップラー効果",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "音源が静止した観測者から遠ざかると、観測される振動数はどうなるか。",
+      "choices": [
+        "小さくなる",
+        "大きくなる",
+        "変わらない",
+        "2倍になる"
+      ],
+      "correct": 0,
+      "explanation": "遠ざかる音源では波長が長くなり、観測振動数は小さくなる。",
+      "image": null
+    },
+    {
+      "id": "WAV-DOP-003",
+      "field": "waves",
+      "unit": "ドップラー効果",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "静止音源に観測者が近づくとき、観測振動数はどうなるか。",
+      "choices": [
+        "大きくなる",
+        "小さくなる",
+        "変わらない",
+        "必ず半分になる"
+      ],
+      "correct": 0,
+      "explanation": "観測者が波面をより頻繁に通過するので振動数は大きくなる。",
+      "image": null
+    },
+    {
+      "id": "WAV-DOP-004",
+      "field": "waves",
+      "unit": "ドップラー効果",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "静止音源から観測者が遠ざかるとき、観測振動数はどうなるか。",
+      "choices": [
+        "小さくなる",
+        "大きくなる",
+        "変わらない",
+        "必ず2倍になる"
+      ],
+      "correct": 0,
+      "explanation": "観測者が波面を通過する頻度が減るため観測振動数は小さくなる。",
+      "image": null
+    },
+    {
+      "id": "WAV-DOP-005",
+      "field": "waves",
+      "unit": "ドップラー効果",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "静止観測者に近づく音源の速度を $v_s$、音速を $V$、音源振動数を $f$ とすると、観測振動数 $f'$ はどれか。",
+      "choices": [
+        "$f'=\\dfrac{V}{V-v_s}f$",
+        "$f'=\\dfrac{V}{V+v_s}f$",
+        "$f'=\\dfrac{V-v_s}{V}f$",
+        "$f'=\\dfrac{V+v_s}{V}f$"
+      ],
+      "correct": 0,
+      "explanation": "近づく音源では波長が短くなり $f'=V/(V-v_s)\\,f$。",
+      "image": null
+    },
+    {
+      "id": "WAV-DOP-006",
+      "field": "waves",
+      "unit": "ドップラー効果",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "静止観測者から遠ざかる音源について正しい式を選べ。",
+      "choices": [
+        "$f'=\\dfrac{V}{V+v_s}f$",
+        "$f'=\\dfrac{V}{V-v_s}f$",
+        "$f'=\\dfrac{V+v_s}{V}f$",
+        "$f'=f$"
+      ],
+      "correct": 0,
+      "explanation": "遠ざかる音源では波長が長くなり $f'=V/(V+v_s)\\,f$。",
+      "image": null
+    },
+    {
+      "id": "WAV-DOP-007",
+      "field": "waves",
+      "unit": "ドップラー効果",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "静止音源に速度 $v_o$ で近づく観測者の観測振動数を表す式を選べ。",
+      "choices": [
+        "$f'=\\dfrac{V+v_o}{V}f$",
+        "$f'=\\dfrac{V-v_o}{V}f$",
+        "$f'=\\dfrac{V}{V-v_o}f$",
+        "$f'=\\dfrac{V}{V+v_o}f$"
+      ],
+      "correct": 0,
+      "explanation": "観測者が近づくと単位時間に受け取る波面数が増え、$f'=(V+v_o)f/V$。",
+      "image": null
+    },
+    {
+      "id": "WAV-DOP-008",
+      "field": "waves",
+      "unit": "ドップラー効果",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "静止音源から速度 $v_o$ で遠ざかる観測者の観測振動数を表す式を選べ。",
+      "choices": [
+        "$f'=\\dfrac{V-v_o}{V}f$",
+        "$f'=\\dfrac{V+v_o}{V}f$",
+        "$f'=\\dfrac{V}{V-v_o}f$",
+        "$f'=f$"
+      ],
+      "correct": 0,
+      "explanation": "観測者が遠ざかると $f'=(V-v_o)f/V$。",
+      "image": null
+    },
+    {
+      "id": "WAV-DOP-009",
+      "field": "waves",
+      "unit": "ドップラー効果",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "ドップラー効果で変化するのは、観測者が受け取る何か。",
+      "choices": [
+        "振動数",
+        "音源固有の振動数そのもの",
+        "真空中の光速",
+        "媒質の質量"
+      ],
+      "correct": 0,
+      "explanation": "ドップラー効果では相対運動により観測振動数が変化する。",
+      "image": null
+    },
+    {
+      "id": "WAV-DOP-010",
+      "field": "waves",
+      "unit": "ドップラー効果",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "音源が近づくと音が高く聞こえる主な理由は何か。",
+      "choices": [
+        "観測振動数が増えるから",
+        "音速が必ず増えるから",
+        "振幅が必ず0になるから",
+        "波長が無限大になるから"
+      ],
+      "correct": 0,
+      "explanation": "音の高さは振動数で決まり、近づく音源では観測振動数が増える。",
+      "image": null
+    },
+    {
+      "id": "WAV-DOP-011",
+      "field": "waves",
+      "unit": "ドップラー効果",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "音源が動く場合、前方の波長は後方の波長と比べてどうなるか。",
+      "choices": [
+        "短い",
+        "長い",
+        "同じ",
+        "必ず0"
+      ],
+      "correct": 0,
+      "explanation": "音源が前進するため前方の波面間隔は詰まり、波長が短くなる。",
+      "image": null
+    },
+    {
+      "id": "WAV-DOP-012",
+      "field": "waves",
+      "unit": "ドップラー効果",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "反射体が動く場合のドップラー効果では、反射体をいったん何として考えると整理しやすいか。",
+      "choices": [
+        "観測者、次に音源",
+        "熱源だけ",
+        "静止媒質だけ",
+        "偏光板"
+      ],
+      "correct": 0,
+      "explanation": "動く反射体では、まず反射体が音を受け取る観測者、次に反射波を出す音源として2段階で考える。",
+      "image": null
+    },
+    {
+      "id": "WAV-DOP-013",
+      "field": "waves",
+      "unit": "ドップラー効果",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "音速 $340\\,\\mathrm{m/s}$、振動数 $640\\,\\mathrm{Hz}$ の音源が観測者へ $20\\,\\mathrm{m/s}$ で近づく。観測振動数は約何 Hz か。",
+      "choices": [
+        "$680.0$",
+        "$640.0$",
+        "$604.4$",
+        "$660.0$"
+      ],
+      "correct": 0,
+      "explanation": "$f'=\\frac{V}{V-v_s}f=\\frac{340}{320}\\times640\\approx680.0\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-DOP-014",
+      "field": "waves",
+      "unit": "ドップラー効果",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "音速 $340\\,\\mathrm{m/s}$、振動数 $680\\,\\mathrm{Hz}$ の音源が観測者へ $10\\,\\mathrm{m/s}$ で近づく。観測振動数は約何 Hz か。",
+      "choices": [
+        "$700.6$",
+        "$680.0$",
+        "$660.6$",
+        "$690.0$"
+      ],
+      "correct": 0,
+      "explanation": "$f'=\\frac{V}{V-v_s}f=\\frac{340}{330}\\times680\\approx700.6\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-DOP-015",
+      "field": "waves",
+      "unit": "ドップラー効果",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "音速 $330\\,\\mathrm{m/s}$、振動数 $600\\,\\mathrm{Hz}$ の音源が観測者へ $15\\,\\mathrm{m/s}$ で近づく。観測振動数は約何 Hz か。",
+      "choices": [
+        "$628.6$",
+        "$600.0$",
+        "$573.9$",
+        "$615.0$"
+      ],
+      "correct": 0,
+      "explanation": "$f'=\\frac{V}{V-v_s}f=\\frac{330}{315}\\times600\\approx628.6\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-DOP-016",
+      "field": "waves",
+      "unit": "ドップラー効果",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "音速 $345\\,\\mathrm{m/s}$、振動数 $690\\,\\mathrm{Hz}$ の音源が観測者へ $30\\,\\mathrm{m/s}$ で近づく。観測振動数は約何 Hz か。",
+      "choices": [
+        "$755.7$",
+        "$690.0$",
+        "$634.8$",
+        "$720.0$"
+      ],
+      "correct": 0,
+      "explanation": "$f'=\\frac{V}{V-v_s}f=\\frac{345}{315}\\times690\\approx755.7\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-DOP-017",
+      "field": "waves",
+      "unit": "ドップラー効果",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "音速 $340\\,\\mathrm{m/s}$、振動数 $500\\,\\mathrm{Hz}$ の音源が観測者へ $40\\,\\mathrm{m/s}$ で近づく。観測振動数は約何 Hz か。",
+      "choices": [
+        "$566.7$",
+        "$500.0$",
+        "$447.4$",
+        "$540.0$"
+      ],
+      "correct": 0,
+      "explanation": "$f'=\\frac{V}{V-v_s}f=\\frac{340}{300}\\times500\\approx566.7\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-DOP-018",
+      "field": "waves",
+      "unit": "ドップラー効果",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "静止音源の振動数が $680\\,\\mathrm{Hz}$、音速が $340\\,\\mathrm{m/s}$。観測者が音源へ $20\\,\\mathrm{m/s}$ で近づくとき、観測振動数は約何 Hz か。",
+      "choices": [
+        "$720.0$",
+        "$680.0$",
+        "$640.0$",
+        "$700.0$"
+      ],
+      "correct": 0,
+      "explanation": "$f'=\\frac{V+v_o}{V}f=\\frac{360}{340}\\times680\\approx720.0\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-DOP-019",
+      "field": "waves",
+      "unit": "ドップラー効果",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "静止音源の振動数が $500\\,\\mathrm{Hz}$、音速が $340\\,\\mathrm{m/s}$。観測者が音源へ $10\\,\\mathrm{m/s}$ で近づくとき、観測振動数は約何 Hz か。",
+      "choices": [
+        "$514.7$",
+        "$500.0$",
+        "$485.3$",
+        "$510.0$"
+      ],
+      "correct": 0,
+      "explanation": "$f'=\\frac{V+v_o}{V}f=\\frac{350}{340}\\times500\\approx514.7\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-DOP-020",
+      "field": "waves",
+      "unit": "ドップラー効果",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "静止音源の振動数が $600\\,\\mathrm{Hz}$、音速が $330\\,\\mathrm{m/s}$。観測者が音源へ $30\\,\\mathrm{m/s}$ で近づくとき、観測振動数は約何 Hz か。",
+      "choices": [
+        "$654.5$",
+        "$600.0$",
+        "$545.5$",
+        "$630.0$"
+      ],
+      "correct": 0,
+      "explanation": "$f'=\\frac{V+v_o}{V}f=\\frac{360}{330}\\times600\\approx654.5\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-DOP-021",
+      "field": "waves",
+      "unit": "ドップラー効果",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "静止音源の振動数が $690\\,\\mathrm{Hz}$、音速が $345\\,\\mathrm{m/s}$。観測者が音源へ $15\\,\\mathrm{m/s}$ で近づくとき、観測振動数は約何 Hz か。",
+      "choices": [
+        "$720.0$",
+        "$690.0$",
+        "$660.0$",
+        "$705.0$"
+      ],
+      "correct": 0,
+      "explanation": "$f'=\\frac{V+v_o}{V}f=\\frac{360}{345}\\times690\\approx720.0\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-DOP-022",
+      "field": "waves",
+      "unit": "ドップラー効果",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "静止音源の振動数が $400\\,\\mathrm{Hz}$、音速が $340\\,\\mathrm{m/s}$。観測者が音源へ $40\\,\\mathrm{m/s}$ で近づくとき、観測振動数は約何 Hz か。",
+      "choices": [
+        "$447.1$",
+        "$400.0$",
+        "$352.9$",
+        "$440.0$"
+      ],
+      "correct": 0,
+      "explanation": "$f'=\\frac{V+v_o}{V}f=\\frac{380}{340}\\times400\\approx447.1\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-DOP-023",
+      "field": "waves",
+      "unit": "ドップラー効果",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "振動数 $680\\,\\mathrm{Hz}$ の音源が静止観測者から $20\\,\\mathrm{m/s}$ で遠ざかる。音速を $340\\,\\mathrm{m/s}$ とすると、観測振動数は約何 Hz か。",
+      "choices": [
+        "$642.2$",
+        "$680.0$",
+        "$722.5$",
+        "$660.0$"
+      ],
+      "correct": 0,
+      "explanation": "$f'=\\frac{V}{V+v_s}f\\approx642.2\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-DOP-024",
+      "field": "waves",
+      "unit": "ドップラー効果",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "振動数 $500\\,\\mathrm{Hz}$ の音源が静止観測者から $10\\,\\mathrm{m/s}$ で遠ざかる。音速を $340\\,\\mathrm{m/s}$ とすると、観測振動数は約何 Hz か。",
+      "choices": [
+        "$485.7$",
+        "$500.0$",
+        "$515.2$",
+        "$490.0$"
+      ],
+      "correct": 0,
+      "explanation": "$f'=\\frac{V}{V+v_s}f\\approx485.7\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-DOP-025",
+      "field": "waves",
+      "unit": "ドップラー効果",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "振動数 $600\\,\\mathrm{Hz}$ の音源が静止観測者から $30\\,\\mathrm{m/s}$ で遠ざかる。音速を $330\\,\\mathrm{m/s}$ とすると、観測振動数は約何 Hz か。",
+      "choices": [
+        "$550.0$",
+        "$600.0$",
+        "$660.0$",
+        "$570.0$"
+      ],
+      "correct": 0,
+      "explanation": "$f'=\\frac{V}{V+v_s}f\\approx550.0\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-DOP-026",
+      "field": "waves",
+      "unit": "ドップラー効果",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "振動数 $690\\,\\mathrm{Hz}$ の音源が静止観測者から $15\\,\\mathrm{m/s}$ で遠ざかる。音速を $345\\,\\mathrm{m/s}$ とすると、観測振動数は約何 Hz か。",
+      "choices": [
+        "$661.2$",
+        "$690.0$",
+        "$721.4$",
+        "$675.0$"
+      ],
+      "correct": 0,
+      "explanation": "$f'=\\frac{V}{V+v_s}f\\approx661.2\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-DOP-027",
+      "field": "waves",
+      "unit": "ドップラー効果",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "振動数 $400\\,\\mathrm{Hz}$ の音源が静止観測者から $40\\,\\mathrm{m/s}$ で遠ざかる。音速を $340\\,\\mathrm{m/s}$ とすると、観測振動数は約何 Hz か。",
+      "choices": [
+        "$357.9$",
+        "$400.0$",
+        "$453.3$",
+        "$360.0$"
+      ],
+      "correct": 0,
+      "explanation": "$f'=\\frac{V}{V+v_s}f\\approx357.9\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-DOP-028",
+      "field": "waves",
+      "unit": "ドップラー効果",
+      "course": "物理",
+      "difficulty": 3,
+      "question": "音速 $340\\,\\mathrm{m/s}$、音源振動数 $680\\,\\mathrm{Hz}$。音源が観測者へ $20\\,\\mathrm{m/s}$ で近づき、観測者も音源へ $10\\,\\mathrm{m/s}$ で近づく。観測振動数は約何 Hz か。",
+      "choices": [
+        "$744$",
+        "$700$",
+        "$660$",
+        "$620$"
+      ],
+      "correct": 0,
+      "explanation": "両者が近づくので $f'=\\dfrac{V+v_o}{V-v_s}f=\\dfrac{350}{320}\\times680\\approx744\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-DOP-029",
+      "field": "waves",
+      "unit": "ドップラー効果",
+      "course": "物理",
+      "difficulty": 3,
+      "question": "静止した音源から出た $680\\,\\mathrm{Hz}$ の音を、壁に向かって $20\\,\\mathrm{m/s}$ で動く観測者が聞く。音速を $340\\,\\mathrm{m/s}$ とし、壁は静止している。直接音の観測振動数は約何 Hz か。",
+      "choices": [
+        "$720$",
+        "$680$",
+        "$640$",
+        "$760$"
+      ],
+      "correct": 0,
+      "explanation": "静止音源へ観測者が近づくので $f'=(340+20)/340\\times680=720\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-DOP-030",
+      "field": "waves",
+      "unit": "ドップラー効果",
+      "course": "物理",
+      "difficulty": 3,
+      "question": "音速 $340\\,\\mathrm{m/s}$。振動数 $600\\,\\mathrm{Hz}$ の音源が $20\\,\\mathrm{m/s}$ で観測者から遠ざかり、観測者も音源から $10\\,\\mathrm{m/s}$ で遠ざかる。観測振動数は約何 Hz か。",
+      "choices": [
+        "$550$",
+        "$600$",
+        "$650$",
+        "$500$"
+      ],
+      "correct": 0,
+      "explanation": "$f'=\\dfrac{V-v_o}{V+v_s}f=\\dfrac{330}{360}\\times600=550\\,\\mathrm{Hz}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-LIGHT-001",
+      "field": "waves",
+      "unit": "光の性質",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "真空中の光速として最も近いものを選べ。",
+      "choices": [
+        "$3.0\\times10^8\\,\\mathrm{m/s}$",
+        "$3.0\\times10^5\\,\\mathrm{m/s}$",
+        "$340\\,\\mathrm{m/s}$",
+        "$9.8\\,\\mathrm{m/s}$"
+      ],
+      "correct": 0,
+      "explanation": "真空中の光速は約 $3.0\\times10^8\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-LIGHT-002",
+      "field": "waves",
+      "unit": "光の性質",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "光の反射で成り立つ法則を選べ。",
+      "choices": [
+        "入射角＝反射角",
+        "入射角＋反射角＝90°",
+        "入射角＝屈折角",
+        "反射角は常に0°"
+      ],
+      "correct": 0,
+      "explanation": "反射の法則より入射角と反射角は等しい。",
+      "image": null
+    },
+    {
+      "id": "WAV-LIGHT-003",
+      "field": "waves",
+      "unit": "光の性質",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "屈折率 $n_{12}$ の式として正しいものを選べ。",
+      "choices": [
+        "$n_{12}=\\sin i/\\sin r$",
+        "$n_{12}=\\sin r/\\sin i$",
+        "$n_{12}=i/r$",
+        "$n_{12}=r/i$"
+      ],
+      "correct": 0,
+      "explanation": "スネルの法則より $n_{12}=\\sin i/\\sin r$。",
+      "image": null
+    },
+    {
+      "id": "WAV-LIGHT-004",
+      "field": "waves",
+      "unit": "光の性質",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "光が媒質1から媒質2へ進むとき、屈折しても変化しない量を選べ。",
+      "choices": [
+        "振動数",
+        "波長",
+        "速さ",
+        "進行方向"
+      ],
+      "correct": 0,
+      "explanation": "境界を越えても振動数は変化しない。",
+      "image": null
+    },
+    {
+      "id": "WAV-LIGHT-005",
+      "field": "waves",
+      "unit": "光の性質",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "白色光をプリズムに通すと色ごとに分かれる現象を何というか。",
+      "choices": [
+        "分散",
+        "偏光",
+        "回折",
+        "全反射"
+      ],
+      "correct": 0,
+      "explanation": "屈折率が波長によって異なるため、白色光が色ごとに分かれる現象を分散という。",
+      "image": null
+    },
+    {
+      "id": "WAV-LIGHT-006",
+      "field": "waves",
+      "unit": "光の性質",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "光が細かい粒子などによってさまざまな方向へ進む現象を何というか。",
+      "choices": [
+        "散乱",
+        "共鳴",
+        "うなり",
+        "定常波"
+      ],
+      "correct": 0,
+      "explanation": "光が粒子などでさまざまな方向へ進む現象を散乱という。",
+      "image": null
+    },
+    {
+      "id": "WAV-LIGHT-007",
+      "field": "waves",
+      "unit": "光の性質",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "光の振動方向が特定の方向に偏った光を何というか。",
+      "choices": [
+        "偏光",
+        "自然光",
+        "定常光",
+        "散乱光"
+      ],
+      "correct": 0,
+      "explanation": "振動方向が特定方向にそろった光を偏光という。",
+      "image": null
+    },
+    {
+      "id": "WAV-LIGHT-008",
+      "field": "waves",
+      "unit": "光の性質",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "偏光板を2枚用い、その透過軸を互いに直交させたとき、理想的には透過光はどうなるか。",
+      "choices": [
+        "ほとんど通らない",
+        "最も強くなる",
+        "必ず2倍になる",
+        "色だけ変わる"
+      ],
+      "correct": 0,
+      "explanation": "偏光板の透過軸が90°なら、理想的には光はほぼ通らない。",
+      "image": null
+    },
+    {
+      "id": "WAV-LIGHT-009",
+      "field": "waves",
+      "unit": "光の性質",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "全反射が起こる条件の1つとして正しいものを選べ。",
+      "choices": [
+        "屈折率の大きい媒質から小さい媒質へ進む",
+        "小さい媒質から大きい媒質へ進む",
+        "入射角が常に0°",
+        "真空中だけ"
+      ],
+      "correct": 0,
+      "explanation": "全反射は屈折率の大きい側から小さい側へ進む場合に起こりうる。",
+      "image": null
+    },
+    {
+      "id": "WAV-LIGHT-010",
+      "field": "waves",
+      "unit": "光の性質",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "全反射が起こるためには、入射角は臨界角と比べてどうである必要があるか。",
+      "choices": [
+        "臨界角より大きい",
+        "臨界角より小さい",
+        "必ず0°",
+        "臨界角の半分"
+      ],
+      "correct": 0,
+      "explanation": "入射角が臨界角を超えると全反射が起こる。",
+      "image": null
+    },
+    {
+      "id": "WAV-LIGHT-011",
+      "field": "waves",
+      "unit": "光の性質",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "光が空気からガラスへ進み、光速が小さくなるとき、波長はどうなるか。",
+      "choices": [
+        "短くなる",
+        "長くなる",
+        "変わらない",
+        "0になる"
+      ],
+      "correct": 0,
+      "explanation": "振動数は一定なので $\\lambda=v/f$ より、速さが小さくなると波長も短くなる。",
+      "image": null
+    },
+    {
+      "id": "WAV-LIGHT-012",
+      "field": "waves",
+      "unit": "光の性質",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "屈折率 $n$ と真空中の光速 $c$、媒質中の光速 $v$ の関係として正しいものを選べ。",
+      "choices": [
+        "$n=c/v$",
+        "$n=v/c$",
+        "$n=cv$",
+        "$n=c+v$"
+      ],
+      "correct": 0,
+      "explanation": "屈折率は $n=c/v$。",
+      "image": null
+    },
+    {
+      "id": "WAV-LIGHT-013",
+      "field": "waves",
+      "unit": "光の性質",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "屈折率 $1.2$ の媒質中での光速は約何 $\\mathrm{m/s}$ か。真空中の光速を $3.0\\times10^8\\,\\mathrm{m/s}$ とする。",
+      "choices": [
+        "$2.50e+08$",
+        "$3.60e+08$",
+        "$3.00e+08$",
+        "$1.25e+08$"
+      ],
+      "correct": 0,
+      "explanation": "$v=c/n=3.0\\times10^8/1.2=2.50e+08\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-LIGHT-014",
+      "field": "waves",
+      "unit": "光の性質",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "屈折率 $1.33$ の媒質中での光速は約何 $\\mathrm{m/s}$ か。真空中の光速を $3.0\\times10^8\\,\\mathrm{m/s}$ とする。",
+      "choices": [
+        "$2.26e+08$",
+        "$3.99e+08$",
+        "$3.00e+08$",
+        "$1.13e+08$"
+      ],
+      "correct": 0,
+      "explanation": "$v=c/n=3.0\\times10^8/1.33=2.26e+08\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-LIGHT-015",
+      "field": "waves",
+      "unit": "光の性質",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "屈折率 $1.5$ の媒質中での光速は約何 $\\mathrm{m/s}$ か。真空中の光速を $3.0\\times10^8\\,\\mathrm{m/s}$ とする。",
+      "choices": [
+        "$2.00e+08$",
+        "$4.50e+08$",
+        "$3.00e+08$",
+        "$1.00e+08$"
+      ],
+      "correct": 0,
+      "explanation": "$v=c/n=3.0\\times10^8/1.5=2.00e+08\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-LIGHT-016",
+      "field": "waves",
+      "unit": "光の性質",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "屈折率 $1.6$ の媒質中での光速は約何 $\\mathrm{m/s}$ か。真空中の光速を $3.0\\times10^8\\,\\mathrm{m/s}$ とする。",
+      "choices": [
+        "$1.88e+08$",
+        "$4.80e+08$",
+        "$3.00e+08$",
+        "$9.38e+07$"
+      ],
+      "correct": 0,
+      "explanation": "$v=c/n=3.0\\times10^8/1.6=1.88e+08\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-LIGHT-017",
+      "field": "waves",
+      "unit": "光の性質",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "屈折率 $2$ の媒質中での光速は約何 $\\mathrm{m/s}$ か。真空中の光速を $3.0\\times10^8\\,\\mathrm{m/s}$ とする。",
+      "choices": [
+        "$1.50e+08$",
+        "$6.00e+08$",
+        "$3.00e+08$",
+        "$7.50e+07$"
+      ],
+      "correct": 0,
+      "explanation": "$v=c/n=3.0\\times10^8/2=1.50e+08\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-LIGHT-018",
+      "field": "waves",
+      "unit": "光の性質",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "空気から屈折率 $1.5$ の媒質へ光が入射角 $30^\\circ$ で入る。屈折角は約何度か。",
+      "choices": [
+        "$19.5^\\circ$",
+        "$30^\\circ$",
+        "$38.9^\\circ$",
+        "$9.7^\\circ$"
+      ],
+      "correct": 0,
+      "explanation": "$\\sin r=\\sin 30^\\circ/1.5$ より $r\\approx19.5^\\circ$。",
+      "image": null
+    },
+    {
+      "id": "WAV-LIGHT-019",
+      "field": "waves",
+      "unit": "光の性質",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "空気から屈折率 $1.33$ の媒質へ光が入射角 $30^\\circ$ で入る。屈折角は約何度か。",
+      "choices": [
+        "$22.1^\\circ$",
+        "$30^\\circ$",
+        "$44.2^\\circ$",
+        "$11.0^\\circ$"
+      ],
+      "correct": 0,
+      "explanation": "$\\sin r=\\sin 30^\\circ/1.33$ より $r\\approx22.1^\\circ$。",
+      "image": null
+    },
+    {
+      "id": "WAV-LIGHT-020",
+      "field": "waves",
+      "unit": "光の性質",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "空気から屈折率 $1.5$ の媒質へ光が入射角 $45^\\circ$ で入る。屈折角は約何度か。",
+      "choices": [
+        "$28.1^\\circ$",
+        "$45^\\circ$",
+        "$56.3^\\circ$",
+        "$14.1^\\circ$"
+      ],
+      "correct": 0,
+      "explanation": "$\\sin r=\\sin 45^\\circ/1.5$ より $r\\approx28.1^\\circ$。",
+      "image": null
+    },
+    {
+      "id": "WAV-LIGHT-021",
+      "field": "waves",
+      "unit": "光の性質",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "空気から屈折率 $2$ の媒質へ光が入射角 $30^\\circ$ で入る。屈折角は約何度か。",
+      "choices": [
+        "$14.5^\\circ$",
+        "$30^\\circ$",
+        "$29.0^\\circ$",
+        "$7.2^\\circ$"
+      ],
+      "correct": 0,
+      "explanation": "$\\sin r=\\sin 30^\\circ/2$ より $r\\approx14.5^\\circ$。",
+      "image": null
+    },
+    {
+      "id": "WAV-LIGHT-022",
+      "field": "waves",
+      "unit": "光の性質",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "空気から屈折率 $1.4$ の媒質へ光が入射角 $60^\\circ$ で入る。屈折角は約何度か。",
+      "choices": [
+        "$38.2^\\circ$",
+        "$60^\\circ$",
+        "$76.4^\\circ$",
+        "$19.1^\\circ$"
+      ],
+      "correct": 0,
+      "explanation": "$\\sin r=\\sin 60^\\circ/1.4$ より $r\\approx38.2^\\circ$。",
+      "image": null
+    },
+    {
+      "id": "WAV-LIGHT-023",
+      "field": "waves",
+      "unit": "光の性質",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "屈折率 $1.5$ の媒質から空気へ光が進むときの臨界角は約何度か。",
+      "choices": [
+        "$41.8^\\circ$",
+        "$48.2^\\circ$",
+        "$20.9^\\circ$",
+        "$90^\\circ$"
+      ],
+      "correct": 0,
+      "explanation": "臨界角 $\\theta_c$ は $\\sin\\theta_c=1/1.5$ より $\\theta_c\\approx41.8^\\circ$。",
+      "image": null
+    },
+    {
+      "id": "WAV-LIGHT-024",
+      "field": "waves",
+      "unit": "光の性質",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "屈折率 $1.33$ の媒質から空気へ光が進むときの臨界角は約何度か。",
+      "choices": [
+        "$48.8^\\circ$",
+        "$41.2^\\circ$",
+        "$24.4^\\circ$",
+        "$90^\\circ$"
+      ],
+      "correct": 0,
+      "explanation": "臨界角 $\\theta_c$ は $\\sin\\theta_c=1/1.33$ より $\\theta_c\\approx48.8^\\circ$。",
+      "image": null
+    },
+    {
+      "id": "WAV-LIGHT-025",
+      "field": "waves",
+      "unit": "光の性質",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "屈折率 $2$ の媒質から空気へ光が進むときの臨界角は約何度か。",
+      "choices": [
+        "$30.0^\\circ$",
+        "$60.0^\\circ$",
+        "$15.0^\\circ$",
+        "$90^\\circ$"
+      ],
+      "correct": 0,
+      "explanation": "臨界角 $\\theta_c$ は $\\sin\\theta_c=1/2$ より $\\theta_c\\approx30.0^\\circ$。",
+      "image": null
+    },
+    {
+      "id": "WAV-LIGHT-026",
+      "field": "waves",
+      "unit": "光の性質",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "屈折率 $1.4$ の媒質から空気へ光が進むときの臨界角は約何度か。",
+      "choices": [
+        "$45.6^\\circ$",
+        "$44.4^\\circ$",
+        "$22.8^\\circ$",
+        "$90^\\circ$"
+      ],
+      "correct": 0,
+      "explanation": "臨界角 $\\theta_c$ は $\\sin\\theta_c=1/1.4$ より $\\theta_c\\approx45.6^\\circ$。",
+      "image": null
+    },
+    {
+      "id": "WAV-LIGHT-027",
+      "field": "waves",
+      "unit": "光の性質",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "屈折率 $1.6$ の媒質から空気へ光が進むときの臨界角は約何度か。",
+      "choices": [
+        "$38.7^\\circ$",
+        "$51.3^\\circ$",
+        "$19.3^\\circ$",
+        "$90^\\circ$"
+      ],
+      "correct": 0,
+      "explanation": "臨界角 $\\theta_c$ は $\\sin\\theta_c=1/1.6$ より $\\theta_c\\approx38.7^\\circ$。",
+      "image": null
+    },
+    {
+      "id": "WAV-LIGHT-028",
+      "field": "waves",
+      "unit": "光の性質",
+      "course": "物理基礎",
+      "difficulty": 3,
+      "question": "空気中で波長 $600\\,\\mathrm{nm}$ の光が屈折率 $1.5$ のガラス中へ入る。ガラス中での波長は何 nm か。",
+      "choices": [
+        "$400$",
+        "$600$",
+        "$900$",
+        "$1200$"
+      ],
+      "correct": 0,
+      "explanation": "振動数は変わらず、速さが $1/1.5$ になるので波長も $1/1.5$。$600/1.5=400\\,\\mathrm{nm}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-LIGHT-029",
+      "field": "waves",
+      "unit": "光の性質",
+      "course": "物理基礎",
+      "difficulty": 3,
+      "question": "屈折率 $1.5$ のガラス中から空気へ光が進む。入射角が $50^\\circ$ のとき、全反射するか。",
+      "choices": [
+        "全反射する",
+        "必ず屈折する",
+        "入射角が0°になる",
+        "情報不足で判定不能"
+      ],
+      "correct": 0,
+      "explanation": "臨界角は $\\sin^{-1}(1/1.5)\\approx41.8^\\circ$。$50^\\circ$ はこれより大きいので全反射する。",
+      "image": null
+    },
+    {
+      "id": "WAV-LIGHT-030",
+      "field": "waves",
+      "unit": "光の性質",
+      "course": "物理基礎",
+      "difficulty": 3,
+      "question": "空気からある透明媒質へ入射角 $45^\\circ$ で入射した光が、屈折角 $30^\\circ$ になった。この媒質の空気に対する屈折率は約いくらか。",
+      "choices": [
+        "$1.41$",
+        "$0.71$",
+        "$1.00$",
+        "$2.00$"
+      ],
+      "correct": 0,
+      "explanation": "$n=\\sin45^\\circ/\\sin30^\\circ=(\\sqrt2/2)/(1/2)=\\sqrt2\\approx1.41$。",
+      "image": null
+    },
+    {
+      "id": "WAV-LENS-001",
+      "field": "waves",
+      "unit": "レンズと球面鏡",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "中央部が周辺部より厚いレンズを何というか。",
+      "choices": [
+        "凸レンズ",
+        "凹レンズ",
+        "平面鏡",
+        "凹面鏡"
+      ],
+      "correct": 0,
+      "explanation": "中央部が厚いレンズが凸レンズ。",
+      "image": null
+    },
+    {
+      "id": "WAV-LENS-002",
+      "field": "waves",
+      "unit": "レンズと球面鏡",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "中央部が周辺部より薄いレンズを何というか。",
+      "choices": [
+        "凹レンズ",
+        "凸レンズ",
+        "凸面鏡",
+        "平面鏡"
+      ],
+      "correct": 0,
+      "explanation": "中央部が薄いレンズが凹レンズ。",
+      "image": null
+    },
+    {
+      "id": "WAV-LENS-003",
+      "field": "waves",
+      "unit": "レンズと球面鏡",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "凸レンズに光軸に平行な光線を入射させたとき、レンズ通過後の光線はどう進むか。",
+      "choices": [
+        "焦点を通る",
+        "必ず平行のまま",
+        "レンズ中心で反射する",
+        "必ず発散する"
+      ],
+      "correct": 0,
+      "explanation": "凸レンズでは光軸に平行な光は屈折後、反対側の焦点を通る。",
+      "image": null
+    },
+    {
+      "id": "WAV-LENS-004",
+      "field": "waves",
+      "unit": "レンズと球面鏡",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "凸レンズの中心を通る近軸光線は、近似的にどう進むか。",
+      "choices": [
+        "ほぼ直進する",
+        "必ず焦点を通る",
+        "必ず反射する",
+        "光軸に垂直になる"
+      ],
+      "correct": 0,
+      "explanation": "薄いレンズの中心を通る近軸光線はほぼ直進する。",
+      "image": null
+    },
+    {
+      "id": "WAV-LENS-005",
+      "field": "waves",
+      "unit": "レンズと球面鏡",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "凸レンズの焦点を通って入射する光線は、レンズ通過後どう進むか。",
+      "choices": [
+        "光軸に平行",
+        "別の焦点へ戻る",
+        "必ず反射",
+        "円弧を描く"
+      ],
+      "correct": 0,
+      "explanation": "焦点を通って入射した光線は屈折後、光軸に平行に進む。",
+      "image": null
+    },
+    {
+      "id": "WAV-LENS-006",
+      "field": "waves",
+      "unit": "レンズと球面鏡",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "薄いレンズの式として正しいものを選べ。",
+      "choices": [
+        "$1/a+1/b=1/f$",
+        "$a+b=f$",
+        "$ab=f$",
+        "$1/a-1/b=f$"
+      ],
+      "correct": 0,
+      "explanation": "薄いレンズでは $1/a+1/b=1/f$。",
+      "image": null
+    },
+    {
+      "id": "WAV-LENS-007",
+      "field": "waves",
+      "unit": "レンズと球面鏡",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "レンズの倍率 $m$ の大きさを表す式として正しいものを選べ。",
+      "choices": [
+        "$m=|b/a|$",
+        "$m=|a/b|$",
+        "$m=a+b$",
+        "$m=ab$"
+      ],
+      "correct": 0,
+      "explanation": "像の大きさと物体の大きさの比は $|b/a|$。",
+      "image": null
+    },
+    {
+      "id": "WAV-LENS-008",
+      "field": "waves",
+      "unit": "レンズと球面鏡",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "凸レンズで物体を焦点より外側に置いたとき、一般にできる像はどれか。",
+      "choices": [
+        "実像",
+        "必ず虚像",
+        "像はできない",
+        "必ず正立等倍像"
+      ],
+      "correct": 0,
+      "explanation": "凸レンズでは物体が焦点より外側なら反対側に実像ができる。",
+      "image": null
+    },
+    {
+      "id": "WAV-LENS-009",
+      "field": "waves",
+      "unit": "レンズと球面鏡",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "凸レンズで物体を焦点より内側に置いたとき、できる像はどれか。",
+      "choices": [
+        "正立・拡大の虚像",
+        "倒立・縮小の実像",
+        "正立・縮小の実像",
+        "像はできない"
+      ],
+      "correct": 0,
+      "explanation": "焦点内に物体を置くと、物体と同じ側に正立拡大の虚像ができる。",
+      "image": null
+    },
+    {
+      "id": "WAV-LENS-010",
+      "field": "waves",
+      "unit": "レンズと球面鏡",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "凹レンズがつくる像について正しいものを選べ。",
+      "choices": [
+        "正立・縮小の虚像",
+        "倒立・拡大の実像",
+        "正立・拡大の実像",
+        "像はできない"
+      ],
+      "correct": 0,
+      "explanation": "凹レンズは通常、物体と同じ側に正立縮小の虚像をつくる。",
+      "image": null
+    },
+    {
+      "id": "WAV-LENS-011",
+      "field": "waves",
+      "unit": "レンズと球面鏡",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "凹面鏡に主軸に平行な光線を入射させると、反射後どうなるか。",
+      "choices": [
+        "焦点を通る",
+        "必ず平行のまま",
+        "鏡の中心で止まる",
+        "発散して虚焦点から出たように見える"
+      ],
+      "correct": 0,
+      "explanation": "凹面鏡では主軸に平行な光線は反射後、焦点を通る。",
+      "image": null
+    },
+    {
+      "id": "WAV-LENS-012",
+      "field": "waves",
+      "unit": "レンズと球面鏡",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "凸面鏡がつくる像について正しいものを選べ。",
+      "choices": [
+        "正立・縮小の虚像",
+        "倒立・拡大の実像",
+        "正立・等倍の実像",
+        "像はできない"
+      ],
+      "correct": 0,
+      "explanation": "凸面鏡では正立縮小の虚像ができる。",
+      "image": null
+    },
+    {
+      "id": "WAV-LENS-013",
+      "field": "waves",
+      "unit": "レンズと球面鏡",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "焦点距離 $12\\,\\mathrm{cm}$ の凸レンズの前方 $30\\,\\mathrm{cm}$ に物体を置いた。像までの距離は何 cm か。",
+      "choices": [
+        "$20.0$",
+        "$18.0$",
+        "$42.0$",
+        "$12.0$"
+      ],
+      "correct": 0,
+      "explanation": "$1/a+1/b=1/f$ より $1/b=1/12-1/30$、したがって $b=20.0\\,\\mathrm{cm}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-LENS-014",
+      "field": "waves",
+      "unit": "レンズと球面鏡",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "焦点距離 $10\\,\\mathrm{cm}$ の凸レンズの前方 $30\\,\\mathrm{cm}$ に物体を置いた。像までの距離は何 cm か。",
+      "choices": [
+        "$15.0$",
+        "$20.0$",
+        "$40.0$",
+        "$10.0$"
+      ],
+      "correct": 0,
+      "explanation": "$1/a+1/b=1/f$ より $1/b=1/10-1/30$、したがって $b=15.0\\,\\mathrm{cm}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-LENS-015",
+      "field": "waves",
+      "unit": "レンズと球面鏡",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "焦点距離 $15\\,\\mathrm{cm}$ の凸レンズの前方 $45\\,\\mathrm{cm}$ に物体を置いた。像までの距離は何 cm か。",
+      "choices": [
+        "$22.5$",
+        "$30.0$",
+        "$60.0$",
+        "$15.0$"
+      ],
+      "correct": 0,
+      "explanation": "$1/a+1/b=1/f$ より $1/b=1/15-1/45$、したがって $b=22.5\\,\\mathrm{cm}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-LENS-016",
+      "field": "waves",
+      "unit": "レンズと球面鏡",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "焦点距離 $20\\,\\mathrm{cm}$ の凸レンズの前方 $60\\,\\mathrm{cm}$ に物体を置いた。像までの距離は何 cm か。",
+      "choices": [
+        "$30.0$",
+        "$40.0$",
+        "$80.0$",
+        "$20.0$"
+      ],
+      "correct": 0,
+      "explanation": "$1/a+1/b=1/f$ より $1/b=1/20-1/60$、したがって $b=30.0\\,\\mathrm{cm}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-LENS-017",
+      "field": "waves",
+      "unit": "レンズと球面鏡",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "焦点距離 $8\\,\\mathrm{cm}$ の凸レンズの前方 $24\\,\\mathrm{cm}$ に物体を置いた。像までの距離は何 cm か。",
+      "choices": [
+        "$12.0$",
+        "$16.0$",
+        "$32.0$",
+        "$8.0$"
+      ],
+      "correct": 0,
+      "explanation": "$1/a+1/b=1/f$ より $1/b=1/8-1/24$、したがって $b=12.0\\,\\mathrm{cm}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-LENS-018",
+      "field": "waves",
+      "unit": "レンズと球面鏡",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "焦点距離 $10\\,\\mathrm{cm}$ の凸レンズの前方 $30\\,\\mathrm{cm}$ に物体を置く。像の倍率の大きさは約いくらか。",
+      "choices": [
+        "$0.50$",
+        "$2.00",
+        "$1.00",
+        "$3.00"
+      ],
+      "correct": 0,
+      "explanation": "まず $b=15.0\\,\\mathrm{cm}$。倍率は $|b/a|=0.50$。",
+      "image": null
+    },
+    {
+      "id": "WAV-LENS-019",
+      "field": "waves",
+      "unit": "レンズと球面鏡",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "焦点距離 $12\\,\\mathrm{cm}$ の凸レンズの前方 $36\\,\\mathrm{cm}$ に物体を置く。像の倍率の大きさは約いくらか。",
+      "choices": [
+        "$0.50$",
+        "$2.00",
+        "$1.00",
+        "$3.00"
+      ],
+      "correct": 0,
+      "explanation": "まず $b=18.0\\,\\mathrm{cm}$。倍率は $|b/a|=0.50$。",
+      "image": null
+    },
+    {
+      "id": "WAV-LENS-020",
+      "field": "waves",
+      "unit": "レンズと球面鏡",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "焦点距離 $15\\,\\mathrm{cm}$ の凸レンズの前方 $45\\,\\mathrm{cm}$ に物体を置く。像の倍率の大きさは約いくらか。",
+      "choices": [
+        "$0.50$",
+        "$2.00",
+        "$1.00",
+        "$3.00"
+      ],
+      "correct": 0,
+      "explanation": "まず $b=22.5\\,\\mathrm{cm}$。倍率は $|b/a|=0.50$。",
+      "image": null
+    },
+    {
+      "id": "WAV-LENS-021",
+      "field": "waves",
+      "unit": "レンズと球面鏡",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "焦点距離 $20\\,\\mathrm{cm}$ の凸レンズの前方 $40\\,\\mathrm{cm}$ に物体を置く。像の倍率の大きさは約いくらか。",
+      "choices": [
+        "$1.00$",
+        "$1.00",
+        "$2.00",
+        "$2.00"
+      ],
+      "correct": 0,
+      "explanation": "まず $b=40.0\\,\\mathrm{cm}$。倍率は $|b/a|=1.00$。",
+      "image": null
+    },
+    {
+      "id": "WAV-LENS-022",
+      "field": "waves",
+      "unit": "レンズと球面鏡",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "焦点距離 $8\\,\\mathrm{cm}$ の凸レンズの前方 $24\\,\\mathrm{cm}$ に物体を置く。像の倍率の大きさは約いくらか。",
+      "choices": [
+        "$0.50$",
+        "$2.00",
+        "$1.00",
+        "$3.00"
+      ],
+      "correct": 0,
+      "explanation": "まず $b=12.0\\,\\mathrm{cm}$。倍率は $|b/a|=0.50$。",
+      "image": null
+    },
+    {
+      "id": "WAV-LENS-023",
+      "field": "waves",
+      "unit": "レンズと球面鏡",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "焦点距離 $10\\,\\mathrm{cm}$ の凹面鏡の前方 $30\\,\\mathrm{cm}$ に物体を置いた。近軸近似で像までの距離は何 cm か。",
+      "choices": [
+        "$15.0$",
+        "$20.0$",
+        "$40.0$",
+        "$10.0$"
+      ],
+      "correct": 0,
+      "explanation": "球面鏡でも近軸では $1/a+1/b=1/f$ を用い、$b=15.0\\,\\mathrm{cm}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-LENS-024",
+      "field": "waves",
+      "unit": "レンズと球面鏡",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "焦点距離 $15\\,\\mathrm{cm}$ の凹面鏡の前方 $45\\,\\mathrm{cm}$ に物体を置いた。近軸近似で像までの距離は何 cm か。",
+      "choices": [
+        "$22.5$",
+        "$30.0$",
+        "$60.0$",
+        "$15.0$"
+      ],
+      "correct": 0,
+      "explanation": "球面鏡でも近軸では $1/a+1/b=1/f$ を用い、$b=22.5\\,\\mathrm{cm}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-LENS-025",
+      "field": "waves",
+      "unit": "レンズと球面鏡",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "焦点距離 $20\\,\\mathrm{cm}$ の凹面鏡の前方 $60\\,\\mathrm{cm}$ に物体を置いた。近軸近似で像までの距離は何 cm か。",
+      "choices": [
+        "$30.0$",
+        "$40.0$",
+        "$80.0$",
+        "$20.0$"
+      ],
+      "correct": 0,
+      "explanation": "球面鏡でも近軸では $1/a+1/b=1/f$ を用い、$b=30.0\\,\\mathrm{cm}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-LENS-026",
+      "field": "waves",
+      "unit": "レンズと球面鏡",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "焦点距離 $8\\,\\mathrm{cm}$ の凹面鏡の前方 $24\\,\\mathrm{cm}$ に物体を置いた。近軸近似で像までの距離は何 cm か。",
+      "choices": [
+        "$12.0$",
+        "$16.0$",
+        "$32.0$",
+        "$8.0$"
+      ],
+      "correct": 0,
+      "explanation": "球面鏡でも近軸では $1/a+1/b=1/f$ を用い、$b=12.0\\,\\mathrm{cm}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-LENS-027",
+      "field": "waves",
+      "unit": "レンズと球面鏡",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "焦点距離 $12\\,\\mathrm{cm}$ の凹面鏡の前方 $36\\,\\mathrm{cm}$ に物体を置いた。近軸近似で像までの距離は何 cm か。",
+      "choices": [
+        "$18.0$",
+        "$24.0$",
+        "$48.0$",
+        "$12.0$"
+      ],
+      "correct": 0,
+      "explanation": "球面鏡でも近軸では $1/a+1/b=1/f$ を用い、$b=18.0\\,\\mathrm{cm}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-LENS-028",
+      "field": "waves",
+      "unit": "レンズと球面鏡",
+      "course": "物理",
+      "difficulty": 3,
+      "question": "焦点距離 $10\\,\\mathrm{cm}$ の凸レンズで、物体と実像の間の距離が $50\\,\\mathrm{cm}$ である。物体距離 $a$ と像距離 $b$ の組として可能なものを選べ。",
+      "choices": [
+        "$a=20\\,\\mathrm{cm},\\ b=30\\,\\mathrm{cm}$",
+        "$a=10\\,\\mathrm{cm},\\ b=40\\,\\mathrm{cm}$",
+        "$a=25\\,\\mathrm{cm},\\ b=25\\,\\mathrm{cm}$",
+        "$a=5\\,\\mathrm{cm},\\ b=45\\,\\mathrm{cm}$"
+      ],
+      "correct": 0,
+      "explanation": "$a+b=50$ と $1/a+1/b=1/10$ を満たす組は $20$ cm と $30$ cm。",
+      "image": null
+    },
+    {
+      "id": "WAV-LENS-029",
+      "field": "waves",
+      "unit": "レンズと球面鏡",
+      "course": "物理",
+      "difficulty": 3,
+      "question": "焦点距離 $12\\,\\mathrm{cm}$ の凸レンズの前方 $8.0\\,\\mathrm{cm}$ に物体を置いた。像距離 $b$ はいくらか。符号規約で虚像側を負とする。",
+      "choices": [
+        "$-24\\,\\mathrm{cm}$",
+        "$24\\,\\mathrm{cm}$",
+        "$-4.8\\,\\mathrm{cm}$",
+        "$4.8\\,\\mathrm{cm}$"
+      ],
+      "correct": 0,
+      "explanation": "$1/8+1/b=1/12$ より $1/b=-1/24$、したがって $b=-24\\,\\mathrm{cm}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-LENS-030",
+      "field": "waves",
+      "unit": "レンズと球面鏡",
+      "course": "物理",
+      "difficulty": 3,
+      "question": "焦点距離 $15\\,\\mathrm{cm}$ の凸レンズで、物体の3倍の大きさの実像をつくりたい。物体距離は何 cm か。",
+      "choices": [
+        "$20$",
+        "$30$",
+        "$45$",
+        "$60$"
+      ],
+      "correct": 0,
+      "explanation": "実像の倍率の大きさが3なので $b=3a$。$1/a+1/(3a)=1/15$ より $4/(3a)=1/15$、$a=20\\,\\mathrm{cm}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-OPTINT-001",
+      "field": "waves",
+      "unit": "光の回折と干渉",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "ヤングの実験で、2つのスリットから点Pまでの経路差が $m\\lambda$ のとき、Pではどうなるか。",
+      "choices": [
+        "明線",
+        "暗線",
+        "必ず全反射",
+        "像が消失する"
+      ],
+      "correct": 0,
+      "explanation": "経路差が波長の整数倍なら強め合い、明線となる。",
+      "image": null
+    },
+    {
+      "id": "WAV-OPTINT-002",
+      "field": "waves",
+      "unit": "光の回折と干渉",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "ヤングの実験で経路差が $(m+1/2)\\lambda$ のとき、Pではどうなるか。",
+      "choices": [
+        "暗線",
+        "明線",
+        "必ず屈折",
+        "偏光のみ"
+      ],
+      "correct": 0,
+      "explanation": "半波長の奇数倍の経路差で弱め合い、暗線となる。",
+      "image": null
+    },
+    {
+      "id": "WAV-OPTINT-003",
+      "field": "waves",
+      "unit": "光の回折と干渉",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "ヤングの実験で、スリット間隔を $d$、スクリーンまでの距離を $L$、明線間隔を $\\Delta x$ とすると、近似式として正しいものを選べ。",
+      "choices": [
+        "$\\Delta x=\\lambda L/d$",
+        "$\\Delta x=\\lambda d/L$",
+        "$\\Delta x=dL/\\lambda$",
+        "$\\Delta x=\\lambda/(Ld)$"
+      ],
+      "correct": 0,
+      "explanation": "ヤングの干渉縞では $\\Delta x=\\lambda L/d$。",
+      "image": null
+    },
+    {
+      "id": "WAV-OPTINT-004",
+      "field": "waves",
+      "unit": "光の回折と干渉",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "回折格子で明線が現れる条件を選べ。格子定数を $d$ とする。",
+      "choices": [
+        "$d\\sin\\theta=m\\lambda$",
+        "$d\\cos\\theta=m\\lambda$",
+        "$d\\tan\\theta=m\\lambda$",
+        "$d=m/\\lambda$"
+      ],
+      "correct": 0,
+      "explanation": "回折格子の主極大条件は $d\\sin\\theta=m\\lambda$。",
+      "image": null
+    },
+    {
+      "id": "WAV-OPTINT-005",
+      "field": "waves",
+      "unit": "光の回折と干渉",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "薄膜干渉で、反射の際に位相が $\\pi$ だけずれることがある主な条件を選べ。",
+      "choices": [
+        "屈折率の小さい媒質から大きい媒質への境界で反射",
+        "大きい媒質から小さい媒質への境界で反射",
+        "透過したとき常に",
+        "真空中のみ"
+      ],
+      "correct": 0,
+      "explanation": "低屈折率側から高屈折率側へ反射すると位相が $\\pi$ だけ反転する。",
+      "image": null
+    },
+    {
+      "id": "WAV-OPTINT-006",
+      "field": "waves",
+      "unit": "光の回折と干渉",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "ニュートンリングは主に何による干渉現象か。",
+      "choices": [
+        "薄い空気層で反射した光どうし",
+        "音波どうし",
+        "電子線どうしだけ",
+        "重力波どうし"
+      ],
+      "correct": 0,
+      "explanation": "凸レンズと平面ガラスの間の薄い空気層で反射した光が干渉してリングができる。",
+      "image": null
+    },
+    {
+      "id": "WAV-OPTINT-007",
+      "field": "waves",
+      "unit": "光の回折と干渉",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "くさび形空気層で見られる干渉縞は、主に何が場所によって変化するため生じるか。",
+      "choices": [
+        "空気層の厚さ",
+        "光速の真空値",
+        "重力加速度",
+        "物体の質量"
+      ],
+      "correct": 0,
+      "explanation": "空気層の厚さが位置によって変わり、光路差が変化するため干渉縞ができる。",
+      "image": null
+    },
+    {
+      "id": "WAV-OPTINT-008",
+      "field": "waves",
+      "unit": "光の回折と干渉",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "ヤングの実験で波長を長くすると、他の条件が同じなら明線間隔はどうなるか。",
+      "choices": [
+        "広くなる",
+        "狭くなる",
+        "変わらない",
+        "0になる"
+      ],
+      "correct": 0,
+      "explanation": "$\\Delta x=\\lambda L/d$ より波長が長いほど明線間隔は広い。",
+      "image": null
+    },
+    {
+      "id": "WAV-OPTINT-009",
+      "field": "waves",
+      "unit": "光の回折と干渉",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "ヤングの実験でスリット間隔を大きくすると、明線間隔はどうなるか。",
+      "choices": [
+        "狭くなる",
+        "広くなる",
+        "変わらない",
+        "必ず2倍"
+      ],
+      "correct": 0,
+      "explanation": "$\\Delta x=\\lambda L/d$ より $d$ が大きいほど明線間隔は狭い。",
+      "image": null
+    },
+    {
+      "id": "WAV-OPTINT-010",
+      "field": "waves",
+      "unit": "光の回折と干渉",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "ヤングの実験でスクリーンまでの距離を大きくすると、明線間隔はどうなるか。",
+      "choices": [
+        "広くなる",
+        "狭くなる",
+        "変わらない",
+        "必ず半分"
+      ],
+      "correct": 0,
+      "explanation": "$\\Delta x=\\lambda L/d$ より $L$ が大きいほど明線間隔は広い。",
+      "image": null
+    },
+    {
+      "id": "WAV-OPTINT-011",
+      "field": "waves",
+      "unit": "光の回折と干渉",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "回折格子の格子定数 $d$ とは何を表すか。",
+      "choices": [
+        "隣り合うスリットの間隔",
+        "スクリーンまでの距離",
+        "波長そのもの",
+        "光源の大きさ"
+      ],
+      "correct": 0,
+      "explanation": "格子定数は隣接する溝・スリットの間隔。",
+      "image": null
+    },
+    {
+      "id": "WAV-OPTINT-012",
+      "field": "waves",
+      "unit": "光の回折と干渉",
+      "course": "物理",
+      "difficulty": 1,
+      "question": "光の干渉が観測できるために重要な条件として適切なものを選べ。",
+      "choices": [
+        "位相関係が安定した光を重ねる",
+        "光を完全に吸収する",
+        "波長を0にする",
+        "必ず真空にする"
+      ],
+      "correct": 0,
+      "explanation": "干渉縞を安定して観測するには、位相関係が一定なコヒーレントな光が必要。",
+      "image": null
+    },
+    {
+      "id": "WAV-OPTINT-013",
+      "field": "waves",
+      "unit": "光の回折と干渉",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "ヤングの実験で、波長 $500\\,\\mathrm{nm}$、スリット間隔 $0.50\\,\\mathrm{mm}$、スクリーンまでの距離 $1\\,\\mathrm{m}$ とする。明線間隔は約何 mm か。",
+      "choices": [
+        "$1.00$",
+        "$2.00$",
+        "$0.50$",
+        "$0.50$"
+      ],
+      "correct": 0,
+      "explanation": "$\\Delta x=\\lambda L/d\\approx1.00\\,\\mathrm{mm}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-OPTINT-014",
+      "field": "waves",
+      "unit": "光の回折と干渉",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "ヤングの実験で、波長 $600\\,\\mathrm{nm}$、スリット間隔 $1.00\\,\\mathrm{mm}$、スクリーンまでの距離 $2\\,\\mathrm{m}$ とする。明線間隔は約何 mm か。",
+      "choices": [
+        "$1.20$",
+        "$2.40$",
+        "$0.60$",
+        "$1.00$"
+      ],
+      "correct": 0,
+      "explanation": "$\\Delta x=\\lambda L/d\\approx1.20\\,\\mathrm{mm}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-OPTINT-015",
+      "field": "waves",
+      "unit": "光の回折と干渉",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "ヤングの実験で、波長 $400\\,\\mathrm{nm}$、スリット間隔 $0.60\\,\\mathrm{mm}$、スクリーンまでの距離 $1.5\\,\\mathrm{m}$ とする。明線間隔は約何 mm か。",
+      "choices": [
+        "$1.00$",
+        "$2.00$",
+        "$0.50$",
+        "$0.60$"
+      ],
+      "correct": 0,
+      "explanation": "$\\Delta x=\\lambda L/d\\approx1.00\\,\\mathrm{mm}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-OPTINT-016",
+      "field": "waves",
+      "unit": "光の回折と干渉",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "ヤングの実験で、波長 $550\\,\\mathrm{nm}$、スリット間隔 $1.10\\,\\mathrm{mm}$、スクリーンまでの距離 $2.5\\,\\mathrm{m}$ とする。明線間隔は約何 mm か。",
+      "choices": [
+        "$1.25$",
+        "$2.50$",
+        "$0.62$",
+        "$1.10$"
+      ],
+      "correct": 0,
+      "explanation": "$\\Delta x=\\lambda L/d\\approx1.25\\,\\mathrm{mm}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-OPTINT-017",
+      "field": "waves",
+      "unit": "光の回折と干渉",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "ヤングの実験で、波長 $700\\,\\mathrm{nm}$、スリット間隔 $0.70\\,\\mathrm{mm}$、スクリーンまでの距離 $1.2\\,\\mathrm{m}$ とする。明線間隔は約何 mm か。",
+      "choices": [
+        "$1.20$",
+        "$2.40$",
+        "$0.60$",
+        "$0.70$"
+      ],
+      "correct": 0,
+      "explanation": "$\\Delta x=\\lambda L/d\\approx1.20\\,\\mathrm{mm}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-OPTINT-018",
+      "field": "waves",
+      "unit": "光の回折と干渉",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "格子定数 $2.00\\,\\mu\\mathrm{m}$ の回折格子に波長 $500\\,\\mathrm{nm}$ の光を垂直入射する。第1次明線の回折角は約何度か。",
+      "choices": [
+        "$14.5^\\circ$",
+        "$7.2^\\circ$",
+        "$29.0^\\circ$",
+        "$0^\\circ$"
+      ],
+      "correct": 0,
+      "explanation": "$d\\sin\\theta=m\\lambda$ より $\\sin\\theta=0.250$、$\\theta\\approx14.5^\\circ$。",
+      "image": null
+    },
+    {
+      "id": "WAV-OPTINT-019",
+      "field": "waves",
+      "unit": "光の回折と干渉",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "格子定数 $1.50\\,\\mu\\mathrm{m}$ の回折格子に波長 $500\\,\\mathrm{nm}$ の光を垂直入射する。第1次明線の回折角は約何度か。",
+      "choices": [
+        "$19.5^\\circ$",
+        "$9.7^\\circ$",
+        "$38.9^\\circ$",
+        "$0^\\circ$"
+      ],
+      "correct": 0,
+      "explanation": "$d\\sin\\theta=m\\lambda$ より $\\sin\\theta=0.333$、$\\theta\\approx19.5^\\circ$。",
+      "image": null
+    },
+    {
+      "id": "WAV-OPTINT-020",
+      "field": "waves",
+      "unit": "光の回折と干渉",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "格子定数 $3.00\\,\\mu\\mathrm{m}$ の回折格子に波長 $600\\,\\mathrm{nm}$ の光を垂直入射する。第2次明線の回折角は約何度か。",
+      "choices": [
+        "$23.6^\\circ$",
+        "$11.8^\\circ$",
+        "$47.2^\\circ$",
+        "$0^\\circ$"
+      ],
+      "correct": 0,
+      "explanation": "$d\\sin\\theta=m\\lambda$ より $\\sin\\theta=0.400$、$\\theta\\approx23.6^\\circ$。",
+      "image": null
+    },
+    {
+      "id": "WAV-OPTINT-021",
+      "field": "waves",
+      "unit": "光の回折と干渉",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "格子定数 $2.50\\,\\mu\\mathrm{m}$ の回折格子に波長 $500\\,\\mathrm{nm}$ の光を垂直入射する。第2次明線の回折角は約何度か。",
+      "choices": [
+        "$23.6^\\circ$",
+        "$11.8^\\circ$",
+        "$47.2^\\circ$",
+        "$0^\\circ$"
+      ],
+      "correct": 0,
+      "explanation": "$d\\sin\\theta=m\\lambda$ より $\\sin\\theta=0.400$、$\\theta\\approx23.6^\\circ$。",
+      "image": null
+    },
+    {
+      "id": "WAV-OPTINT-022",
+      "field": "waves",
+      "unit": "光の回折と干渉",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "格子定数 $4.00\\,\\mu\\mathrm{m}$ の回折格子に波長 $800\\,\\mathrm{nm}$ の光を垂直入射する。第1次明線の回折角は約何度か。",
+      "choices": [
+        "$11.5^\\circ$",
+        "$5.8^\\circ$",
+        "$23.1^\\circ$",
+        "$0^\\circ$"
+      ],
+      "correct": 0,
+      "explanation": "$d\\sin\\theta=m\\lambda$ より $\\sin\\theta=0.200$、$\\theta\\approx11.5^\\circ$。",
+      "image": null
+    },
+    {
+      "id": "WAV-OPTINT-023",
+      "field": "waves",
+      "unit": "光の回折と干渉",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "ヤングの実験で、ある点への経路差が $1\\lambda$ である。この点は明線か暗線か。",
+      "choices": [
+        "明線",
+        "暗線",
+        "必ず中央線",
+        "判断できない"
+      ],
+      "correct": 0,
+      "explanation": "経路差が整数倍なら明線、半整数倍なら暗線。したがって明線。",
+      "image": null
+    },
+    {
+      "id": "WAV-OPTINT-024",
+      "field": "waves",
+      "unit": "光の回折と干渉",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "ヤングの実験で、ある点への経路差が $1.5\\lambda$ である。この点は明線か暗線か。",
+      "choices": [
+        "明線",
+        "暗線",
+        "必ず中央線",
+        "判断できない"
+      ],
+      "correct": 1,
+      "explanation": "経路差が整数倍なら明線、半整数倍なら暗線。したがって暗線。",
+      "image": null
+    },
+    {
+      "id": "WAV-OPTINT-025",
+      "field": "waves",
+      "unit": "光の回折と干渉",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "ヤングの実験で、ある点への経路差が $2\\lambda$ である。この点は明線か暗線か。",
+      "choices": [
+        "明線",
+        "暗線",
+        "必ず中央線",
+        "判断できない"
+      ],
+      "correct": 0,
+      "explanation": "経路差が整数倍なら明線、半整数倍なら暗線。したがって明線。",
+      "image": null
+    },
+    {
+      "id": "WAV-OPTINT-026",
+      "field": "waves",
+      "unit": "光の回折と干渉",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "ヤングの実験で、ある点への経路差が $2.5\\lambda$ である。この点は明線か暗線か。",
+      "choices": [
+        "明線",
+        "暗線",
+        "必ず中央線",
+        "判断できない"
+      ],
+      "correct": 1,
+      "explanation": "経路差が整数倍なら明線、半整数倍なら暗線。したがって暗線。",
+      "image": null
+    },
+    {
+      "id": "WAV-OPTINT-027",
+      "field": "waves",
+      "unit": "光の回折と干渉",
+      "course": "物理",
+      "difficulty": 2,
+      "question": "ヤングの実験で、ある点への経路差が $3\\lambda$ である。この点は明線か暗線か。",
+      "choices": [
+        "明線",
+        "暗線",
+        "必ず中央線",
+        "判断できない"
+      ],
+      "correct": 0,
+      "explanation": "経路差が整数倍なら明線、半整数倍なら暗線。したがって明線。",
+      "image": null
+    },
+    {
+      "id": "WAV-OPTINT-028",
+      "field": "waves",
+      "unit": "光の回折と干渉",
+      "course": "物理",
+      "difficulty": 3,
+      "question": "ヤングの実験で、波長 $600\\,\\mathrm{nm}$、スリット間隔 $0.30\\,\\mathrm{mm}$、スクリーンまでの距離 $2.0\\,\\mathrm{m}$ とする。中央明線から第3明線までの距離は何 mm か。",
+      "choices": [
+        "$4.0$",
+        "$8.0$",
+        "$12$",
+        "$24$"
+      ],
+      "correct": 2,
+      "explanation": "明線間隔は $\\Delta x=\\lambda L/d=600\\times10^{-9}\\times2.0/(0.30\\times10^{-3})=4.0\\,\\mathrm{mm}$。第3明線は $3\\Delta x=12\\,\\mathrm{mm}$。",
+      "image": null
+    },
+    {
+      "id": "WAV-OPTINT-029",
+      "field": "waves",
+      "unit": "光の回折と干渉",
+      "course": "物理",
+      "difficulty": 3,
+      "question": "1 mmあたり500本の溝をもつ回折格子に、波長 $600\\,\\mathrm{nm}$ の光を垂直入射する。第1次明線の回折角は約何度か。",
+      "choices": [
+        "$17.5^\\circ$",
+        "$30.0^\\circ$",
+        "$45.0^\\circ$",
+        "$60.0^\\circ$"
+      ],
+      "correct": 0,
+      "explanation": "格子定数は $d=1\\,\\mathrm{mm}/500=2.0\\,\\mu\\mathrm{m}$。$\\sin\\theta=0.600/2.0=0.30$ より $\\theta\\approx17.5^\\circ$。",
+      "image": null
+    },
+    {
+      "id": "WAV-OPTINT-030",
+      "field": "waves",
+      "unit": "光の回折と干渉",
+      "course": "物理",
+      "difficulty": 3,
+      "question": "ヤングの実験で、波長を1.5倍、スリット間隔を2倍、スクリーンまでの距離を3倍にした。明線間隔はもとの何倍になるか。",
+      "choices": [
+        "$2.25$",
+        "$1.0$",
+        "$3.0$",
+        "$0.75$"
+      ],
+      "correct": 0,
+      "explanation": "$\\Delta x\\propto\\lambda L/d$ なので倍率は $1.5\\times3/2=2.25$。",
+      "image": null
+    }
+  ]
+}

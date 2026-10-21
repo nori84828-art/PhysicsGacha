@@ -1,0 +1,417 @@
+{
+  "field": "basics",
+  "fieldName": "物理の基礎",
+  "units": [
+    "物理で扱う数値について"
+  ],
+  "questions": [
+    {
+      "id": "BAS-001",
+      "field": "basics",
+      "unit": "物理で扱う数値について",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "$10^4 \\times 10^3$ の値として正しいものを選べ。",
+      "choices": [
+        "$10^7$",
+        "$10^{12}$",
+        "$10$",
+        "$10^{-1}$"
+      ],
+      "correct": 0,
+      "explanation": "同じ底の指数の積では指数を加える。$10^4 \\times 10^3=10^{4+3}=10^7$。",
+      "image": null
+    },
+    {
+      "id": "BAS-002",
+      "field": "basics",
+      "unit": "物理で扱う数値について",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "$10^6 \\div 10^2$ の値として正しいものを選べ。",
+      "choices": [
+        "$10^3$",
+        "$10^4$",
+        "$10^8$",
+        "$10^{12}$"
+      ],
+      "correct": 1,
+      "explanation": "同じ底の指数の商では指数を引く。$10^6 \\div 10^2=10^{6-2}=10^4$。",
+      "image": null
+    },
+    {
+      "id": "BAS-003",
+      "field": "basics",
+      "unit": "物理で扱う数値について",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "接頭語 $\\mu$（マイクロ）が表す大きさとして正しいものを選べ。",
+      "choices": [
+        "$10^{-3}$",
+        "$10^{-6}$",
+        "$10^{-9}$",
+        "$10^6$"
+      ],
+      "correct": 1,
+      "explanation": "マイクロ（$\\mu$）は $10^{-6}$ を表す。",
+      "image": null
+    },
+    {
+      "id": "BAS-004",
+      "field": "basics",
+      "unit": "物理で扱う数値について",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "$4.0\\,\\mathrm{km}$ は何 $\\mathrm{m}$ か。",
+      "choices": [
+        "$4.0\\times10^2$",
+        "$4.0\\times10^3$",
+        "$4.0\\times10^4$",
+        "$4.0\\times10^{-3}$"
+      ],
+      "correct": 1,
+      "explanation": "$1\\,\\mathrm{km}=10^3\\,\\mathrm{m}$ より $4.0\\times10^3\\,\\mathrm{m}$。",
+      "image": null
+    },
+    {
+      "id": "BAS-005",
+      "field": "basics",
+      "unit": "物理で扱う数値について",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "$2.5\\,\\mathrm{m^2}$ は何 $\\mathrm{cm^2}$ か。",
+      "choices": [
+        "$2.5\\times10^2$",
+        "$2.5\\times10^3$",
+        "$2.5\\times10^4$",
+        "$2.5\\times10^6$"
+      ],
+      "correct": 2,
+      "explanation": "$1\\,\\mathrm{m^2}=(10^2)^2\\,\\mathrm{cm^2}=10^4\\,\\mathrm{cm^2}$。",
+      "image": null
+    },
+    {
+      "id": "BAS-006",
+      "field": "basics",
+      "unit": "物理で扱う数値について",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "$3.0\\times10^2\\,\\mathrm{cm^3}$ は何 $\\mathrm{m^3}$ か。",
+      "choices": [
+        "$3.0\\times10^{-2}$",
+        "$3.0\\times10^{-4}$",
+        "$3.0\\times10^{-6}$",
+        "$3.0\\times10^{-8}$"
+      ],
+      "correct": 1,
+      "explanation": "$1\\,\\mathrm{cm^3}=10^{-6}\\,\\mathrm{m^3}$ より $3.0\\times10^{-4}\\,\\mathrm{m^3}$。",
+      "image": null
+    },
+    {
+      "id": "BAS-007",
+      "field": "basics",
+      "unit": "物理で扱う数値について",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "$54\\,\\mathrm{km/h}$ は何 $\\mathrm{m/s}$ か。",
+      "choices": [
+        "$10$",
+        "$15$",
+        "$19$",
+        "$54$"
+      ],
+      "correct": 1,
+      "explanation": "$1\\,\\mathrm{m/s}=3.6\\,\\mathrm{km/h}$ より $54\\div3.6=15\\,\\mathrm{m/s}$。",
+      "image": null
+    },
+    {
+      "id": "BAS-008",
+      "field": "basics",
+      "unit": "物理で扱う数値について",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "数値 $0.062$ の有効数字は何桁か。",
+      "choices": [
+        "1桁",
+        "2桁",
+        "3桁",
+        "4桁"
+      ],
+      "correct": 1,
+      "explanation": "先頭の0は位取りを示すので数えず、$6,2$ の2桁。",
+      "image": null
+    },
+    {
+      "id": "BAS-009",
+      "field": "basics",
+      "unit": "物理で扱う数値について",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "$0.00450$ の有効数字は何桁か。",
+      "choices": [
+        "2桁",
+        "3桁",
+        "4桁",
+        "5桁"
+      ],
+      "correct": 1,
+      "explanation": "先頭の0は数えないが末尾の0は数えるため、$4,5,0$ の3桁。",
+      "image": null
+    },
+    {
+      "id": "BAS-010",
+      "field": "basics",
+      "unit": "物理で扱う数値について",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "$6384$ を有効数字2桁で表せ。",
+      "choices": [
+        "$6.3\\times10^3$",
+        "$6.4\\times10^3$",
+        "$6.38\\times10^3$",
+        "$6.384\\times10^3$"
+      ],
+      "correct": 1,
+      "explanation": "$6.384\\times10^3$ を有効数字2桁に丸めて $6.4\\times10^3$。",
+      "image": null
+    },
+    {
+      "id": "BAS-011",
+      "field": "basics",
+      "unit": "物理で扱う数値について",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "$4.18+2.7$ を、与えられた数値の精度を考慮して表せ。",
+      "choices": [
+        "$6.88$",
+        "$6.9$",
+        "$6.90$",
+        "$7$"
+      ],
+      "correct": 1,
+      "explanation": "加減では末尾の位が大きい数値に合わせるので、小数第1位までの $6.9$。",
+      "image": null
+    },
+    {
+      "id": "BAS-012",
+      "field": "basics",
+      "unit": "物理で扱う数値について",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "$5.6\\times4.28$ を有効数字を考慮して表せ。",
+      "choices": [
+        "$23.968$",
+        "$24.0$",
+        "$24$",
+        "$2.4\\times10^2$"
+      ],
+      "correct": 2,
+      "explanation": "乗除では有効数字が最少の数値に合わせる。$23.968$ を2桁に丸めて $24$。",
+      "image": null
+    },
+    {
+      "id": "BAS-013",
+      "field": "basics",
+      "unit": "物理で扱う数値について",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "$\\pi=3.14$ として、$2.1\\pi$ を有効数字を考慮して表せ。",
+      "choices": [
+        "$6.594$",
+        "$6.59$",
+        "$6.6$",
+        "$7$"
+      ],
+      "correct": 2,
+      "explanation": "$2.1\\times3.14=6.594$ を有効数字2桁に丸めて $6.6$。",
+      "image": null
+    },
+    {
+      "id": "BAS-014",
+      "field": "basics",
+      "unit": "物理で扱う数値について",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "直角三角形で、角 $\\theta$ に対する対辺を $a$、隣辺を $b$、斜辺を $c$ とする。$\\sin\\theta$ はどれか。",
+      "choices": [
+        "$\\frac{a}{c}$",
+        "$\\frac{b}{c}$",
+        "$\\frac{a}{b}$",
+        "$\\frac{c}{a}$"
+      ],
+      "correct": 0,
+      "explanation": "$\\sin\\theta=\\frac{\\mathrm{対辺}}{\\mathrm{斜辺}}=\\frac{a}{c}$。",
+      "image": null
+    },
+    {
+      "id": "BAS-015",
+      "field": "basics",
+      "unit": "物理で扱う数値について",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "$\\sin30^\\circ$ の値を選べ。",
+      "choices": [
+        "$\\frac12$",
+        "$\\frac1{\\sqrt2}$",
+        "$\\frac{\\sqrt3}{2}$",
+        "$1$"
+      ],
+      "correct": 0,
+      "explanation": "$30^\\circ$-$60^\\circ$-$90^\\circ$ の三角形より $\\sin30^\\circ=\\frac12$。",
+      "image": null
+    },
+    {
+      "id": "BAS-016",
+      "field": "basics",
+      "unit": "物理で扱う数値について",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "$\\cos45^\\circ$ の値を選べ。",
+      "choices": [
+        "$\\frac12$",
+        "$\\frac1{\\sqrt2}$",
+        "$\\frac{\\sqrt3}{2}$",
+        "$1$"
+      ],
+      "correct": 1,
+      "explanation": "$45^\\circ$-$45^\\circ$-$90^\\circ$ の三角形より $\\cos45^\\circ=\\frac1{\\sqrt2}$。",
+      "image": null
+    },
+    {
+      "id": "BAS-017",
+      "field": "basics",
+      "unit": "物理で扱う数値について",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "$\\cos120^\\circ$ の値を選べ。",
+      "choices": [
+        "$-\\frac{\\sqrt3}{2}$",
+        "$-\\frac12$",
+        "$\\frac12$",
+        "$\\frac{\\sqrt3}{2}$"
+      ],
+      "correct": 1,
+      "explanation": "$120^\\circ=180^\\circ-60^\\circ$ より $\\cos120^\\circ=-\\cos60^\\circ=-\\frac12$。",
+      "image": null
+    },
+    {
+      "id": "BAS-018",
+      "field": "basics",
+      "unit": "物理で扱う数値について",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "斜辺が $10\\,\\mathrm{cm}$、一つの鋭角が $30^\\circ$ の直角三角形がある。$30^\\circ$ に隣接する辺の長さを求めよ。",
+      "choices": [
+        "$5$",
+        "$5\\sqrt2$",
+        "$5\\sqrt3$",
+        "$10\\sqrt3$"
+      ],
+      "correct": 2,
+      "explanation": "$a=10\\cos30^\\circ=5\\sqrt3\\,\\mathrm{cm}$。",
+      "image": null
+    },
+    {
+      "id": "BAS-019",
+      "field": "basics",
+      "unit": "物理で扱う数値について",
+      "course": "物理基礎",
+      "difficulty": 1,
+      "question": "ベクトルについて正しい説明を選べ。",
+      "choices": [
+        "大きさだけをもつ量",
+        "向きだけをもつ量",
+        "大きさと向きをもつ量",
+        "必ず正の値をとる量"
+      ],
+      "correct": 2,
+      "explanation": "ベクトルは大きさと向きをもつ量である。",
+      "image": null
+    },
+    {
+      "id": "BAS-020",
+      "field": "basics",
+      "unit": "物理で扱う数値について",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "互いに直角な2つのベクトル $\\vec a,\\vec b$ の大きさがそれぞれ3、4である。$\\vec a+\\vec b$ の大きさを求めよ。",
+      "choices": [
+        "$1$",
+        "$5$",
+        "$7$",
+        "$12$"
+      ],
+      "correct": 1,
+      "explanation": "三平方の定理より $\\sqrt{3^2+4^2}=5$。",
+      "image": null
+    },
+    {
+      "id": "BAS-021",
+      "field": "basics",
+      "unit": "物理で扱う数値について",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "$7.2\\times10^3\\,\\mathrm{kg/m^3}$ は何 $\\mathrm{g/cm^3}$ か。",
+      "choices": [
+        "$0.72$",
+        "$7.2$",
+        "$72$",
+        "$7.2\\times10^3$"
+      ],
+      "correct": 1,
+      "explanation": "$1\\,\\mathrm{kg/m^3}=10^{-3}\\,\\mathrm{g/cm^3}$ より $7.2\\,\\mathrm{g/cm^3}$。",
+      "image": null
+    },
+    {
+      "id": "BAS-022",
+      "field": "basics",
+      "unit": "物理で扱う数値について",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "$8.0\\,\\mathrm{m/s}$ は何 $\\mathrm{km/h}$ か。",
+      "choices": [
+        "$2.2$",
+        "$22$",
+        "$29$",
+        "$80$"
+      ],
+      "correct": 2,
+      "explanation": "$8.0\\times3.6=28.8\\,\\mathrm{km/h}$ を有効数字2桁で $29\\,\\mathrm{km/h}$。",
+      "image": null
+    },
+    {
+      "id": "BAS-023",
+      "field": "basics",
+      "unit": "物理で扱う数値について",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "$6.4\\sqrt3$ を、$\\sqrt3=1.73$ として有効数字2桁で表せ。",
+      "choices": [
+        "$11$",
+        "$11.1$",
+        "$1.1\\times10^2$",
+        "$9.2$"
+      ],
+      "correct": 0,
+      "explanation": "$6.4\\times1.73=11.072$ を有効数字2桁に丸めて $11$。",
+      "image": null
+    },
+    {
+      "id": "BAS-024",
+      "field": "basics",
+      "unit": "物理で扱う数値について",
+      "course": "物理基礎",
+      "difficulty": 2,
+      "question": "大きさ6と8の互いに直角な2つのベクトルについて、その差の大きさを求めよ。",
+      "choices": [
+        "$2$",
+        "$10$",
+        "$14$",
+        "$48$"
+      ],
+      "correct": 1,
+      "explanation": "差は一方の逆ベクトルとの和。直角なので $\\sqrt{6^2+8^2}=10$。",
+      "image": null
+    }
+  ]
+}
