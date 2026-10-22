@@ -4909,7 +4909,7 @@ body.is-result-screen .result-actions .btn-primary:hover { filter: brightness(1.
   display: none;
   pointer-events: none;
 }
-body:is(.is-home-screen, .is-battle-select-screen, .is-battle-menu-screen, .is-gacha-screen) #global-hud { display: grid; }
+body:is(.is-home-screen, .is-battle-select-screen, .is-mini-game-screen, .is-battle-menu-screen, .is-gacha-screen) #global-hud { display: grid; }
 /* 選択画面とガチャでは所持数HUDだけを同じ座標に表示する。 */
 body:is(.is-battle-menu-screen, .is-gacha-screen) #global-hud .home-left-hud { visibility: hidden; }
 
@@ -5781,4 +5781,373 @@ body.is-home-screen .home-settings-button:focus-visible,
   font-size: .78rem;
   font-weight: 800;
   text-align: center;
+}
+
+/* Safariの可視領域を全画面共通の9:16ゲーム枠の基準にする。
+   JSのvisualViewport値が利用できるまでの間もdvhで表示する。 */
+:root {
+  --game-viewport-height: 100vh;
+  --game-height: min(var(--game-viewport-height), calc(100vw * 16 / 9));
+  --game-width: min(100vw, calc(var(--game-viewport-height) * 9 / 16));
+}
+@supports (height: 100dvh) {
+  :root { --game-viewport-height: 100dvh; }
+}
+
+html {
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+body:is(.is-home-screen, .is-battle-select-screen, .is-mini-game-screen, .is-normal-battle-select-screen,
+        .is-boss-select-screen, .is-gacha-screen, .is-quiz-screen, .is-result-screen) {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: var(--game-viewport-height);
+  min-height: 0;
+  padding: 0;
+  align-items: center;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+body:is(.is-home-screen, .is-battle-select-screen, .is-mini-game-screen, .is-normal-battle-select-screen,
+        .is-boss-select-screen, .is-gacha-screen, .is-quiz-screen, .is-result-screen) .app-container {
+  flex: none;
+  width: var(--game-width);
+  max-width: none;
+  height: var(--game-height);
+  min-height: 0;
+  margin: 0 auto;
+}
+
+body:is(.is-home-screen, .is-battle-select-screen, .is-mini-game-screen, .is-normal-battle-select-screen,
+        .is-boss-select-screen, .is-gacha-screen, .is-quiz-screen, .is-result-screen) .quiz-card {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+body.is-home-screen #start-screen.active,
+body.is-battle-select-screen #battle-select-screen.active,
+body.is-gacha-screen #gacha-screen.active,
+body.is-normal-battle-select-screen #normal-battle-select-screen.active,
+body.is-boss-select-screen #boss-select-screen.active {
+  height: 100%;
+  min-height: 0;
+}
+
+body.is-home-screen .social-home,
+body.is-battle-select-screen .battle-select-page,
+body.is-gacha-screen .gacha-page,
+body.is-normal-battle-select-screen .normal-battle-select-page,
+#boss-select-screen .boss-select-layout {
+  height: 100%;
+  min-height: 0;
+}
+
+body.is-home-screen .social-home { grid-template-rows: auto minmax(0, 1fr) auto auto; }
+body.is-battle-select-screen .battle-select-page { grid-template-rows: auto auto minmax(0, 1fr) auto auto; }
+body.is-battle-select-screen .battle-select-modes {
+  align-self: stretch;
+  align-items: center;
+  min-height: 0;
+}
+body.is-battle-select-screen .battle-select-card {
+  height: 100%;
+  min-height: 0;
+  max-height: clamp(330px, 47dvh, 520px);
+}
+body.is-gacha-screen .gacha-page { grid-template-rows: auto minmax(0, 1fr); }
+body.is-gacha-screen .gacha-content { grid-template-rows: auto minmax(0, 1fr) auto; }
+
+/* 長い問題やBOSS内容はゲーム枠の内側だけでスクロールさせる。 */
+body:is(.is-normal-battle-select-screen, .is-boss-select-screen, .is-quiz-screen,
+        .is-result-screen) .quiz-card {
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+body.is-quiz-screen #quiz-screen.active { min-height: 100%; }
+
+/* モーダルもページではなく可視領域を基準にし、既存の内部スクロールを残す。 */
+.modal-overlay {
+  height: var(--game-viewport-height);
+  min-height: 0;
+  overscroll-behavior: contain;
+}
+
+/* プレイ画面の2枚の選択カードはそのまま、下部の操作だけを横並びにする。 */
+.battle-select-footer-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-width: 0;
+}
+.battle-select-mini-button { white-space: nowrap; }
+
+/* ミニゲームだけで使う背景。画像を変形させず、9:16のゲーム枠内で表示する。 */
+body.is-mini-game-screen { background: #07101d; }
+body.is-mini-game-screen .quiz-card {
+  padding: 0;
+  overflow: hidden;
+  border-radius: 0;
+  background: #07101d;
+  box-shadow: none;
+}
+body.is-mini-game-screen #mini-game-screen.active { height: 100%; min-height: 0; }
+.mini-game-page {
+  display: grid;
+  grid-template-rows: auto auto minmax(0, 1fr) auto;
+  gap: clamp(12px, 2vh, 20px);
+  height: 100%;
+  min-height: 0;
+  padding: 18px 15px 20px;
+  color: #f8fafc;
+  background:
+    linear-gradient(180deg, rgba(5, 12, 25, .52), rgba(5, 12, 25, .12) 44%, rgba(5, 12, 25, .54)),
+    url("images/minigame/library.png") center / cover no-repeat;
+}
+.mini-game-page.is-history {
+  background:
+    linear-gradient(180deg, rgba(19, 13, 10, .5), rgba(23, 15, 9, .16) 42%, rgba(18, 11, 8, .45)),
+    url("images/minigame/history-study.png") center / cover no-repeat;
+}
+.mini-game-heading h2 { color: #fff0ce; font-size: clamp(2rem, 7vw, 3.5rem); text-shadow: 0 2px 12px rgba(31, 17, 9, .95); }
+.mini-game-heading > span { color: #dfbd7d; }
+.mini-game-panel {
+  align-self: start;
+  min-height: 0;
+  max-height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
+  padding: 18px 14px;
+  border: 1px solid rgba(211, 171, 101, .86);
+  border-radius: 12px;
+  background: linear-gradient(145deg, rgba(32, 28, 29, .95), rgba(9, 24, 39, .95) 62%, rgba(43, 30, 23, .94));
+  box-shadow: 0 12px 28px rgba(0, 0, 0, .46), inset 0 0 0 3px rgba(6, 13, 24, .7), inset 0 0 0 4px rgba(211, 171, 101, .2);
+}
+.mini-game-path {
+  margin-bottom: 8px;
+  color: #e6c891;
+  font-size: .8rem;
+  font-weight: 700;
+}
+.mini-game-path[hidden],
+.mini-game-options[hidden],
+.mini-game-coming-soon[hidden] { display: none; }
+.mini-game-panel h3 {
+  margin: 0 0 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(211, 171, 101, .55);
+  color: #fff0ce;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: 1.2rem;
+}
+.mini-game-options { display: grid; gap: 10px; }
+.mini-game-option {
+  position: relative;
+  display: grid;
+  gap: 3px;
+  width: 100%;
+  min-height: 58px;
+  padding: 10px 35px 10px 14px;
+  border: 1px solid rgba(211, 171, 101, .78);
+  border-radius: 7px;
+  color: #fff3da;
+  background: linear-gradient(135deg, rgba(53, 39, 31, .94), rgba(13, 29, 46, .96));
+  box-shadow: inset 0 0 0 2px rgba(211, 171, 101, .1);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.mini-game-option strong { font-family: "Yu Mincho", "Hiragino Mincho ProN", serif; font-size: 1.05rem; }
+.mini-game-option small { color: #e1d3bb; font-size: .75rem; line-height: 1.4; }
+.mini-game-option-arrow { position: absolute; right: 12px; top: 50%; color: #e7bf77; font-size: 1.45rem; line-height: 1; transform: translateY(-50%); }
+.mini-game-option:hover, .mini-game-option:focus-visible { filter: brightness(1.14); }
+.mini-game-option:focus-visible { outline: 2px solid #f7dd9e; outline-offset: 2px; box-shadow: 0 0 14px rgba(224, 178, 94, .34); }
+.mini-game-option:active { box-shadow: 0 0 12px rgba(224, 178, 94, .28), inset 0 2px 6px rgba(53, 33, 15, .3); }
+.mini-game-page:not(.is-history) .mini-game-option {
+  min-height: 78px;
+  padding-left: 62px;
+  background: linear-gradient(135deg, rgba(57, 38, 27, .97), rgba(11, 32, 49, .96));
+  box-shadow: 0 6px 14px rgba(0, 0, 0, .42), inset 0 1px rgba(255, 238, 200, .15), inset 0 -3px rgba(0, 0, 0, .38);
+}
+.mini-game-page:not(.is-history) .mini-game-option::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #e0bb78;
+  border-radius: 50%;
+  background: radial-gradient(circle, #f2d49b 0 19%, #8b652f 22% 48%, #372919 52% 70%, #c69a51 74%);
+  box-shadow: 0 0 0 3px rgba(8, 22, 34, .85), 0 2px 7px rgba(0, 0, 0, .5);
+  transform: translateY(-50%);
+}
+.mini-game-coming-soon { padding: 20px 10px; text-align: center; }
+.mini-game-coming-soon strong { display: block; color: #fff0ce; font-size: 1.08rem; }
+.mini-game-coming-soon p { margin-top: 12px; color: #e1d3bb; font-size: 1.2rem; font-weight: 800; }
+.mini-game-page > .battle-select-back { justify-self: start; background: linear-gradient(135deg, #15283c, #38291f); border-color: #d3ab65; }
+
+/* 歴史階層は和紙と古地図を思わせる淡い資料面に切り替える。 */
+.mini-game-page.is-history .mini-game-panel {
+  background:
+    radial-gradient(circle at 88% 16%, transparent 0 41px, rgba(105, 73, 38, .12) 42px 43px, transparent 44px),
+    repeating-linear-gradient(0deg, rgba(91, 66, 35, .025) 0 1px, transparent 1px 8px),
+    linear-gradient(145deg, rgba(247, 234, 207, .97), rgba(217, 192, 147, .96));
+  border-color: #c99d53;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, .48), inset 0 0 0 3px rgba(255, 247, 224, .55), inset 0 0 0 4px rgba(121, 85, 39, .42);
+}
+.mini-game-page.is-history .mini-game-path { color: #654826; }
+.mini-game-page.is-history .mini-game-panel h3 { color: #332716; border-bottom-color: rgba(121, 85, 39, .52); }
+.mini-game-page.is-history .mini-game-option {
+  color: #2e261d;
+  border-color: rgba(142, 102, 49, .8);
+  background: linear-gradient(135deg, rgba(255, 250, 233, .93), rgba(224, 204, 165, .92));
+  box-shadow: 0 5px 11px rgba(53, 33, 15, .23), inset 0 1px rgba(255, 255, 245, .72), inset 0 -3px rgba(111, 76, 38, .15);
+}
+.mini-game-page.is-history .mini-game-option:not(.mini-game-level-option) {
+  min-height: 68px;
+  padding-left: 28px;
+  border-left: 5px solid #936933;
+}
+.mini-game-level-option { --mini-level-accent: #8c9c78; padding-left: 54px; }
+.mini-game-level-option:nth-child(2) { --mini-level-accent: #c4a15e; }
+.mini-game-level-option:nth-child(3) { --mini-level-accent: #a76b65; }
+.mini-game-level-option::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 13px;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #8e6b3c;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 251, 228, .9) 0 20%, var(--mini-level-accent) 24% 68%, #f3e1b4 72%);
+  box-shadow: 0 0 0 2px rgba(255, 249, 224, .66), 0 2px 5px rgba(55, 33, 16, .25);
+  transform: translateY(-50%);
+}
+.mini-game-page.is-history .mini-game-option small { color: #624b33; }
+.mini-game-page.is-history .mini-game-option-arrow { color: #8e622d; }
+.mini-game-page.is-history .mini-game-coming-soon strong,
+.mini-game-page.is-history .mini-game-coming-soon p { color: #342818; }
+
+/* 「殿の疑いを晴らせ！」は歴史背景のまま、対話と問題だけを内部スクロールさせる。 */
+.mini-game-page.is-tono-playing { grid-template-rows: auto minmax(0, 1fr) auto; }
+.mini-game-page.is-tono-playing .mini-game-heading,
+.mini-game-panel[hidden], .tono-game[hidden],
+.tono-intro[hidden], .tono-question[hidden], .tono-result[hidden],
+.tono-feedback[hidden], .tono-action[hidden], #tono-question-sample[hidden] { display: none; }
+.tono-game {
+  min-width: 0;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
+  padding: clamp(13px, 2vw, 21px);
+  border: 1px solid #c99d53;
+  border-radius: 12px;
+  color: #fff1d2;
+  background: linear-gradient(155deg, rgba(33, 25, 22, .95), rgba(16, 25, 38, .96) 66%, rgba(48, 29, 24, .95));
+  box-shadow: 0 12px 28px rgba(0, 0, 0, .48), inset 0 0 0 3px rgba(255, 237, 188, .06);
+}
+.tono-game-heading { margin-bottom: 12px; border-bottom: 1px solid rgba(211, 171, 101, .52); }
+.tono-game-heading span { color: #d9b77c; font-size: .75rem; letter-spacing: .13em; }
+.tono-game-heading h3 { margin: 2px 0 10px; color: #fff0c5; font-family: "Yu Mincho", "Hiragino Mincho ProN", serif; font-size: clamp(1.25rem, 5vw, 1.75rem); }
+.tono-dialogue { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.tono-portrait { position: relative; flex: 0 0 62px; width: 62px; height: 77px; overflow: hidden; border: 1px solid #b9955a; border-radius: 5px; background: radial-gradient(circle at 50% 35%, #5c4030, #1b1b24 72%); }
+.tono-portrait-hat { position: absolute; top: 9px; left: 20px; width: 22px; height: 15px; border-radius: 45% 45% 10% 10%; background: #171821; box-shadow: 0 2px 0 #b9955a; }
+.tono-portrait-head { position: absolute; top: 23px; left: 22px; width: 18px; height: 19px; border-radius: 45%; background: #c6a181; }
+.tono-portrait-robe { position: absolute; top: 40px; left: 9px; width: 44px; height: 40px; border: 1px solid #b9955a; border-radius: 15px 15px 0 0; background: linear-gradient(90deg, #392e34, #6a3941, #322a36); }
+.tono-portrait-name { position: absolute; right: 2px; bottom: 1px; z-index: 1; color: #fff0c5; font-size: .7rem; text-shadow: 0 1px 3px #000; }
+.tono-speech { position: relative; flex: 1; min-width: 0; margin: 0; padding: 11px 12px; border: 1px solid rgba(218, 180, 111, .75); border-radius: 9px; background: rgba(15, 19, 28, .88); color: #fff8e9; font-size: .9rem; line-height: 1.55; white-space: pre-line; }
+.tono-speech::before { content: ""; position: absolute; top: 24px; left: -6px; width: 9px; height: 9px; border-left: 1px solid rgba(218, 180, 111, .75); border-bottom: 1px solid rgba(218, 180, 111, .75); background: #151923; transform: rotate(45deg); }
+.tono-intro > p { margin: 4px 0 18px; padding: 14px; border: 1px solid rgba(211, 171, 101, .35); border-radius: 7px; background: rgba(10, 20, 31, .72); line-height: 1.7; }
+.tono-action { display: block; width: 100%; min-height: 44px; padding: 9px 13px; border: 1px solid #dfb870; border-radius: 7px; background: linear-gradient(#e8c987, #bb873a); color: #201a1a; box-shadow: inset 0 1px rgba(255, 247, 213, .75), 0 3px 8px rgba(0, 0, 0, .25); font: inherit; font-weight: 800; cursor: pointer; }
+.tono-action:hover, .tono-action:focus-visible { filter: brightness(1.08); }
+.tono-action:focus-visible, .tono-choice:focus-visible { outline: 2px solid #fff1bd; outline-offset: 2px; }
+.tono-action:disabled { cursor: wait; opacity: .7; }
+.tono-action-secondary { background: linear-gradient(#24334a, #111d2f); color: #fff0d1; }
+.tono-load-message { margin: 8px 0 0; color: #f3d596; font-size: .82rem; line-height: 1.4; }
+.tono-load-message:empty { display: none; }
+.tono-question-meta, .tono-trust-label { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.tono-question-meta { margin: 0 0 8px; color: #e7c891; font-size: .84rem; font-weight: 700; }
+#tono-question-sample { padding: 2px 6px; border: 1px solid #c9a45d; border-radius: 4px; font-size: .7rem; }
+.tono-trust { padding: 9px 11px 11px; border: 1px solid rgba(211, 171, 101, .7); border-radius: 7px; background: rgba(10, 17, 28, .84); }
+.tono-trust-label { margin-bottom: 7px; font-size: .88rem; }
+.tono-trust-label strong { color: #fff2c9; font-size: 1rem; }
+.tono-trust-track { height: 12px; overflow: hidden; border: 1px solid #ba955d; border-radius: 8px; background: #231f27; }
+.tono-trust-fill { width: 50%; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #8d6cba, #d3b0e6); box-shadow: 0 0 8px rgba(211, 176, 230, .4); transition: width .45s ease; }
+.tono-trust.is-correct { animation: tono-trust-correct .65s ease; }
+.tono-trust.is-wrong { animation: tono-trust-wrong .65s ease; }
+@keyframes tono-trust-correct { 50% { border-color: #8ee0ae; box-shadow: 0 0 12px rgba(110, 218, 141, .4); } }
+@keyframes tono-trust-wrong { 50% { border-color: #f2a19a; box-shadow: 0 0 12px rgba(230, 94, 91, .4); } }
+.tono-question-text { margin: 13px 0; padding: 13px 14px; border-left: 3px solid #d0ab6b; border-radius: 5px; background: rgba(246, 232, 201, .95); color: #2c251f; font-size: 1.02rem; font-weight: 700; line-height: 1.65; }
+.tono-choices { display: grid; gap: 8px; }
+.tono-choice { display: flex; align-items: center; gap: 10px; width: 100%; min-height: 43px; padding: 7px 9px; border: 1px solid #b69561; border-radius: 6px; color: #fff8e7; background: linear-gradient(135deg, #303040, #1a2738); text-align: left; font: inherit; line-height: 1.4; cursor: pointer; }
+.tono-choice:not(:disabled):hover { filter: brightness(1.16); }
+.tono-choice:disabled { cursor: default; }
+.tono-choice.is-correct { border-color: #72d59b; background: linear-gradient(135deg, #194d38, #1b3b35); }
+.tono-choice.is-wrong { border-color: #e9968c; background: linear-gradient(135deg, #683331, #432b36); }
+.tono-choice-letter { display: grid; flex: 0 0 24px; place-items: center; width: 24px; height: 24px; border: 1px solid #d5b778; border-radius: 50%; color: #f9e6b8; font-size: .78rem; }
+.tono-feedback { margin: 11px 0; padding: 10px 12px; border-left: 3px solid #74ce9c; border-radius: 5px; background: rgba(15, 47, 36, .9); }
+.tono-feedback.is-wrong { border-left-color: #e7958b; background: rgba(68, 31, 39, .9); }
+.tono-feedback p { margin: 5px 0 0; font-size: .89rem; line-height: 1.55; }
+.tono-question > .tono-action { margin-top: 11px; }
+.tono-result { padding: 9px 0; text-align: center; }
+.tono-result-grade { margin: 3px 0 14px; color: #f2d58d; font-family: "Yu Mincho", "Hiragino Mincho ProN", serif; font-size: 1.55rem; font-weight: 800; }
+.tono-result-grade.is-failure { color: #efb2a4; }
+.tono-result > p:not(.tono-result-grade) { margin: 8px 0; font-size: 1rem; }
+.tono-result-actions { display: grid; gap: 9px; margin-top: 20px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .tono-trust-fill { transition: none; }
+  .tono-trust.is-correct, .tono-trust.is-wrong { animation: none; }
+}
+
+/* 設定パネル内だけで日付順のおしらせを閲覧する。 */
+.home-settings-modal { height: var(--game-viewport-height); }
+.home-settings-panel { max-height: calc(var(--game-viewport-height) - 32px); }
+.home-settings-panel.is-notices-view {
+  width: min(100%, calc(var(--game-width) - 24px), 420px);
+  overflow: hidden;
+}
+.home-settings-notices-list {
+  display: grid;
+  gap: 0;
+  min-height: 0;
+  max-height: min(calc(var(--game-viewport-height) - 150px), 520px);
+  padding-right: 5px;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-color: rgba(216, 175, 93, .7) transparent;
+}
+.home-settings-notices-empty { padding: 12px 2px; color: #fff7e3; line-height: 1.6; }
+.home-settings-notice-item {
+  min-width: 0;
+  padding: 16px 2px 18px;
+  border-bottom: 1px solid rgba(216, 175, 93, .5);
+}
+.home-settings-notice-item:first-child { padding-top: 2px; }
+.home-settings-notice-item time { color: #e5cb98; font-size: .8rem; letter-spacing: .02em; }
+.home-settings-notice-meta { display: flex; align-items: center; gap: 8px; }
+.home-settings-notice-sample { display: inline-block; padding: 1px 6px; border: 1px solid rgba(216, 175, 93, .75); border-radius: 4px; color: #fff0ca; font-size: .68rem; line-height: 1.35; }
+.home-settings-view .home-settings-notice-item h3 { margin: 9px 0 7px; color: #fff1c9; font-size: 1.06rem; line-height: 1.45; }
+.home-settings-notice-item p { margin: 0; color: #f6f2e9; font-size: .94rem; line-height: 1.7; white-space: pre-wrap; overflow-wrap: anywhere; }
+
+@media (max-width: 640px) {
+  .mini-game-page { gap: 10px; padding: max(11px, env(safe-area-inset-top)) 13px max(14px, env(safe-area-inset-bottom)); }
+  .mini-game-heading h2 { font-size: clamp(1.7rem, 7vw, 2.2rem); }
+  .mini-game-panel { padding: 14px 11px; }
+  .mini-game-page > .battle-select-back { min-width: 78px; min-height: 37px; margin-bottom: 0; padding: 4px 10px; font-size: .86rem; }
 }

@@ -3,6 +3,17 @@
  */
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Safariのアドレスバーを除いた実表示領域に、全画面で共通のゲーム枠を合わせる。
+  function syncGameViewportHeight() {
+    const visibleHeight = window.visualViewport?.height || window.innerHeight;
+    if (!Number.isFinite(visibleHeight) || visibleHeight <= 0) return;
+    document.documentElement.style.setProperty("--game-viewport-height", `${Math.floor(visibleHeight)}px`);
+  }
+  syncGameViewportHeight();
+  window.addEventListener("resize", syncGameViewportHeight);
+  window.addEventListener("orientationchange", syncGameViewportHeight);
+  window.visualViewport?.addEventListener("resize", syncGameViewportHeight);
+
   // 設定定数
   const QUESTION_TIME_LIMIT = 20; // 1問あたりの制限時間（秒）
   const TOTAL_QUESTIONS = 10;
@@ -36,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const resultScreen = document.getElementById("result-screen");
   const gachaScreen = document.getElementById("gacha-screen");
   const battleSelectScreen = document.getElementById("battle-select-screen");
+  const miniGameScreen = document.getElementById("mini-game-screen");
   const normalBattleSelectScreen = document.getElementById("normal-battle-select-screen");
   const bossSelectScreen = document.getElementById("boss-select-screen");
   const bossDeckScreen = document.getElementById("boss-deck-screen");
@@ -51,17 +63,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const startBossCoins = document.getElementById("start-boss-coins");
   const btnHomeSettings = document.getElementById("btn-home-settings");
   const homeSettingsModal = document.getElementById("home-settings-modal");
+  const homeSettingsPanel = homeSettingsModal.querySelector(".home-settings-panel");
+  const homeSettingsTitle = document.getElementById("home-settings-title");
   const homeSettingsMenu = document.getElementById("home-settings-menu");
   const homeSettingsNameView = document.getElementById("home-settings-name-view");
   const homeSettingsCodeView = document.getElementById("home-settings-code-view");
+  const homeSettingsNoticesView = document.getElementById("home-settings-notices-view");
   const homeSettingsInfoView = document.getElementById("home-settings-info-view");
   const btnSettingsName = document.getElementById("btn-settings-name");
   const btnSettingsCode = document.getElementById("btn-settings-code");
+  const btnSettingsNotices = document.getElementById("btn-settings-notices");
   const btnSettingsInfo = document.getElementById("btn-settings-info");
   const btnCloseHomeSettings = document.getElementById("btn-close-home-settings");
   const btnBackFromSettingsName = document.getElementById("btn-back-from-settings-name");
   const btnBackFromSettingsCode = document.getElementById("btn-back-from-settings-code");
   const btnBackFromSettingsInfo = document.getElementById("btn-back-from-settings-info");
+  const homeSettingsNoticesList = document.getElementById("home-settings-notices-list");
   const homeSettingsNameForm = document.getElementById("home-settings-name-form");
   const homeSettingsName = document.getElementById("home-settings-name");
   const homeSettingsNameMessage = document.getElementById("home-settings-name-message");
@@ -96,6 +113,43 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnToBossFromStart = document.getElementById("btn-to-boss-from-start");
   const btnToBattleSelect = document.getElementById("btn-to-battle-select");
   const btnBackFromBattleSelect = document.getElementById("btn-back-from-battle-select");
+  const btnToMiniGame = document.getElementById("btn-to-mini-game");
+  const btnBackFromMiniGame = document.getElementById("btn-back-from-mini-game");
+  const miniGamePanel = document.getElementById("mini-game-panel");
+  const miniGamePath = document.getElementById("mini-game-path");
+  const miniGameSectionTitle = document.getElementById("mini-game-section-title");
+  const miniGameOptions = document.getElementById("mini-game-options");
+  const miniGameComingSoon = document.getElementById("mini-game-coming-soon");
+  const miniGameComingSoonLevel = document.getElementById("mini-game-coming-soon-level");
+  const tonoGame = document.getElementById("tono-game");
+  const tonoSpeech = document.getElementById("tono-speech");
+  const tonoIntro = document.getElementById("tono-intro");
+  const tonoQuestion = document.getElementById("tono-question");
+  const tonoResult = document.getElementById("tono-result");
+  const btnTonoStart = document.getElementById("btn-tono-start");
+  const tonoLoadMessage = document.getElementById("tono-load-message");
+  const tonoQuestionNumber = document.getElementById("tono-question-number");
+  const tonoQuestionSample = document.getElementById("tono-question-sample");
+  const tonoTrustValue = document.getElementById("tono-trust-value");
+  const tonoTrustFill = document.getElementById("tono-trust-fill");
+  const tonoTrust = document.querySelector(".tono-trust");
+  const tonoQuestionText = document.getElementById("tono-question-text");
+  const tonoChoices = document.getElementById("tono-choices");
+  const tonoFeedback = document.getElementById("tono-feedback");
+  const tonoFeedbackTitle = document.getElementById("tono-feedback-title");
+  const tonoExplanation = document.getElementById("tono-explanation");
+  const btnTonoNext = document.getElementById("btn-tono-next");
+  const tonoResultGrade = document.getElementById("tono-result-grade");
+  const tonoResultScore = document.getElementById("tono-result-score");
+  const tonoResultTrust = document.getElementById("tono-result-trust");
+  const btnTonoRetry = document.getElementById("btn-tono-retry");
+  const btnTonoGenres = document.getElementById("btn-tono-genres");
+  let miniGameStage = "subjects";
+  let miniGameDifficulty = "";
+  let tonoGenre = "";
+  let tonoQuestionBank = null;
+  let tonoSession = null;
+  const TONO_RULES = { questionCount: 5, startTrust: 50, correctDelta: 10, wrongDelta: -10, clearCount: 3, clearTrust: 60 };
   const btnStartFromBattleSelect = document.getElementById("btn-start-from-battle-select");
   const btnToBossFromBattleSelect = document.getElementById("btn-to-boss-from-battle-select");
   const btnBackFromNormalBattleSelect = document.getElementById("btn-back-from-normal-battle-select");
@@ -488,10 +542,68 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function showHomeSettingsView(view) {
+    homeSettingsTitle.textContent = view === "notices" ? "おしらせ" : "設定";
+    homeSettingsPanel.classList.toggle("is-notices-view", view === "notices");
+    btnCloseHomeSettings.setAttribute("aria-label", view === "notices" ? "おしらせを閉じて設定へ戻る" : "設定を閉じる");
     homeSettingsMenu.hidden = view !== "menu";
     homeSettingsNameView.hidden = view !== "name";
     homeSettingsCodeView.hidden = view !== "code";
+    homeSettingsNoticesView.hidden = view !== "notices";
     homeSettingsInfoView.hidden = view !== "info";
+  }
+
+  function formatNoticeDate(value) {
+    const date = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value);
+    return date ? `${date[1]}.${date[2]}.${date[3]}` : value;
+  }
+
+  async function openHomeSettingsNotices() {
+    showHomeSettingsView("notices");
+    homeSettingsNoticesList.scrollTop = 0;
+    homeSettingsNoticesList.textContent = "読み込み中…";
+
+    try {
+      const response = await fetch("notices.json", { cache: "no-store" });
+      if (!response.ok) throw new Error(`notices.json: ${response.status}`);
+      const data = await response.json();
+      if (!Array.isArray(data.notices)) throw new Error("notices.json の形式が正しくありません。");
+      const notices = data.notices
+        .filter(notice => notice && typeof notice.date === "string" && typeof notice.title === "string" && typeof notice.body === "string")
+        .sort((a, b) => b.date.localeCompare(a.date));
+
+      homeSettingsNoticesList.replaceChildren();
+      if (notices.length === 0) {
+        const emptyMessage = document.createElement("p");
+        emptyMessage.className = "home-settings-notices-empty";
+        emptyMessage.textContent = "現在、おしらせはありません。";
+        homeSettingsNoticesList.appendChild(emptyMessage);
+      }
+      notices.forEach(notice => {
+        const article = document.createElement("article");
+        article.className = "home-settings-notice-item";
+        const date = document.createElement("time");
+        date.dateTime = notice.date;
+        date.textContent = formatNoticeDate(notice.date);
+        const meta = document.createElement("span");
+        meta.className = "home-settings-notice-meta";
+        meta.appendChild(date);
+        if (notice.sample === true) {
+          const sample = document.createElement("span");
+          sample.className = "home-settings-notice-sample";
+          sample.textContent = "サンプル";
+          meta.appendChild(sample);
+        }
+        const title = document.createElement("h3");
+        title.textContent = notice.title;
+        const body = document.createElement("p");
+        body.textContent = notice.body;
+        article.append(meta, title, body);
+        homeSettingsNoticesList.appendChild(article);
+      });
+    } catch (error) {
+      homeSettingsNoticesList.textContent = "おしらせを読み込めませんでした。";
+      console.error(error);
+    }
   }
 
   function openHomeSettings() {
@@ -2096,11 +2208,19 @@ document.addEventListener("DOMContentLoaded", () => {
   if (btnHomeSettings) btnHomeSettings.addEventListener("click", openHomeSettings);
   if (btnSettingsName) btnSettingsName.addEventListener("click", openHomeSettingsName);
   if (btnSettingsCode) btnSettingsCode.addEventListener("click", openHomeSettingsCode);
+  if (btnSettingsNotices) btnSettingsNotices.addEventListener("click", openHomeSettingsNotices);
   if (btnSettingsInfo) btnSettingsInfo.addEventListener("click", () => {
     showHomeSettingsView("info");
     btnBackFromSettingsInfo.focus();
   });
-  if (btnCloseHomeSettings) btnCloseHomeSettings.addEventListener("click", closeHomeSettings);
+  if (btnCloseHomeSettings) btnCloseHomeSettings.addEventListener("click", () => {
+    if (!homeSettingsNoticesView.hidden) {
+      returnToHomeSettingsMenu();
+      btnSettingsNotices.focus();
+    } else {
+      closeHomeSettings();
+    }
+  });
   if (btnBackFromSettingsName) btnBackFromSettingsName.addEventListener("click", returnToHomeSettingsMenu);
   if (btnBackFromSettingsCode) btnBackFromSettingsCode.addEventListener("click", returnToHomeSettingsMenu);
   if (btnBackFromSettingsInfo) btnBackFromSettingsInfo.addEventListener("click", returnToHomeSettingsMenu);
@@ -2156,6 +2276,16 @@ document.addEventListener("DOMContentLoaded", () => {
   if (btnBackFromBattleSelect) {
     btnBackFromBattleSelect.addEventListener("click", () => showScreen("start"));
   }
+  if (btnToMiniGame) btnToMiniGame.addEventListener("click", openMiniGame);
+  if (btnBackFromMiniGame) btnBackFromMiniGame.addEventListener("click", backFromMiniGame);
+  if (btnTonoStart) btnTonoStart.addEventListener("click", startTonoGame);
+  if (btnTonoNext) btnTonoNext.addEventListener("click", advanceTonoGame);
+  if (btnTonoRetry) btnTonoRetry.addEventListener("click", startTonoGame);
+  if (btnTonoGenres) btnTonoGenres.addEventListener("click", () => {
+    tonoSession = null;
+    miniGameStage = "tono-genres";
+    renderMiniGame();
+  });
   if (btnStartFromBattleSelect) {
     btnStartFromBattleSelect.addEventListener("click", openNormalBattleSelect);
   }
@@ -2398,6 +2528,276 @@ document.addEventListener("DOMContentLoaded", () => {
   // ==========================================
   // 画面切り替え
   // ==========================================
+  function setTonoStage(stage) {
+    miniGameStage = stage;
+    renderMiniGame();
+    tonoGame.scrollTop = 0;
+  }
+
+  function updateTonoTrust(animate = false) {
+    const trust = tonoSession ? tonoSession.trust : TONO_RULES.startTrust;
+    tonoTrustValue.textContent = `${trust}%`;
+    tonoTrustFill.style.width = `${trust}%`;
+    tonoTrust.classList.remove("is-correct", "is-wrong");
+    if (animate) {
+      void tonoTrust.offsetWidth;
+      tonoTrust.classList.add(tonoSession.lastAnswerCorrect ? "is-correct" : "is-wrong");
+    }
+  }
+
+  function renderTonoQuestion() {
+    const question = tonoSession.questions[tonoSession.index];
+    tonoSpeech.textContent = "そなた、この問いに答えてみよ。";
+    tonoQuestionNumber.textContent = `${tonoGenre}　${tonoSession.index + 1} / ${TONO_RULES.questionCount}`;
+    tonoQuestionSample.hidden = !tonoSession.sample;
+    tonoQuestionText.textContent = question.question;
+    tonoChoices.replaceChildren();
+    tonoFeedback.hidden = true;
+    btnTonoNext.hidden = true;
+    tonoTrust.classList.remove("is-correct", "is-wrong");
+    updateTonoTrust();
+    question.choices.forEach((choice, index) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "tono-choice";
+      const letter = document.createElement("span");
+      letter.className = "tono-choice-letter";
+      letter.textContent = String.fromCharCode(65 + index);
+      const content = document.createElement("span");
+      content.textContent = choice;
+      button.append(letter, content);
+      button.addEventListener("click", () => answerTonoQuestion(index));
+      tonoChoices.appendChild(button);
+    });
+  }
+
+  function renderTonoResult() {
+    const count = tonoSession.correctCount;
+    const cleared = count >= TONO_RULES.clearCount && tonoSession.trust >= TONO_RULES.clearTrust;
+    const grades = { 5: "完全勝利", 4: "大勝利", 3: "勝利" };
+    const speeches = {
+      5: "見事じゃ！そなたへの疑いは完全に晴れた！",
+      4: "立派なものじゃ。そなたを信じよう！",
+      3: "よかろう。ひとまず疑いは晴れたぞ。"
+    };
+    tonoResultGrade.textContent = cleared ? `${grades[count]} ― クリア` : "失敗";
+    tonoResultGrade.classList.toggle("is-failure", !cleared);
+    tonoResultScore.textContent = `正解数：${count} / ${TONO_RULES.questionCount}`;
+    tonoResultTrust.textContent = `最終信頼度：${tonoSession.trust}%`;
+    tonoSpeech.textContent = cleared ? speeches[count] : "まだ疑いは晴れぬ……。出直してまいれ！";
+  }
+
+  function renderTonoStage() {
+    tonoIntro.hidden = miniGameStage !== "tono-intro";
+    tonoQuestion.hidden = miniGameStage !== "tono-question";
+    tonoResult.hidden = miniGameStage !== "tono-result";
+    if (miniGameStage === "tono-intro") {
+      tonoSpeech.textContent = "そなたに裏切りの疑いがかかっておる……。\n真実を示し、身の潔白を証明してみせよ！";
+      tonoLoadMessage.textContent = "";
+    } else if (miniGameStage === "tono-question" && tonoSession) {
+      renderTonoQuestion();
+    } else if (miniGameStage === "tono-result" && tonoSession) {
+      renderTonoResult();
+    }
+  }
+
+  async function loadTonoQuestions() {
+    if (tonoQuestionBank) return tonoQuestionBank;
+    const response = await fetch("minigames/tono-history-sample.json");
+    if (!response.ok) throw new Error(`問題データの取得に失敗しました (${response.status})`);
+    const data = await response.json();
+    if (!Array.isArray(data.questions)) throw new Error("問題データの形式が正しくありません");
+    const ids = new Set();
+    for (const question of data.questions) {
+      if (typeof question.id !== "string" || ids.has(question.id) ||
+          !["戦国時代", "江戸時代", "幕末"].includes(question.genre) ||
+          typeof question.question !== "string" || !question.question ||
+          !Array.isArray(question.choices) || question.choices.length !== 4 ||
+          !question.choices.every(choice => typeof choice === "string" && choice) ||
+          !Number.isInteger(question.correct) || question.correct < 0 || question.correct > 3 ||
+          typeof question.explanation !== "string") {
+        throw new Error("問題データの形式が正しくありません");
+      }
+      ids.add(question.id);
+    }
+    tonoQuestionBank = { sample: data.sample === true, questions: data.questions };
+    return tonoQuestionBank;
+  }
+
+  async function startTonoGame() {
+    if (!tonoGenre || btnTonoStart.disabled) return;
+    btnTonoStart.disabled = true;
+    btnTonoRetry.disabled = true;
+    tonoLoadMessage.textContent = "問題を読み込んでいます……";
+    try {
+      const bank = await loadTonoQuestions();
+      if (!["tono-intro", "tono-result"].includes(miniGameStage)) return;
+      const pool = bank.questions.filter(question => question.genre === tonoGenre);
+      if (pool.length < TONO_RULES.questionCount) throw new Error(`${tonoGenre}の問題が不足しています`);
+      const shuffled = pool.slice();
+      for (let index = shuffled.length - 1; index > 0; index--) {
+        const swap = Math.floor(Math.random() * (index + 1));
+        [shuffled[index], shuffled[swap]] = [shuffled[swap], shuffled[index]];
+      }
+      tonoSession = {
+        genre: tonoGenre,
+        questions: shuffled.slice(0, TONO_RULES.questionCount),
+        index: 0,
+        correctCount: 0,
+        trust: TONO_RULES.startTrust,
+        answered: false,
+        sample: bank.sample,
+        lastAnswerCorrect: null
+      };
+      setTonoStage("tono-question");
+    } catch (error) {
+      if (miniGameStage === "tono-result") setTonoStage("tono-intro");
+      tonoLoadMessage.textContent = `${error.message}。ローカルサーバーから開いて、もう一度お試しください。`;
+    } finally {
+      btnTonoStart.disabled = false;
+      btnTonoRetry.disabled = false;
+    }
+  }
+
+  function answerTonoQuestion(selectedIndex) {
+    if (miniGameStage !== "tono-question" || !tonoSession || tonoSession.answered) return;
+    const question = tonoSession.questions[tonoSession.index];
+    const correct = selectedIndex === question.correct;
+    tonoSession.answered = true;
+    tonoSession.lastAnswerCorrect = correct;
+    if (correct) tonoSession.correctCount++;
+    tonoSession.trust = Math.max(0, Math.min(100, tonoSession.trust + (correct ? TONO_RULES.correctDelta : TONO_RULES.wrongDelta)));
+    updateTonoTrust(true);
+    tonoChoices.querySelectorAll("button").forEach((button, index) => {
+      button.disabled = true;
+      if (index === question.correct) button.classList.add("is-correct");
+      else if (index === selectedIndex) button.classList.add("is-wrong");
+    });
+    tonoFeedbackTitle.textContent = correct ? "正解" : "不正解";
+    tonoFeedback.classList.toggle("is-wrong", !correct);
+    tonoExplanation.textContent = question.explanation;
+    tonoFeedback.hidden = false;
+    const reactionIndex = tonoSession.index % 2;
+    tonoSpeech.textContent = correct
+      ? ["ほう、よく知っておるな。", "少しは信用できそうじゃ。"][reactionIndex]
+      : ["むむ……怪しいのう。", "それでは疑いは晴れぬぞ。"][reactionIndex];
+    btnTonoNext.hidden = false;
+    btnTonoNext.textContent = tonoSession.index === TONO_RULES.questionCount - 1 ? "結果を見る" : "次へ";
+  }
+
+  function advanceTonoGame() {
+    if (miniGameStage !== "tono-question" || !tonoSession?.answered) return;
+    tonoSession.index++;
+    if (tonoSession.index === TONO_RULES.questionCount) {
+      setTonoStage("tono-result");
+    } else {
+      tonoSession.answered = false;
+      renderTonoQuestion();
+      tonoGame.scrollTop = 0;
+    }
+  }
+
+  function renderMiniGame() {
+    const isTonoStage = ["tono-intro", "tono-question", "tono-result"].includes(miniGameStage);
+    const page = miniGameScreen.querySelector(".mini-game-page");
+    page.classList.toggle("is-history", miniGameStage !== "subjects");
+    page.classList.toggle("is-tono-playing", isTonoStage);
+    miniGamePanel.hidden = isTonoStage;
+    tonoGame.hidden = !isTonoStage;
+    if (isTonoStage) {
+      renderTonoStage();
+      return;
+    }
+    const stages = {
+      subjects: { path: "", title: "教科を選択", options: [{ label: "歴史", next: "series" }] },
+      series: { path: "歴史", title: "シリーズを選択", options: [
+        { label: "殿の疑いを晴らせ！", description: "戦国・江戸・幕末の歴史に挑戦", next: "tono-genres" },
+        { label: "幕末・明治維新", description: "将来追加予定", next: "difficulty" }
+      ] },
+      "tono-genres": { path: "歴史 / 殿の疑いを晴らせ！", title: "ジャンルを選択", options: [
+        { label: "戦国時代", genre: "戦国時代" },
+        { label: "江戸時代", genre: "江戸時代" },
+        { label: "幕末", genre: "幕末" }
+      ] },
+      difficulty: {
+        path: "歴史 / 幕末・明治維新",
+        title: "難易度を選択",
+        options: [
+          { label: "初級", description: "人物・用語の基礎知識" },
+          { label: "中級", description: "歴史の流れと出来事の関係" },
+          { label: "上級", description: "共通テストを意識した資料読解" }
+        ]
+      }
+    };
+    const stage = stages[miniGameStage];
+    miniGamePath.textContent = stage?.path || "歴史 / 幕末・明治維新";
+    miniGamePath.hidden = !miniGamePath.textContent;
+    miniGameSectionTitle.textContent = stage?.title || miniGameDifficulty;
+    miniGameOptions.replaceChildren();
+    miniGameOptions.hidden = !stage;
+    miniGameComingSoon.hidden = Boolean(stage);
+
+    if (!stage) {
+      miniGameComingSoonLevel.textContent = `幕末・明治維新 ${miniGameDifficulty}`;
+      return;
+    }
+    stage.options.forEach(option => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "mini-game-option";
+      if (miniGameStage === "difficulty") button.classList.add("mini-game-level-option");
+      const label = document.createElement("strong");
+      label.textContent = option.label;
+      button.appendChild(label);
+      if (option.description) {
+        const description = document.createElement("small");
+        description.textContent = option.description;
+        button.appendChild(description);
+      }
+      const arrow = document.createElement("span");
+      arrow.className = "mini-game-option-arrow";
+      arrow.setAttribute("aria-hidden", "true");
+      arrow.textContent = "›";
+      button.appendChild(arrow);
+      button.addEventListener("click", () => {
+        if (miniGameStage === "difficulty") {
+          miniGameDifficulty = option.label;
+          miniGameStage = "coming-soon";
+        } else if (option.genre) {
+          tonoGenre = option.genre;
+          tonoSession = null;
+          miniGameStage = "tono-intro";
+        } else {
+          miniGameStage = option.next;
+        }
+        renderMiniGame();
+      });
+      miniGameOptions.appendChild(button);
+    });
+  }
+
+  function openMiniGame() {
+    miniGameStage = "subjects";
+    miniGameDifficulty = "";
+    renderMiniGame();
+    showScreen("mini-game");
+  }
+
+  function backFromMiniGame() {
+    const previous = {
+      "coming-soon": "difficulty", difficulty: "series", series: "subjects",
+      "tono-genres": "series", "tono-intro": "tono-genres",
+      "tono-question": "tono-intro", "tono-result": "tono-genres"
+    }[miniGameStage];
+    if (!previous) {
+      showScreen("battle-select");
+      return;
+    }
+    miniGameStage = previous;
+    if (previous === "tono-intro") tonoSession = null;
+    renderMiniGame();
+  }
+
   function showScreen(screenType) {
     stopBossTimer();
     // 直前の画面のスクロール位置を引き継がず、新しい画面は必ず上端から表示する。
@@ -2407,6 +2807,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.toggle("is-result-screen", screenType === "result");
     document.body.classList.toggle("is-gacha-screen", screenType === "gacha");
     document.body.classList.toggle("is-battle-select-screen", screenType === "battle-select");
+    document.body.classList.toggle("is-mini-game-screen", screenType === "mini-game");
     document.body.classList.toggle("is-normal-battle-select-screen", screenType === "normal-battle-select");
     document.body.classList.toggle("is-boss-select-screen", ["boss-select", "boss-deck", "boss-battle", "boss-result"].includes(screenType));
     document.body.classList.toggle("is-battle-menu-screen", ["normal-battle-select", "boss-select"].includes(screenType));
@@ -2415,6 +2816,7 @@ document.addEventListener("DOMContentLoaded", () => {
     resultScreen.classList.remove("active");
     if (gachaScreen) gachaScreen.classList.remove("active");
     if (battleSelectScreen) battleSelectScreen.classList.remove("active");
+    if (miniGameScreen) miniGameScreen.classList.remove("active");
     if (normalBattleSelectScreen) normalBattleSelectScreen.classList.remove("active");
     if (bossSelectScreen) bossSelectScreen.classList.remove("active");
     if (bossDeckScreen) bossDeckScreen.classList.remove("active");
@@ -2433,6 +2835,8 @@ document.addEventListener("DOMContentLoaded", () => {
       updateGachaScreen();
     } else if (screenType === "battle-select") {
       if (battleSelectScreen) battleSelectScreen.classList.add("active");
+    } else if (screenType === "mini-game") {
+      if (miniGameScreen) miniGameScreen.classList.add("active");
     } else if (screenType === "normal-battle-select") {
       if (normalBattleSelectScreen) normalBattleSelectScreen.classList.add("active");
     } else if (screenType === "boss-select") {

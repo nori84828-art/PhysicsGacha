@@ -123,7 +123,74 @@
               <b>挑戦する　›</b>
             </button>
           </div>
-          <button id="btn-back-from-battle-select" class="battle-select-back">‹ 戻る</button>
+          <div class="battle-select-footer-actions">
+            <button id="btn-back-from-battle-select" class="battle-select-back" type="button">‹ 戻る</button>
+            <button id="btn-to-mini-game" class="battle-select-back battle-select-mini-button" type="button">ミニゲーム ›</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ミニゲーム：歴史シリーズと殿の疑いを晴らせ！ -->
+      <section id="mini-game-screen" class="screen">
+        <div class="mini-game-page">
+          <div class="battle-select-hud-space" aria-hidden="true"></div>
+          <header class="battle-select-heading mini-game-heading">
+            <h2>ミニゲーム</h2>
+            <span>MINI GAME</span>
+          </header>
+          <section id="mini-game-panel" class="mini-game-panel" aria-labelledby="mini-game-section-title">
+            <p id="mini-game-path" class="mini-game-path"></p>
+            <h3 id="mini-game-section-title">教科を選択</h3>
+            <div id="mini-game-options" class="mini-game-options"></div>
+            <div id="mini-game-coming-soon" class="mini-game-coming-soon" hidden>
+              <strong id="mini-game-coming-soon-level"></strong>
+              <p>準備中</p>
+            </div>
+          </section>
+          <section id="tono-game" class="tono-game" aria-label="殿の疑いを晴らせ！" hidden>
+            <header class="tono-game-heading">
+              <span>歴史ミニゲーム</span>
+              <h3>殿の疑いを晴らせ！</h3>
+            </header>
+            <div class="tono-dialogue">
+              <div class="tono-portrait" role="img" aria-label="殿の仮の立ち絵">
+                <span class="tono-portrait-hat" aria-hidden="true"></span>
+                <span class="tono-portrait-head" aria-hidden="true"></span>
+                <span class="tono-portrait-robe" aria-hidden="true"></span>
+                <span class="tono-portrait-name">殿</span>
+              </div>
+              <p id="tono-speech" class="tono-speech"></p>
+            </div>
+            <div id="tono-intro" class="tono-intro" hidden>
+              <p>あなたには裏切りの疑いがかけられています。歴史についての5つの問いに答え、殿からの信頼を取り戻しましょう。3問以上正解すればクリアです。</p>
+              <button id="btn-tono-start" class="tono-action" type="button">挑戦する</button>
+              <p id="tono-load-message" class="tono-load-message" role="status"></p>
+            </div>
+            <div id="tono-question" class="tono-question" hidden>
+              <div class="tono-question-meta"><span id="tono-question-number"></span><span id="tono-question-sample">サンプル問題</span></div>
+              <div class="tono-trust" aria-label="殿の信頼度">
+                <div class="tono-trust-label"><span>殿の信頼度</span><strong id="tono-trust-value">50%</strong></div>
+                <div class="tono-trust-track"><div id="tono-trust-fill" class="tono-trust-fill"></div></div>
+              </div>
+              <p id="tono-question-text" class="tono-question-text"></p>
+              <div id="tono-choices" class="tono-choices"></div>
+              <div id="tono-feedback" class="tono-feedback" role="status" hidden>
+                <strong id="tono-feedback-title"></strong>
+                <p id="tono-explanation"></p>
+              </div>
+              <button id="btn-tono-next" class="tono-action" type="button" hidden>次へ</button>
+            </div>
+            <div id="tono-result" class="tono-result" hidden>
+              <p id="tono-result-grade" class="tono-result-grade"></p>
+              <p id="tono-result-score"></p>
+              <p id="tono-result-trust"></p>
+              <div class="tono-result-actions">
+                <button id="btn-tono-retry" class="tono-action" type="button">もう一度挑戦</button>
+                <button id="btn-tono-genres" class="tono-action tono-action-secondary" type="button">ジャンル選択へ戻る</button>
+              </div>
+            </div>
+          </section>
+          <button id="btn-back-from-mini-game" class="battle-select-back" type="button">‹ 戻る</button>
         </div>
       </section>
 
@@ -612,6 +679,7 @@
         <nav class="home-settings-options" aria-label="設定項目">
           <button id="btn-settings-name" class="home-settings-option" type="button">名前設定</button>
           <button id="btn-settings-code" class="home-settings-option" type="button">コード入力</button>
+          <button id="btn-settings-notices" class="home-settings-option" type="button">おしらせ</button>
           <button id="btn-settings-info" class="home-settings-option" type="button">ゲーム情報</button>
         </nav>
       </div>
@@ -640,6 +708,9 @@
           <button class="home-settings-submit" type="submit">POINTを付与</button>
         </form>
         <button id="btn-back-from-settings-code" class="home-settings-nav-button" type="button">戻る</button>
+      </div>
+      <div id="home-settings-notices-view" class="home-settings-view" hidden>
+        <div id="home-settings-notices-list" class="home-settings-notices-list" aria-label="おしらせ一覧"></div>
       </div>
       <div id="home-settings-info-view" class="home-settings-view" hidden>
         <h3>ゲーム情報</h3>
