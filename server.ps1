@@ -43,6 +43,8 @@ try {
                 ".png"  { $response.ContentType = "image/png" }
                 ".jpg"  { $response.ContentType = "image/jpeg" }
                 ".jpeg" { $response.ContentType = "image/jpeg" }
+                ".woff2" { $response.ContentType = "font/woff2" }
+                ".ttf" { $response.ContentType = "font/ttf" }
                 default { $response.ContentType = "application/octet-stream" }
             }
 

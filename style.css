@@ -5891,7 +5891,7 @@ body.is-quiz-screen #quiz-screen.active { min-height: 100%; }
 }
 .battle-select-mini-button { white-space: nowrap; }
 
-/* ミニゲームだけで使う背景。画像を変形させず、9:16のゲーム枠内で表示する。 */
+/* ミニゲームは本編の背景とHUDを使わない専用ページにする。 */
 body.is-mini-game-screen { background: #07101d; }
 body.is-mini-game-screen .quiz-card {
   padding: 0;
@@ -5901,23 +5901,21 @@ body.is-mini-game-screen .quiz-card {
   box-shadow: none;
 }
 body.is-mini-game-screen #mini-game-screen.active { height: 100%; min-height: 0; }
+body.is-mini-game-screen #global-hud { display: none; }
 .mini-game-page {
   display: grid;
-  grid-template-rows: auto auto minmax(0, 1fr) auto;
+  grid-template-rows: auto minmax(0, 1fr) auto;
   gap: clamp(12px, 2vh, 20px);
   height: 100%;
   min-height: 0;
   padding: 18px 15px 20px;
   color: #f8fafc;
-  background:
-    linear-gradient(180deg, rgba(5, 12, 25, .52), rgba(5, 12, 25, .12) 44%, rgba(5, 12, 25, .54)),
-    url("images/minigame/library.png") center / cover no-repeat;
+  background: linear-gradient(rgba(7, 14, 25, .42), rgba(7, 14, 25, .62)), url("./images/minigame/library.png") center / cover no-repeat;
 }
 .mini-game-page.is-history {
-  background:
-    linear-gradient(180deg, rgba(19, 13, 10, .5), rgba(23, 15, 9, .16) 42%, rgba(18, 11, 8, .45)),
-    url("images/minigame/history-study.png") center / cover no-repeat;
+  background: linear-gradient(rgba(12, 10, 11, .28), rgba(12, 10, 11, .52)), url("./images/minigame/history-study.png") center / cover no-repeat;
 }
+.mini-game-page .battle-select-hud-space { display: none; }
 .mini-game-heading h2 { color: #fff0ce; font-size: clamp(2rem, 7vw, 3.5rem); text-shadow: 0 2px 12px rgba(31, 17, 9, .95); }
 .mini-game-heading > span { color: #dfbd7d; }
 .mini-game-panel {
@@ -6041,77 +6039,233 @@ body.is-mini-game-screen #mini-game-screen.active { height: 100%; min-height: 0;
 .mini-game-page.is-history .mini-game-coming-soon strong,
 .mini-game-page.is-history .mini-game-coming-soon p { color: #342818; }
 
-/* 「殿の疑いを晴らせ！」は歴史背景のまま、対話と問題だけを内部スクロールさせる。 */
-.mini-game-page.is-tono-playing { grid-template-rows: auto minmax(0, 1fr) auto; }
+/* 美咲フォントは歴史ミニゲーム専用。GitHub Pagesでも解決できるCSSからの相対パス。 */
+@font-face {
+  font-family: "Misaki Gothic";
+  src: url("./fonts/misaki/misaki_gothic.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Misaki Gothic 2nd";
+  src: url("./fonts/misaki/misaki_gothic_2nd.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Misaki Mincho";
+  src: url("./fonts/misaki/misaki_mincho.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+/* 歴史ミニゲームの液晶表示用。woff2を優先し、未対応環境ではttfを使う。 */
+@font-face {
+  font-family: "x8y12pxDenkiChip";
+  src: url("./fonts/x8y12pxDenkiChip/x8y12pxDenkiChip.woff2") format("woff2"),
+       url("./fonts/x8y12pxDenkiChip/x8y12pxDenkiChip.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+/* 殿のミニゲームは液晶と物理ボタンを持つ携帯ゲーム機として独立させる。 */
+.mini-game-page.is-tono-playing { grid-template-rows: minmax(0, 1fr); place-items: center; gap: 0; padding: 10px 6px; background: #07101d; }
 .mini-game-page.is-tono-playing .mini-game-heading,
+.mini-game-page.is-tono-playing > .battle-select-back,
 .mini-game-panel[hidden], .tono-game[hidden],
-.tono-intro[hidden], .tono-question[hidden], .tono-result[hidden],
-.tono-feedback[hidden], .tono-action[hidden], #tono-question-sample[hidden] { display: none; }
+.tono-genre-select[hidden], .tono-intro[hidden], .tono-question[hidden], .tono-result[hidden],
+.tono-feedback[hidden], .tono-action[hidden], .tono-choices[hidden],
+.tono-result-actions[hidden], #tono-question-sample[hidden] { display: none; }
 .tono-game {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) 26%;
+  gap: 8px;
+  width: min(100%, 430px);
+  height: auto;
+  aspect-ratio: .68;
+  max-height: 100%;
   min-width: 0;
   min-height: 0;
-  overflow-y: auto;
-  overscroll-behavior-y: contain;
-  -webkit-overflow-scrolling: touch;
-  padding: clamp(13px, 2vw, 21px);
-  border: 1px solid #c99d53;
-  border-radius: 12px;
-  color: #fff1d2;
-  background: linear-gradient(155deg, rgba(33, 25, 22, .95), rgba(16, 25, 38, .96) 66%, rgba(48, 29, 24, .95));
-  box-shadow: 0 12px 28px rgba(0, 0, 0, .48), inset 0 0 0 3px rgba(255, 237, 188, .06);
+  justify-self: center;
+  padding: 10px 11px 9px;
+  border: 3px solid #697f9b;
+  border-bottom-color: #102d54;
+  border-right-color: #163962;
+  border-radius: 22px 22px 36px 22px;
+  color: #203527;
+  background: linear-gradient(110deg, #416a99 0%, #214e80 24%, #153e70 62%, #0d315d 100%);
+  box-shadow: 0 12px 0 #092444, 0 19px 27px rgba(0, 0, 0, .55), inset 2px 2px 1px rgba(211, 230, 255, .45), inset -3px -4px 7px rgba(1, 17, 42, .56);
+  font-family: "Misaki Gothic", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+  font-synthesis: none;
 }
-.tono-game-heading { margin-bottom: 12px; border-bottom: 1px solid rgba(211, 171, 101, .52); }
-.tono-game-heading span { color: #d9b77c; font-size: .75rem; letter-spacing: .13em; }
-.tono-game-heading h3 { margin: 2px 0 10px; color: #fff0c5; font-family: "Yu Mincho", "Hiragino Mincho ProN", serif; font-size: clamp(1.25rem, 5vw, 1.75rem); }
-.tono-dialogue { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
-.tono-portrait { position: relative; flex: 0 0 62px; width: 62px; height: 77px; overflow: hidden; border: 1px solid #b9955a; border-radius: 5px; background: radial-gradient(circle at 50% 35%, #5c4030, #1b1b24 72%); }
-.tono-portrait-hat { position: absolute; top: 9px; left: 20px; width: 22px; height: 15px; border-radius: 45% 45% 10% 10%; background: #171821; box-shadow: 0 2px 0 #b9955a; }
-.tono-portrait-head { position: absolute; top: 23px; left: 22px; width: 18px; height: 19px; border-radius: 45%; background: #c6a181; }
-.tono-portrait-robe { position: absolute; top: 40px; left: 9px; width: 44px; height: 40px; border: 1px solid #b9955a; border-radius: 15px 15px 0 0; background: linear-gradient(90deg, #392e34, #6a3941, #322a36); }
-.tono-portrait-name { position: absolute; right: 2px; bottom: 1px; z-index: 1; color: #fff0c5; font-size: .7rem; text-shadow: 0 1px 3px #000; }
-.tono-speech { position: relative; flex: 1; min-width: 0; margin: 0; padding: 11px 12px; border: 1px solid rgba(218, 180, 111, .75); border-radius: 9px; background: rgba(15, 19, 28, .88); color: #fff8e9; font-size: .9rem; line-height: 1.55; white-space: pre-line; }
-.tono-speech::before { content: ""; position: absolute; top: 24px; left: -6px; width: 9px; height: 9px; border-left: 1px solid rgba(218, 180, 111, .75); border-bottom: 1px solid rgba(218, 180, 111, .75); background: #151923; transform: rotate(45deg); }
-.tono-intro > p { margin: 4px 0 18px; padding: 14px; border: 1px solid rgba(211, 171, 101, .35); border-radius: 7px; background: rgba(10, 20, 31, .72); line-height: 1.7; }
-.tono-action { display: block; width: 100%; min-height: 44px; padding: 9px 13px; border: 1px solid #dfb870; border-radius: 7px; background: linear-gradient(#e8c987, #bb873a); color: #201a1a; box-shadow: inset 0 1px rgba(255, 247, 213, .75), 0 3px 8px rgba(0, 0, 0, .25); font: inherit; font-weight: 800; cursor: pointer; }
-.tono-action:hover, .tono-action:focus-visible { filter: brightness(1.08); }
-.tono-action:focus-visible, .tono-choice:focus-visible { outline: 2px solid #fff1bd; outline-offset: 2px; }
-.tono-action:disabled { cursor: wait; opacity: .7; }
-.tono-action-secondary { background: linear-gradient(#24334a, #111d2f); color: #fff0d1; }
-.tono-load-message { margin: 8px 0 0; color: #f3d596; font-size: .82rem; line-height: 1.4; }
+.tono-device-brand { display: flex; justify-content: space-between; align-items: center; padding: 0 6px; color: #d5e5f2; font-family: "Misaki Gothic 2nd", ui-monospace, monospace; font-size: .76rem; letter-spacing: .08em; text-shadow: 1px 1px #082747; }
+.tono-device-brand span:first-child { font-size: .97rem; }
+.tono-lcd-bezel { min-width: 0; min-height: 0; padding: 6px; border: 2px solid #101f2c; border-radius: 8px 8px 16px 8px; background: #172c3d; box-shadow: inset 2px 2px 4px #091522, 0 2px 1px rgba(198, 218, 239, .25); }
+.tono-lcd-screen {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-family: "x8y12pxDenkiChip", "Misaki Gothic", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+  font-size: 16px;
+  line-height: 1.45;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  padding: 8px 9px 10px;
+  border: 2px solid #304836;
+  border-radius: 2px;
+  background: repeating-linear-gradient(0deg, rgba(37, 64, 41, .035) 0 1px, transparent 1px 4px), linear-gradient(145deg, #dce9b1, #bccd9a);
+  box-shadow: inset 0 0 18px rgba(47, 77, 49, .35);
+}
+.tono-lcd-screen.is-switching { animation: tono-screen-switch .28s steps(3, end); }
+@keyframes tono-screen-switch { 0% { filter: brightness(.66); } 100% { filter: brightness(1); } }
+.tono-game.is-correct .tono-lcd-screen { animation: tono-screen-correct .46s steps(2, end); }
+.tono-game.is-wrong .tono-lcd-screen { animation: tono-screen-wrong .46s steps(2, end); }
+@keyframes tono-screen-correct { 50% { background-color: #b9efa4; box-shadow: inset 0 0 22px #59a66c; } }
+@keyframes tono-screen-wrong { 50% { background-color: #e3c7a5; box-shadow: inset 0 0 22px #bd7d70; } }
+.tono-game-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 4px; margin-bottom: 5px; padding-bottom: 4px; border-bottom: 2px solid #527254; }
+.tono-game-heading > span { order: 2; flex: 0 0 auto; padding: 1px 3px; border: 1px solid #49694a; color: #304e35; font-size: 14px; }
+.tono-game-heading h3 { margin: 0; color: #203e2b; font-size: clamp(16px, 3.4vw, 18px); line-height: 1.4; }
+.tono-game.is-question .tono-game-heading h3 { display: none; }
+.tono-game.is-question .tono-game-heading > span { order: 0; }
+.tono-game.is-question .tono-game-heading .tono-question-meta { order: 1; }
+.tono-game.is-genre-select .tono-dialogue { display: none; }
+.tono-genre-select { display: flex; flex: 1 1 auto; min-height: 0; flex-direction: column; justify-content: center; gap: 9px; }
+.tono-genre-prompt { margin: 0; color: #203e2b; font-size: 18px; line-height: 1.4; text-align: center; }
+.tono-genre-choices { display: grid; gap: 8px; }
+.tono-genre-choice { min-height: 48px; font-size: 20px; }
+.tono-genre-hint { margin: 0; color: #2c4932; font-size: 14px; line-height: 1.4; text-align: center; }
+.tono-dialogue { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; }
+.tono-portrait { position: relative; flex: 0 0 60px; width: 60px; height: 72px; overflow: hidden; border: 2px solid #567657; border-radius: 2px; background: #a0b889; image-rendering: pixelated; }
+.tono-portrait-image { position: absolute; top: -5%; left: 50%; width: 150%; height: auto; max-width: none; transform: translateX(-50%); image-rendering: pixelated; }
+.tono-portrait.is-changing .tono-portrait-image { animation: tono-portrait-change .18s steps(2, end); }
+@keyframes tono-portrait-change { from { opacity: .4; } to { opacity: 1; } }
+.tono-portrait-name { position: absolute; right: 1px; bottom: 0; color: #e9f2ce; background: #3b5642; font-size: 12px; line-height: 1.1; }
+.tono-speech { flex: 1; min-width: 0; margin: 0; padding: 5px 7px; border: 2px solid #567657; border-radius: 3px; background: rgba(233, 243, 196, .7); color: #1d3524; font-size: 18px; line-height: 1.4; white-space: pre-line; overflow-wrap: anywhere; }
+.tono-intro > p:first-child { margin: 4px 0; padding: 5px; border: 1px dashed #75916e; color: #1e3926; font: 18px/1.5 "x8y12pxDenkiChip", "Misaki Gothic", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif; overflow-wrap: anywhere; }
+.tono-load-message { margin: 5px 0 0; color: #455b32; font-size: 14px; line-height: 1.45; }
 .tono-load-message:empty { display: none; }
-.tono-question-meta, .tono-trust-label { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
-.tono-question-meta { margin: 0 0 8px; color: #e7c891; font-size: .84rem; font-weight: 700; }
-#tono-question-sample { padding: 2px 6px; border: 1px solid #c9a45d; border-radius: 4px; font-size: .7rem; }
-.tono-trust { padding: 9px 11px 11px; border: 1px solid rgba(211, 171, 101, .7); border-radius: 7px; background: rgba(10, 17, 28, .84); }
-.tono-trust-label { margin-bottom: 7px; font-size: .88rem; }
-.tono-trust-label strong { color: #fff2c9; font-size: 1rem; }
-.tono-trust-track { height: 12px; overflow: hidden; border: 1px solid #ba955d; border-radius: 8px; background: #231f27; }
-.tono-trust-fill { width: 50%; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #8d6cba, #d3b0e6); box-shadow: 0 0 8px rgba(211, 176, 230, .4); transition: width .45s ease; }
+.tono-question-meta, .tono-trust-label { display: flex; align-items: center; justify-content: space-between; gap: 4px; }
+.tono-question:not([hidden]) { display: flex; flex: 1 1 auto; min-height: 0; flex-direction: column; }
+.tono-question-meta { margin: 0; color: #28472d; font-size: 14px; }
+.tono-question-meta[hidden] { display: none; }
+#tono-question-sample { padding: 1px 4px; border: 1px solid #6e8362; font-size: 12px; }
+.tono-trust { padding: 4px 5px 6px; border: 1px solid #658160; background: rgba(230, 242, 197, .6); }
+.tono-trust-label { margin-bottom: 3px; font-size: 14px; }
+.tono-trust-label strong { font-size: 15px; }
+.tono-trust-track { height: 9px; overflow: hidden; border: 1px solid #37523b; background: #80977a; }
+.tono-trust-fill { width: 50%; height: 100%; background: repeating-linear-gradient(90deg, #355a39 0 6px, #4e7647 6px 8px); transition: width .45s ease; }
 .tono-trust.is-correct { animation: tono-trust-correct .65s ease; }
 .tono-trust.is-wrong { animation: tono-trust-wrong .65s ease; }
-@keyframes tono-trust-correct { 50% { border-color: #8ee0ae; box-shadow: 0 0 12px rgba(110, 218, 141, .4); } }
-@keyframes tono-trust-wrong { 50% { border-color: #f2a19a; box-shadow: 0 0 12px rgba(230, 94, 91, .4); } }
-.tono-question-text { margin: 13px 0; padding: 13px 14px; border-left: 3px solid #d0ab6b; border-radius: 5px; background: rgba(246, 232, 201, .95); color: #2c251f; font-size: 1.02rem; font-weight: 700; line-height: 1.65; }
-.tono-choices { display: grid; gap: 8px; }
-.tono-choice { display: flex; align-items: center; gap: 10px; width: 100%; min-height: 43px; padding: 7px 9px; border: 1px solid #b69561; border-radius: 6px; color: #fff8e7; background: linear-gradient(135deg, #303040, #1a2738); text-align: left; font: inherit; line-height: 1.4; cursor: pointer; }
-.tono-choice:not(:disabled):hover { filter: brightness(1.16); }
+@keyframes tono-trust-correct { 50% { border-color: #218348; box-shadow: 0 0 7px #5cab61; } }
+@keyframes tono-trust-wrong { 50% { border-color: #9c563c; box-shadow: 0 0 7px #af6556; } }
+.tono-question-text { margin: 2px 0 0; padding: 5px; border-left: 3px solid #3f6944; background: rgba(238, 247, 206, .7); color: #193522; font: 18px/1.4 "x8y12pxDenkiChip", "Misaki Gothic", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif; overflow-wrap: anywhere; }
+.tono-answer-hint { margin: 4px 0 0; color: #506e49; font-size: 14px; letter-spacing: .02em; }
+.tono-feedback { margin: 6px 0 0; padding: 5px 6px; border: 2px solid #528454; background: #d7e9b1; color: #1d3824; font-size: 17px; overflow-wrap: anywhere; }
+.tono-feedback.is-wrong { border-color: #99694c; background: #e2d5af; }
+.tono-feedback p { margin: 5px 0 0; color: #1d3824; font: 18px/1.5 "x8y12pxDenkiChip", "Misaki Gothic", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif; overflow-wrap: anywhere; }
+.tono-question.is-feedback .tono-question-text,
+.tono-question.is-feedback .tono-choices,
+.tono-question.is-feedback .tono-answer-hint,
+.tono-question.is-reading .tono-choices,
+.tono-question.is-reading .tono-answer-hint,
+.tono-question.is-choice-only .tono-question-text,
+.tono-question.is-choice-only .tono-answer-hint,
+.tono-game.is-choice-only .tono-dialogue { display: none; }
+.tono-game.is-intro-speech .tono-intro > p:first-child,
+.tono-game.is-intro-description .tono-dialogue,
+.tono-game.is-result-reading .tono-result-actions,
+.tono-game.is-result-reading #tono-result-score,
+.tono-game.is-result-reading #tono-result-trust,
+.tono-game.is-result-actions .tono-dialogue { display: none; }
+.tono-page-actions { display: flex; justify-content: space-between; gap: 6px; margin-top: 5px; }
+.tono-page-actions[hidden], .tono-page-button[hidden] { display: none; }
+.tono-page-button { min-height: 30px; padding: 3px 8px; border: 1px solid #416448; border-radius: 2px; color: #1b3824; background: #d5e7ae; font: 15px "x8y12pxDenkiChip", "Misaki Gothic", "Yu Gothic", sans-serif; cursor: pointer; }
+.tono-page-button:last-child { margin-left: auto; }
+.tono-game.is-compact .tono-game-heading { margin-bottom: 2px; padding-bottom: 2px; }
+.tono-game.is-compact .tono-dialogue { margin-bottom: 2px; }
+.tono-game.is-compact .tono-speech { padding-block: 2px; }
+.tono-game.is-compact .tono-trust { padding: 2px 4px; }
+.tono-game.is-compact .tono-trust-label { margin-bottom: 1px; }
+.tono-game.is-compact .tono-question-text { margin-top: 1px; padding-block: 3px; }
+.tono-game.is-compact .tono-choices { gap: 2px; margin-top: 3px; }
+.tono-game.is-compact .tono-choice { min-height: 34px; padding-block: 1px; }
+.tono-game.is-compact .tono-answer-hint { display: none; }
+.tono-result { margin: auto 0; padding: 4px 0; text-align: center; }
+.tono-game.is-clear .tono-result:not([hidden]), .tono-game.is-failure .tono-result:not([hidden]) { animation: tono-result-appear .45s steps(4, end); }
+@keyframes tono-result-appear { from { opacity: .45; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+.tono-result::before { content: "CLEAR!"; display: block; color: #285b34; font: 22px "x8y12pxDenkiChip", "Misaki Gothic", "Yu Gothic", sans-serif; letter-spacing: .08em; }
+.tono-game.is-failure .tono-result::before { content: "GAME OVER"; color: #6f4737; }
+.tono-result-grade { margin: 4px 0; color: #254832; font-size: 18px; }
+.tono-result-grade.is-failure { color: #744531; }
+.tono-result > p:not(.tono-result-grade) { margin: 4px 0; font-size: 16px; }
+.tono-choices { display: grid; grid-template-columns: 1fr; gap: 4px; margin-top: 5px; }
+.tono-choice { display: flex; align-items: center; gap: 7px; min-width: 0; min-height: 38px; padding: 4px 6px; border: 1px solid #668269; border-left-width: 3px; border-radius: 2px; color: #193622; background: rgba(236, 246, 205, .76); box-shadow: inset 0 -1px rgba(75, 111, 76, .16); text-align: left; font: 18px/1.4 "x8y12pxDenkiChip", "Misaki Gothic", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif; cursor: pointer; touch-action: manipulation; }
+.tono-choice > span:last-child { min-width: 0; overflow-wrap: anywhere; }
+.tono-choice-letter { display: grid; flex: 0 0 24px; place-items: center; width: 24px; height: 24px; border: 1px solid currentColor; color: inherit; font: 17px "x8y12pxDenkiChip", "Misaki Gothic", ui-monospace, monospace; }
+.tono-choice.is-current, .tono-choice:not(:disabled):hover, .tono-choice:focus-visible { border-color: #294d31; color: #eaf4d0; background: #31583b; }
+.tono-choice:not(:disabled):active { transform: translateY(1px); }
 .tono-choice:disabled { cursor: default; }
-.tono-choice.is-correct { border-color: #72d59b; background: linear-gradient(135deg, #194d38, #1b3b35); }
-.tono-choice.is-wrong { border-color: #e9968c; background: linear-gradient(135deg, #683331, #432b36); }
-.tono-choice-letter { display: grid; flex: 0 0 24px; place-items: center; width: 24px; height: 24px; border: 1px solid #d5b778; border-radius: 50%; color: #f9e6b8; font-size: .78rem; }
-.tono-feedback { margin: 11px 0; padding: 10px 12px; border-left: 3px solid #74ce9c; border-radius: 5px; background: rgba(15, 47, 36, .9); }
-.tono-feedback.is-wrong { border-left-color: #e7958b; background: rgba(68, 31, 39, .9); }
-.tono-feedback p { margin: 5px 0 0; font-size: .89rem; line-height: 1.55; }
-.tono-question > .tono-action { margin-top: 11px; }
-.tono-result { padding: 9px 0; text-align: center; }
-.tono-result-grade { margin: 3px 0 14px; color: #f2d58d; font-family: "Yu Mincho", "Hiragino Mincho ProN", serif; font-size: 1.55rem; font-weight: 800; }
-.tono-result-grade.is-failure { color: #efb2a4; }
-.tono-result > p:not(.tono-result-grade) { margin: 8px 0; font-size: 1rem; }
-.tono-result-actions { display: grid; gap: 9px; margin-top: 20px; }
+.tono-choice.is-correct { border-color: #356c45; color: #eaf6d0; background: #438054; }
+.tono-choice.is-wrong { border-color: #88554a; color: #fff1d8; background: #966e55; }
+.tono-action { display: block; width: min(100%, 230px); min-height: 34px; margin: 8px auto 2px; padding: 5px 9px; border: 2px solid #385b3d; border-radius: 2px; color: #25472e; background: #e4efc0; box-shadow: 2px 2px #789475; font: 16px "x8y12pxDenkiChip", "Misaki Gothic", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif; cursor: pointer; touch-action: manipulation; }
+.tono-action:not(:disabled):active { transform: translate(1px, 1px); box-shadow: 1px 1px #789475; }
+.tono-action-secondary { background: #cbdca7; }
+.tono-action:disabled { cursor: wait; opacity: .7; }
+.tono-action:focus-visible, .tono-choice:focus-visible { outline: 2px solid #ffeda6; outline-offset: 2px; }
+.tono-result-actions { display: grid; gap: 5px; margin-top: 8px; }
+.tono-device-details { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 8px; height: 100%; min-height: 0; margin-top: 2px; padding: 8px 16px; border-top: 1px solid rgba(183, 208, 231, .24); border-radius: 0 0 19px 14px; background: linear-gradient(rgba(11, 45, 83, .03), rgba(8, 36, 75, .26)); }
+.tono-dpad { position: relative; width: 88px; height: 88px; justify-self: start; filter: drop-shadow(2px 4px #05172c); }
+.tono-dpad::before { content: ""; position: absolute; inset: 0; background: #092644; clip-path: polygon(34% 0, 66% 0, 66% 34%, 100% 34%, 100% 66%, 66% 66%, 66% 100%, 34% 100%, 34% 66%, 0 66%, 0 34%, 34% 34%); }
+.tono-dpad button { position: absolute; z-index: 1; left: 31%; width: 38%; height: 34%; padding: 0; border: 0; color: #96abc3; background: transparent; font: 14px ui-monospace, monospace; cursor: pointer; touch-action: manipulation; }
+.tono-dpad-up { top: 0; }
+.tono-dpad-down { bottom: 0; }
+.tono-dpad button:active { color: #f3f7ff; transform: translateY(3px); }
+.tono-round-buttons { display: flex; align-items: center; justify-self: end; gap: 10px; transform: rotate(-17deg); }
+.tono-round-buttons > * { display: grid; place-items: center; width: 48px; height: 48px; padding: 0; border: 3px solid #512a42; border-radius: 50%; color: #f4dbe2; background: #a0576b; box-shadow: inset 3px 3px #d58e9c, 0 4px #411f38; font: 19px "Misaki Gothic 2nd", ui-monospace, monospace; }
+.tono-physical-a, .tono-physical-b:not(:disabled) { cursor: pointer; touch-action: manipulation; }
+.tono-physical-a:active, .tono-physical-b:not(:disabled):active { transform: translateY(3px); box-shadow: inset 2px 2px #512a42, 0 1px #411f38; }
+.tono-physical-b:disabled { cursor: default; opacity: .45; }
+.tono-device-details button:focus-visible { outline: 2px solid #e6f0bb; outline-offset: 2px; }
+.tono-speaker { display: none; }
+
+@media (max-width: 400px) {
+  .tono-game { grid-template-rows: auto minmax(0, 1fr) 18.5%; gap: 4px; padding: 7px 8px 6px; aspect-ratio: .6; }
+  .tono-device-brand { font-size: 11px; }
+  .tono-device-brand span:first-child { font-size: 14px; }
+  .tono-lcd-bezel { padding: 4px; }
+  .tono-lcd-screen { padding: 5px 6px 6px; }
+  .tono-game-heading { margin-bottom: 4px; padding-bottom: 2px; }
+  .tono-game-heading h3 { font-size: 16px; }
+  .tono-genre-select { gap: 6px; }
+  .tono-genre-choices { gap: 6px; }
+  .tono-genre-choice { min-height: 42px; font-size: 19px; }
+  .tono-dialogue { gap: 5px; margin-bottom: 4px; }
+  .tono-portrait { flex-basis: 52px; width: 52px; height: 62px; }
+  .tono-speech { padding: 4px 5px; font-size: 18px; line-height: 1.35; }
+  .tono-question-meta { margin-bottom: 3px; font-size: 14px; }
+  .tono-trust { padding: 3px; }
+  .tono-trust-label { margin-bottom: 1px; font-size: 14px; }
+  .tono-trust-track { height: 7px; }
+  .tono-question-text { font-size: 18px; line-height: 1.35; }
+  .tono-choices { gap: 3px; margin-top: 4px; }
+  .tono-choice { min-height: 36px; padding: 2px 5px; font-size: 18px; line-height: 1.35; }
+  .tono-device-details { gap: 5px; padding: 5px 8px; }
+  .tono-dpad { width: 72px; height: 72px; }
+  .tono-dpad button { font-size: 12px; }
+  .tono-round-buttons { gap: 7px; }
+  .tono-round-buttons > * { width: 40px; height: 40px; font-size: 16px; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   .tono-trust-fill { transition: none; }
-  .tono-trust.is-correct, .tono-trust.is-wrong { animation: none; }
+  .tono-trust.is-correct, .tono-trust.is-wrong,
+  .tono-game.is-correct .tono-lcd-screen, .tono-game.is-wrong .tono-lcd-screen,
+  .tono-lcd-screen.is-switching, .tono-game.is-clear .tono-result,
+  .tono-game.is-failure .tono-result { animation: none; }
 }
 
 /* 設定パネル内だけで日付順のおしらせを閲覧する。 */

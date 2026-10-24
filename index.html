@@ -148,46 +148,75 @@
             </div>
           </section>
           <section id="tono-game" class="tono-game" aria-label="殿の疑いを晴らせ！" hidden>
-            <header class="tono-game-heading">
-              <span>歴史ミニゲーム</span>
-              <h3>殿の疑いを晴らせ！</h3>
-            </header>
-            <div class="tono-dialogue">
-              <div class="tono-portrait" role="img" aria-label="殿の仮の立ち絵">
-                <span class="tono-portrait-hat" aria-hidden="true"></span>
-                <span class="tono-portrait-head" aria-hidden="true"></span>
-                <span class="tono-portrait-robe" aria-hidden="true"></span>
-                <span class="tono-portrait-name">殿</span>
+            <div class="tono-device-brand" aria-hidden="true"><span>MINI GAME</span><span>HISTORY QUEST</span></div>
+            <div class="tono-lcd-bezel">
+              <div class="tono-lcd-screen">
+                <header class="tono-game-heading">
+                  <span id="tono-genre-label">歴史ミニゲーム</span>
+                  <h3>殿の疑いを晴らせ！</h3>
+                  <div class="tono-question-meta" hidden><span id="tono-question-number"></span><span id="tono-question-sample">サンプル問題</span></div>
+                </header>
+                <div id="tono-genre-select" class="tono-genre-select" hidden>
+                  <p class="tono-genre-prompt">時代を選択せよ</p>
+                  <div id="tono-genre-choices" class="tono-genre-choices" role="group" aria-label="挑戦する時代">
+                    <button class="tono-choice tono-genre-choice" type="button" data-tono-genre="戦国時代"><span class="tono-choice-letter" aria-hidden="true">1</span><span>戦国時代</span></button>
+                    <button class="tono-choice tono-genre-choice" type="button" data-tono-genre="江戸時代"><span class="tono-choice-letter" aria-hidden="true">2</span><span>江戸時代</span></button>
+                    <button class="tono-choice tono-genre-choice" type="button" data-tono-genre="幕末"><span class="tono-choice-letter" aria-hidden="true">3</span><span>幕末</span></button>
+                  </div>
+                  <p class="tono-genre-hint">上下で選び、Aで決定</p>
+                </div>
+                <div class="tono-dialogue">
+                  <div class="tono-portrait">
+                    <img class="tono-portrait-image" src="images/minigame/tono/normal.png" alt="殿の立ち絵" width="1254" height="1254">
+                    <span class="tono-portrait-name">殿</span>
+                  </div>
+                  <p id="tono-speech" class="tono-speech"></p>
+                </div>
+                <div id="tono-intro" class="tono-intro" hidden>
+                  <p>あなたには裏切りの疑いがかけられています。歴史についての5つの問いに答え、殿からの信頼を取り戻しましょう。3問以上正解すればクリアです。</p>
+                  <button id="btn-tono-start" class="tono-action" type="button" hidden>挑戦する</button>
+                  <p id="tono-load-message" class="tono-load-message" role="status"></p>
+                </div>
+                <div id="tono-question" class="tono-question" hidden>
+                  <div class="tono-trust" aria-label="殿の信頼度">
+                    <div class="tono-trust-label"><span>殿の信頼度</span><strong id="tono-trust-value">50%</strong></div>
+                    <div class="tono-trust-track"><div id="tono-trust-fill" class="tono-trust-fill"></div></div>
+                  </div>
+                  <p id="tono-question-text" class="tono-question-text"></p>
+                  <div id="tono-choices" class="tono-choices" hidden></div>
+                  <p class="tono-answer-hint">A / B / C / D で答えよ</p>
+                  <div id="tono-page-actions" class="tono-page-actions" hidden>
+                    <button id="btn-tono-page-back" class="tono-page-button" type="button" hidden>前へ</button>
+                    <button id="btn-tono-page-next" class="tono-page-button" type="button">続きを読む</button>
+                  </div>
+                  <div id="tono-feedback" class="tono-feedback" role="status" hidden>
+                    <strong id="tono-feedback-title"></strong>
+                    <p id="tono-explanation"></p>
+                  </div>
+                  <button id="btn-tono-next" class="tono-action" type="button" hidden>次へ</button>
+                </div>
+                <div id="tono-result" class="tono-result" hidden>
+                  <p id="tono-result-grade" class="tono-result-grade"></p>
+                  <p id="tono-result-score"></p>
+                  <p id="tono-result-trust"></p>
+                  <button id="btn-tono-result-continue" class="tono-action" type="button" hidden>結果を見る</button>
+                  <div id="tono-result-actions" class="tono-result-actions" hidden>
+                    <button id="btn-tono-retry" class="tono-action" type="button">もう一度挑戦</button>
+                    <button id="btn-tono-genres" class="tono-action tono-action-secondary" type="button">ジャンル選択へ戻る</button>
+                  </div>
+                </div>
               </div>
-              <p id="tono-speech" class="tono-speech"></p>
             </div>
-            <div id="tono-intro" class="tono-intro" hidden>
-              <p>あなたには裏切りの疑いがかけられています。歴史についての5つの問いに答え、殿からの信頼を取り戻しましょう。3問以上正解すればクリアです。</p>
-              <button id="btn-tono-start" class="tono-action" type="button">挑戦する</button>
-              <p id="tono-load-message" class="tono-load-message" role="status"></p>
-            </div>
-            <div id="tono-question" class="tono-question" hidden>
-              <div class="tono-question-meta"><span id="tono-question-number"></span><span id="tono-question-sample">サンプル問題</span></div>
-              <div class="tono-trust" aria-label="殿の信頼度">
-                <div class="tono-trust-label"><span>殿の信頼度</span><strong id="tono-trust-value">50%</strong></div>
-                <div class="tono-trust-track"><div id="tono-trust-fill" class="tono-trust-fill"></div></div>
+            <div class="tono-device-details">
+              <div class="tono-dpad" role="group" aria-label="選択肢の移動">
+                <button id="btn-tono-up" class="tono-dpad-up" type="button" aria-label="上の選択肢">▲</button>
+                <button id="btn-tono-down" class="tono-dpad-down" type="button" aria-label="下の選択肢">▼</button>
               </div>
-              <p id="tono-question-text" class="tono-question-text"></p>
-              <div id="tono-choices" class="tono-choices"></div>
-              <div id="tono-feedback" class="tono-feedback" role="status" hidden>
-                <strong id="tono-feedback-title"></strong>
-                <p id="tono-explanation"></p>
+              <div class="tono-round-buttons">
+                <button id="btn-tono-b" class="tono-physical-b" type="button" aria-label="もどる" title="もどる">B</button>
+                <button id="btn-tono-a" class="tono-physical-a" type="button" aria-label="決定">A</button>
               </div>
-              <button id="btn-tono-next" class="tono-action" type="button" hidden>次へ</button>
-            </div>
-            <div id="tono-result" class="tono-result" hidden>
-              <p id="tono-result-grade" class="tono-result-grade"></p>
-              <p id="tono-result-score"></p>
-              <p id="tono-result-trust"></p>
-              <div class="tono-result-actions">
-                <button id="btn-tono-retry" class="tono-action" type="button">もう一度挑戦</button>
-                <button id="btn-tono-genres" class="tono-action tono-action-secondary" type="button">ジャンル選択へ戻る</button>
-              </div>
+              <span class="tono-speaker" aria-hidden="true"></span>
             </div>
           </section>
           <button id="btn-back-from-mini-game" class="battle-select-back" type="button">‹ 戻る</button>
