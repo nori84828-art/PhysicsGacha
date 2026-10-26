@@ -8,8 +8,8 @@ const source = fs.readFileSync(path.join(root, "cards.js"), "utf8");
 const scriptedRolls = [];
 const scriptedMath = Object.create(Math);
 scriptedMath.random = () => scriptedRolls.shift();
-const { catalog, pool, rates, draw } = vm.runInNewContext(
-  `${source}\n({ catalog: PHYSICS_CARDS, pool: GACHA_PHYSICS_CARDS, rates: GACHA_RATES, draw: drawGachaCard })`,
+const { catalog, history, pool, rates, draw } = vm.runInNewContext(
+  `${source}\n({ catalog: PHYSICS_CARDS, history: HISTORY_CARD_CATALOG, pool: GACHA_PHYSICS_CARDS, rates: GACHA_RATES, draw: drawGachaCard })`,
   { Math: scriptedMath }
 );
 
@@ -89,3 +89,24 @@ for (const [rarity, rate] of Object.entries(rates)) {
 }
 
 console.log("POINT gacha catalog: 20 drawable cards, UR 1 / SSR 3 / SR 5 / R 5 / N 6; all 25 IDs and assets verified.");
+
+const expectedHistory = [
+  ["織田信長", "天下布武", "UR", "M1.png", "織田風戦国武将、炎と金の軍装.png"],
+  ["伊達政宗", "独眼竜", "SSR", "M2.jpg", "月龍を背負う独眼竜の武士.png"],
+  ["真田幸村", "日本一の兵", "SR", "M3.png", "紅蓮の六文銭 samurai warrior.png"],
+  ["明智光秀", "本能寺の変", "R", "M4.jpg", "戦略図を掲げる蒼き武将.png"],
+  ["お市の方", "戦国一の美女", "N", "M5.jpg", "桜舞う雅な姫君.png"]
+];
+assert.deepEqual(Array.from(history, card => [card.scientist, card.cardName, card.rarity, path.basename(card.cardImage), path.basename(card.standingImage)]), expectedHistory);
+assert.equal(new Set([...catalog, ...history].map(card => card.id)).size, 30);
+for (const card of history) {
+  assert.ok(fs.existsSync(path.join(root, card.cardImage)), `Missing history card: ${card.id}`);
+  assert.ok(fs.existsSync(path.join(root, card.standingImage)), `Missing history standing image: ${card.id}`);
+  assert.equal(card.gachaAvailable, false);
+  assert.equal(card.acquisition.type, "history_medal_exchange");
+  assert.equal(card.acquisition.enabled, true);
+  assert.equal(card.acquisition.medalCost, { UR: 1200, SSR: 700, SR: 400, R: 150, N: 50 }[card.rarity]);
+  assert.equal(card.stats, null);
+  assert.ok(!pool.some(item => item.id === card.id));
+}
+console.log("History catalog: five cards and matching standing images registered; exchange costs verified, stats remain unconfigured.");

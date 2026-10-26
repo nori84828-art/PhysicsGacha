@@ -1507,6 +1507,7 @@ body {
 }
 
 .card-knowledge-value .katex { font-size: 1.28em; }
+.card-biography { margin: 0; color: #e2e8f0; font-size: .9rem; line-height: 1.85; overflow-wrap: anywhere; text-align: left; }
 
 .card-symbols-section { margin-top: 1.2rem; }
 
@@ -5576,7 +5577,7 @@ body.is-home-screen .home-settings-button:focus-visible,
 .teacher-admin-step-button:hover { background: #183660; }
 .teacher-admin-modal button:focus-visible,
 .teacher-admin-modal input:focus-visible { outline: 2px solid #fff1bd; outline-offset: 2px; }
-.teacher-admin-values { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 18px; }
+.teacher-admin-values { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 18px; }
 .teacher-admin-values label { display: grid; gap: 7px; color: #f2dca8; font-weight: 700; }
 .teacher-admin-modal input[type="number"],
 .teacher-admin-modal input[type="search"] {
@@ -5783,7 +5784,7 @@ body.is-home-screen .home-settings-button:focus-visible,
   text-align: center;
 }
 
-/* Safariの可視領域を全画面共通の9:16ゲーム枠の基準にする。
+/* PCは可視領域に収まる9:16ゲーム枠を維持する。
    JSのvisualViewport値が利用できるまでの間もdvhで表示する。 */
 :root {
   --game-viewport-height: 100vh;
@@ -5801,7 +5802,7 @@ html {
 }
 
 body:is(.is-home-screen, .is-battle-select-screen, .is-mini-game-screen, .is-normal-battle-select-screen,
-        .is-boss-select-screen, .is-gacha-screen, .is-quiz-screen, .is-result-screen) {
+        .is-boss-select-screen, .is-gacha-screen, .is-quiz-screen, .is-result-screen, .is-exchange-screen) {
   position: fixed;
   inset: 0;
   width: 100%;
@@ -5814,7 +5815,7 @@ body:is(.is-home-screen, .is-battle-select-screen, .is-mini-game-screen, .is-nor
 }
 
 body:is(.is-home-screen, .is-battle-select-screen, .is-mini-game-screen, .is-normal-battle-select-screen,
-        .is-boss-select-screen, .is-gacha-screen, .is-quiz-screen, .is-result-screen) .app-container {
+        .is-boss-select-screen, .is-gacha-screen, .is-quiz-screen, .is-result-screen, .is-exchange-screen) .app-container {
   flex: none;
   width: var(--game-width);
   max-width: none;
@@ -5824,7 +5825,7 @@ body:is(.is-home-screen, .is-battle-select-screen, .is-mini-game-screen, .is-nor
 }
 
 body:is(.is-home-screen, .is-battle-select-screen, .is-mini-game-screen, .is-normal-battle-select-screen,
-        .is-boss-select-screen, .is-gacha-screen, .is-quiz-screen, .is-result-screen) .quiz-card {
+        .is-boss-select-screen, .is-gacha-screen, .is-quiz-screen, .is-result-screen, .is-exchange-screen) .quiz-card {
   width: 100%;
   height: 100%;
   min-height: 0;
@@ -6141,6 +6142,7 @@ body.is-mini-game-screen #global-hud { display: none; }
 .tono-dialogue { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; }
 .tono-portrait { position: relative; flex: 0 0 60px; width: 60px; height: 72px; overflow: hidden; border: 2px solid #567657; border-radius: 2px; background: #a0b889; image-rendering: pixelated; }
 .tono-portrait-image { position: absolute; top: -5%; left: 50%; width: 150%; height: auto; max-width: none; transform: translateX(-50%); image-rendering: pixelated; }
+.tono-portrait[data-era="edo"] .tono-portrait-image { top: -30%; width: 180%; }
 .tono-portrait.is-changing .tono-portrait-image { animation: tono-portrait-change .18s steps(2, end); }
 @keyframes tono-portrait-change { from { opacity: .4; } to { opacity: 1; } }
 .tono-portrait-name { position: absolute; right: 1px; bottom: 0; color: #e9f2ce; background: #3b5642; font-size: 12px; line-height: 1.1; }
@@ -6304,4 +6306,161 @@ body.is-mini-game-screen #global-hud { display: none; }
   .mini-game-heading h2 { font-size: clamp(1.7rem, 7vw, 2.2rem); }
   .mini-game-panel { padding: 14px 11px; }
   .mini-game-page > .battle-select-back { min-width: 78px; min-height: 37px; margin-bottom: 0; padding: 4px 10px; font-size: .86rem; }
+}
+
+/* スマホ・タブレットは端末の表示領域を使う。PCのマウス操作には適用しない。 */
+/* 交換所：メダルの種類と必要数を商品ごとに表示し、一覧内だけでスクロールする。 */
+body.is-gacha-screen .quiz-card { overflow-y: hidden; }
+body.is-exchange-screen { background: #050d1b; }
+body.is-exchange-screen .quiz-card { padding: 0; overflow: hidden; border-radius: 0; background: #081428; }
+#exchange-screen.active { height: 100%; min-height: 0; }
+.exchange-page {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: 10px;
+  height: 100%;
+  min-height: 0;
+  padding: max(14px, env(safe-area-inset-top)) max(14px, env(safe-area-inset-right)) max(12px, env(safe-area-inset-bottom)) max(14px, env(safe-area-inset-left));
+  color: #fff2d7;
+  background: radial-gradient(ellipse at 50% 40%, rgba(63, 91, 130, .3), transparent 65%), linear-gradient(150deg, #172a40, #091426 58%, #251c1d);
+}
+.exchange-header { display: grid; grid-template-columns: auto 1fr; gap: 8px 12px; align-items: center; }
+.exchange-header .battle-select-back { min-height: 40px; min-width: 0; margin: 0; padding: 5px 10px; font-size: .85rem; }
+.exchange-header > div { text-align: right; }
+.exchange-eyebrow { color: #c9b38e; font-size: .6rem; letter-spacing: .12em; }
+.exchange-header h2 { margin: 2px 0 0; color: #fff0c8; font-family: "Yu Mincho", serif; font-size: 1.7rem; }
+.exchange-balance { grid-column: 1 / -1; display: flex; align-items: baseline; justify-content: center; gap: 8px; padding: 8px 12px; border: 1px solid #b39154; border-radius: 8px; background: rgba(2, 9, 22, .55); font-size: .85rem; }
+.exchange-balance strong { color: #ffe0a2; font-size: 1.35rem; font-variant-numeric: tabular-nums; }
+.exchange-balance > img { width: 28px; height: 28px; object-fit: contain; align-self: center; }
+.exchange-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(145px, 1fr)); grid-auto-rows: max-content; align-content: start; gap: 12px; min-height: 0; margin: 0; padding: 3px; list-style: none; overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; }
+.exchange-product { display: flex; flex-direction: column; min-width: 0; padding: 10px; border: 1px solid #9b8055; border-radius: 10px; background: linear-gradient(155deg, #24364b, #0c182b); box-shadow: inset 0 1px rgba(255, 234, 191, .15); text-align: center; }
+.exchange-product h3 { margin: 0; color: #fff1d0; font-size: .95rem; line-height: 1.5; }
+.exchange-product-rarity { color: #f5d294; font-size: .7rem; }
+.exchange-product-title { margin: 3px 0 8px; color: #c5cbd4; font-size: .75rem; }
+.exchange-product-image { display: block; width: 100%; height: clamp(100px, 18vh, 170px); object-fit: contain; }
+.exchange-product-owned { margin: 7px 0; font-size: .75rem; color: #c5cbd4; }
+.exchange-product-cost { display: grid; grid-template-columns: 26px 1fr; align-items: center; gap: 2px 5px; padding: 6px; margin-bottom: 7px; border: 1px solid #9a7d47; border-radius: 7px; background: #081526; }
+.exchange-product-cost img { grid-row: span 2; width: 26px; height: 26px; object-fit: contain; }
+.exchange-product-cost > span { font-size: .65rem; color: #ded1b8; }
+.exchange-product-cost strong { color: #ffe1a5; font-size: 1rem; font-variant-numeric: tabular-nums; }
+.exchange-product-cost small { margin-left: 3px; font-size: .65rem; }
+.exchange-submit, .exchange-confirm button { min-height: 42px; padding: 7px 8px; border: 1px solid #ceac6b; border-radius: 7px; color: #fff3d7; background: linear-gradient(#344e70, #182c49); font: inherit; font-size: .85rem; font-weight: 700; cursor: pointer; }
+.exchange-product > .exchange-submit { width: 100%; margin-top: auto; }
+.exchange-submit:disabled { color: #c0c5cd; border-color: #647082; background: #283547; cursor: default; }
+.exchange-footer { min-width: 0; }
+.exchange-confirm { padding: 9px; border: 1px solid #c3a16a; border-radius: 8px; background: #142238; }
+.exchange-confirm p { margin-bottom: 8px; font-size: .85rem; line-height: 1.5; }
+.exchange-confirm > div { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.exchange-confirm[hidden] { display: none; }
+.exchange-message { min-height: 2.6em; margin-top: 7px; color: #f8dfaa; font-size: .8rem; line-height: 1.3; text-align: center; }
+.exchange-page button:focus-visible { outline: 2px solid #ffe2a2; outline-offset: 2px; }
+.holdings-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin: 16px 0; padding: 0; list-style: none; }
+.holdings-item { width: 100%; max-width: 230px; justify-self: center; padding: 14px; border: 1px solid #ac8950; border-radius: 12px; background: linear-gradient(155deg, #1a2d47, #0b172a); box-shadow: inset 0 1px rgba(255, 229, 174, .12); }
+.holdings-item-name { margin: 0 0 12px; color: #fff0cb; font-size: 1rem; font-weight: 700; text-align: center; }
+.holdings-item-art { display: grid; place-items: center; padding: 8px; border: 1px solid rgba(201, 165, 99, .4); border-radius: 9px; background: radial-gradient(circle, #2d3040, #0c182b); }
+.holdings-item-art img { display: block; width: 112px; max-width: 100%; height: auto; aspect-ratio: 1; object-fit: contain; }
+.holdings-item-count { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; margin-top: 12px; color: #fff1cd; font-size: .9rem; }
+.holdings-item-count > span:first-child { color: #c9c5bd; font-size: .8rem; }
+.holdings-item-count strong { font-size: 1.1rem; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.holdings-item-count > span:last-child { min-width: 0; text-align: right; }
+.home-settings-panel.is-items-view {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  width: min(100%, calc(var(--game-width) - 24px));
+  height: min(calc(var(--game-height) - 32px), calc(var(--game-viewport-height) - 32px));
+  overflow: hidden;
+}
+.home-settings-panel.is-items-view #home-settings-items-view:not([hidden]) {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 16px;
+  min-height: 0;
+}
+.home-settings-panel.is-items-view .holdings-grid {
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  grid-auto-rows: max-content;
+  align-content: start;
+  align-items: start;
+  margin: 0;
+  min-height: 0;
+  padding: 2px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.home-settings-panel.is-items-view .holdings-item { max-width: none; justify-self: stretch; }
+#home-settings-items-view h3 { display: none; }
+#tono-result-medals { color: #203e2b; font-size: 14px; font-weight: 700; }
+@media (max-height: 540px) {
+  .home-settings-options { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .home-settings-panel { padding: 16px; }
+  .holdings-grid { margin: 10px 0; }
+  .holdings-item { padding: 10px; }
+  .holdings-item-name { margin-bottom: 8px; }
+  .holdings-item-art img { width: 80px; }
+  .holdings-item-count { margin-top: 8px; }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  :root {
+    --game-width: min(100vw, 1180px);
+    --game-height: var(--game-viewport-height);
+  }
+
+  body .quiz-card {
+    padding-top: max(12px, env(safe-area-inset-top));
+    padding-right: max(12px, env(safe-area-inset-right));
+    padding-bottom: max(16px, env(safe-area-inset-bottom));
+    padding-left: max(12px, env(safe-area-inset-left));
+  }
+  body:is(.is-home-screen, .is-gacha-screen, .is-battle-select-screen,
+          .is-normal-battle-select-screen, .is-boss-select-screen, .is-mini-game-screen) .quiz-card {
+    padding: 0;
+  }
+  body.is-home-screen .social-home,
+  body.is-gacha-screen .gacha-page,
+  .battle-select-page, .normal-battle-select-page, #boss-select-screen .boss-select-layout,
+  .mini-game-page {
+    padding-left: max(13px, env(safe-area-inset-left));
+    padding-right: max(13px, env(safe-area-inset-right));
+    padding-top: max(12px, env(safe-area-inset-top));
+    padding-bottom: max(16px, env(safe-area-inset-bottom));
+  }
+  #gacha-rates-modal .gacha-rates-modal-container {
+    width: min(calc(var(--game-width) - 28px), 600px);
+    max-height: calc(var(--game-viewport-height) - 32px);
+  }
+  #collection-modal .collection-modal-container {
+    width: min(calc(var(--game-width) - 24px), 960px);
+    max-height: calc(var(--game-viewport-height) - 32px);
+  }
+  .modal-overlay { min-height: 0; }
+  #global-hud {
+    top: max(14px, env(safe-area-inset-top));
+    left: max(13px, env(safe-area-inset-left));
+    right: max(13px, env(safe-area-inset-right));
+  }
+  .tono-game { height: min(680px, calc(var(--game-height) - 56px)); aspect-ratio: auto; }
+
+  /* タブレットでは横幅を活用しつつ、読める大きさとカードの比率を保つ。 */
+  @media (min-width: 700px) {
+    body.is-home-screen .home-main-menu { gap: 16px; }
+    body.is-home-screen .home-menu-card { min-height: 160px; }
+    body.is-battle-select-screen .battle-select-modes { width: min(100%, 880px); justify-self: center; gap: 24px; }
+    .mini-game-panel { width: min(100%, 760px); justify-self: center; }
+    body.is-quiz-screen #quiz-screen,
+    body.is-result-screen #result-screen { width: min(100%, 900px); margin-inline: auto; }
+  }
+
+  /* 縦の余裕が少ない場合も、同じ画面を枠内に収める。 */
+  @media (max-height: 540px) {
+    body:is(.is-home-screen, .is-gacha-screen, .is-battle-select-screen,
+            .is-mini-game-screen, .is-normal-battle-select-screen, .is-boss-select-screen,
+            .is-quiz-screen, .is-result-screen, .is-exchange-screen) .app-container {
+      width: calc(var(--game-width) / var(--compact-game-scale));
+      height: calc(var(--game-height) / var(--compact-game-scale));
+      zoom: var(--compact-game-scale);
+    }
+    .tono-game { height: calc(var(--game-height) / var(--compact-game-scale) - 56px); }
+  }
 }

@@ -227,6 +227,61 @@ const PHYSICS_CARD_CATALOG = [
   }
 ];
 
+// 歴史メダル交換用の登録データ。カード画像の表記と、指定された立ち絵の順番に対応。
+// 交換で入手したカードだけを図鑑へ表示する。能力値未設定のため編成には含めない。
+const HISTORY_CARD_CATALOG = [
+  {
+    id: "history-oda-nobunaga", subject: "history", rarity: "UR",
+    biography: "尾張から勢力を広げ、天下統一を目指した戦国大名。1560年、桶狭間の戦いで今川義元を破り、1567年には美濃を攻略して岐阜を拠点とした。1582年、家臣の明智光秀が起こした本能寺の変で生涯を終えた。",
+    biographySources: ["https://www.city.gifu.lg.jp/kankoubunka/kankou/1013051/1005097/1034742/1034737.html", "https://gifunomatsuri.jp/nobunaga/nobunaga-history/"],
+    scientist: "織田信長", collectionScientistName: "織田信長", scientistEn: "Oda Nobunaga",
+    cardName: "天下布武", category: "人物", unit: "戦国時代",
+    cardImage: "images/card/M1.png", standingImage: "images/scientists/織田風戦国武将、炎と金の軍装.png",
+    gachaAvailable: false, acquisition: { type: "history_medal_exchange", currency: "history_medal", enabled: true, medalCost: 1200 },
+    stats: null, skill: null
+  },
+  {
+    id: "history-date-masamune", subject: "history", rarity: "SSR",
+    biography: "仙台藩の初代藩主。1601年に仙台へ本拠地を移し、城下町の整備や新田開発を進めて藩の基礎を築いた。海外との交流にも目を向け、1613年には支倉常長らをスペインやローマへ向かう慶長遣欧使節として派遣した。",
+    biographySources: ["https://www.city.sendai.jp/museum/shuzohin/shuzohin/shuzohin-23.html", "https://www.mofa.go.jp/mofaj/annai/page5_000234.html"],
+    scientist: "伊達政宗", collectionScientistName: "伊達政宗", scientistEn: "Date Masamune",
+    cardName: "独眼竜", category: "人物", unit: "戦国時代",
+    cardImage: "images/card/M2.jpg", standingImage: "images/scientists/月龍を背負う独眼竜の武士.png",
+    gachaAvailable: false, acquisition: { type: "history_medal_exchange", currency: "history_medal", enabled: true, medalCost: 700 },
+    stats: null, skill: null
+  },
+  {
+    id: "history-sanada-yukimura", subject: "history", rarity: "SR",
+    biography: "本名は信繁で、後世に「幸村」の名で広く知られるようになった武将。九度山での蟄居を経て、豊臣方として大坂の陣に参戦した。1614年の冬の陣では出城の真田丸で奮戦し、翌年の夏の陣で討死した。",
+    biographySources: ["https://museum.umic.jp/hakubutsukan/ueda-castle-history/03/", "https://museum.umic.jp/uedagunki/chronology.html"],
+    scientist: "真田幸村", collectionScientistName: "真田幸村", scientistEn: "Sanada Yukimura",
+    cardName: "日本一の兵", category: "人物", unit: "戦国時代",
+    cardImage: "images/card/M3.png", standingImage: "images/scientists/紅蓮の六文銭 samurai warrior.png",
+    gachaAvailable: false, acquisition: { type: "history_medal_exchange", currency: "history_medal", enabled: true, medalCost: 400 },
+    stats: null, skill: null
+  },
+  {
+    id: "history-akechi-mitsuhide", subject: "history", rarity: "R",
+    biography: "織田信長に仕えた武将。丹波攻略を命じられ、亀山城を築いて拠点とした。1582年、本能寺の変を起こして主君の信長を討ったが、その後の山崎の戦いで羽柴秀吉に敗れた。",
+    biographySources: ["https://museums.city.kameoka.kyoto.jp/cultural/", "https://ja.kyoto.travel/tourism/single02.php?category_id=9&tourism_id=2214"],
+    scientist: "明智光秀", collectionScientistName: "明智光秀", scientistEn: "Akechi Mitsuhide",
+    cardName: "本能寺の変", category: "人物", unit: "戦国時代",
+    cardImage: "images/card/M4.jpg", standingImage: "images/scientists/戦略図を掲げる蒼き武将.png",
+    gachaAvailable: false, acquisition: { type: "history_medal_exchange", currency: "history_medal", enabled: true, medalCost: 150 },
+    stats: null, skill: null
+  },
+  {
+    id: "history-oichi", subject: "history", rarity: "N",
+    biography: "織田信長の妹。近江の戦国大名・浅井長政に嫁ぎ、茶々・初・江の三姉妹らをもうけた。浅井家の滅亡後は柴田勝家に再嫁し、1583年、賤ヶ岳の戦いで敗れた勝家とともに北庄城で生涯を終えた。",
+    biographySources: ["https://www.city.nagahama.lg.jp/cmsfiles/contents/0000001/1238/R8rekimachikeikaku_1.pdf", "https://www.library-archives.pref.fukui.lg.jp/fukui/07/nenpyo/rekishi/chrn25.html"],
+    scientist: "お市の方", collectionScientistName: "お市の方", scientistEn: "Oichi",
+    cardName: "戦国一の美女", category: "人物", unit: "戦国時代",
+    cardImage: "images/card/M5.jpg", standingImage: "images/scientists/桜舞う雅な姫君.png",
+    gachaAvailable: false, acquisition: { type: "history_medal_exchange", currency: "history_medal", enabled: true, medalCost: 50 },
+    stats: null, skill: null
+  }
+];
+
 // 一覧・所持数・編成画面は、POINTガチャ対象外の5枚も含むカードマスターを参照する。
 const PHYSICS_CARDS = PHYSICS_CARD_CATALOG;
 

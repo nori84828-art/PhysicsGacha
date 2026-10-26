@@ -1,0 +1,56 @@
+const assert = require("node:assert/strict");
+const fs = require("node:fs");
+const path = require("node:path");
+const vm = require("node:vm");
+const root = path.resolve(__dirname, "..");
+const source = ["cards.js", "history.js"].map(file => fs.readFileSync(path.join(root, file), "utf8")).join("\n");
+const { economy, cards } = vm.runInNewContext(`${source}\n({economy:HistoryMedals,cards:HISTORY_CARD_CATALOG})`);
+let raw = null;
+const storage = { getItem: () => raw, setItem: (key, value) => { assert.equal(key, economy.storageKey); raw = value; } };
+assert.equal(economy.read(storage).medals, 0);
+for (const [count, expected] of [[0,0],[1,0],[2,0],[3,100],[4,120],[5,150]]) {
+  assert.equal(economy.reward(count, count >= 3), expected);
+  assert.equal(economy.reward(count, false), 0);
+  const session = {correctCount:count};
+  const before = economy.read(storage).medals;
+  assert.equal(economy.award(session, count >= 3, storage), expected);
+  assert.equal(economy.award(session, count >= 3, storage), expected);
+  assert.equal(economy.read(storage).medals, before + expected, "Repeated result grants only once");
+}
+raw = JSON.stringify({medals:2500,cards:{}});
+for (const card of cards) {
+  const before = economy.read(storage).medals;
+  const result = economy.exchange(card.id, storage);
+  assert.equal(result.medals, before-card.acquisition.medalCost);
+  assert.equal(economy.read(storage).cards[card.id], 1);
+}
+assert.equal(economy.read(storage).medals, 0);
+const saved = raw;
+assert.throws(() => economy.exchange(cards[4].id, storage), /足りません/);
+assert.throws(() => economy.exchange("unknown", storage), /交換できません/);
+assert.equal(raw, saved);
+const originalCurrency = cards[4].acquisition.currency;
+cards[4].acquisition.currency = "different_medal";
+assert.throws(() => economy.exchange(cards[4].id, storage), /交換できません/);
+assert.equal(raw, saved, "Another currency must never spend history medals");
+cards[4].acquisition.currency = originalCurrency;
+raw = JSON.stringify({medals:100,cards:{}});
+economy.exchange(cards[4].id, storage);
+economy.exchange(cards[4].id, storage);
+assert.equal(economy.read(storage).cards[cards[4].id], 2);
+assert.equal(economy.read(storage).medals, 0);
+raw = JSON.stringify({medals:1200,cards:{}});
+const failedStorage = {getItem:()=>raw,setItem:()=>{throw new Error("Full");}};
+const beforeFailure = raw;
+assert.throws(() => economy.exchange(cards[0].id, failedStorage), /Full/);
+assert.equal(raw, beforeFailure, "Save failure must not consume medals or grant a card");
+const session = {correctCount:5};
+assert.throws(() => economy.award(session, true, failedStorage), /Full/);
+assert.equal(session.historyReward, undefined);
+assert.equal(raw, beforeFailure);
+economy.award(session, true, storage);
+assert.equal(economy.read(storage).medals, 1350);
+raw = '{"medals":-100,"cards":{"history-oichi":-1}}';
+assert.equal(economy.read(storage).medals, 0);
+assert.equal(Object.keys(economy.read(storage).cards).length, 0);
+console.log("History medals: rewards, duplicate prevention, exchange costs, repeat exchanges and atomic save failures passed.");

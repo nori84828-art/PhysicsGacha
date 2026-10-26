@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const visibleHeight = window.visualViewport?.height || window.innerHeight;
     if (!Number.isFinite(visibleHeight) || visibleHeight <= 0) return;
     document.documentElement.style.setProperty("--game-viewport-height", `${Math.floor(visibleHeight)}px`);
+    document.documentElement.style.setProperty("--compact-game-scale", String(Math.min(1, visibleHeight / 600)));
   }
   syncGameViewportHeight();
   window.addEventListener("resize", syncGameViewportHeight);
@@ -70,6 +71,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const homeSettingsCodeView = document.getElementById("home-settings-code-view");
   const homeSettingsNoticesView = document.getElementById("home-settings-notices-view");
   const homeSettingsInfoView = document.getElementById("home-settings-info-view");
+  const homeSettingsItemsView = document.getElementById("home-settings-items-view");
+  const exchangeScreen = document.getElementById("exchange-screen");
+  const exchangeList = document.getElementById("exchange-list");
+  const exchangeConfirm = document.getElementById("exchange-confirm");
+  const exchangeMessage = document.getElementById("exchange-message");
+  const exchangeCurrencies = { history_medal: { name: "歴史のメダル", image: "images/items/history-medal-v1.png" } };
+  let pendingHistoryExchange = null;
   const btnSettingsName = document.getElementById("btn-settings-name");
   const btnSettingsCode = document.getElementById("btn-settings-code");
   const btnSettingsNotices = document.getElementById("btn-settings-notices");
@@ -93,6 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const teacherAdminForm = document.getElementById("teacher-admin-form");
   const teacherAdminPoints = document.getElementById("teacher-admin-points");
   const teacherAdminGems = document.getElementById("teacher-admin-gems");
+  const teacherAdminHistoryMedals = document.getElementById("teacher-admin-history-medals");
   const teacherAdminRank = document.getElementById("teacher-admin-rank");
   const teacherAdminSearch = document.getElementById("teacher-admin-search");
   const teacherAdminCardList = document.getElementById("teacher-admin-card-list");
@@ -135,6 +144,18 @@ document.addEventListener("DOMContentLoaded", () => {
     victory: "images/minigame/tono/correct.png"
   });
   const tonoPortraitPreloads = [];
+  const TONO_EDO_PORTRAIT_IMAGES = Object.freeze({
+    normal: "images/minigame/tono/edo/normal.png",
+    happy: "images/minigame/tono/edo/correct.png",
+    doubt: "images/minigame/tono/edo/wrong.png",
+    victory: "images/minigame/tono/edo/correct.png"
+  });
+  const TONO_BAKUMATSU_PORTRAIT_IMAGES = Object.freeze({
+    normal: "images/minigame/tono/bakumatsu/normal.png",
+    happy: "images/minigame/tono/bakumatsu/correct.png",
+    doubt: "images/minigame/tono/bakumatsu/wrong.png",
+    victory: "images/minigame/tono/bakumatsu/correct.png"
+  });
   const tonoSpeech = document.getElementById("tono-speech");
   const tonoIntro = document.getElementById("tono-intro");
   const tonoIntroText = tonoIntro.querySelector("p:first-child");
@@ -478,10 +499,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function getInventory(persistMigration = true) {
+    const historyInventory = HistoryMedals.read().cards;
     const data = localStorage.getItem(STORAGE_KEY_INVENTORY);
     try {
       const inventory = data ? JSON.parse(data) : {};
-      if (!inventory || typeof inventory !== "object" || Array.isArray(inventory)) return {};
+      if (!inventory || typeof inventory !== "object" || Array.isArray(inventory)) return { ...historyInventory };
 
       // 既存ユーザーの所持枚数を失わないための一度きりのID移行。
       let migrated = false;
@@ -493,20 +515,91 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
       if (migrated && persistMigration) saveInventory(inventory);
-      return inventory;
+      return { ...inventory, ...historyInventory };
     } catch (e) {
-      return {};
+      return { ...historyInventory };
     }
   }
 
   function saveInventory(inv) {
-    localStorage.setItem(STORAGE_KEY_INVENTORY, JSON.stringify(inv));
+    const physicsInventory = Object.fromEntries(Object.entries(inv).filter(([id]) => !HISTORY_CARD_CATALOG.some(card => card.id === id)));
+    localStorage.setItem(STORAGE_KEY_INVENTORY, JSON.stringify(physicsInventory));
+  }
+
+  function getCollectionCards() {
+    const owned = HistoryMedals.read().cards;
+    return [...PHYSICS_CARDS, ...HISTORY_CARD_CATALOG.filter(card => owned[card.id] > 0)];
+  }
+
+  function openHoldings() {
+    document.getElementById("items-history-medals").textContent = HistoryMedals.read().medals.toLocaleString();
+    showHomeSettingsView("items");
+    document.getElementById("btn-back-from-settings-items").focus();
+  }
+
+  function renderExchange() {
+    const data = HistoryMedals.read();
+    document.getElementById("exchange-medal-count").textContent = data.medals.toLocaleString();
+    exchangeList.replaceChildren();
+    for (const card of HISTORY_CARD_CATALOG) {
+      const currency = exchangeCurrencies[card.acquisition.currency];
+      if (!currency) continue;
+      const item = document.createElement("li");
+      item.className = "exchange-product";
+      item.dataset.cardId = card.id;
+      const enough = data.medals >= card.acquisition.medalCost;
+      item.innerHTML = '<h3><span class="exchange-product-rarity">'+card.rarity+'</span> '+card.scientist+'</h3>' +
+        '<p class="exchange-product-title">'+card.cardName+'</p>' +
+        '<img class="exchange-product-image" src="'+card.cardImage+'" alt="'+card.scientist+'のカード" width="1060" height="1484">' +
+        '<p class="exchange-product-owned">所持：'+(data.cards[card.id] || 0)+'枚</p>' +
+        '<div class="exchange-product-cost" data-currency="'+card.acquisition.currency+'"><img src="'+currency.image+'" alt="" width="26" height="26"><span>'+currency.name+'</span><strong>'+card.acquisition.medalCost.toLocaleString()+'<small>枚</small></strong></div>' +
+        '<button id="exchange-'+card.id+'" class="exchange-submit" type="button" data-exchange-id="'+card.id+'" '+(!enough?'disabled':'')+' aria-label="'+card.scientist+'を'+currency.name+card.acquisition.medalCost+'枚で交換">'+(enough?'交換する':'メダル不足')+'</button>';
+      exchangeList.appendChild(item);
+    }
+    exchangeConfirm.hidden = pendingHistoryExchange === null;
+  }
+
+  function openExchange() {
+    closeHomeSettings();
+    pendingHistoryExchange = null;
+    exchangeMessage.textContent = "";
+    showScreen("exchange");
+    renderExchange();
+    exchangeList.scrollTop = 0;
+    document.getElementById("btn-back-from-exchange").focus();
+  }
+
+  function requestHistoryExchange(cardId) {
+    const card = HISTORY_CARD_CATALOG.find(item => item.id === cardId);
+    if (!card || HistoryMedals.read().medals < card.acquisition.medalCost) return;
+    pendingHistoryExchange = card.id;
+    const currency = exchangeCurrencies[card.acquisition.currency];
+    document.getElementById("exchange-confirm-text").textContent = currency.name+card.acquisition.medalCost.toLocaleString()+"枚で、"+card.scientist+"を1枚交換しますか？";
+    exchangeMessage.textContent = "";
+    exchangeConfirm.hidden = false;
+    document.getElementById("btn-exchange-confirm").focus();
+  }
+
+  function confirmHistoryExchange() {
+    if (!pendingHistoryExchange) return;
+    const id = pendingHistoryExchange;
+    pendingHistoryExchange = null;
+    const scrollTop = exchangeList.scrollTop;
+    try {
+      const result = HistoryMedals.exchange(id);
+      exchangeMessage.textContent = result.card.scientist+"を1枚獲得しました。図鑑に追加されました。";
+      updateGachaScreen();
+    } catch (error) {
+      exchangeMessage.textContent = error.message === "歴史のメダルが足りません。" ? error.message : "保存できなかったため、交換していません。もう一度お試しください。";
+    }
+    renderExchange();
+    exchangeList.scrollTop = scrollTop;
   }
 
   function getUniqueOwnedCount() {
     const inv = getInventory();
     let count = 0;
-    PHYSICS_CARDS.forEach(card => {
+    getCollectionCards().forEach(card => {
       if (inv[card.id] && inv[card.id] > 0) {
         count++;
       }
@@ -517,7 +610,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ホームに表示する科学者は1枚だけ保存する。ホームでは立ち絵だけを使用する。
   function getHomeCharacterCard() {
     const cardId = localStorage.getItem(STORAGE_KEY_HOME_CHARACTER);
-    const card = PHYSICS_CARDS.find(item => item.id === cardId && item.standingImage);
+    const card = getCollectionCards().find(item => item.id === cardId && item.standingImage);
     if (!card && cardId) localStorage.removeItem(STORAGE_KEY_HOME_CHARACTER);
     return card || null;
   }
@@ -577,14 +670,16 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function showHomeSettingsView(view) {
-    homeSettingsTitle.textContent = view === "notices" ? "おしらせ" : "設定";
+    homeSettingsTitle.textContent = view === "notices" ? "おしらせ" : view === "items" ? "持ち物" : "設定";
     homeSettingsPanel.classList.toggle("is-notices-view", view === "notices");
+    homeSettingsPanel.classList.toggle("is-items-view", view === "items");
     btnCloseHomeSettings.setAttribute("aria-label", view === "notices" ? "おしらせを閉じて設定へ戻る" : "設定を閉じる");
     homeSettingsMenu.hidden = view !== "menu";
     homeSettingsNameView.hidden = view !== "name";
     homeSettingsCodeView.hidden = view !== "code";
     homeSettingsNoticesView.hidden = view !== "notices";
     homeSettingsInfoView.hidden = view !== "info";
+    homeSettingsItemsView.hidden = view !== "items";
   }
 
   function formatNoticeDate(value) {
@@ -734,7 +829,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const fragment = document.createDocumentFragment();
     teacherAdminCardList.textContent = "";
 
-    PHYSICS_CARDS.forEach(card => {
+    [...PHYSICS_CARDS, ...HISTORY_CARD_CATALOG].forEach(card => {
       const row = document.createElement("article");
       row.className = "teacher-admin-card-row";
       row.dataset.search = `${card.scientist} ${card.collectionScientistName || ""} ${card.cardName}`.toLocaleLowerCase();
@@ -793,6 +888,7 @@ document.addEventListener("DOMContentLoaded", () => {
     pendingTeacherAdminChanges = null;
     teacherAdminPoints.value = String(getTotalPoints());
     teacherAdminGems.value = String(getBossCoins());
+    teacherAdminHistoryMedals.value = String(HistoryMedals.read().medals);
     teacherAdminRank.value = String(getPlayerRankProgress().rank);
     teacherAdminSearch.value = "";
     teacherAdminMessage.textContent = "";
@@ -830,12 +926,13 @@ document.addEventListener("DOMContentLoaded", () => {
   function collectTeacherAdminChanges() {
     const inventory = { ...getInventory(false) };
     const points = parseTeacherAdminInteger(teacherAdminPoints, 0, "POINT");
-    const gems = parseTeacherAdminInteger(teacherAdminGems, 0, "宝石");
+    const gems = parseTeacherAdminInteger(teacherAdminGems, 0, "時の結晶");
+    const historyMedals = parseTeacherAdminInteger(teacherAdminHistoryMedals, 0, "歴史のメダル");
     const rank = parseTeacherAdminInteger(teacherAdminRank, 1, "RANK");
     teacherAdminCardList.querySelectorAll(".teacher-admin-card-count").forEach(input => {
       inventory[input.dataset.cardId] = parseTeacherAdminInteger(input, 0, "所持枚数");
     });
-    return { points, gems, rank, inventory };
+    return { points, gems, rank, inventory, historyMedals };
   }
 
   function requestTeacherAdminSave(event) {
@@ -866,12 +963,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function applyTeacherAdminSave() {
     if (!teacherAdminUnlocked || !pendingTeacherAdminChanges) return;
-    const { points, gems, rank, inventory } = pendingTeacherAdminChanges;
+    const { points, gems, rank, inventory, historyMedals } = pendingTeacherAdminChanges;
     const currentProgress = getPlayerRankProgress();
     const exp = rank === currentProgress.rank
       ? currentProgress.exp
       : Math.min(currentProgress.exp, getExpRequiredForNextRank(rank) - 1);
-    const keys = [STORAGE_KEY_TOTAL, STORAGE_KEY_BOSS_COINS, STORAGE_KEY_PLAYER_RANK, STORAGE_KEY_PLAYER_EXP, STORAGE_KEY_INVENTORY];
+    const keys = [STORAGE_KEY_TOTAL, STORAGE_KEY_BOSS_COINS, STORAGE_KEY_PLAYER_RANK, STORAGE_KEY_PLAYER_EXP, STORAGE_KEY_INVENTORY, HistoryMedals.storageKey];
     const previous = keys.map(key => localStorage.getItem(key));
 
     try {
@@ -879,6 +976,8 @@ document.addEventListener("DOMContentLoaded", () => {
       setBossCoins(gems);
       savePlayerRankProgress({ rank, exp });
       saveInventory(inventory);
+      const historyCards = Object.fromEntries(HISTORY_CARD_CATALOG.filter(card => inventory[card.id] > 0).map(card => [card.id, inventory[card.id]]));
+      localStorage.setItem(HistoryMedals.storageKey, JSON.stringify({ medals: historyMedals, cards: historyCards }));
     } catch (error) {
       keys.forEach((key, index) => {
         try {
@@ -926,7 +1025,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const ownedCount = getUniqueOwnedCount();
     if (collectionCountBadge) {
-      collectionCountBadge.textContent = `${ownedCount}/${PHYSICS_CARDS.length}`;
+      collectionCountBadge.textContent = `${ownedCount}/${getCollectionCards().length}`;
     }
 
     if (total < GACHA_COST) {
@@ -1306,13 +1405,19 @@ document.addEventListener("DOMContentLoaded", () => {
     setCardStatusExpanded(false);
     if (!isCollectionDetail) return;
 
-    const status = getCardBattleStatus(card, count);
-    const knowledge = card.knowledge || {
+    const status = card.stats ? getCardBattleStatus(card, count) : null;
+    const isHistory = card.subject === "history";
+    const knowledge = card.knowledge || (isHistory ? {
+      label: "カード", text: card.cardName, description: card.unit
+    } : {
       label: "公式",
       text: card.formula,
       description: card.description
-    };
+    });
 
+    document.getElementById("card-person-label").textContent = isHistory ? "CHARACTER" : "SCIENTIST";
+    document.getElementById("card-biography-section").hidden = !card.biography;
+    document.getElementById("card-biography").textContent = card.biography || "";
     if (cardScientistFullName) cardScientistFullName.textContent = card.scientist;
     if (cardScientistLifespan) {
       cardScientistLifespan.textContent = card.life ? `${card.life.born} - ${card.life.died}` : "";
@@ -1347,10 +1452,10 @@ document.addEventListener("DOMContentLoaded", () => {
         renderKatexMath(notation);
       });
     }
-    if (cardStatusAtk) cardStatusAtk.textContent = status.atk.toLocaleString();
-    if (cardStatusHp) cardStatusHp.textContent = status.hp.toLocaleString();
-    if (cardStatusTime) cardStatusTime.textContent = `+${status.time}秒`;
-    if (cardStatusBreakthrough) cardStatusBreakthrough.textContent = `${status.breakthrough} / ${status.maxBreakthrough}`;
+    if (cardStatusAtk) cardStatusAtk.textContent = status ? status.atk.toLocaleString() : "未設定";
+    if (cardStatusHp) cardStatusHp.textContent = status ? status.hp.toLocaleString() : "未設定";
+    if (cardStatusTime) cardStatusTime.textContent = status ? `+${status.time}秒` : "未設定";
+    if (cardStatusBreakthrough) cardStatusBreakthrough.textContent = `${getBreakthroughLevel(count)} / 10`;
     if (cardSkillSection) cardSkillSection.style.display = card.skill ? "block" : "none";
     if (card.skill) {
       if (cardSkillName) cardSkillName.textContent = card.skill.name;
@@ -1401,7 +1506,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // 4. 簡単な説明・単元・所持数
-    cardDesc.textContent = card.description;
+    cardDesc.textContent = card.description || `${card.scientist}【${card.cardName}】`;
     cardUnit.textContent = card.unit;
 
     // 所持数は常に下部へ表示。初獲得のNEWはガチャ結果専用のオーバーレイで表示する。
@@ -1453,14 +1558,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const inv = getInventory();
     const ownedCount = getUniqueOwnedCount();
     if (collectionProgressText) {
-      collectionProgressText.textContent = `${ownedCount} / ${PHYSICS_CARDS.length} 種 収集`;
+      collectionProgressText.textContent = `${ownedCount} / ${getCollectionCards().length} 種 収集`;
     }
 
     if (collectionGrid) {
       collectionGrid.innerHTML = "";
       const rarityOrder = ["UR", "SSR", "SR", "R", "N"];
       rarityOrder.forEach(rarity => {
-        const rarityCards = PHYSICS_CARDS.filter(card => card.rarity === rarity);
+        const rarityCards = getCollectionCards().filter(card => card.rarity === rarity);
         if (!rarityCards.length) return;
 
         const group = document.createElement("section");
@@ -1477,6 +1582,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
           const item = document.createElement("div");
           item.className = `collection-card rarity-${card.rarity.toLowerCase()} ${isOwned ? "has-card-image is-owned" : "has-card-back not-owned"}`;
+          item.dataset.cardId = card.id;
 
           // フルサイズの正式ロゴと同じレアリティテーマを一覧にも適用する。
           const rarityBadgeBg = card.rarity === "UR" ? "#ef4444" :
@@ -2248,6 +2354,25 @@ document.addEventListener("DOMContentLoaded", () => {
     showHomeSettingsView("info");
     btnBackFromSettingsInfo.focus();
   });
+  document.getElementById("btn-settings-items").addEventListener("click", openHoldings);
+  document.getElementById("btn-back-from-settings-items").addEventListener("click", returnToHomeSettingsMenu);
+  document.getElementById("btn-settings-exchange").addEventListener("click", openExchange);
+  document.getElementById("btn-back-from-exchange").addEventListener("click", () => {
+    pendingHistoryExchange = null;
+    showScreen("start");
+    btnHomeSettings.focus();
+  });
+  exchangeList.addEventListener("click", event => {
+    const button = event.target.closest("button[data-exchange-id]");
+    if (button && !button.disabled) requestHistoryExchange(button.dataset.exchangeId);
+  });
+  document.getElementById("btn-exchange-confirm").addEventListener("click", confirmHistoryExchange);
+  document.getElementById("btn-exchange-cancel").addEventListener("click", () => {
+    const id = pendingHistoryExchange;
+    pendingHistoryExchange = null;
+    exchangeConfirm.hidden = true;
+    document.getElementById("exchange-"+id)?.focus({preventScroll:true});
+  });
   if (btnCloseHomeSettings) btnCloseHomeSettings.addEventListener("click", () => {
     if (!homeSettingsNoticesView.hidden) {
       returnToHomeSettingsMenu();
@@ -2609,7 +2734,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // 画面切り替え
   // ==========================================
   function setTonoPortraitMood(mood) {
-    const nextSource = TONO_PORTRAIT_IMAGES[mood];
+    const portraits = tonoGenre === "江戸時代" ? TONO_EDO_PORTRAIT_IMAGES
+      : tonoGenre === "幕末" ? TONO_BAKUMATSU_PORTRAIT_IMAGES : TONO_PORTRAIT_IMAGES;
+    const nextSource = portraits[mood];
+    tonoPortrait.dataset.era = tonoGenre === "江戸時代" ? "edo" : tonoGenre === "幕末" ? "bakumatsu" : "default";
     tonoPortrait.dataset.mood = mood;
     if (tonoPortraitImage.getAttribute("src") === nextSource) return;
     tonoPortraitImage.src = nextSource;
@@ -2620,7 +2748,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function preloadTonoPortraits() {
     if (tonoPortraitPreloads.length) return;
-    for (const source of [TONO_PORTRAIT_IMAGES.happy, TONO_PORTRAIT_IMAGES.doubt]) {
+    for (const source of new Set([...Object.values(TONO_PORTRAIT_IMAGES), ...Object.values(TONO_EDO_PORTRAIT_IMAGES), ...Object.values(TONO_BAKUMATSU_PORTRAIT_IMAGES)])) {
       const image = new Image();
       image.src = source;
       tonoPortraitPreloads.push(image);
@@ -2890,6 +3018,13 @@ document.addEventListener("DOMContentLoaded", () => {
     setTonoPortraitMood(cleared ? "victory" : "doubt");
     tonoResultScore.textContent = `正解数：${count} / ${TONO_RULES.questionCount}`;
     tonoResultTrust.textContent = `最終信頼度：${tonoSession.trust}%`;
+    const medalText = document.getElementById("tono-result-medals");
+    try {
+      const earned = HistoryMedals.award(tonoSession, cleared);
+      medalText.textContent = `歴史のメダル ＋${earned}枚`;
+    } catch {
+      medalText.textContent = "メダルを保存できませんでした。";
+    }
     tonoSpeech.textContent = cleared ? speeches[count] : "まだ疑いは晴れぬ……。出直してまいれ！";
     layoutTonoResult();
   }
@@ -3140,6 +3275,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 直前の画面のスクロール位置を引き継がず、新しい画面は必ず上端から表示する。
     window.scrollTo(0, 0);
     document.body.classList.toggle("is-home-screen", screenType === "start");
+    document.body.classList.toggle("is-exchange-screen", screenType === "exchange");
     document.body.classList.toggle("is-quiz-screen", screenType === "quiz");
     document.body.classList.toggle("is-result-screen", screenType === "result");
     document.body.classList.toggle("is-gacha-screen", screenType === "gacha");
@@ -3150,6 +3286,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.toggle("is-boss-select-screen", ["boss-select", "boss-deck", "boss-battle", "boss-result"].includes(screenType));
     document.body.classList.toggle("is-battle-menu-screen", ["normal-battle-select", "boss-select"].includes(screenType));
     startScreen.classList.remove("active");
+    exchangeScreen.classList.remove("active");
     quizScreen.classList.remove("active");
     resultScreen.classList.remove("active");
     if (gachaScreen) gachaScreen.classList.remove("active");
@@ -3163,6 +3300,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (screenType === "start") {
       startScreen.classList.add("active");
+    } else if (screenType === "exchange") {
+      exchangeScreen.classList.add("active");
     } else if (screenType === "quiz") {
       quizScreen.classList.add("active");
     } else if (screenType === "result") {

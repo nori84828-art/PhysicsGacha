@@ -40,7 +40,7 @@
               <img class="home-resource-icon home-point-icon currency-icon" src="images/home/hud/point.png" alt="">
               <span class="status-value"><strong id="start-total-points">0</strong></span>
             </div>
-            <div class="status-pill boss-coin-pill home-resource-pill currency-card currency-wisdom" aria-label="叡智の欠片">
+            <div class="status-pill boss-coin-pill home-resource-pill currency-card currency-wisdom" aria-label="時の結晶">
               <img class="home-resource-icon home-wisdom-icon currency-icon" src="images/home/hud/wisdom-stone.png" alt="">
               <span class="status-value"><strong id="start-boss-coins">0</strong></span>
             </div>
@@ -199,6 +199,7 @@
                   <p id="tono-result-grade" class="tono-result-grade"></p>
                   <p id="tono-result-score"></p>
                   <p id="tono-result-trust"></p>
+                  <p id="tono-result-medals" role="status"></p>
                   <button id="btn-tono-result-continue" class="tono-action" type="button" hidden>結果を見る</button>
                   <div id="tono-result-actions" class="tono-result-actions" hidden>
                     <button id="btn-tono-retry" class="tono-action" type="button">もう一度挑戦</button>
@@ -258,6 +259,24 @@
       <!-- ==============================================
            2. クイズ画面
       =============================================== -->
+      <section id="exchange-screen" class="screen" aria-labelledby="exchange-title">
+        <div class="exchange-page">
+          <header class="exchange-header">
+            <button id="btn-back-from-exchange" class="battle-select-back" type="button">‹ ホームへ</button>
+            <div><p class="exchange-eyebrow">ITEM EXCHANGE</p><h2 id="exchange-title">交換所</h2></div>
+            <p class="exchange-balance"><img src="images/items/history-medal-v1.png" alt="" width="28" height="28">歴史のメダル <strong id="exchange-medal-count">0</strong><span>枚</span></p>
+          </header>
+          <ul id="exchange-list" class="exchange-grid" aria-label="交換できるカード一覧"></ul>
+          <footer class="exchange-footer">
+            <div id="exchange-confirm" class="exchange-confirm" hidden>
+              <p id="exchange-confirm-text"></p>
+              <div><button id="btn-exchange-cancel" type="button">キャンセル</button><button id="btn-exchange-confirm" class="exchange-submit" type="button">交換を確定</button></div>
+            </div>
+            <p id="exchange-message" class="exchange-message" role="status" aria-live="polite"></p>
+          </footer>
+        </div>
+      </section>
+
       <section id="quiz-screen" class="screen">
         <div class="quiz-header">
           <div class="quiz-meta-row">
@@ -597,9 +616,13 @@
           <div id="card-status-content" class="card-status-content" aria-hidden="true">
             <div class="card-status-content-inner">
               <section class="card-info-section">
-                <div class="card-status-title">SCIENTIST</div>
+                <div id="card-person-label" class="card-status-title">SCIENTIST</div>
                 <strong id="card-scientist-full-name" class="card-scientist-full-name"></strong>
                 <p id="card-scientist-lifespan" class="card-scientist-lifespan"></p>
+              </section>
+              <section id="card-biography-section" class="card-info-section" hidden aria-labelledby="card-biography-title">
+                <h3 id="card-biography-title" class="card-status-title">経歴</h3>
+                <p id="card-biography" class="card-biography"></p>
               </section>
               <section class="card-info-section">
                 <div id="card-knowledge-label" class="card-status-title">公式</div>
@@ -708,6 +731,8 @@
         <nav class="home-settings-options" aria-label="設定項目">
           <button id="btn-settings-name" class="home-settings-option" type="button">名前設定</button>
           <button id="btn-settings-code" class="home-settings-option" type="button">コード入力</button>
+          <button id="btn-settings-items" class="home-settings-option" type="button">持ち物</button>
+          <button id="btn-settings-exchange" class="home-settings-option" type="button">交換所</button>
           <button id="btn-settings-notices" class="home-settings-option" type="button">おしらせ</button>
           <button id="btn-settings-info" class="home-settings-option" type="button">ゲーム情報</button>
         </nav>
@@ -741,6 +766,19 @@
       <div id="home-settings-notices-view" class="home-settings-view" hidden>
         <div id="home-settings-notices-list" class="home-settings-notices-list" aria-label="おしらせ一覧"></div>
       </div>
+      <div id="home-settings-items-view" class="home-settings-view" hidden>
+        <h3>持ち物</h3>
+        <ul class="holdings-grid" aria-label="持ち物一覧">
+          <li class="holdings-item">
+            <h4 class="holdings-item-name">歴史のメダル</h4>
+            <div class="holdings-item-art">
+              <img id="items-history-medal-image" src="images/items/history-medal-v1.png" alt="史の文字が刻まれた歴史のメダル" width="1280" height="1280">
+            </div>
+            <div class="holdings-item-count"><span>所持数</span><span><strong id="items-history-medals">0</strong> 枚</span></div>
+          </li>
+        </ul>
+        <button id="btn-back-from-settings-items" class="home-settings-nav-button" type="button">戻る</button>
+      </div>
       <div id="home-settings-info-view" class="home-settings-view" hidden>
         <h3>ゲーム情報</h3>
         <div class="home-settings-game-info">
@@ -766,11 +804,14 @@
           <label for="teacher-admin-points">POINT
             <input id="teacher-admin-points" type="number" inputmode="numeric" min="0" step="1" required>
           </label>
-          <label for="teacher-admin-gems">宝石
+          <label for="teacher-admin-gems">時の結晶
             <input id="teacher-admin-gems" type="number" inputmode="numeric" min="0" step="1" required>
           </label>
           <label for="teacher-admin-rank">RANK
             <input id="teacher-admin-rank" type="number" inputmode="numeric" min="1" step="1" required>
+          </label>
+          <label for="teacher-admin-history-medals">歴史のメダル
+            <input id="teacher-admin-history-medals" type="number" inputmode="numeric" min="0" step="1" required>
           </label>
         </div>
         <p class="teacher-admin-rank-note">RANK変更時、EXPが新しい上限を超える場合のみ調整します。</p>
@@ -800,6 +841,7 @@
   <!-- スクリプト読み込み -->
   <script src="vendor/katex/katex.min.js"></script>
   <script src="cards.js"></script>
+  <script src="history.js"></script>
   <script src="bosses.js"></script>
   <script src="app.js"></script>
 </body>

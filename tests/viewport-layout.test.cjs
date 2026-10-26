@@ -59,7 +59,8 @@ async function main() {
     });
     const send = (method, params = {}) => new Promise((resolve, reject) => {
       const id = ++nextId;
-      pending.set(id, { resolve, reject });
+      const timeout = setTimeout(() => { pending.delete(id); reject(new Error(`Browser command timed out: ${method}`)); }, 20000);
+      pending.set(id, { resolve: value => {clearTimeout(timeout);resolve(value);}, reject: error => {clearTimeout(timeout);reject(error);} });
       socket.send(JSON.stringify({ id, method, params }));
     });
     const evaluate = async expression => {
@@ -68,7 +69,8 @@ async function main() {
       return response.result.value;
     };
     await send("Page.enable");
-    for (const size of [{ width: 820, height: 980, visible: 780 }, { width: 1024, height: 768, visible: 600 }, { width: 1180, height: 720 }, { width: 390, height: 730 }, { width: 375, height: 630, visible: 540 }, { width: 320, height: 568 }]) {
+    for (const size of [{ width: 1920, height: 1080 }, { width: 820, height: 980, visible: 780, touch: true }, { width: 1024, height: 768, visible: 600, touch: true }, { width: 1180, height: 720 }, { width: 390, height: 844, touch: true }, { width: 375, height: 630, visible: 540, touch: true }, { width: 320, height: 568, touch: true }, { width: 844, height: 390, touch: true }]) {
+      if (process.env.PHYSICS_VIEWPORT_WIDTH && size.width !== Number(process.env.PHYSICS_VIEWPORT_WIDTH)) continue;
       if (size.width === 320) {
         tonoFixture = JSON.parse(fs.readFileSync(path.join(root, "minigames", "tono-history-sample.json"), "utf8"));
         tonoFixture.questions.filter(item => item.genre === "戦国時代").forEach(item => {
@@ -76,7 +78,8 @@ async function main() {
           item.explanation = `長い解説文も一文字も欠けずにページを切り替えて読めることを確認します。`.repeat(8);
         });
       } else tonoFixture = null;
-      await send("Emulation.setDeviceMetricsOverride", { ...size, deviceScaleFactor: 2, mobile: true });
+      await send("Emulation.setTouchEmulationEnabled", { enabled: Boolean(size.touch), maxTouchPoints: 5 });
+      await send("Emulation.setDeviceMetricsOverride", { width: size.width, height: size.height, deviceScaleFactor: 2, mobile: Boolean(size.touch) });
       await send("Page.navigate", { url: `http://127.0.0.1:${server.address().port}/` });
       await until(() => evaluate("document.readyState === 'complete' && !!document.querySelector('#btn-to-battle-select')"), "game load");
       if (size.visible) await evaluate(`document.documentElement.style.setProperty('--game-viewport-height', '${size.visible}px')`);
@@ -85,24 +88,78 @@ async function main() {
         const metric = await evaluate(`(() => {
           const game = document.querySelector('.quiz-card').getBoundingClientRect();
           const target = document.querySelector(${JSON.stringify(selector)}).getBoundingClientRect();
-          const content = document.querySelector({home:'.social-home',gacha:'.gacha-page',play:'.battle-select-page',mini:'.mini-game-page',normal:'.normal-battle-select-page',boss:'.boss-select-layout'}[${JSON.stringify(name)}]);
-          const essential = ({home:['.home-main-menu','#global-tagline'],gacha:['.gacha-draw-buttons','.gacha-collection-button','#btn-open-gacha-rates'],play:['.battle-select-modes','#btn-back-from-battle-select','#btn-to-mini-game','#global-tagline'],mini:['.mini-game-panel','#btn-back-from-mini-game'],normal:['.normal-battle-select-content'],boss:['.boss-select-content']}[${JSON.stringify(name)}]).map(selector => {
+          const content = document.querySelector({home:'.social-home',gacha:'.gacha-page',play:'.battle-select-page',mini:'.mini-game-page',normal:'.normal-battle-select-page',boss:'.boss-select-layout',exchange:'.exchange-page'}[${JSON.stringify(name)}]);
+          const essential = ({home:['.home-main-menu','#global-tagline'],gacha:['.gacha-draw-buttons','.gacha-collection-button','#btn-open-gacha-rates'],play:['.battle-select-modes','#btn-back-from-battle-select','#btn-to-mini-game','#global-tagline'],mini:['.mini-game-panel','#btn-back-from-mini-game'],normal:['.normal-battle-select-content'],boss:['.boss-select-content'],exchange:['.exchange-header','.exchange-grid','.exchange-footer']}[${JSON.stringify(name)}]).map(selector => {
             const rect = document.querySelector(selector).getBoundingClientRect();
             return {selector,top:Math.round(rect.top),bottom:Math.round(rect.bottom)};
           });
-          return {screen:${JSON.stringify(name)}, viewport:visualViewport.height, available:parseInt(getComputedStyle(document.documentElement).getPropertyValue('--game-viewport-height')), gameTop:Math.round(game.top), gameBottom:Math.round(game.bottom), gameWidth:Math.round(game.width), gameHeight:Math.round(game.height), lastBottom:Math.round(target.bottom), pageScroll:document.documentElement.scrollHeight-innerHeight, gameScroll:document.querySelector('.quiz-card').scrollHeight-document.querySelector('.quiz-card').clientHeight, gameSideScroll:document.querySelector('.quiz-card').scrollWidth-document.querySelector('.quiz-card').clientWidth, contentScroll:content.scrollHeight-content.clientHeight, contentSideScroll:content.scrollWidth-content.clientWidth, essential};
+          return {screen:${JSON.stringify(name)}, viewport:visualViewport.height, available:parseInt(getComputedStyle(document.documentElement).getPropertyValue('--game-viewport-height')), gameTop:Math.round(game.top), gameBottom:Math.round(game.bottom), gameWidth:Math.round(game.width), gameHeight:Math.round(game.height), lastBottom:Math.round(target.bottom), pageScroll:document.documentElement.scrollHeight-innerHeight, gameOverflow:getComputedStyle(document.querySelector('.quiz-card')).overflowY, gameScroll:document.querySelector('.quiz-card').scrollHeight-document.querySelector('.quiz-card').clientHeight, gameSideScroll:document.querySelector('.quiz-card').scrollWidth-document.querySelector('.quiz-card').clientWidth, contentScroll:content.scrollHeight-content.clientHeight, contentSideScroll:content.scrollWidth-content.clientWidth, essential};
         })()`);
         console.log(`${size.width}x${size.height}${size.visible ? ` visible ${size.visible}` : ''} ${name}: ${metric.gameWidth}x${metric.gameHeight}, bottom ${metric.gameBottom}/${metric.available}, page scroll ${metric.pageScroll}`);
+        if (process.env.PHYSICS_LAYOUT_SCREENSHOTS && name === 'exchange' && [820, 390, 375, 844].includes(size.width)) {
+          const folder = path.join(root, 'output', 'responsive-qa');
+          fs.mkdirSync(folder, {recursive:true});
+          const shot = await send('Page.captureScreenshot', {format:'png'});
+          fs.writeFileSync(path.join(folder, size.width + '-' + name + '.png'), Buffer.from(shot.data, 'base64'));
+        }
+        const wrongFrame = size.touch ? Math.abs(metric.gameWidth - Math.min(size.width,1180)) > 1 || Math.abs(metric.gameHeight - metric.available) > 1 : Math.abs(metric.gameWidth / metric.gameHeight - 9 / 16) > 0.004;
         const menusOverlap = name === 'play' && metric.essential[0].bottom > metric.essential[1].top - 2;
-        if (metric.gameTop < -1 || metric.gameBottom > metric.available + 1 || metric.lastBottom > metric.gameBottom + 1 || metric.pageScroll > 1 || Math.abs(metric.gameWidth / metric.gameHeight - 9 / 16) > 0.004 || menusOverlap || ((name === 'home' || name === 'gacha' || name === 'play') && (metric.contentScroll > 1 || metric.essential.some(item => item.top < metric.gameTop - 1 || item.bottom > metric.gameBottom + 1)))) {
+        if (metric.gameTop < -1 || metric.gameBottom > metric.available + 1 || metric.lastBottom > metric.gameBottom + 1 || metric.pageScroll > 1 || (['home','gacha','play','mini','exchange'].includes(name) && ['auto','scroll'].includes(metric.gameOverflow) && metric.gameScroll > 1) || metric.gameSideScroll > 1 || metric.contentSideScroll > 1 || wrongFrame || menusOverlap || ((name === 'home' || name === 'gacha' || name === 'play' || name === 'mini' || name === 'exchange') && (metric.contentScroll > 1 || metric.essential.some(item => item.top < metric.gameTop - 1 || item.bottom > metric.gameBottom + 1)))) {
           throw new Error(`Viewport overflow: ${JSON.stringify(metric)}`);
         }
+
       };
       await measure("home", "#global-tagline");
+      await evaluate("document.querySelector('#btn-home-settings').click(); document.querySelector('#btn-settings-items').click()");
+      if (!await evaluate("!document.querySelector('#home-settings-items-view').hidden && document.querySelector('#items-history-medals').textContent===HistoryMedals.read().medals.toLocaleString()")) throw new Error('Holdings medal balance mismatch');
+      if (!await evaluate("(() => {const p=document.querySelector('.home-settings-panel');return p.scrollHeight<=p.clientHeight+1;})()")) throw new Error('Holdings unexpectedly scrolls');
+      await evaluate("document.querySelector('#btn-back-from-settings-items').click(); document.querySelector('#btn-settings-exchange').click()");
+      if (!await evaluate("document.querySelector('#exchange-screen').classList.contains('active') && document.querySelector('#home-settings-modal').style.display==='none'")) throw new Error('Exchange did not open as a separate screen');
+      await measure("exchange", "#exchange-message");
+      if (!await evaluate("(() => {const list=document.querySelector('.exchange-grid').getBoundingClientRect(), button=document.querySelector('.exchange-product .exchange-submit').getBoundingClientRect();return button.bottom<=list.bottom+1;})()")) throw new Error('First product cost and action are not visible together');
+      await until(() => evaluate("[...document.querySelectorAll('.exchange-product-image')].every(image=>image.complete&&image.naturalWidth>0)"), 'exchange product images');
+      if (!await evaluate("document.querySelectorAll('.exchange-product').length===5 && [...document.querySelectorAll('.exchange-product-cost')].every(cost=>cost.dataset.currency==='history_medal'&&cost.textContent.includes('歴史のメダル')&&cost.querySelector('img').getAttribute('src').includes('history-medal'))")) throw new Error('Product currency identifiers missing');
+      for (let cardIndex = 0; cardIndex < 5; cardIndex++) {
+        const cost = await evaluate("document.querySelectorAll('.exchange-product-cost strong')["+cardIndex+"].textContent");
+        if (cost !== ['1,200枚','700枚','400枚','150枚','50枚'][cardIndex]) throw new Error('Exchange cost mismatch');
+      }
+      const savedHistory = await evaluate("localStorage.getItem(HistoryMedals.storageKey)");
+      await evaluate("localStorage.setItem(HistoryMedals.storageKey, JSON.stringify({medals:2500,cards:{}})); document.querySelector('#btn-back-from-exchange').click(); document.querySelector('#btn-home-settings').click(); document.querySelector('#btn-settings-exchange').click(); document.querySelector('.exchange-product .exchange-submit').click()");
+      await measure("exchange", "#btn-exchange-confirm");
+      await evaluate("document.querySelector('#btn-exchange-cancel').click()");
+      await evaluate(`localStorage.${savedHistory === null ? "removeItem(HistoryMedals.storageKey)" : `setItem(HistoryMedals.storageKey, ${JSON.stringify(savedHistory)})`}`);
+      await evaluate("document.querySelector('#btn-back-from-exchange').click(); document.querySelector('#btn-home-settings').click(); document.querySelector('#btn-settings-exchange').click()");
+      if (size.width === 1920) {
+        const originalHistory = await evaluate("localStorage.getItem(HistoryMedals.storageKey)");
+        await evaluate("localStorage.setItem(HistoryMedals.storageKey, JSON.stringify({medals:2500,cards:{}})); document.querySelector('#btn-back-from-exchange').click(); document.querySelector('#btn-home-settings').click(); document.querySelector('#btn-settings-exchange').click()");
+        await evaluate("document.querySelector('.exchange-product .exchange-submit').click()");
+        if (!await evaluate("!document.querySelector('#exchange-confirm').hidden")) throw new Error('Missing exchange confirmation');
+        await evaluate("document.querySelector('#btn-exchange-cancel').click()");
+        if (!await evaluate("HistoryMedals.read().medals===2500 && Object.keys(HistoryMedals.read().cards).length===0")) throw new Error('Cancelled exchange changed inventory');
+        for (let index = 0; index < 5; index++) {
+          await evaluate("document.querySelectorAll('[data-exchange-id]')["+index+"].click(); document.querySelector('#btn-exchange-confirm').click(); document.querySelector('#btn-exchange-confirm').click()");
+          if (!await evaluate(`HistoryMedals.read().cards[HISTORY_CARD_CATALOG[${index}].id]===1`)) throw new Error('Exchange failed or granted twice');
+        }
+        if (!await evaluate("HistoryMedals.read().medals===0 && document.querySelector('.exchange-product .exchange-submit').disabled")) throw new Error('Exchange overdraw or insufficient balance not blocked');
+        await evaluate("document.querySelector('#btn-back-from-exchange').click(); document.querySelector('#btn-to-collection-from-start').click()");
+        if (!await evaluate("document.querySelectorAll('#collection-grid .collection-card').length===30 && document.querySelectorAll('#collection-grid [data-card-id^=\"history-\"]').length===5")) throw new Error('Owned history cards missing from collection');
+        await evaluate("document.querySelector('#collection-grid [data-card-id=\"history-oda-nobunaga\"]').click()");
+        if (!await evaluate("document.querySelector('#card-detail-status').style.display==='block' && document.querySelector('#card-status-atk').textContent==='未設定' && document.querySelector('#card-image').getAttribute('src')==='images/card/M1.png'")) throw new Error('History detail failed with unset battle stats');
+        await evaluate("document.querySelector('#btn-close-gacha-modal').click(); document.querySelector('#btn-close-collection').click()");
+        await send("Page.reload");
+        await until(() => evaluate("document.readyState==='complete' && !!document.querySelector('#btn-to-collection-from-start')"), 'history persistence reload');
+        if (!await evaluate("HistoryMedals.read().medals===0 && Object.keys(HistoryMedals.read().cards).length===5")) throw new Error('History exchanges were not persisted');
+        await evaluate(`localStorage.${originalHistory === null ? "removeItem(HistoryMedals.storageKey)" : `setItem(HistoryMedals.storageKey, ${JSON.stringify(originalHistory)})`}`);
+        await evaluate("document.querySelector('#btn-to-collection-from-start').click()");
+        if (!await evaluate("document.querySelectorAll('#collection-grid [data-card-id^=\"history-\"]').length===0")) throw new Error('Unowned history cards leaked into collection');
+        await evaluate("document.querySelector('#btn-close-collection').click()");
+      } else {
+        await evaluate("document.querySelector('#btn-back-from-exchange').click()");
+      }
       if (size.visible) {
         await evaluate("document.querySelector('#btn-home-settings').click()");
         const order = await evaluate("[...document.querySelectorAll('#home-settings-menu .home-settings-option')].map(button => button.textContent.trim())");
-        if (order.join(',') !== '名前設定,コード入力,おしらせ,ゲーム情報') throw new Error(`Settings order: ${order}`);
+        if (order.join(',') !== '名前設定,コード入力,持ち物,交換所,おしらせ,ゲーム情報') throw new Error(`Settings order: ${order}`);
         for (const [button, view] of [['#btn-settings-name','#home-settings-name-view'],['#btn-settings-code','#home-settings-code-view'],['#btn-settings-info','#home-settings-info-view']]) {
           await evaluate(`document.querySelector(${JSON.stringify(button)}).click()`);
           if (!await evaluate(`!document.querySelector(${JSON.stringify(view)}).hidden`)) throw new Error(`Settings view did not open: ${view}`);
@@ -180,7 +237,17 @@ async function main() {
         if (!await evaluate("document.querySelectorAll('#tono-genre-choices button')[1].classList.contains('is-current')")) throw new Error('Genre D-pad down failed');
         await evaluate("document.querySelector('#btn-tono-up').click()");
         if (!await evaluate("document.querySelectorAll('#tono-genre-choices button')[0].classList.contains('is-current')")) throw new Error('Genre D-pad up failed');
-        for (const [genreIndex, expectedCorrect] of [[0,3],[1,5],[2,2],[1,4]]) {
+        // Changing era while the mood stays normal must still replace the image.
+        for (const genreIndex of [1, 2, 1, 2, 0]) {
+          await evaluate(`document.querySelectorAll('#tono-genre-choices button')[${genreIndex}].click()`);
+          const source = `images/minigame/tono/${genreIndex === 1 ? 'edo/' : genreIndex === 2 ? 'bakumatsu/' : ''}normal.png`;
+          await until(() => evaluate(`(() => { const image=document.querySelector('.tono-portrait-image'); return image.complete && image.naturalWidth===1254 && image.getAttribute('src')===${JSON.stringify(source)}; })()`), 'Era change with normal mood');
+          if (!await evaluate(`(() => { const image=document.querySelector('.tono-portrait-image'), frame=image.parentElement, style=getComputedStyle(image), expected=${genreIndex === 1 ? 1.8 : 1.5}; return Math.abs(image.getBoundingClientRect().width/frame.clientWidth-expected)<0.02 && style.imageRendering==='pixelated' && getComputedStyle(frame).overflow==='hidden'; })()`)) throw new Error('Portrait zoom does not match the selected era');
+          await evaluate("document.querySelector('#btn-tono-b').click()");
+        }
+        for (const [genreIndex, expectedCorrect] of [[0,3],[1,5],[2,2],[2,5],[1,2],[1,4]]) {
+          const beforeHistoryMedals = await evaluate("HistoryMedals.read().medals");
+          const portraitBase = `images/minigame/tono/${genreIndex === 1 ? "edo/" : genreIndex === 2 ? "bakumatsu/" : ""}`;
           if (genreIndex === 0) await evaluate("document.querySelector('#btn-tono-a').click()");
           else await evaluate(`document.querySelectorAll('#tono-genre-choices button')[${genreIndex}].click()`);
           if (!await evaluate("!document.querySelector('#tono-intro').hidden && document.querySelector('#tono-speech').textContent.includes('裏切りの疑い') && !!document.querySelector('.tono-lcd-screen #btn-tono-start') && getComputedStyle(document.querySelector('#global-hud')).display === 'none'")) throw new Error('Tono introduction failed');
@@ -190,7 +257,7 @@ async function main() {
             if (!await evaluate("!document.querySelector('#tono-genre-select').hidden")) throw new Error('B did not return from introduction');
             await evaluate("document.querySelector('#btn-tono-a').click()");
           }
-          await until(() => evaluate("(() => { const image=document.querySelector('.tono-portrait-image'); return image.complete && image.getAttribute('src')==='images/minigame/tono/normal.png' && image.naturalWidth===1254 && getComputedStyle(image).imageRendering==='pixelated'; })()"), 'Tono normal portrait');
+          await until(() => evaluate(`(() => { const image=document.querySelector('.tono-portrait-image'); return image.complete && image.getAttribute('src')==='${portraitBase}normal.png' && image.naturalWidth===1254 && getComputedStyle(image).imageRendering==='pixelated'; })()`), 'Tono normal portrait');
           if (!await evaluate("getComputedStyle(document.querySelector('.mini-game-page')).backgroundImage === 'none' && getComputedStyle(document.querySelector('.mini-game-page')).backgroundColor === 'rgb(7, 16, 29)'")) throw new Error('Tono play background is not plain dark');
           for (let page = 0; page < 12 && await evaluate("document.querySelector('#btn-tono-start').textContent === '続きを読む'"); page++) {
             if (!await evaluate("(() => { const lcd=document.querySelector('.tono-lcd-screen'); return lcd.scrollHeight-lcd.clientHeight<=1 && document.querySelector('#btn-tono-start').getBoundingClientRect().bottom<=lcd.getBoundingClientRect().bottom+1; })()")) throw new Error('Tono introduction page is clipped');
@@ -199,13 +266,13 @@ async function main() {
           await evaluate("document.querySelector('#btn-tono-start').click()");
           await until(() => evaluate("!document.querySelector('#tono-question').hidden && document.querySelectorAll('#tono-choices button').length === 4"), "Tono question");
           if (!await evaluate("document.querySelector('#btn-tono-b').disabled")) throw new Error('B is active after the challenge started');
-          if (!await evaluate("document.querySelector('.tono-portrait-image').getAttribute('src')==='images/minigame/tono/normal.png'")) throw new Error('Tono question portrait is not normal');
+          if (!await evaluate(`document.querySelector('.tono-portrait-image').getAttribute('src')==='${portraitBase}normal.png'`)) throw new Error('Tono question portrait is not normal');
           const fonts = await evaluate("(async () => { await document.fonts.load('18px x8y12pxDenkiChip', '殿の疑いを晴らせ！'); const selectors=['#tono-question-text','#tono-speech','.tono-choice','.tono-game-heading h3','.tono-portrait-name','#tono-feedback','.tono-question-meta','#tono-trust-value','.tono-action','.tono-intro > p:first-child','#tono-explanation']; return {loaded:[...document.fonts].some(face=>face.family==='x8y12pxDenkiChip' && face.status==='loaded'),lcd:selectors.map(selector=>({selector,family:getComputedStyle(document.querySelector(selector)).fontFamily,size:parseFloat(getComputedStyle(document.querySelector(selector)).fontSize)})),home:getComputedStyle(document.querySelector('.player-name')).fontFamily}; })()");
           if (!fonts.loaded || fonts.lcd.some(item=>!item.family.includes('x8y12pxDenkiChip')) || fonts.home.includes('x8y12pxDenkiChip') || fonts.lcd.find(item=>item.selector==='#tono-question-text').size < 18 || fonts.lcd.find(item=>item.selector==='.tono-choice').size < 18 || fonts.lcd.find(item=>item.selector==='#tono-speech').size < 16) throw new Error(`DenkiChip font was not scoped, loaded, or readable: ${JSON.stringify(fonts)}`);
           const textStyles = await evaluate("['#tono-speech','#tono-question-text','#tono-choices .tono-choice'].map(selector=>{const style=getComputedStyle(document.querySelector(selector));return [style.fontFamily,style.fontSize,style.fontWeight,style.lineHeight].join('|')})");
           if (new Set(textStyles).size !== 1) throw new Error(`Speech, question and answers use different typography: ${JSON.stringify(textStyles)}`);
           const bounds = await evaluate("(() => { const game=document.querySelector('.quiz-card').getBoundingClientRect(), panel=document.querySelector('#tono-game').getBoundingClientRect(), lcd=document.querySelector('.tono-lcd-screen').getBoundingClientRect(), controls=document.querySelector('.tono-device-details').getBoundingClientRect(), b=document.querySelector('#btn-tono-b').getBoundingClientRect(), portrait=document.querySelector('.tono-portrait').getBoundingClientRect(), dpad=document.querySelector('.tono-dpad').getBoundingClientRect(), a=document.querySelector('#btn-tono-a').getBoundingClientRect(); return {gameTop:game.top,gameBottom:game.bottom,gameCenter:(game.left+game.right)/2,panelTop:panel.top,panelBottom:panel.bottom,panelCenter:(panel.left+panel.right)/2,panelRatio:panel.width/panel.height,lcdRatio:lcd.height/panel.height,controlsRatio:controls.height/panel.height,portraitWidth:portrait.width,dpadWidth:dpad.width,aWidth:a.width,bTop:b.top,bBottom:b.bottom,pageScroll:document.documentElement.scrollHeight-innerHeight,innerOverflow:getComputedStyle(document.querySelector('.tono-lcd-screen')).overflowY,choicesInsideLcd:!!document.querySelector('.tono-lcd-screen #tono-choices'),hudHidden:getComputedStyle(document.querySelector('#global-hud')).display==='none',outerBackHidden:getComputedStyle(document.querySelector('#btn-back-from-mini-game')).display==='none',selectedCount:document.querySelectorAll('#tono-choices .is-current').length}; })()");
-          if (bounds.panelTop < bounds.gameTop + 4 || bounds.panelBottom > bounds.gameBottom - 4 || Math.abs(bounds.panelCenter - bounds.gameCenter) > 1 || bounds.panelRatio < .55 || bounds.panelRatio > .75 || bounds.lcdRatio < .57 || bounds.lcdRatio > .76 || bounds.controlsRatio < .17 || bounds.controlsRatio > .33 || bounds.portraitWidth < 48 || bounds.dpadWidth < 70 || bounds.aWidth < 38 || bounds.bTop < bounds.panelTop || bounds.bBottom > bounds.panelBottom || bounds.pageScroll > 1 || bounds.innerOverflow !== 'hidden' || !bounds.choicesInsideLcd || !bounds.hudHidden || !bounds.outerBackHidden || bounds.selectedCount !== 1) throw new Error(`Tono viewport overflow: ${JSON.stringify(bounds)}`);
+          if (bounds.panelTop < bounds.gameTop + 4 || bounds.panelBottom > bounds.gameBottom - 4 || Math.abs(bounds.panelCenter - bounds.gameCenter) > 1 || bounds.panelRatio < .55 || bounds.panelRatio > (size.touch ? .9 : .75) || bounds.lcdRatio < .57 || bounds.lcdRatio > .76 || bounds.controlsRatio < .17 || bounds.controlsRatio > .33 || bounds.portraitWidth < 48 || bounds.dpadWidth < 70 || bounds.aWidth < 38 || bounds.bTop < bounds.panelTop || bounds.bBottom > bounds.panelBottom || bounds.pageScroll > 1 || bounds.innerOverflow !== 'hidden' || !bounds.choicesInsideLcd || !bounds.hudHidden || !bounds.outerBackHidden || bounds.selectedCount !== 1) throw new Error(`Tono viewport overflow: ${JSON.stringify(bounds)}`);
           for (let page = 0; page < 12 && await evaluate("document.querySelector('#tono-question').classList.contains('is-reading')"); page++) await evaluate("document.querySelector('#btn-tono-page-next').click()");
           if (genreIndex === 0) {
             await evaluate("document.querySelector('#tono-game').dispatchEvent(new KeyboardEvent('keydown', {key:'ArrowDown',bubbles:true}))");
@@ -234,18 +301,21 @@ async function main() {
             }
             const answerState = await evaluate("({title:document.querySelector('#tono-feedback-title').textContent,trust:document.querySelector('#tono-trust-value').textContent,nextVisible:!document.querySelector('#btn-tono-next').hidden,disabled:[...document.querySelectorAll('#tono-choices button')].every(button=>button.disabled)})");
             const expectedPortrait = shouldAnswerCorrectly ? 'correct.png' : 'wrong.png';
-            await until(() => evaluate(`(() => { const image=document.querySelector('.tono-portrait-image'); return image.complete && image.getAttribute('src')==='images/minigame/tono/${expectedPortrait}' && image.naturalWidth===1254; })()`), `Tono answer portrait: ${expectedPortrait}`);
+            await until(() => evaluate(`(() => { const image=document.querySelector('.tono-portrait-image'); return image.complete && image.getAttribute('src')==='${portraitBase}${expectedPortrait}' && image.naturalWidth===1254; })()`), `Tono answer portrait: ${expectedPortrait}`);
             const trust = 50 + (Math.min(questionIndex + 1, expectedCorrect) - Math.max(0, questionIndex + 1 - expectedCorrect)) * 10;
             if (answerState.title !== (shouldAnswerCorrectly ? '正解' : '不正解') || answerState.trust !== `${trust}%` || !answerState.nextVisible || !answerState.disabled) throw new Error(`Tono answer failed: ${JSON.stringify(answerState)}`);
             const next = await evaluate("(() => { const lcd=document.querySelector('.tono-lcd-screen'),box=lcd.getBoundingClientRect(),button=document.querySelector('#btn-tono-next').getBoundingClientRect(); return {top:button.top,bottom:button.bottom,lcdTop:box.top,lcdBottom:box.bottom,overflow:lcd.scrollHeight-lcd.clientHeight}; })()");
             if (next.top < next.lcdTop - 1 || next.bottom > next.lcdBottom + 1 || next.overflow > 1) throw new Error(`Explanation action is clipped: ${JSON.stringify(next)}`);
             for (let page = 0; page < 12 && await evaluate("document.querySelector('#btn-tono-next').textContent === '続きを読む'"); page++) await evaluate("document.querySelector('#btn-tono-next').click()");
             await evaluate("document.querySelector('#btn-tono-next').click()");
-            if (questionIndex < 4 && !await evaluate("document.querySelector('.tono-portrait-image').getAttribute('src')==='images/minigame/tono/normal.png'")) throw new Error('Tono portrait did not reset for the next question');
+            if (questionIndex < 4 && !await evaluate(`document.querySelector('.tono-portrait-image').getAttribute('src')==='${portraitBase}normal.png'`)) throw new Error('Tono portrait did not reset for the next question');
           }
           const result = await evaluate("({visible:!document.querySelector('#tono-result').hidden,grade:document.querySelector('#tono-result-grade').textContent,score:document.querySelector('#tono-result-score').textContent,trust:document.querySelector('#tono-result-trust').textContent})");
+          const expectedMedals = ({3:100,4:120,5:150})[expectedCorrect] || 0;
+          if (!await evaluate(`document.querySelector('#tono-result-medals').textContent.includes('＋${expectedMedals}枚')`)) throw new Error('History clear medal reward mismatch');
+          if (!await evaluate(`HistoryMedals.read().medals===${beforeHistoryMedals + expectedMedals}`)) throw new Error('History medals were not saved exactly once');
           if (!await evaluate("document.querySelector('#btn-tono-b').disabled")) throw new Error('B is active on the result screen');
-          if (!await evaluate(`document.querySelector('.tono-portrait-image').getAttribute('src')==='images/minigame/tono/${expectedCorrect >= 3 ? 'correct' : 'wrong'}.png'`)) throw new Error('Tono result portrait failed');
+          if (!await evaluate(`document.querySelector('.tono-portrait-image').getAttribute('src')==='${portraitBase}${expectedCorrect >= 3 ? 'correct' : 'wrong'}.png'`)) throw new Error('Tono result portrait failed');
           const expectedGrade = expectedCorrect === 5 ? '完全勝利' : expectedCorrect === 4 ? '大勝利' : expectedCorrect === 3 ? '勝利' : '失敗';
           if (!result.visible || !result.grade.includes(expectedGrade) || !result.score.includes(`${expectedCorrect} / 5`) || !result.trust.includes(`${50 + (expectedCorrect * 2 - 5) * 10}%`) || !await evaluate("getComputedStyle(document.querySelector('#global-hud')).display === 'none' && !!document.querySelector('.tono-lcd-screen #tono-result-actions')")) throw new Error(`Tono result failed: ${JSON.stringify(result)}`);
           for (let page = 0; page < 12 && await evaluate("!document.querySelector('#btn-tono-result-continue').hidden"); page++) {
@@ -340,12 +410,43 @@ async function main() {
         const bossScroll = await evaluate("(() => { const content = document.querySelector('.boss-select-content'); const item = document.createElement('div'); item.style.height = '900px'; document.querySelector('#boss-select-list').append(item); content.scrollTop = content.scrollHeight; return {overflow: getComputedStyle(content).overflowY, scrolled: content.scrollTop, page: document.documentElement.scrollTop}; })()");
         if (bossScroll.overflow !== "auto" || bossScroll.scrolled <= 0 || bossScroll.page !== 0) throw new Error(`BOSS list does not scroll internally: ${JSON.stringify(bossScroll)}`);
       }
+      // Play a normal quiz through to the result: long content must stay reachable
+      // inside the game frame on both full-screen touch devices and the PC frame.
+      await send("Page.navigate", { url: `http://127.0.0.1:${server.address().port}/` });
+      await until(() => evaluate("document.readyState === 'complete' && !!document.querySelector('#btn-to-battle-select')"), 'reload for normal quiz');
+      if (size.visible) await evaluate(`document.documentElement.style.setProperty('--game-viewport-height', '${size.visible}px')`);
+      await evaluate("document.querySelector('#btn-to-battle-select').click(); document.querySelector('#btn-start-from-battle-select').click()");
+      await until(() => evaluate("!!document.querySelector('.normal-battle-field-button')"), 'normal quiz field');
+      await evaluate("document.querySelector('.normal-battle-field-button').click()");
+      await until(() => evaluate("!!document.querySelector('.normal-battle-unit-button')"), 'normal quiz unit');
+      await evaluate("document.querySelector('.normal-battle-unit-button').click()");
+      await until(() => evaluate("document.querySelector('#quiz-screen').classList.contains('active') && document.querySelectorAll('#options-grid button').length===4"), 'normal quiz');
+      await delay(400);
+      for (let question = 0; question < 10 && await evaluate("document.querySelector('#quiz-screen').classList.contains('active')"); question++) {
+        await evaluate("document.querySelector('#options-grid button').click(); document.querySelector('#btn-next').scrollIntoView({block:'end'})");
+        await delay(100);
+        const fit = await evaluate("(() => {const frame=document.querySelector('.quiz-card'), f=frame.getBoundingClientRect(), b=document.querySelector('#btn-next').getBoundingClientRect();return {side:frame.scrollWidth-frame.clientWidth,page:document.documentElement.scrollHeight-innerHeight,top:b.top,bottom:b.bottom,frameTop:f.top,frameBottom:f.bottom,reachable:b.bottom<=f.bottom+1&&b.top>=f.top-1};})()");
+        if (fit.side > 1 || fit.page > 1 || !fit.reachable) throw new Error(`Normal quiz action clipped: ${JSON.stringify(fit)}`);
+        await evaluate("document.querySelector('#btn-next').click()");
+      }
+      if (!await evaluate("document.querySelector('#result-screen').classList.contains('active')")) throw new Error('Normal quiz did not reach results');
+      await delay(400);
+      await evaluate("document.querySelector('#btn-restart').scrollIntoView({block:'end'})");
+      if (!await evaluate("(() => {const f=document.querySelector('.quiz-card'),a=f.getBoundingClientRect(),b=document.querySelector('#btn-restart').getBoundingClientRect();return b.bottom<=a.bottom+1&&f.scrollWidth<=f.clientWidth+1&&document.documentElement.scrollHeight<=innerHeight+1;})()")) throw new Error('Result actions clipped');
+      console.log(`${size.width}x${size.height} normal quiz and results: passed`);
+      if (size.touch && size.height <= 540) {
+        await evaluate("document.querySelector('#btn-back-from-result').click(); document.querySelector('#btn-to-battle-select').click(); document.querySelector('#btn-to-mini-game').click(); document.querySelector('#mini-game-options .mini-game-option').click(); document.querySelector('#mini-game-options .mini-game-option').click(); document.querySelector('#tono-genre-choices button').click()");
+        await delay(400);
+        const fit = await evaluate("(() => { const frame=document.querySelector('.quiz-card'), a=frame.getBoundingClientRect(), b=document.querySelector('#tono-game').getBoundingClientRect(), lcd=document.querySelector('.tono-lcd-screen'); return {scroll:frame.scrollHeight-frame.clientHeight,top:b.top,bottom:b.bottom,frameBottom:a.bottom,lcdOverflow:lcd.scrollHeight-lcd.clientHeight}; })()");
+        if (fit.scroll > 1 || fit.top < -1 || fit.bottom > fit.frameBottom + 1 || fit.lcdOverflow > 1) throw new Error(`Landscape mini-game scrolls: ${JSON.stringify(fit)}`);
+        console.log('Landscape mini-game fits without scrolling');
+      }
       if (size.width === 320) {
         await send("Emulation.setDeviceMetricsOverride", { width: 320, height: 520, deviceScaleFactor: 2, mobile: true });
         await evaluate("window.dispatchEvent(new Event('resize'))");
         await until(() => evaluate("parseInt(getComputedStyle(document.documentElement).getPropertyValue('--game-viewport-height')) === 520"), "dynamic viewport resize");
         const resized = await evaluate("(() => { const game = document.querySelector('.quiz-card').getBoundingClientRect(); return {bottom:game.bottom,ratio:game.width/game.height,scroll:document.documentElement.scrollHeight-innerHeight}; })()");
-        if (resized.bottom > 521 || resized.scroll > 1 || Math.abs(resized.ratio - 9 / 16) > 0.004) throw new Error(`Resize failed: ${JSON.stringify(resized)}`);
+        if (resized.bottom > 521 || resized.scroll > 1 || Math.abs(resized.ratio - 320 / 520) > 0.004) throw new Error(`Resize failed: ${JSON.stringify(resized)}`);
       }
     }
   } finally {
